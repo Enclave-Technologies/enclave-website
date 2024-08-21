@@ -6,28 +6,208 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  font-family: "Poppins", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
+    --background-start-rgb: 255, 255, 255;
     --background-end-rgb: 0, 0, 0;
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: url("/bg-image.jpg") #ffe7d088;
+  background-blend-mode: multiply;
+  padding: 0;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+section {
+  width: 100vw;
+}
+
+h2 {
+  @apply text-5xl font-bold;
+  @apply uppercase;
+}
+
+h3 {
+  @apply text-xl font-bold;
+}
+
+h6 {
+  @apply text-lg font-bold;
+}
+
+.inner-container {
+  @apply p-24;
+}
+
+.hero-title {
+  color: #fff;
+  text-align: center;
+  line-height: 120%; /* 72px */
+  mix-blend-mode: exclusion;
+}
+
+.cta-button {
+  @apply bg-black text-white font-normal py-4 px-8 rounded-full w-fit transition-all duration-75 ease-in-out;
+  box-shadow: 2px 2px 2px 2px #00000077;
+  border: 1px solid #000;
+}
+
+.cta-button:hover {
+  @apply bg-black text-white font-normal py-4 px-8 rounded-full w-fit transition-all duration-75 ease-in-out;
+  transform: translate(0.5px, 0.5px);
+  box-shadow: 1px 1px 1px 1px #00000077;
+}
+
+.service-tab {
+  @apply w-screen transition-all duration-300 ease-in-out;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+.service-tab > div {
+  @apply max-w-screen-lg mx-auto py-8;
+}
+
+.service-title {
+  @apply transition-all duration-75 ease-in-out;
+  -webkit-text-stroke-width: 4;
+  -webkit-text-stroke-color: #000;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 108px */
+  font-variant: small-caps;
+}
+
+.service-number {
+  @apply transition-all duration-75 ease-in-out;
+  -webkit-text-stroke-width: 4;
+  -webkit-text-stroke-color: #000;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 108px */
+  font-variant: small-caps;
+}
+
+.service-tag {
+  @apply py-2 px-4 uppercase text-xs transition-all duration-75 ease-in-out;
+  background-color: transparent;
+  border: 1px solid #000;
+  border-radius: 200px;
+}
+
+.service-arrow {
+  @apply transition-all duration-75 ease-in-out;
+}
+
+.service-tab:hover {
+  @apply bg-black text-white transition-all duration-75 ease-in-out;
+}
+
+.service-tab:hover .service-arrow {
+  @apply dark:invert transition-all duration-75 ease-in-out;
+  fill: #fff;
+}
+
+.service-tab:hover .service-title {
+  @apply transition-all duration-75 ease-in-out;
+  font-style: italic;
+}
+
+.service-tab:hover .service-number {
+  @apply transition-all duration-75 ease-in-out;
+  font-style: italic;
+}
+
+.service-tab:hover .service-tag {
+  border: 1px solid #fff;
+  background-color: #fff;
+  color: #000;
+}
+
+.footer-scroll-title {
+  @apply font-bold;
+  font-size: 320px;
+  animation: scroll 40s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.big-cta-button {
+  @apply font-normal py-4 px-16 rounded-full w-fit uppercase transition-all duration-75 ease-in-out;
+  font-size: 120px;
+  border: 4px solid #000;
+}
+
+.big-cta-button:hover {
+  @apply bg-black text-white uppercase transition-all duration-75 ease-in-out;
+  font-size: 120px;
+  border: 4px solid #000;
+}
+
+.footer {
+  @apply w-screen flex flex-col items-center pt-60;
+  background: url("/gradient.svg") bottom no-repeat;
+  background-size: cover;
+  background-blend-mode: lighten;
+}
+
+#quote .testimonial::before {
+  @apply text-5xl font-bold;
+  line-height: 200px;
+}
+
+#quote .testimonial {
+  @apply text-5xl font-bold;
+  line-height: 52px;
+}
+
+li a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+li a:hover {
+  text-decoration: underline;
+}
+
+.nav-inner-container {
+  @apply p-4 text-black z-50;
+  border: 1px solid #000;
+  background: #ffe7d0aa;
+  mix-blend-mode: exclusion;
+}
+
+.cta-button-nav {
+  @apply bg-black text-white font-normal py-2 px-8 rounded-full w-fit transition-all duration-75 ease-in-out;
+  border: 1px solid #000;
+  mix-blend-mode: normal;
+  text-decoration: underline;
+}
+
+.cta-button-nav:hover {
+  @apply bg-black text-white font-normal py-2 px-8 rounded-full w-fit transition-all duration-75 ease-in-out;
+  border: 1px solid #000;
+  mix-blend-mode: difference;
+  text-decoration: none;
 }
