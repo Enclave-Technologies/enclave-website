@@ -19,7 +19,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: url("/bg-image.jpg") #ffe7d088;
+  background: #f8f4eb;
   background-blend-mode: multiply;
   padding: 0;
   scroll-behavior: smooth;
@@ -181,12 +181,12 @@ h6 {
   background-blend-mode: lighten;
 }
 
-#quote .testimonial::before {
+#about .testimonial::before {
   @apply text-5xl font-bold;
   line-height: 200px;
 }
 
-#quote .testimonial {
+#about .testimonial {
   @apply text-5xl font-bold;
   line-height: 52px;
 }
