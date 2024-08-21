@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-export const Works = () => {
+export const Works = ({ id }) => {
   return (
-    <section id="works">
+    <section id={id}>
       <div className="inner-container flex flex-col gap-32 items-center">
         <div className="flex flex-row items-start justify-between">
           <div className="flex flex-col gap-4 w-1/2">

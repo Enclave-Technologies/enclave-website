@@ -34,9 +34,9 @@ const servicesList = [
   },
 ];
 
-export const Services = () => {
+export const Services = ({ id }) => {
   return (
-    <section>
+    <section id={id}>
       <div className="inner-container flex flex-col items-center gap-12">
         <div className="flex flex-col items-center gap-4">
           <h3>Dicover</h3>

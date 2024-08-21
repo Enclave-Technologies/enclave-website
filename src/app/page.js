@@ -12,14 +12,14 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between text-black">
       <Navbar />
       <Hero />
-      <Works />
+      <Works id={"works"} />
       {/* <section>
         <h3>Empowering Businesses & Individuals</h3>
         <h2>Strategy 2 Delivery</h2>
       </section> */}
-      <Services />
+      <Services id="services" />
       <CTA />
-      <Quote />
+      <Quote id="about" />
       <Footer />
     </main>
   );

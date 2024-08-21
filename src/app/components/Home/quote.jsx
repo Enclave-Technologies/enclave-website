@@ -1,6 +1,6 @@
-export const Quote = () => {
+export const Quote = ({ id }) => {
   return (
-    <section id="quote">
+    <section id={id}>
       <div className="inner-container flex flex-col gap-12">
         <div>
           <span className="testimonial">
