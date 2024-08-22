@@ -37,7 +37,7 @@ section {
 }
 
 h2 {
-  @apply text-8xl font-bold;
+  @apply text-5xl font-semibold;
   @apply uppercase;
 }
 
