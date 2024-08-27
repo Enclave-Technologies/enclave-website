@@ -61,14 +61,36 @@ button {
 
 #home-hero {
   max-width: 1720px;
-  height: calc(100vh - 10rem);
+  min-height: 100vh;
 }
 
 .hero-title {
+  @apply text-7xl font-bold z-10 text-center;
   color: #fff;
   text-align: center;
-  line-height: 120%; /* 72px */
   mix-blend-mode: exclusion;
+}
+
+.nav-container {
+  @apply w-full px-0 h-28 fixed top-0 flex flex-row justify-center items-center z-10;
+  max-width: 1720px;
+}
+
+.mobile-nav {
+  @apply hidden w-full flex flex-row justify-between items-center;
+}
+
+.hamburger {
+  @apply flex flex-col gap-1;
+}
+
+.hamburger-line-1 {
+  @apply w-6 bg-white;
+  height: 1px;
+}
+
+.footer-links-container {
+  @apply w-full flex flex-row items-center justify-between;
 }
 
 .cta-button {
@@ -85,7 +107,7 @@ button {
 }
 
 .service-tab {
-  @apply w-screen p-2 transition-all duration-300 ease-in-out max-w-7xl;
+  @apply w-screen p-2 transition-all duration-300 ease-in-out;
   border-top: 1px solid #000;
   border-bottom: 1px solid #000;
 }
@@ -121,6 +143,23 @@ button {
   background-color: transparent;
   border: 1px solid #000;
   border-radius: 200px;
+}
+
+@media screen and (max-width: 720px) {
+  .service-title {
+    font-size: 40px;
+    line-height: 100%;
+  }
+
+  .service-number {
+    font-size: 40px;
+    line-height: 100%;
+  }
+
+  .service-tag {
+    @apply py-2 px-2 uppercase text-xs transition-all duration-150 ease-in-out;
+    text-wrap: nowrap;
+  }
 }
 
 .service-arrow {
@@ -231,9 +270,7 @@ li a:hover {
 }
 
 .nav-inner-container {
-  @apply p-4 text-black z-10;
-  box-shadow: 0px 0px 4px 0px #00000033;
-  background: #ffe7d033;
+  @apply py-4 px-24 text-black z-50;
   mix-blend-mode: difference;
   max-width: 1720px;
 }
@@ -256,4 +293,72 @@ li a:hover {
   mix-blend-mode: difference;
   text-decoration: none;
   cursor: pointer;
+}
+
+.mobile-nav-links {
+  @apply hidden;
+}
+
+.mobile-nav-links .visible {
+  @apply flex flex-col gap-4;
+}
+
+.hamburger-container {
+  @apply flex flex-col absolute right-0 top-0 items-end justify-center;
+  background-color: #000;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  padding: 16px 16px;
+  mix-blend-mode: difference;
+}
+
+.mobile-nav-links-container {
+  @apply w-full flex flex-col gap-4 px-12 py-4;
+}
+
+/* Mobile Responsive Styles */
+
+@media screen and (max-width: 720px) {
+  .nav-container {
+    @apply w-full px-4 h-28 fixed top-0 flex flex-row justify-center items-center z-10;
+  }
+
+  .desktop-nav {
+    @apply hidden;
+  }
+
+  .mobile-nav {
+    @apply w-full flex flex-row justify-between items-center;
+  }
+
+  .hero-title {
+    @apply text-5xl;
+  }
+
+  .hero-image {
+    @apply hidden;
+  }
+
+  .footer-links-container {
+    @apply flex-col;
+  }
+
+  .big-cta-button {
+    font-size: 40px;
+    border: 4px solid #000;
+    cursor: pointer;
+  }
+
+  #about .testimonial {
+    @apply text-5xl font-bold text-center px-4;
+  }
+
+  .inner-container {
+    @apply p-4;
+    overflow: hidden;
+  }
+
+  #steps {
+    @apply flex-col;
+  }
 }

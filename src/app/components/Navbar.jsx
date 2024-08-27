@@ -20,9 +20,16 @@ export const Navbar = () => {
     });
   });
 
+  const toggleNavMenu = () => {
+    const linksContainer = document.getElementById(
+      "mobile-nav-links-container"
+    );
+    linksContainer.classList.toggle("!hidden");
+  };
+
   return (
-    <nav className="w-full px-48 h-28 sticky top-0 flex flex-row justify-center items-center">
-      <ul className="w-full flex flex-row items-center justify-between rounded-full nav-inner-container">
+    <nav className="nav-container z-50">
+      <ul className="desktop-nav w-full flex flex-row items-center justify-between rounded-full nav-inner-container">
         {/* Logo */}
         <div className="w-48">
           <Image src="/logo.svg" width={32} height={32} alt="Logo" />
@@ -38,6 +45,39 @@ export const Navbar = () => {
           <button className="cta-button-nav">CONTACT US</button>
         </div>
         {/* Contact Us Button */}
+      </ul>
+      <ul className="mobile-nav relative">
+        <div className="w-48">
+          <Image src="/logo.svg" width={32} height={32} alt="Logo" />
+        </div>
+        <div
+          className="hamburger-container cursor-pointer"
+          onClick={toggleNavMenu}
+        >
+          <button className="hamburger">
+            <div className="hamburger-line-1" />
+            <div className="hamburger-line-1" />
+          </button>
+          <div
+            id="mobile-nav-links-container"
+            className="mobile-nav-links-container"
+          >
+            <ul className="flex flex-col gap-4">
+              <li className="text-white text-center">
+                <Link href="#works">WORK</Link>
+              </li>
+              <li className="text-white text-center">
+                <Link href="#services">SERVICES</Link>
+              </li>
+              <li className="text-white text-center">
+                <Link href="#about">ABOUT</Link>
+              </li>
+              <li className="text-white text-center">
+                <Link href="#faq">FAQ</Link>
+              </li>
+            </ul>
+          </div>
+        </div>
       </ul>
     </nav>
   );

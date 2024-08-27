@@ -39,14 +39,14 @@ export const Services = ({ id }) => {
     <section id={id}>
       <div className="inner-container flex flex-col items-center gap-12 overflow-hidden">
         <div className="flex flex-col items-center gap-4">
-          <h3>Dicover</h3>
+          <h3>Discover</h3>
           <div className="flex flex-col gap-6 items-center">
             <h2>Our Services</h2>
             <p className="text-center">
               It is our mission to be the best User Experience and User
               Interface focused web design agency.
             </p>
-            <p className="text-center w-2/3">
+            <p className="text-center w-full md:w-2/3">
               Our UX and UI web design process is centered around empathy -
               having a complete picture of your end-users and target audiences
               preferences. As well as a mobile-first approach (responsive
@@ -79,7 +79,7 @@ const ServiceTab = ({ index, key, title, redirectURL, tags }) => {
           <div id={`service-tab-{key}`} className="flex flex-row items-end">
             <span className="service-number">{index}.</span>
             <div className="flex flex-col gap-4">
-              <div className="flex flex-row gap-4 z-20">
+              <div className="flex flex-wrap gap-2 md:gap-4 z-20 max-w-full">
                 {tags &&
                   tags.map((tag, index) => (
                     <div key={index} className="service-tag">

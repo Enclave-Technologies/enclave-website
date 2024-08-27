@@ -2,9 +2,9 @@ import Image from "next/image";
 
 export const CTA = () => {
   return (
-    <section>
+    <section className="relative overflow-hidden">
       <Image
-        className="absolute -right-0"
+        className="absolute -right-40 top-24 md:-right-0"
         src="/human-sculpture.png"
         width={400}
         height={100}

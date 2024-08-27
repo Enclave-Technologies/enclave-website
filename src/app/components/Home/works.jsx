@@ -4,8 +4,8 @@ export const Works = ({ id }) => {
   return (
     <section id={id}>
       <div className="inner-container flex flex-col gap-32 items-center">
-        <div className="flex flex-row items-center justify-between gap-48">
-          <div className="flex flex-col gap-12 w-3/5">
+        <div className="w-full flex flex-col md:flex-row items-center justify-between gap-4 md:gap-48">
+          <div className="flex flex-col gap-12 w-full md:w-3/5">
             <div className="flex flex-col gap-4">
               <h3>
                 Your business is not a template, then why should your website be
