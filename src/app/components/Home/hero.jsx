@@ -9,7 +9,7 @@ export const Hero = () => {
     >
       <Image
         src="/hero-image.png"
-        width={940}
+        width={600}
         height={600}
         alt="Web Design"
         className="hero-image absolute z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"

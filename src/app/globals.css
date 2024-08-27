@@ -65,7 +65,7 @@ button {
 }
 
 .hero-title {
-  @apply text-7xl font-bold z-10 text-center;
+  @apply text-7xl font-bold z-0 text-center;
   color: #fff;
   text-align: center;
   mix-blend-mode: exclusion;
@@ -94,17 +94,30 @@ button {
 }
 
 .cta-button {
-  @apply bg-black text-white font-normal py-4 px-8 rounded-full w-fit transition-all duration-150 ease-in-out;
+  @apply bg-transparent text-black font-normal py-4 px-8 rounded-full w-fit transition-all duration-150 ease-in-out;
   box-shadow: 2px 2px 2px 2px #00000077;
   border: 1px solid #000;
   cursor: pointer;
 }
 
 .cta-button:hover {
-  @apply bg-black text-white font-normal py-4 px-8 rounded-full w-fit transition-all duration-150 ease-in-out;
+  @apply text-black font-normal py-4 px-8 rounded-full w-fit transition-all duration-150 ease-in-out;
   transform: translate(0.5px, 0.5px);
   box-shadow: 1px 1px 1px 1px #00000077;
+  /* animation: fill 0.5s ease-in-out forwards; */
 }
+
+/* @keyframes fill {
+  0% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: #cae002;
+  }
+  100% {
+    background-color: rgb(255, 173, 100);
+  }
+} */
 
 .service-tab {
   @apply w-screen p-2 transition-all duration-300 ease-in-out;
@@ -299,12 +312,8 @@ li a:hover {
   @apply hidden;
 }
 
-.mobile-nav-links .visible {
-  @apply flex flex-col gap-4;
-}
-
 .hamburger-container {
-  @apply flex flex-col absolute right-0 top-0 items-end justify-center;
+  @apply flex flex-col absolute right-0 top-0 items-end justify-center transition-all duration-150 ease-in-out;
   background-color: #000;
   border: 1px solid #fff;
   border-radius: 20px;
@@ -313,7 +322,30 @@ li a:hover {
 }
 
 .mobile-nav-links-container {
-  @apply w-full flex flex-col gap-4 px-12 py-4;
+  @apply w-full flex flex-col gap-4 px-12 py-4 transition-all duration-300 ease-in-out overflow-hidden;
+  height: 100%;
+}
+
+#cursor {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: #fff;
+  /* transition: all 200ms ease-out; */
+  position: fixed;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  mix-blend-mode: exclusion;
+}
+
+@keyframes cursorAnim {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.7);
+  }
 }
 
 /* Mobile Responsive Styles */
@@ -336,7 +368,7 @@ li a:hover {
   }
 
   .hero-image {
-    @apply hidden;
+    /* @apply hidden; */
   }
 
   .footer-links-container {
@@ -347,6 +379,12 @@ li a:hover {
     font-size: 40px;
     border: 4px solid #000;
     cursor: pointer;
+  }
+
+  .big-cta-button:hover {
+    @apply bg-black text-white uppercase transition-all duration-150 ease-in-out;
+    font-size: 40px;
+    border: 4px solid #000;
   }
 
   #about .testimonial {

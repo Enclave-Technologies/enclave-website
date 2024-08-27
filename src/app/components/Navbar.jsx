@@ -8,10 +8,8 @@ export const Navbar = () => {
   useEffect(() => {
     document.addEventListener("scroll", () => {
       const headerHeight = document.querySelector("nav").offsetHeight / 3;
-      console.log(headerHeight);
       const nav = document.querySelector("nav");
       const scrollY = window.scrollY;
-      console.log(scrollY > headerHeight);
       if (scrollY > headerHeight) {
         // nav.classList.add("scrolled");
       } else {
@@ -60,7 +58,7 @@ export const Navbar = () => {
           </button>
           <div
             id="mobile-nav-links-container"
-            className="mobile-nav-links-container"
+            className="!hidden mobile-nav-links-container"
           >
             <ul className="flex flex-col gap-4">
               <li className="text-white text-center">
