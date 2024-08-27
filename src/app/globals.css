@@ -49,6 +49,9 @@ h6 {
   @apply text-lg font-bold;
 }
 
+body {
+}
+
 button {
   cursor: pointer;
 }
