@@ -18,9 +18,9 @@ export const CTA = () => {
         height={100}
         alt="Web Design"
       />
-      <div className="inner-container flex flex-col items-center gap-20">
+      <div className="inner-container flex flex-col items-center gap-20 !max-w-none">
         <div className="flex flex-col items-center gap-4">
-          <h3>Empowerment</h3>
+          <h3>Make the Leap</h3>
           <div className="flex flex-col items-center gap-6">
             <h2 className="capitalize text-center">
               Don&apos;t settle for generic.

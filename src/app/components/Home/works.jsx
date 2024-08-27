@@ -8,8 +8,7 @@ export const Works = ({ id }) => {
           <div className="flex flex-col gap-12 w-full md:w-3/5">
             <div className="flex flex-col gap-4">
               <h3>
-                Your business is not a template, then why should your website be
-                one?
+                Your business deserves a website that works as hard as you do
               </h3>
               <div className="flex flex-col gap-6">
                 <h2>Solutions that convert</h2>
@@ -28,7 +27,7 @@ export const Works = ({ id }) => {
                 imageURL={"/strategize-illustration.svg"}
                 title={"Strategize"}
                 description={
-                  "We design websites that are not only visually stunning, but also convert visitors into customers."
+                  "We work from the ground up to find what your customers want and how to deliver it."
                 }
               />
               <Step
@@ -36,7 +35,7 @@ export const Works = ({ id }) => {
                 imageURL={"/design-illustration.svg"}
                 title={"Design"}
                 description={
-                  "We design websites that are not only visually stunning, but also convert visitors into customers."
+                  "We design solutions that are not only visually stunning, but also convert visitors into customers."
                 }
               />
               <Step
@@ -44,7 +43,7 @@ export const Works = ({ id }) => {
                 imageURL={"/develop-illustration.svg"}
                 title={"Develop"}
                 description={
-                  "We design websites that are not only visually stunning, but also convert visitors into customers."
+                  "Designs are brought to life with clean, efficient code that works on all devices."
                 }
               />
             </div>

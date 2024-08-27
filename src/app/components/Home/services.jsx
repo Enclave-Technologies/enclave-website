@@ -37,21 +37,20 @@ const servicesList = [
 export const Services = ({ id }) => {
   return (
     <section id={id}>
-      <div className="inner-container flex flex-col items-center gap-12 overflow-hidden">
+      <div className="inner-container flex flex-col items-center gap-12 overflow-hidden !max-w-none">
         <div className="flex flex-col items-center gap-4">
           <h3>Discover</h3>
           <div className="flex flex-col gap-6 items-center">
             <h2>Our Services</h2>
             <p className="text-center">
-              It is our mission to be the best User Experience and User
-              Interface focused web design agency.
+              It is our mission to be the best technology solutions agency with
+              user experience at the core of our design process.
             </p>
             <p className="text-center w-full md:w-2/3">
-              Our UX and UI web design process is centered around empathy -
-              having a complete picture of your end-users and target audiences
-              preferences. As well as a mobile-first approach (responsive
-              design), so that we’re building great experiences that scale
-              across devices.
+              Our process is centred around empathy with your users - to focus
+              on their needs and preferences. We take a mobile-first approach to
+              that ensure we are creating intuitive and engaging digital
+              experiences that scale across devices.
             </p>
           </div>
         </div>
