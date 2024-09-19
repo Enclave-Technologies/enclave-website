@@ -1,15 +1,18 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export const Works = ({ id }) => {
   return (
     <section id={id}>
       <div className="inner-container flex flex-col gap-32 items-center">
-        <div className="w-full flex flex-col md:flex-col items-center justify-between gap-4 md:gap-48">
+        <div className="w-full flex flex-col md:flex-col items-center justify-between gap-24 md:gap-48">
           <div className="flex flex-col gap-12 w-full items-center">
             <div className="flex flex-col gap-4">
-              <h3 className="text-center">Quality with Speed</h3>
+              <h3 className="text-center">Quality & Speed</h3>
               <div className="flex flex-col gap-6 text-center">
-                <h2>Design and Development that Doesn&apos;t Compromise</h2>
+                <h2 className="text-center">
+                  Design and Development that Doesn&apos;t Compromise
+                </h2>
                 <p>
                   We employ a 4-step process led by product strategy and design
                   thinking followed by development and result measurement to
@@ -43,25 +46,27 @@ export const Works = ({ id }) => {
                   "We bring the designs to life through technical implementation. Our team collaborates closely to build a robust, scalable product using best practices in software development."
                 }
               />
-              <Step
+              {/* <Step
                 id={"Deployment"}
                 imageURL={"/develop-illustration.svg"}
                 title={"Deploy"}
                 description={
                   "Our focus is on ensuring a seamless launch that maximizes user adoption and satisfaction while monitoring performance post-launch for continuous improvement."
                 }
-              />
+              /> */}
             </div>
           </div>
           <div>
             <Image
-              src="/venn-diagram.svg"
-              width={800}
+              src="/Venn Diagram.svg"
+              width={600}
               height={100}
               alt="Web Design"
             />
           </div>
-          <button className="cta-button">Learn More</button>
+          <Link className="cta-button" href="/contact">
+            Learn More
+          </Link>
         </div>
       </div>
     </section>

@@ -1,9 +1,13 @@
+import Link from "next/link";
+
 const { default: Image } = require("next/image");
 
 export const Footer = () => {
   return (
     <footer className="footer pb-16">
-      <button className="big-cta-button">Get in touch</button>
+      <Link className="big-cta-button" href="/contact">
+        Get in touch
+      </Link>
       <div className="max-w-full flex flex-row overflow-x-hidden">
         <span className="footer-scroll-title pr-48">ENCLAVE</span>
         <span className="footer-scroll-title pr-48">ENCLAVE</span>

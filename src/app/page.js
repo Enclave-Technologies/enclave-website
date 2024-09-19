@@ -15,6 +15,7 @@ export default function Home() {
 
   function onMouseUpdate(e) {
     const cursor = document.querySelectorAll(".cursor")[0];
+    if (!cursor) return;
     cursor.style.left = e.clientX - 10 + "px";
     cursor.style.top = e.clientY - 10 + "px";
   }

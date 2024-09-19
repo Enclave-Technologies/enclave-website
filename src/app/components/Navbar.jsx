@@ -29,22 +29,19 @@ export const Navbar = () => {
     <nav className="nav-container z-50">
       <ul className="desktop-nav w-full flex flex-row items-center justify-between rounded-full nav-inner-container">
         {/* Logo */}
-        <div className="w-48">
+        <Link href="/">
           <Image src="/logo.svg" width={32} height={32} alt="Logo" />
-        </div>
+        </Link>
         {/* NavLinks */}
-        <li className="flex flex-row gap-8 items-center">
-          <Link href="#works">Work</Link>
-          <Link href="#services">Services</Link>
-          <Link href="#about">About</Link>
-          <Link href="#faq">Faq</Link>
-        </li>
-        <div className="w-48 flex flex-row justify-end">
-          <button className="cta-button-nav">CONTACT US</button>
+        <div className="w-auto flex flex-row items-center gap-8 justify-end flex-1">
+          <Link href="#blog">Blog</Link>
+          <Link href="/contact" className="cta-button-nav">
+            Let&apos;s talk
+          </Link>
         </div>
         {/* Contact Us Button */}
       </ul>
-      <ul className="mobile-nav relative">
+      {/* <ul className="mobile-nav relative">
         <div className="w-48">
           <Image src="/logo.svg" width={32} height={32} alt="Logo" />
         </div>
@@ -76,7 +73,7 @@ export const Navbar = () => {
             </ul>
           </div>
         </div>
-      </ul>
+      </ul> */}
     </nav>
   );
 };

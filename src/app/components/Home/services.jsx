@@ -39,13 +39,6 @@ const servicesList = [
       "Webflow",
     ],
   },
-  {
-    index: 3,
-    key: "deploy",
-    title: "Deployment",
-    redirectURL: null,
-    tags: ["iOS App Store", "Android Play Store", "Website", "E-Commerce"],
-  },
 ];
 
 export const Services = ({ id }) => {
@@ -115,7 +108,7 @@ const ServiceTab = ({ index, key, title, redirectURL, tags }) => {
               </div>
             </div>
           </div>
-          <div className="-translate-y-4">
+          {/* <div className="-translate-y-4">
             <Image
               className="service-arrow-black"
               src="/service-arrow-black.png"
@@ -130,7 +123,7 @@ const ServiceTab = ({ index, key, title, redirectURL, tags }) => {
               height={200}
               alt={key}
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
