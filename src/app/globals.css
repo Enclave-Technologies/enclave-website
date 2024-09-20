@@ -72,9 +72,8 @@ button {
 
 .hero-title {
   @apply text-7xl font-bold z-0 text-center;
-  color: #fff;
+  color: #000;
   text-align: center;
-  mix-blend-mode: difference;
 }
 
 .nav-container {
@@ -288,7 +287,7 @@ button {
 }
 
 #about .testimonial {
-  @apply text-6xl font-bold text-center px-4;
+  @apply text-4xl font-bold text-center px-4;
 }
 
 li a {
@@ -407,7 +406,7 @@ li a:hover {
   }
 
   #about .testimonial {
-    @apply text-3xl font-bold text-center px-4;
+    @apply text-2xl font-bold text-center px-4;
   }
 
   .inner-container {

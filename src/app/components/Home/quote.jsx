@@ -11,11 +11,13 @@ export const Quote = ({ id }) => {
             acquisition.&quot;
           </p>
         </div>
-        <div className="w-full flex flex-col gap-4 items-center justify-between md:flex-row">
+        <div className="w-full flex flex-col gap-4 items-center justify-center md:flex-row">
           <div className="flex flex-col md:flex-row gap-4 items-stretch">
             <div className="flex flex-col">
-              <p className="font-bold text-right">Aman Selarka</p>
-              <p className="text-right">Head of Product</p>
+              <p className="font-bold text-center md:text-right">
+                Aman Selarka
+              </p>
+              <p className="text-center md:text-right">Head of Product</p>
             </div>
             <div className="w-full md:w-0.5 min-h-0.5 bg-black" />
             <Image
