@@ -12,7 +12,7 @@ export const Partners = ({ id }) => {
                   Empowering Startups & Businesses Alike
                 </h3>
                 <h2 className="text-center">
-                  TRUSTED BY THE BEST TEAMS IN THE WORLD
+                  TRUSTED BY BUSINESSES IN HONG KONG & SINGAPORE
                 </h2>
               </div>
               <div className="slider-container">
@@ -36,7 +36,7 @@ export const Partners = ({ id }) => {
                         style={{
                           position: "relative",
                           height: "200px",
-                          width: "140px",
+                          width: "180px",
                         }}
                       >
                         <Image
@@ -72,7 +72,7 @@ export const Partners = ({ id }) => {
                         style={{
                           position: "relative",
                           height: "200px",
-                          width: "140px",
+                          width: "180px",
                         }}
                       >
                         <Image

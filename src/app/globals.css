@@ -44,7 +44,7 @@ h2 {
 }
 
 h3 {
-  @apply text-xl font-bold;
+  @apply text-xl;
 }
 
 h6 {
@@ -66,20 +66,22 @@ button {
 
 #home-hero {
   max-width: 1720px;
-  min-height: 100vh;
+  height: 100vh;
+  min-height: 812px;
 }
 
 .hero-title {
   @apply text-7xl font-bold z-0 text-center;
   color: #fff;
   text-align: center;
-  mix-blend-mode: exclusion;
+  mix-blend-mode: difference;
 }
 
 .nav-container {
   @apply w-full px-0 h-auto py-4 fixed top-0 flex flex-row justify-center items-center z-10;
-  max-width: 1720px;
-  mix-blend-mode: multiply;
+  /* max-width: 1720px; */
+  /* mix-blend-mode: multiply; */
+  background-color: #fffaf6;
 }
 
 .scrolled {
