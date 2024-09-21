@@ -22,7 +22,7 @@ body {
   background: #fffaf6;
   background-blend-mode: multiply;
   padding: 0;
-  scroll-behavior: smooth;
+  max-width: 100vw;
   overflow-x: hidden;
   font-family: "Poppins", sans-serif !important;
 }
@@ -78,14 +78,18 @@ button {
 
 .nav-container {
   @apply w-full px-0 h-auto py-4 fixed top-0 flex flex-row justify-center items-center z-10;
-  /* max-width: 1720px; */
-  /* mix-blend-mode: multiply; */
-  background-color: #fffaf6;
+  max-width: 100vw;
+  mix-blend-mode: exclusion;
 }
 
+.nav-container a {
+  color: #fff;
+}
+
+/* 
 .scrolled {
   border-bottom: 1px solid #efebe0;
-}
+} */
 
 .mobile-nav {
   @apply hidden w-full flex flex-row justify-between items-center;
@@ -306,19 +310,21 @@ li a:hover {
 }
 
 .cta-button-nav {
-  @apply bg-black text-white font-normal py-2 px-8 rounded-full w-fit transition-all duration-150 ease-in-out;
-  border: 1px solid #000;
-  mix-blend-mode: hard-light;
+  @apply bg-white font-normal py-2 px-8 rounded-full w-fit transition-all duration-150 ease-in-out;
+  border: 1px solid #fff;
+  color: #000 !important;
+  mix-blend-mode: exclusion;
   text-decoration: underline;
   cursor: pointer;
 }
 
 .cta-button-nav:hover {
-  @apply bg-black text-white font-normal py-2 px-8 rounded-full w-fit transition-all duration-150 ease-in-out;
-  border: 1px solid #000;
+  @apply bg-white text-white font-normal py-2 px-8 rounded-full w-fit transition-all duration-150 ease-in-out;
+  border: 1px solid #fff;
   mix-blend-mode: difference;
   text-decoration: none;
   cursor: pointer;
+  transform: translate(0px, 2px);
 }
 
 .mobile-nav-links {
@@ -366,6 +372,10 @@ li a:hover {
 /* Mobile Responsive Styles */
 
 @media screen and (max-width: 720px) {
+  .cursor {
+    @apply hidden;
+  }
+
   .nav-container {
     @apply w-full px-4 h-auto fixed top-0 flex flex-row justify-center items-center z-10;
   }
@@ -439,5 +449,40 @@ li a:hover {
   }
   100% {
     transform: translateX(-100%);
+  }
+}
+
+.bouncing-arrow {
+  @apply px-2 pb-2 pt-12 bg-black rounded-full;
+  animation: bounce 2s infinite forwards;
+}
+
+#works-cursor-button {
+  @apply px-8 py-2 text-black w-max rounded-full backdrop-blur-lg fixed transition-all ease-in-out hidden;
+  transition-duration: 0ms;
+  background-color: white;
+}
+
+.cursor {
+  aspect-ratio: 1;
+  border-radius: 100%;
+  background-color: #fff;
+  /* transition: all 200ms ease-out; */
+  position: fixed;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  mix-blend-mode: exclusion;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(25%);
+  }
+  100% {
+    transform: translateY(0%);
   }
 }

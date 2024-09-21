@@ -18,7 +18,7 @@ export const Footer = () => {
       >
         <div className="footer-links-container gap-8">
           <div className="w-auto md:w-52">
-            <Image src="/logo.svg" width={42} height={42} alt="Logo" />
+            <Image src="/logo-dark.svg" width={42} height={42} alt="Logo" />
           </div>
           <ul>
             <li className="flex flex-col md:flex-row gap-12">

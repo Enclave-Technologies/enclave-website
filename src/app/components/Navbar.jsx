@@ -30,11 +30,18 @@ export const Navbar = () => {
       <ul className="desktop-nav w-full flex flex-row items-center justify-between rounded-full nav-inner-container">
         {/* Logo */}
         <Link href="/">
-          <Image src="/logo.svg" width={32} height={32} alt="Logo" />
+          <Image
+            src="/logo.svg"
+            width={32}
+            height={32}
+            alt="Logo"
+            className="mix-blend-exclusion"
+          />
         </Link>
         {/* NavLinks */}
         <div className="w-auto flex flex-row items-center gap-8 justify-end flex-1">
-          <Link href="#blog">Blog</Link>
+          <Link href="/works">Works</Link>
+          {/* <Link href="#blog">Blog</Link> */}
           <Link href="/contact" className="cta-button-nav">
             Let&apos;s talk
           </Link>
