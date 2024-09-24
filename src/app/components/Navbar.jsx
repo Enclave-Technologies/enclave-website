@@ -40,7 +40,9 @@ export const Navbar = () => {
         </Link>
         {/* NavLinks */}
         <div className="w-auto flex flex-row items-center gap-8 justify-end flex-1">
-          <Link href="/works">Works</Link>
+          <Link href="/works" className="hover:underline">
+            Works
+          </Link>
           {/* <Link href="#blog">Blog</Link> */}
           <Link href="/contact">
             <button className="cta-button-nav">
