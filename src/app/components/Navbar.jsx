@@ -42,8 +42,13 @@ export const Navbar = () => {
         <div className="w-auto flex flex-row items-center gap-8 justify-end flex-1">
           <Link href="/works">Works</Link>
           {/* <Link href="#blog">Blog</Link> */}
-          <Link href="/contact" className="cta-button-nav">
-            Let&apos;s talk
+          <Link href="/contact">
+            <button className="cta-button-nav">
+              <span className="cta-button-text-container">
+                <span className="cta-button-text">Let&apos;s talk</span>
+                <span className="cta-button-text">Let&apos;s talk</span>
+              </span>
+            </button>
           </Link>
         </div>
         {/* Contact Us Button */}

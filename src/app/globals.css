@@ -19,7 +19,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: #fffaf6;
+  background: #ffffff;
   background-blend-mode: multiply;
   padding: 0;
   max-width: 100vw;
@@ -310,21 +310,51 @@ li a:hover {
 }
 
 .cta-button-nav {
-  @apply bg-white font-normal py-2 px-8 rounded-full w-fit transition-all duration-150 ease-in-out;
+  @apply bg-white font-normal rounded-full w-fit transition-all duration-150 ease-in-out;
+  /* width: 80px; */
+  padding: 8px 16px;
   border: 1px solid #fff;
   color: #000 !important;
   mix-blend-mode: exclusion;
-  text-decoration: underline;
   cursor: pointer;
+  position: relative;
 }
 
 .cta-button-nav:hover {
-  @apply bg-white text-white font-normal py-2 px-8 rounded-full w-fit transition-all duration-150 ease-in-out;
+  @apply bg-white text-white font-normal rounded-full  transition-all duration-150 ease-in-out;
   border: 1px solid #fff;
   mix-blend-mode: difference;
   text-decoration: none;
   cursor: pointer;
-  transform: translate(0px, 2px);
+  /* transform: translate(0px, 2px); */
+}
+
+.cta-button-nav span {
+  display: inline-block;
+  margin: 0;
+}
+
+.cta-button-nav .cta-button-text-container {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+.cta-button-text-container span:last-child {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  text-decoration: underline;
+}
+
+.cta-button-nav .cta-button-text-container span {
+  /* transform: translateY(calc(-100%)); */
+  transition: transform 0.4s cubic-bezier(0.17, 0.67, 0.42, 0.84);
+}
+
+.cta-button-nav:hover .cta-button-text-container span {
+  transform: translateY(calc(-100%));
+  transition: transform 0.5s ease-in-out;
 }
 
 .mobile-nav-links {

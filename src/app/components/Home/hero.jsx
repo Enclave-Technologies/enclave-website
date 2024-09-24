@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Navbar } from "../Navbar";
+import Spline from "@splinetool/react-spline/next";
 
 export const Hero = () => {
   return (
@@ -7,6 +8,7 @@ export const Hero = () => {
       id="home-hero"
       className="relative flex flex-row items-center justify-center p-4 md:p-24"
     >
+      {/* <Spline scene="https://prod.spline.design/a92NHsBGCPYrDVe0/scene.splinecode" /> */}
       <Image
         src="/hero-image.png"
         width={600}
