@@ -11,12 +11,19 @@ export const Hero = () => {
     >
       {/* <Spline scene="https://prod.spline.design/3kAGWK74ivpJ8AXa/scene.splinecode" /> */}
       {/* <canvas id="web-gl-canvas" /> */}
-      <Image
+      {/* <Image
         src="/hero-image.png"
         width={800}
         height={800}
         alt="Web Design"
         className="hero-image absolute z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-50"
+      /> */}
+      <img
+        src="/hero-image.png"
+        alt="Web Design"
+        className="hero-image absolute z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-50"
+        width={800}
+        height={800}
       />
       <div className="flex flex-col items-center gap-16 z-50">
         <h1 className="hero-title">
