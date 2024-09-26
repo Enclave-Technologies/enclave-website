@@ -17,6 +17,7 @@ export const Hero = () => {
         height={800}
         alt="Web Design"
         className="hero-image absolute z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-50"
+        unoptimized
       />
       <div className="flex flex-col items-center gap-16 z-50">
         <h1 className="hero-title">
