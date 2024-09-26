@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Navbar } from "../Navbar";
 import Spline from "@splinetool/react-spline/next";
 import Link from "next/link";
-import HeroImage from "../../../../public/hero-image.png";
 
 export const Hero = () => {
   return (
@@ -13,8 +12,7 @@ export const Hero = () => {
       {/* <Spline scene="https://prod.spline.design/3kAGWK74ivpJ8AXa/scene.splinecode" /> */}
       {/* <canvas id="web-gl-canvas" /> */}
       <Image
-        src={HeroImage}
-        // "/hero-image.png"
+        src="/hero-image.png"
         width={800}
         height={800}
         alt="Web Design"
