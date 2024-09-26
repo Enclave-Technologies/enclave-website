@@ -2,7 +2,7 @@
 const nextConfig = {
   
   output: 'export',
-  assetPrefix: 'https://ghostwhite-worm-873765.hostingersite.com/',  // Ensure relative paths
+  // assetPrefix: 'https://ghostwhite-worm-873765.hostingersite.com/',  // Ensure relative paths
 };
 
 export default nextConfig;
