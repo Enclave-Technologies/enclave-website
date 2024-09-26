@@ -24,11 +24,17 @@ jobs:
     - name: Build Next.js
       run: npm run build
 
+    - name: Extract Hostinger Host
+      id: extract_host
+      run: |
+        echo "HOSTINGER_HOST=${{ secrets.HOSTINGER_HOST }}"
+        echo "::set-output name=host::$(echo ${{ secrets.HOSTINGER_HOST }} | sed 's/^ftp:\/\///')"
+
     - name: Deploy to Hostinger
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
-        server: ${{ secrets.HOSTINGER_HOST }}
+        server: ${{ steps.extract_host.outputs.host }}
         username: ${{ secrets.HOSTINGER_USERNAME }}
         password: ${{ secrets.HOSTINGER_PASSWORD }}
         local-dir: out/  # Directory where Next.js exports static files
-        server-dir: ${{ secrets.HOSTINGER_DIRECTORY }}/
+        server-dir: ${{ secrets.HOSTINGER_DIRECTORY }}/  # Ensure it ends with a /
