@@ -71,7 +71,9 @@ button {
 }
 
 .hero-title {
-  @apply text-7xl font-bold z-0 text-center;
+  @apply font-bold z-0 text-center;
+  font-size: 5rem;
+  line-height: 5.2rem;
   color: #000;
   text-align: center;
 }

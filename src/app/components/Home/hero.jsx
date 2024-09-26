@@ -13,8 +13,8 @@ export const Hero = () => {
       {/* <canvas id="web-gl-canvas" /> */}
       <Image
         src="/hero-image.png"
-        width={600}
-        height={600}
+        width={800}
+        height={800}
         alt="Web Design"
         className="hero-image absolute z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-50"
       />
@@ -22,7 +22,7 @@ export const Hero = () => {
         <h1 className="hero-title">
           AWARD WINNING WEB AND MOBILE APPLICATION DEVELOPMENT
         </h1>
-        <div className="flex flex-row gap-4">
+        {/* <div className="flex flex-row gap-4">
           <Link href="/contact">
             <button className="cta-button-nav !bg-black !border-black">
               <span className="cta-button-text-container">
@@ -47,7 +47,7 @@ export const Hero = () => {
               </span>
             </button>
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   );
