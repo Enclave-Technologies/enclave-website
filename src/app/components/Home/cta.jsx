@@ -10,6 +10,7 @@ export const CTA = () => {
         width={400}
         height={100}
         alt="Web Design"
+        unoptimized
       />
       <Image
         className="absolute -left-40 z-0"
@@ -18,6 +19,7 @@ export const CTA = () => {
         width={400}
         height={100}
         alt="Web Design"
+        unoptimized
       />
       <div className="inner-container flex flex-col items-center gap-20 !max-w-none z-10">
         <div className="flex flex-col items-center gap-4">

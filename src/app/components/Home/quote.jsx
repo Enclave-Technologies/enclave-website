@@ -25,6 +25,7 @@ export const Quote = ({ id }) => {
               src="/company-logos/logo-payphone.png"
               width={200}
               height={100}
+              unoptimized
             />
           </div>
         </div>

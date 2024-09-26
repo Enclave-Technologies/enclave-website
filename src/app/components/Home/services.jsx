@@ -103,6 +103,7 @@ const ServiceTab = ({ index, key, title, redirectURL, tags }) => {
                     width={120}
                     height={100}
                     alt={key}
+                    unoptimized
                   />
                 </div>
               </div>
@@ -115,6 +116,7 @@ const ServiceTab = ({ index, key, title, redirectURL, tags }) => {
               width={100}
               height={200}
               alt={key}
+              unoptimized
             />
             <Image
               className="service-arrow-white"
@@ -122,6 +124,7 @@ const ServiceTab = ({ index, key, title, redirectURL, tags }) => {
               width={100}
               height={200}
               alt={key}
+              unoptimized
             />
           </div> */}
         </div>

@@ -76,7 +76,7 @@ export const Works = ({ id }) => {
 const Step = ({ id, imageURL, title, description }) => {
   return (
     <div className="flex flex-col gap-4 items-center flex-1">
-      <Image src={imageURL} width={72} height={100} alt="" />
+      <Image src={imageURL} width={72} height={100} alt="" unoptimized />
       <h6 className="text-center">{title}</h6>
       <p className="text-center">{description}</p>
     </div>

@@ -47,6 +47,7 @@ export const Partners = ({ id }) => {
                             objectFit: "contain",
                             filter: `grayscale(1)`,
                           }}
+                          unoptimized
                         />
                       </div>
                     );
@@ -83,6 +84,7 @@ export const Partners = ({ id }) => {
                             objectFit: "contain",
                             filter: `grayscale(1)`,
                           }}
+                          unoptimized
                         />
                       </div>
                     );
@@ -109,6 +111,13 @@ export const Partners = ({ id }) => {
 
 const ProjectTile = ({ id, imageURL }) => {
   return (
-    <Image key={id} src={imageURL} width={2400} height={100} alt="Web Design" />
+    <Image
+      key={id}
+      src={imageURL}
+      width={2400}
+      height={100}
+      alt="Web Design"
+      unoptimized
+    />
   );
 };
