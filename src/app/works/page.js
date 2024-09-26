@@ -133,7 +133,7 @@ const WorkItem = ({ index, link, label, image }) => {
           width={500}
           height={300}
           className="z-40"
-          alt=""
+          alt={`${label}-Cover`}
           unoptimized
         />
       </div>

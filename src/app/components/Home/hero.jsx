@@ -15,7 +15,7 @@ export const Hero = () => {
         src="/hero-image.png"
         width={800}
         height={800}
-        alt="Web Design"
+        alt="Hero Image"
         className="hero-image absolute z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-50"
         unoptimized
       />

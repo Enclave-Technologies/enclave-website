@@ -34,7 +34,7 @@ export const Navbar = () => {
             src="/logo.svg"
             width={32}
             height={32}
-            alt="Logo"
+            alt="Enclave_Logo_Light"
             className="mix-blend-exclusion"
           />
         </Link>

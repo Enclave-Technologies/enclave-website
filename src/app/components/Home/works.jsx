@@ -61,7 +61,7 @@ export const Works = ({ id }) => {
               src="/Venn Diagram.svg"
               width={600}
               height={100}
-              alt="Web Design"
+              alt="Our Mission"
             />
           </div>
           <Link className="cta-button" href="/contact">
@@ -76,7 +76,13 @@ export const Works = ({ id }) => {
 const Step = ({ id, imageURL, title, description }) => {
   return (
     <div className="flex flex-col gap-4 items-center flex-1">
-      <Image src={imageURL} width={72} height={100} alt="" unoptimized />
+      <Image
+        src={imageURL}
+        width={72}
+        height={100}
+        alt={`Step-{id}`}
+        unoptimized
+      />
       <h6 className="text-center">{title}</h6>
       <p className="text-center">{description}</p>
     </div>

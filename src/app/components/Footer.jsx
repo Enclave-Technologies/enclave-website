@@ -18,7 +18,12 @@ export const Footer = () => {
       >
         <div className="footer-links-container gap-8">
           <div className="w-auto md:w-52">
-            <Image src="/logo-dark.svg" width={42} height={42} alt="Logo" />
+            <Image
+              src="/logo-dark.svg"
+              width={42}
+              height={42}
+              alt="Enclave-Logo-Dark"
+            />
           </div>
           <ul>
             <li className="flex flex-col md:flex-row gap-12">
@@ -31,19 +36,39 @@ export const Footer = () => {
           <ul>
             <li className="flex flex-row gap-4 w-52">
               <a>
-                <Image src="/Facebook.svg" width={24} height={24} alt="Logo" />
+                <Image
+                  src="/Facebook.svg"
+                  width={24}
+                  height={24}
+                  alt="Logo_FB"
+                />
               </a>
               <a>
-                <Image src="/Instagram.svg" width={24} height={24} alt="Logo" />
+                <Image
+                  src="/Instagram.svg"
+                  width={24}
+                  height={24}
+                  alt="Logo_Instagram"
+                />
               </a>
               <a>
-                <Image src="/X.svg" width={24} height={24} alt="Logo" />
+                <Image src="/X.svg" width={24} height={24} alt="Logo_X" />
               </a>
               <a>
-                <Image src="/LinkedIn.svg" width={24} height={24} alt="Logo" />
+                <Image
+                  src="/LinkedIn.svg"
+                  width={24}
+                  height={24}
+                  alt="Logo_Linkedin"
+                />
               </a>
               <a>
-                <Image src="/Youtube.svg" width={24} height={24} alt="Logo" />
+                <Image
+                  src="/Youtube.svg"
+                  width={24}
+                  height={24}
+                  alt="Logo_Youtube"
+                />
               </a>
             </li>
           </ul>

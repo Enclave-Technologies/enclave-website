@@ -9,7 +9,7 @@ export const CTA = () => {
         src="/human-sculpture.png"
         width={400}
         height={100}
-        alt="Web Design"
+        alt="Human Sculpture"
         unoptimized
       />
       <Image
@@ -18,7 +18,7 @@ export const CTA = () => {
         src="/human-sculpture.png"
         width={400}
         height={100}
-        alt="Web Design"
+        alt="Human Sculpture"
         unoptimized
       />
       <div className="inner-container flex flex-col items-center gap-20 !max-w-none z-10">

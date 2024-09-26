@@ -109,15 +109,15 @@ export const Partners = ({ id }) => {
   );
 };
 
-const ProjectTile = ({ id, imageURL }) => {
-  return (
-    <Image
-      key={id}
-      src={imageURL}
-      width={2400}
-      height={100}
-      alt="Web Design"
-      unoptimized
-    />
-  );
-};
+// const ProjectTile = ({ id, imageURL }) => {
+//   return (
+//     <Image
+//       key={id}
+//       src={imageURL}
+//       width={2400}
+//       height={100}
+//       alt="Web Design"
+//       unoptimized
+//     />
+//   );
+// };
