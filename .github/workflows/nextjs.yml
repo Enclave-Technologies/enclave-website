@@ -37,4 +37,4 @@ jobs:
         username: ${{ secrets.HOSTINGER_USERNAME }}
         password: ${{ secrets.HOSTINGER_PASSWORD }}
         local-dir: out/  # Directory where Next.js exports static files
-        server-dir: ${{ secrets.HOSTINGER_DIRECTORY }}/  # Ensure it ends with a /
+        server-dir: /  # Ensure it ends with a /
