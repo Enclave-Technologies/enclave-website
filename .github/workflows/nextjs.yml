@@ -3,38 +3,38 @@ name: Deploy Next.js to Hostinger
 on:
   push:
     branches:
-      - main  # or the branch you want to deploy from
+      - main # or the branch you want to deploy from
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '21'  # or the version you are using
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "21" # or the version you are using
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: Build Next.js
-      run: npm run build
+      - name: Build Next.js
+        run: npm run build
 
-    - name: Extract Hostinger Host
-      id: extract_host
-      run: |
-        echo "HOSTINGER_HOST=${{ secrets.HOSTINGER_HOST }}"
-        echo "::set-output name=host::$(echo ${{ secrets.HOSTINGER_HOST }} | sed 's/^ftp:\/\///')"
+      - name: Extract Hostinger Host
+        id: extract_host
+        run: |
+          echo "HOSTINGER_HOST=${{ secrets.HOSTINGER_HOST }}"
+          echo "::set-output name=host::$(echo ${{ secrets.HOSTINGER_HOST }} | sed 's/^ftp:\/\///')"
 
-    - name: Deploy to Hostinger
-      uses: SamKirkland/FTP-Deploy-Action@4.3.0
-      with:
-        server: ${{ steps.extract_host.outputs.host }}
-        username: ${{ secrets.HOSTINGER_USERNAME }}
-        password: ${{ secrets.HOSTINGER_PASSWORD }}
-        local-dir: out/  # Directory where Next.js exports static files
-        server-dir: /  # Ensure it ends with a /
+      - name: Deploy to Hostinger
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ steps.extract_host.outputs.host }}
+          username: ${{ secrets.HOSTINGER_USERNAME }}
+          password: ${{ secrets.HOSTINGER_PASSWORD }}
+          local-dir: out/ # Directory where Next.js exports static files
+          server-dir: /${{ secrets.HOSTINGER_DIRECTORY }}/ # Ensure it ends with a /
