@@ -30,6 +30,16 @@ jobs:
         echo "HOSTINGER_HOST=${{ secrets.HOSTINGER_HOST }}"
         echo "::set-output name=host::$(echo ${{ secrets.HOSTINGER_HOST }} | sed 's/^ftp:\/\///')"
 
+    - name: Delete Remote Directory Content
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        server: ${{ steps.extract_host.outputs.host }}
+        username: ${{ secrets.HOSTINGER_USERNAME }}
+        password: ${{ secrets.HOSTINGER_PASSWORD }}
+        local-dir: ./  # Use the root directory to delete remote content
+        server-dir: ./  # Ensure it ends with a /
+        method: delete  # Delete method to remove all content
+
     - name: Deploy to Hostinger
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
@@ -37,4 +47,4 @@ jobs:
         username: ${{ secrets.HOSTINGER_USERNAME }}
         password: ${{ secrets.HOSTINGER_PASSWORD }}
         local-dir: out/  # Directory where Next.js exports static files
-        server-dir: /  # Ensure it ends with a /
+        server-dir: ./${{ secrets.HOSTINGER_DIRECTORY }}/  # Ensure it ends with a /
