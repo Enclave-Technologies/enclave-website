@@ -2,6 +2,7 @@
 const nextConfig = {
   
   output: 'export',
+  assetPrefix: './',  // Ensure relative paths
 };
 
 export default nextConfig;
