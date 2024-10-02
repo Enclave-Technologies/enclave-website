@@ -34,16 +34,16 @@ export const Footer = () => {
             </li>
           </ul>
           <ul>
-            <li className="flex flex-row gap-4 w-52">
-              <a>
+            <li className="flex flex-row justify-end gap-4 w-52">
+              {/* <a>
                 <Image
                   src="/Facebook.svg"
                   width={24}
                   height={24}
                   alt="Logo_FB"
                 />
-              </a>
-              <a>
+              </a> */}
+              <a href="https://www.instagram.com/enclave.live/" target="_blank">
                 <Image
                   src="/Instagram.svg"
                   width={24}
@@ -51,10 +51,10 @@ export const Footer = () => {
                   alt="Logo_Instagram"
                 />
               </a>
-              <a>
+              {/* <a>
                 <Image src="/X.svg" width={24} height={24} alt="Logo_X" />
-              </a>
-              <a>
+              </a> */}
+              <a href="https://www.linkedin.com/company/enclave-tech">
                 <Image
                   src="/LinkedIn.svg"
                   width={24}
@@ -62,14 +62,14 @@ export const Footer = () => {
                   alt="Logo_Linkedin"
                 />
               </a>
-              <a>
+              {/* <a>
                 <Image
                   src="/Youtube.svg"
                   width={24}
                   height={24}
                   alt="Logo_Youtube"
                 />
-              </a>
+              </a> */}
             </li>
           </ul>
         </div>
