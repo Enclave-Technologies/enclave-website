@@ -16,6 +16,29 @@ const services = [
   "Logo Design",
 ];
 
+const workItems = [
+  {
+    label: "ATHENA.IO",
+    image: "/work-items/work-item-1.png",
+    link: "https://athenasocial.webflow.io/",
+  },
+  {
+    label: "NBHD",
+    image: "/work-items/work-item-2.png",
+    link: "https://nbhd.social",
+  },
+  {
+    label: "MOVEMENT",
+    image: "/work-items/work-item-3.png",
+    link: "https://movementfitnesshk.com",
+  },
+  {
+    label: "Xccelerate",
+    image: "/work-items/work-item-4.png",
+    link: "https://xccelerate.co",
+  },
+];
+
 const budgets = ["2-10K", "10-20K", "20-50K", "50-100K", "100K+"];
 
 export default function Works() {
@@ -66,21 +89,14 @@ export default function Works() {
           className="z-40 w-full flex flex-col "
           style={{ backgroundColor: "#0B0B0B" }}
         >
-          <WorkItem
-            label="ATHENA.IO"
-            image={"/work-items/work-item-1.png"}
-            link="https://athena.io"
-          />
-          <WorkItem
-            label="NBHD"
-            image={"/work-items/work-item-2.png"}
-            link="https://nbhd.social"
-          />
-          <WorkItem
-            label="MOVEMENT"
-            image={"/work-items/work-item-3.png"}
-            link="https://movementfitnesshk.com"
-          />
+          {workItems.map((item, index) => (
+            <WorkItem
+              key={index}
+              label={item.label}
+              image={item.image}
+              link={item.link}
+            />
+          ))}
         </div>
       </div>
       <div id="works-cursor-button">
@@ -129,7 +145,7 @@ const WorkItem = ({ index, link, label, image }) => {
         </h1>
         <Image
           src={image}
-          style={{ width: "auto", height: "80%" }}
+          style={{ width: "auto", height: "80%", maxHeight: "500px" }}
           width={500}
           height={300}
           className="z-40"
