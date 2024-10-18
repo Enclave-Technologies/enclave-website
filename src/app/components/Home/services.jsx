@@ -9,7 +9,7 @@ const servicesList = [
     tags: [
       "Brand Design",
       "Web Design",
-      "Mobile Design",
+      "Mobile App Design",
       "User Experience Design",
     ],
   },
@@ -20,8 +20,8 @@ const servicesList = [
     redirectURL: null,
     tags: [
       "Website Development",
-      "Mobile Development",
-      "Web Applications",
+      "Mobile App Development",
+      "Web App Development",
       "E-commerce",
     ],
   },
