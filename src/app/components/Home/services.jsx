@@ -3,40 +3,38 @@ import Image from "next/image";
 const servicesList = [
   {
     index: 1,
-    key: "strategize",
-    title: "Strategy & Discovery",
+    key: "design",
+    title: "Design",
     redirectURL: null,
     tags: [
-      "Problem Discovery",
-      "Product Vision",
-      "Requirements Analaytics",
-      "Development Planning",
+      "Brand Design",
+      "Web Design",
+      "Mobile Design",
+      "User Experience Design",
     ],
   },
   {
     index: 2,
-    key: "design",
-    title: "UI/UX Design",
+    key: "development",
+    title: "Development",
     redirectURL: null,
     tags: [
-      "Design Thinking",
-      "Interaction Design",
-      "High/Low Prototyping",
-      "Responsive Design",
+      "Website Development",
+      "Mobile Development",
+      "Web Applications",
+      "E-commerce",
     ],
   },
   {
     index: 3,
-    key: "develop",
-    title: "App Development",
+    key: "growth",
+    title: "Growth Hacking",
     redirectURL: null,
     tags: [
-      "Custom Applications",
-      "Full Stack Development",
-      "Wordpress",
-      "Magento",
-      "Shopify",
-      "Webflow",
+      "SEO Improvement",
+      "Analytics & Reporting",
+      "Search Engine Marketing",
+      "Email Marketing",
     ],
   },
 ];
@@ -62,7 +60,7 @@ export const Services = ({ id }) => {
             </p>
           </div>
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col md:flex-row justify-center gap-4 w-full">
           {servicesList.map((service, index) => (
             <ServiceTab
               index={service.index}
@@ -80,32 +78,34 @@ export const Services = ({ id }) => {
 
 const ServiceTab = ({ index, key, title, redirectURL, tags }) => {
   return (
-    <div>
+    <div className="w-full md:w-1/3 max-w-96">
       <div className="service-tab">
-        <div className="flex flex-row items-end justify-between">
-          <div id={`service-tab-{key}`} className="flex flex-row items-end">
-            <span className="service-number">{index}.</span>
+        <div className="flex flex-row items-end justify-between p-4">
+          <div
+            id={`service-tab-{key}`}
+            className="relative w-full flex flex-col items-start justify-between gap-12 md:gap-24"
+          >
+            <span className="service-title z-20">
+              {index}. {title}
+            </span>
             <div className="flex flex-col gap-4">
-              <div className="flex flex-wrap gap-0.5 md:gap-2 z-20 max-w-full">
+              <div className="flex flex-col items-start gap-2 md:gap-4 z-20 max-w-full">
                 {tags &&
                   tags.map((tag, index) => (
-                    <div key={index} className="service-tag">
+                    <h3 key={index} className="service-tag">
                       {tag}
-                    </div>
+                    </h3>
                   ))}
               </div>
-              <div className="relative flex flex-row items-end">
-                <span className="service-title z-20">{title}</span>
-                <div className="service-image-container absolute bottom-0 right-0 -translate-x-12 z-10">
-                  <Image
-                    className="service-image"
-                    src={`/Service-Image-${index}.png`}
-                    width={120}
-                    height={100}
-                    alt={key}
-                    unoptimized
-                  />
-                </div>
+              <div className="service-image-container absolute bottom-0 right-0 z-10">
+                <Image
+                  className="service-image"
+                  src={`/Service-Image-${index}.png`}
+                  width={120}
+                  height={100}
+                  alt={key}
+                  unoptimized
+                />
               </div>
             </div>
           </div>
