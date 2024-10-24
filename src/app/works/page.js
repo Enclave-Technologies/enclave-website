@@ -23,9 +23,9 @@ const workItems = [
     link: "https://athenasocial.webflow.io/",
   },
   {
-    label: "NBHD",
+    label: "SG PODCAST",
     image: "/work-items/work-item-2.png",
-    link: "https://nbhd.social",
+    link: "https://supergirl-podcast.webflow.io",
   },
   {
     label: "MOVEMENT",
