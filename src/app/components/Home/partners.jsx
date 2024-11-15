@@ -2,18 +2,16 @@ import Image from "next/image";
 
 export const Partners = ({ id }) => {
   return (
-    <section id={id}>
-      <div className="inner-container flex flex-col gap-32 items-center">
+    <div id={id} className="bg-white/100">
+      <div className="inner-container flex flex-col gap-32 items-center bg-white">
         <div className="w-full flex flex-col md:flex-col items-center justify-between gap-4 md:gap-48">
           <div className="flex flex-col gap-4 w-full items-center">
             <div className="flex flex-col gap-4">
               <div className="flex flex-col gap-4">
                 <h3 className="text-center">
-                  Empowering Startups & Businesses Alike
+                  Delivery Quality Solutions Since 2020
                 </h3>
-                <h2 className="text-center">
-                  TRUSTED BY BUSINESSES IN HONG KONG & SINGAPORE
-                </h2>
+                <h2 className="text-center">TRUSTED BY TOP TEAMS IN APAC</h2>
               </div>
               <div className="slider-container">
                 <div className="slider flex flex-row flex-nowrap gap-12 justify-start items-center">
@@ -36,7 +34,7 @@ export const Partners = ({ id }) => {
                         style={{
                           position: "relative",
                           height: "200px",
-                          width: "180px",
+                          width: "160px",
                         }}
                       >
                         <Image
@@ -73,7 +71,7 @@ export const Partners = ({ id }) => {
                         style={{
                           position: "relative",
                           height: "200px",
-                          width: "180px",
+                          width: "160px",
                         }}
                       >
                         <Image
@@ -92,32 +90,23 @@ export const Partners = ({ id }) => {
                 </div>
               </div>
             </div>
-            {/* <div className="flex flex-row overflow-x-scroll w-full gap-6">
-              {[1, 2, 3, 4, 5].map((num) => (
-                <ProjectTile
-                  id={`Project ${num}`}
-                  key={`Project ${num}`}
-                  imageURL={`/Project ${num}.png`}
-                />
-              ))}
-            </div> */}
             {/* <button className="cta-button">Case Studies</button> */}
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
-// const ProjectTile = ({ id, imageURL }) => {
-//   return (
-//     <Image
-//       key={id}
-//       src={imageURL}
-//       width={2400}
-//       height={100}
-//       alt="Web Design"
-//       unoptimized
-//     />
-//   );
-// };
+const ProjectTile = ({ id, imageURL }) => {
+  return (
+    <Image
+      key={id}
+      src={imageURL}
+      width={600}
+      height={100}
+      alt="Web Design"
+      unoptimized
+    />
+  );
+};

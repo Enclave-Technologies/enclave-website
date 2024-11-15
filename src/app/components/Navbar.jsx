@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
 import { useEffect } from "react";
-import { calendlyBookingLink } from "../utils/links";
+import { calendlyBookingLink, contactLink } from "../utils/links";
+import { Button } from "./Button";
 
 const { default: Image } = require("next/image");
 
@@ -27,7 +28,7 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="nav-container z-50 md:px-24">
+    <nav className="nav-container z-50 md:px-24 ">
       <ul className="desktop-nav w-full flex flex-row items-center justify-between rounded-full nav-inner-container">
         {/* Logo */}
         <Link href="/">
@@ -40,7 +41,7 @@ export const Navbar = () => {
           />
         </Link>
         {/* NavLinks */}
-        <div className="w-auto flex flex-row items-center gap-8 justify-end flex-1">
+        <div className="w-auto flex flex-row items-center gap-2 justify-end flex-1">
           <Link href="/#services" className="hover:underline">
             Services
           </Link>
@@ -48,14 +49,12 @@ export const Navbar = () => {
             Works
           </Link>
           {/* <Link href="#blog">Blog</Link> */}
-          <Link href={calendlyBookingLink}>
-            <button className="cta-button-nav">
-              <span className="cta-button-text-container">
-                <span className="cta-button-text">Let&apos;s talk</span>
-                <span className="cta-button-text">Let&apos;s talk</span>
-              </span>
-            </button>
-          </Link>
+          <Button
+            variant="primary"
+            link="/contact"
+            title="Let's talk"
+            onClick={() => {}}
+          />
         </div>
         {/* Contact Us Button */}
       </ul>

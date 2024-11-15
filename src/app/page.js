@@ -9,6 +9,12 @@ import { Footer } from "./components/Footer";
 import { Quote } from "./components/Home/quote";
 import { useEffect, useState } from "react";
 import { Partners } from "./components/Home/partners";
+import Ethos from "./components/Home/ethos";
+import AboutUs from "./components/Home/about-us";
+
+// export const metadata = {
+//   title: "Web Design & Development Studio",
+// };
 
 export default function Home() {
   const [domLoaded, setDomLoaded] = useState(false);
@@ -43,15 +49,17 @@ export default function Home() {
       <div className="cursor" />
       <Navbar />
       <Hero />
-      <Partners id="partners" />
-      <Works id={"works"} />
+      <AboutUs id="about" />
+      {/* <Partners id="partners" /> */}
+      <Works id="works" />
+      <Services id="services" />
+      <Ethos id={"ethos"} />
       {/* <section>
         <h3>Empowering Businesses & Individuals</h3>
         <h2>Strategy 2 Delivery</h2>
       </section> */}
-      <Services id="services" />
-      <CTA />
       <Quote id="about" />
+      <CTA />
       <Footer />
     </main>
   );

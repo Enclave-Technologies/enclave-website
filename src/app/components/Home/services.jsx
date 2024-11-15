@@ -3,45 +3,34 @@ import Image from "next/image";
 const servicesList = [
   {
     index: 1,
-    key: "design",
-    title: "Design",
+    key: "strategy",
+    title: "Strategy",
     redirectURL: null,
-    tags: [
-      "Brand Design",
-      "Web Design",
-      "Mobile App Design",
-      "User Experience Design",
-    ],
+    tags: ["Brand Strategy", "Application Strategy", "Product Strategy"],
   },
   {
     index: 2,
+    key: "design",
+    title: "Design",
+    redirectURL: null,
+    tags: ["Brand Design", "Web Design", "UI/UX Design"],
+  },
+  {
+    index: 3,
     key: "development",
     title: "Development",
     redirectURL: null,
     tags: [
       "Website Development",
-      "Mobile App Development",
       "Web App Development",
-      "E-commerce",
-    ],
-  },
-  {
-    index: 3,
-    key: "growth",
-    title: "Growth Hacking",
-    redirectURL: null,
-    tags: [
-      "SEO Improvement",
-      "Analytics & Reporting",
-      "Search Engine Marketing",
-      "Email Marketing",
+      "Mobile Appl Development",
     ],
   },
 ];
 
 export const Services = ({ id }) => {
   return (
-    <section id={id}>
+    <section id={id} className="bg-white">
       <div className="inner-container flex flex-col items-center gap-12 overflow-hidden !max-w-none">
         <div className="flex flex-col items-center gap-4">
           <h3>Discover</h3>
@@ -60,7 +49,7 @@ export const Services = ({ id }) => {
             </p>
           </div>
         </div>
-        <div className="flex flex-col md:flex-row justify-center gap-4 w-full">
+        <div className="flex flex-col md:flex-row flex-wrap justify-center gap-4 w-full items-stretch">
           {servicesList.map((service, index) => (
             <ServiceTab
               index={service.index}
@@ -100,7 +89,7 @@ const ServiceTab = ({ index, key, title, redirectURL, tags }) => {
               <div className="service-image-container absolute bottom-0 right-0 z-10">
                 <Image
                   className="service-image"
-                  src={`/Service-Image-${index}.png`}
+                  src={`/service-images/Service-Image-${index}.png`}
                   width={120}
                   height={100}
                   alt={key}

@@ -4,13 +4,14 @@ import { Navbar } from "../components/Navbar";
 import { useForm, ValidationError } from "@formspree/react";
 
 const services = [
+  "Brand Design",
+  "Logo Design",
   "Website for my business",
-  "Website Optimization",
+  "e-Commerce Store",
   "Web Application",
   "Mobile Application",
-  "e-Commerce Store",
   "SEO/SEM",
-  "Logo Design",
+  "Website Optimization",
 ];
 
 const budgets = ["2-10K", "10-20K", "20-50K", "50-100K", "100K+"];
@@ -88,7 +89,7 @@ export default function Contact() {
                 required
                 id="message"
                 name="message"
-                placeholder="Tell us about your project"
+                placeholder="Tell us briefly about your project"
                 style={{ fontSize: 20 }}
                 className="bg-transparent border-b-2 max-w-2xl focus:outline-none"
               />

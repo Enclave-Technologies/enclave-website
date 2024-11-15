@@ -5,7 +5,10 @@ import Head from "next/head";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Web & Mobile | Design & Development Studio in Hong Kong | Enclave",
+  title: {
+    template: "%s | Enclave",
+    default: "Enclave Technologies",
+  },
   description:
     "We are a technology studio based in Hong Kong. We help businesses with web design and development, mobile app design and development and growth hacking.",
 };

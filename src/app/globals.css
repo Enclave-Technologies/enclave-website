@@ -18,6 +18,7 @@
 }
 
 body {
+  /* cursor: none; */
   color: rgb(var(--foreground-rgb));
   background: #ffffff;
   background-blend-mode: multiply;
@@ -35,7 +36,9 @@ body {
 
 section {
   @apply flex flex-row justify-center py-8;
+  min-height: 100vh;
   width: 100vw;
+  padding: 24px;
 }
 
 h2 {
@@ -51,9 +54,6 @@ h6 {
   @apply text-lg font-bold;
 }
 
-body {
-}
-
 button {
   cursor: pointer;
 }
@@ -65,7 +65,6 @@ button {
 }
 
 #home-hero {
-  @apply bg-black text-white;
   height: 100vh;
   width: 100vw;
 }
@@ -79,30 +78,33 @@ button {
 }
 
 .hero-title {
-  @apply font-bold z-0;
-  font-size: 3.5rem;
-  line-height: 4.2rem;
-  padding: 0 8rem 0 0;
+  @apply font-semibold z-0;
+  font-size: 4rem;
+  line-height: 120%;
 }
 
 .hero-subheading {
   @apply px-0;
   font-family: Poppins;
-  font-size: 24px;
+  font-size: 1.2rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 120%; /* 28.8px */
-  text-transform: capitalize;
+  line-height: 120%;
+  text-transform: none;
+  text-align: center;
 }
 
 .nav-container {
   @apply w-full px-0 h-auto py-4 fixed top-0 flex flex-row justify-center items-center z-10;
   max-width: 100vw;
+  z-index: 9999;
   mix-blend-mode: exclusion;
 }
 
 .nav-container a {
   color: #fff;
+  padding: 0 1rem;
+  backdrop-filter: blur(33px);
 }
 
 /* 
@@ -127,14 +129,14 @@ button {
   @apply w-full flex flex-row items-center justify-between;
 }
 
-.cta-button {
+.button {
   @apply bg-transparent text-black font-normal py-4 px-8 rounded-full w-fit transition-all duration-150 ease-in-out;
   box-shadow: 2px 2px 2px 2px #00000077;
   border: 1px solid #000;
   cursor: pointer;
 }
 
-.cta-button:hover {
+.button:hover {
   @apply text-black font-normal py-4 px-8 rounded-full w-fit transition-all duration-150 ease-in-out;
   transform: translate(0.5px, 0.5px);
   box-shadow: 1px 1px 1px 1px #00000077;
@@ -278,20 +280,20 @@ button {
   }
 }
 
-.big-cta-button {
+.big-button {
   @apply font-normal py-4 px-16 rounded-full w-fit uppercase transition-all duration-150 ease-in-out;
   font-size: 120px;
   border: 4px solid #000;
   cursor: pointer;
 }
 
-.big-cta-button:hover {
+.big-button:hover {
   @apply bg-black text-white uppercase transition-all duration-150 ease-in-out;
   font-size: 120px;
   border: 4px solid #000;
 }
 
-.big-cta-button:disabled {
+.big-button:disabled {
   @apply bg-gray-200 text-gray-500 uppercase transition-all duration-150 ease-in-out border-gray-200;
   font-size: 120px;
   border-width: 4px;
@@ -311,7 +313,7 @@ button {
 }
 
 #about .testimonial {
-  @apply text-4xl font-bold text-center px-4;
+  @apply text-4xl font-semibold text-center px-4;
 }
 
 li a {
@@ -329,50 +331,56 @@ li a:hover {
   max-width: 1920px;
 }
 
-.cta-button-nav {
+.primary {
   @apply bg-white font-normal rounded-full w-fit transition-all duration-150 ease-in-out;
   /* width: 80px; */
   padding: 8px 16px;
   border: 1px solid #fff;
   color: #000 !important;
-  mix-blend-mode: exclusion;
   cursor: pointer;
   position: relative;
 }
 
-.cta-button-nav:hover {
-  @apply bg-white text-white font-normal rounded-full  transition-all duration-150 ease-in-out;
-  border: 1px solid #fff;
-  mix-blend-mode: difference;
-  text-decoration: none;
+.secondary {
+  @apply bg-transparent text-black font-normal py-4 px-8 rounded-full w-fit transition-all duration-150 ease-in-out;
+  border: 1px solid #000;
   cursor: pointer;
-  /* transform: translate(0px, 2px); */
 }
 
-.cta-button-nav span {
+.primary:hover {
+  @apply bg-black font-normal rounded-full w-fit transition-all duration-150 ease-in-out;
+  /* width: 80px; */
+  padding: 8px 16px;
+  border: 1px solid #000;
+  color: #fff !important;
+  cursor: pointer;
+  position: relative;
+}
+
+.primary span {
   display: inline-block;
   margin: 0;
 }
 
-.cta-button-nav .cta-button-text-container {
+button .button-text-container {
   position: relative;
   display: flex;
   overflow: hidden;
 }
 
-.cta-button-text-container span:last-child {
+.button-text-container span:last-child {
   position: absolute;
   top: 100%;
   left: 0;
   text-decoration: underline;
 }
 
-.cta-button-nav .cta-button-text-container span {
+button .button-text-container span {
   /* transform: translateY(calc(-100%)); */
   transition: transform 0.4s cubic-bezier(0.17, 0.67, 0.42, 0.84);
 }
 
-.cta-button-nav:hover .cta-button-text-container span {
+button:hover .button-text-container span {
   transform: translateY(calc(-100%));
   transition: transform 0.5s ease-in-out;
 }
@@ -436,12 +444,13 @@ li a:hover {
   aspect-ratio: 1;
   border-radius: 100%;
   background-color: #fff;
-  /* transition: all 200ms ease-out; */
+  transition: all 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: fixed;
   pointer-events: none;
-  left: 0;
-  top: 0;
+  left: 40px;
+  top: 40px;
   mix-blend-mode: exclusion;
+  z-index: 999;
 }
 
 @keyframes cursorAnim {
@@ -487,14 +496,14 @@ li a:hover {
     @apply flex-col;
   }
 
-  .big-cta-button {
+  .big-button {
     @apply px-4;
     font-size: 40px;
     border: 4px solid #000;
     cursor: pointer;
   }
 
-  .big-cta-button:hover {
+  .big-button:hover {
     @apply bg-black text-white uppercase transition-all duration-150 ease-in-out;
     font-size: 40px;
     border: 4px solid #000;
@@ -552,18 +561,6 @@ li a:hover {
   background-color: white;
 }
 
-.cursor {
-  aspect-ratio: 1;
-  border-radius: 100%;
-  background-color: #fff;
-  /* transition: all 200ms ease-out; */
-  position: fixed;
-  pointer-events: none;
-  left: 0;
-  top: 0;
-  mix-blend-mode: exclusion;
-}
-
 @keyframes bounce {
   0% {
     transform: translateY(0);
@@ -597,19 +594,36 @@ li a:hover {
   margin: 0;
 }
 
-.secondary-btn .cta-button-text-container {
+.secondary-btn .button-text-container {
   position: relative;
   display: flex;
   overflow: hidden;
 }
 
-.secondary-btn .cta-button-text-container span {
+.secondary-btn .button-text-container span {
   /* transform: translateY(calc(-100%)); */
   transform: translateY(-100%);
   transition: transform 0.4s cubic-bezier(0.17, 0.67, 0.42, 0.84);
 }
 
-.secondary-btn:hover .cta-button-text-container span {
+.secondary-btn:hover .button-text-container span {
   transform: translateY(calc(0%));
   transition: transform 0.5s ease-in-out;
+}
+
+.parallax {
+  background-color: #000;
+  background: url("/public/starry-bg.png") repeat fixed 100%;
+  height: 100vh;
+  width: 100vw;
+}
+
+.dark-gradient {
+  background: linear-gradient(
+    178deg,
+    #000 20.45%,
+    #4a0ec8 59.18%,
+    #e8e4ff 77.84%,
+    #fff 94.64%
+  );
 }

@@ -5,7 +5,7 @@ const { default: Image } = require("next/image");
 export const Footer = () => {
   return (
     <footer className="footer pb-16">
-      <Link className="big-cta-button" href="/contact">
+      <Link className="big-button" href="/contact">
         Get in touch
       </Link>
       <div className="max-w-full flex flex-row overflow-x-hidden">

@@ -23,7 +23,7 @@ const workItems = [
     link: "https://athenasocial.webflow.io/",
   },
   {
-    label: "SG PODCAST",
+    label: "SG Podcast",
     image: "/work-items/work-item-2.png",
     link: "https://supergirl-podcast.webflow.io",
   },
