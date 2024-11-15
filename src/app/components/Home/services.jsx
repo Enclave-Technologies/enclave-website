@@ -65,13 +65,13 @@ export const Services = ({ id }) => {
   );
 };
 
-const ServiceTab = ({ index, key, title, redirectURL, tags }) => {
+const ServiceTab = ({ index, title, redirectURL, tags }) => {
   return (
     <div className="w-full md:w-1/3 max-w-96">
       <div className="service-tab">
         <div className="flex flex-row items-end justify-between p-4">
           <div
-            id={`service-tab-{key}`}
+            id={`service-tab-${index}`}
             className="relative w-full flex flex-col items-start justify-between gap-12 md:gap-24"
           >
             <span className="service-title z-20">
@@ -92,7 +92,7 @@ const ServiceTab = ({ index, key, title, redirectURL, tags }) => {
                   src={`/service-images/Service-Image-${index}.png`}
                   width={120}
                   height={100}
-                  alt={key}
+                  alt={title}
                   unoptimized
                 />
               </div>

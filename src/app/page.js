@@ -50,7 +50,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <AboutUs id="about" />
-      {/* <Partners id="partners" /> */}
+      <Partners id="partners" />
       <Works id="works" />
       <Services id="services" />
       <Ethos id={"ethos"} />

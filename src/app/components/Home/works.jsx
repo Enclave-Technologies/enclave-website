@@ -1,15 +1,21 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 import { Button } from "../Button";
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 const SectionWrapper = ({ children }) => {
   return <section className="">{children}</section>;
 };
 
 const ProjectTile = ({ title, tags, imageURL, id, index, year, url }) => {
-  const screenWidth = window.screen.availWidth;
+  const [screenWidth, setScreenWidth] = useState(0);
+
+  useEffect(() => {
+    setScreenWidth(window.screen.availWidth);
+  }, []);
+
   const imageWidth = useMemo(() => {
     if (screenWidth > 1024) return 400;
     else if (screenWidth > 768) return 360;
@@ -43,7 +49,12 @@ const ProjectTile = ({ title, tags, imageURL, id, index, year, url }) => {
           <div
             className={`min-w-[320px] w-[${imageWidth}px] lg:w-[400px] aspect-square relative bg-white`}
           >
-            <Image src={imageURL} objectFit="contain" fill alt="avante decor" />
+            <Image
+              src={imageURL}
+              style={{ objectFit: "contain" }}
+              fill
+              alt="avante decor"
+            />
           </div>
           <div
             className={`min-w-[320px] w-[${imageWidth}px] lg:w-[400px] flex flex-row items-start gap-2`}
