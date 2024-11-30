@@ -49,18 +49,18 @@ export default function Home() {
       <div className="cursor" />
       <Navbar />
       <Hero />
-      <AboutUs id="about" />
-      <Partners id="partners" />
-      <Works id="works" />
       <Services id="services" />
+      <Works id="works" />
+      <Partners id="partners" />
       <Ethos id={"ethos"} />
+      {/* <AboutUs id="about" /> */}
+      <Quote id="about" />
+      <CTA />
+      <Footer />
       {/* <section>
         <h3>Empowering Businesses & Individuals</h3>
         <h2>Strategy 2 Delivery</h2>
       </section> */}
-      <Quote id="about" />
-      <CTA />
-      <Footer />
     </main>
   );
 }

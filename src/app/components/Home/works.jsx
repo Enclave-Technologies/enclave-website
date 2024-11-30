@@ -26,7 +26,7 @@ const ProjectTile = ({ title, tags, imageURL, id, index, year, url }) => {
   return (
     <div
       id={id}
-      className="sticky top-0 w-full bg-white/95 min-h-screen flex flex-row justify-center items-center"
+      className="sticky top-0 w-full bg-white min-h-screen flex flex-row justify-center items-center"
     >
       <div className="w-full max-w-4xl flex flex-col md:flex-row justify-between items-start">
         <span className="text-[90px] md:text-[180px] lg:text-[120px]">
@@ -35,17 +35,6 @@ const ProjectTile = ({ title, tags, imageURL, id, index, year, url }) => {
         <div
           className={`min-w-[320px] w-[${imageWidth}px] flex-col justify-start items-center gap-6 inline-flex`}
         >
-          <div
-            className={`min-w-[320px] w-[${imageWidth}px] lg:w-[400px] flex flex-row items-center justify-between`}
-          >
-            <h3 className="font-semibold">{title}</h3>
-            <a
-              href={url}
-              className="flex items-center justify-center bg-black rounded-full w-12 aspect-square"
-            >
-              <FiArrowUpRight size={20} className="text-white" />
-            </a>
-          </div>
           <div
             className={`min-w-[320px] w-[${imageWidth}px] lg:w-[400px] aspect-square relative bg-white`}
           >
@@ -57,29 +46,49 @@ const ProjectTile = ({ title, tags, imageURL, id, index, year, url }) => {
             />
           </div>
           <div
-            className={`min-w-[320px] w-[${imageWidth}px] lg:w-[400px] flex flex-row items-start gap-2`}
+            className={`min-w-[320px] w-[${imageWidth}px] lg:w-[400px] flex flex-row items-start gap-4`}
           >
-            <div className="flex flex-1 flex-row flex-wrap items-center justify-start gap-2">
-              {tags.map((tag, index) => {
-                return (
-                  <p
-                    className="text-sm bg-white text-[#000] rounded-full shadow p-1 px-2"
-                    style={{ boxShadow: "0px 0px 2px 0px #000" }}
-                    key={title + index}
-                  >
-                    {tag}
+            <div
+              className={`min-w-[320px] w-[${imageWidth}px] lg:w-[400px] flex flex-row items-start justify-start`}
+            >
+              <div className="flex flex-col items-start justify-start gap-2">
+                <h3 className="font-semibold">{title}</h3>
+                <Tags tags={tags} />
+              </div>
+              <div className="flex flex-col items-start justify-start gap-2">
+                <a
+                  href={url}
+                  className="flex items-center justify-center bg-black rounded-full w-8 aspect-square"
+                >
+                  <FiArrowUpRight size={16} className="text-white" />
+                </a>
+                {/* <div className="w-auto">
+                  <p className="w-auto text-sm bg-black text-[#FFF] rounded-full shadow p-1 px-2">
+                    {year}
                   </p>
-                );
-              })}
-            </div>
-            <div className="w-auto">
-              <p className="w-auto text-sm bg-black text-[#FFF] rounded-full shadow p-1 px-2">
-                {year}
-              </p>
+                </div> */}
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  );
+};
+
+export const Tags = ({ tags }) => {
+  return (
+    <div className="flex flex-1 flex-row flex-wrap items-center justify-start gap-2">
+      {tags.map((tag, index) => {
+        return (
+          <p
+            className="text-sm bg-white text-[#000] rounded-full border-[1px] border-gray-300 p-1 px-2"
+            key={index}
+          >
+            {tag}
+          </p>
+        );
+      })}
     </div>
   );
 };
@@ -95,7 +104,7 @@ export const Works = ({ id }) => {
             id={"project-1"}
             title="Athena Social"
             imageURL={"/project-images/athena-social.png"}
-            tags={["Brand Design", "Web Design", "Webflow Development"]}
+            tags={["Brand Design", "UI/UX Design", "Web Development"]}
             index={1}
             url="https://athenasocial.webflow.io/"
             year={2024}
@@ -105,10 +114,9 @@ export const Works = ({ id }) => {
             title="Xccelerate"
             imageURL={"/project-images/xccelerate.png"}
             tags={[
-              "Web Design",
-              "Web Development",
-              "SEO/SEM",
-              "Data Analytics",
+              "Website Design",
+              "UI/UX Development",
+              "Workflow Automation",
             ]}
             index={2}
             url="https://xccelerate.co"
@@ -120,9 +128,9 @@ export const Works = ({ id }) => {
             imageURL={"/project-images/parallelchain.png"}
             tags={[
               "Brand Design",
-              "Website Design",
-              "Web App Design",
-              "Web App Development",
+              "UI/UX Design",
+              "Web Development",
+              "Mobile Development",
             ]}
             index={3}
             url="https://explorer.parallelchain.io"
@@ -132,13 +140,16 @@ export const Works = ({ id }) => {
             id={"project-4"}
             title="Roju - Jump Rope & Fitness App"
             imageURL={"/project-images/roju.png"}
-            tags={["Brand Design", "Web Design", "Web Development"]}
+            tags={["Mobile App Design", "Mobile App Development"]}
             index={4}
             url="https://roju.app/"
             year={2022}
           />
         </div>
-        <Button variant="secondary" title="View More Works" link="/works" />
+        <div className="flex flex-row items-stretch gap-2">
+          <Button variant="primary" title="Get Started" link="/works" />
+          <Button variant="secondary" title="View Portfolio" link="/works" />
+        </div>
       </div>
     </SectionWrapper>
   );

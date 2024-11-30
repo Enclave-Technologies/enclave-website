@@ -26,27 +26,27 @@ const Ethos = ({ id }) => {
             </div>
             <div id="steps" className="flex flex-row gap-12 items-start">
               <Step
-                id={"Strategize"}
+                id={"strategy"}
                 imageURL={"/strategize-illustration.svg"}
-                title={"Strategy"}
+                title={"Strategy & Alignment"}
                 description={
-                  "Our goal is to create a solid foundation that guides the entire development process and ensures alignment with product vision and business goals."
+                  "A strong foundation is the key to a successful project. We work meticulously with our partners to ensure alignment on the final outcomes & discuss development plans"
                 }
               />
               <Step
-                id={"Design"}
+                id={"design"}
                 imageURL={"/design-illustration.svg"}
-                title={"Design"}
+                title={"Design & Development"}
                 description={
-                  " We ensure that the product not only meets functional requirements but also provides an engaging user experience."
+                  "Once the foundation has been laid down, it’s time to start designing and developing. Our team of talented designers and developers work with dedication to make sure the final product meets our client’s requirements."
                 }
               />
               <Step
-                id={"Development"}
+                id={"iterate"}
                 imageURL={"/develop-illustration.svg"}
-                title={"Development"}
+                title={"Measure & Iterate"}
                 description={
-                  "We bring the designs to life through technical implementation. Our team collaborates closely to build a robust, scalable product using best practices in software development."
+                  "No solution is perfect at once. After launching the project, we support our clients for at least 2-months to make sure they win."
                 }
               />
               {/* <Step
@@ -67,7 +67,10 @@ const Ethos = ({ id }) => {
               alt="Our Mission"
             />
           </div>
-          <Button variant="secondary" link={contactLink} title="Learn More" />
+          <div className="flex flex-row items-center justify-center gap-2">
+            <Button variant="primary" link={contactLink} title="Get in touch" />
+            <Button variant="secondary" link={contactLink} title="Learn More" />
+          </div>
         </div>
       </div>
     </section>

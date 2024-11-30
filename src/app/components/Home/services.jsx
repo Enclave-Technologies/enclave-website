@@ -3,27 +3,33 @@ import Image from "next/image";
 const servicesList = [
   {
     index: 1,
-    key: "strategy",
-    title: "Strategy",
-    redirectURL: null,
-    tags: ["Brand Strategy", "Application Strategy", "Product Strategy"],
-  },
-  {
-    index: 2,
     key: "design",
     title: "Design",
     redirectURL: null,
-    tags: ["Brand Design", "Web Design", "UI/UX Design"],
+    tags: ["UI/UX Design", "Web Design", "Brand Design", "Graphic Design"],
   },
   {
-    index: 3,
+    index: 2,
     key: "development",
     title: "Development",
     redirectURL: null,
     tags: [
       "Website Development",
-      "Web App Development",
-      "Mobile Appl Development",
+      "E-commerce Development",
+      "Web Applications",
+      "Mobile Applications",
+    ],
+  },
+  {
+    index: 3,
+    key: "automations",
+    title: "Automation",
+    redirectURL: null,
+    tags: [
+      "Workflow Automation",
+      "Marketing Automation",
+      "Sales Automation",
+      "E-commerce Automation",
     ],
   },
 ];
@@ -33,19 +39,20 @@ export const Services = ({ id }) => {
     <section id={id} className="bg-white">
       <div className="inner-container flex flex-col items-center gap-12 overflow-hidden !max-w-none">
         <div className="flex flex-col items-center gap-4">
-          <h3>Discover</h3>
+          <h3>Our Services</h3>
           <div className="flex flex-col gap-6 items-center">
-            <h2>Our Services</h2>
+            <h2 className="text-center">SOLUTIONS TAILORED FOR YOUR NEEDS</h2>
             <p className="text-center">
-              It is our mission to be the best User Experience focused
-              application development agency.
+              It is in our DNA to build solutions that help your business grow.
+              We take a data-driven approach to design, development and
+              marketing to make sure that our solutions perform in the best way
+              possible.
             </p>
             <p className="text-center w-full md:w-2/3">
-              Our UX and UI web design process is centered around empathy -
-              having a complete picture of your end-users and target audiences
-              preferences. As well as a mobile-first approach (responsive
-              design), so that we’re building great experiences that scale
-              across devices.
+              Our team is a mix of perfectionists and people who want to get
+              shit done. But all of us are united by a mission of delivering the
+              best possible outcomes to our clients. Our agency is driven by a
+              strong desire to keep learning, measuring & building.
             </p>
           </div>
         </div>
@@ -74,11 +81,9 @@ const ServiceTab = ({ index, title, redirectURL, tags }) => {
             id={`service-tab-${index}`}
             className="relative w-full flex flex-col items-start justify-between gap-12 md:gap-24"
           >
-            <span className="service-title z-20">
-              {index}. {title}
-            </span>
+            <span className="service-title z-20">{title}</span>
             <div className="flex flex-col gap-4">
-              <div className="flex flex-col items-start gap-2 md:gap-4 z-20 max-w-full">
+              <div className="flex flex-col items-start gap-2 md:gap-2 z-20 max-w-full">
                 {tags &&
                   tags.map((tag, index) => (
                     <h3 key={index} className="service-tag">

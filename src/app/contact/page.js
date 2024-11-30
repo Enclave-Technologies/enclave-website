@@ -4,14 +4,12 @@ import { Navbar } from "../components/Navbar";
 import { useForm, ValidationError } from "@formspree/react";
 
 const services = [
-  "Brand Design",
-  "Logo Design",
-  "Website for my business",
-  "e-Commerce Store",
-  "Web Application",
-  "Mobile Application",
-  "SEO/SEM",
-  "Website Optimization",
+  "UI/UX Design",
+  "Website Development",
+  "Mobile App Development",
+  "E-commerce Development",
+  "Process Automation",
+  "Search Engine Optimization",
 ];
 
 const budgets = ["2-10K", "10-20K", "20-50K", "50-100K", "100K+"];
@@ -39,7 +37,7 @@ export default function Contact() {
             <div className="flex flex-col gap-20">
               <div className="flex flex-col gap-10">
                 <p>I’m Interested in...</p>
-                <div className="flex flex-wrap gap-8">
+                <div className="flex flex-wrap gap-4">
                   {services.map((service, index) => {
                     return (
                       <OptionPill
@@ -89,7 +87,7 @@ export default function Contact() {
                 required
                 id="message"
                 name="message"
-                placeholder="Tell us briefly about your project"
+                placeholder="Please leave a brief overview of your requirements"
                 style={{ fontSize: 20 }}
                 className="bg-transparent border-b-2 max-w-2xl focus:outline-none"
               />
@@ -99,7 +97,7 @@ export default function Contact() {
                 errors={state.errors}
               />
               <div>
-                <p className="pb-12">Project Budget (USD)</p>
+                <p className="pb-12">Your Budget (USD)</p>
                 <div className="flex flex-wrap gap-8">
                   {budgets.map((budget, index) => (
                     <OptionPill
@@ -118,21 +116,21 @@ export default function Contact() {
               {state.submitting ? (
                 <input
                   type="submit"
-                  className="big-cta-button !py-10 md:!py-24 !text-4xl !px-10 md:!px-40"
+                  className="big-button !py-10 md:!py-24 !text-4xl !px-10 md:!px-40"
                   value="Submitting ..."
                   disabled
                 />
               ) : state.succeeded ? (
                 <input
                   type="button"
-                  className="big-cta-button !py-10 md:!py-24 !text-4xl !px-10 md:!px-40"
+                  className="big-button !py-10 md:!py-24 !text-4xl !px-10 md:!px-40"
                   value="Submitted"
                   disabled
                 />
               ) : (
                 <input
                   type="submit"
-                  className="big-cta-button !py-10 md:!py-24 !text-4xl !px-10 md:!px-40"
+                  className="big-button !py-10 md:!py-24 !text-4xl !px-10 md:!px-40"
                   value="Send Request"
                 />
               )}
