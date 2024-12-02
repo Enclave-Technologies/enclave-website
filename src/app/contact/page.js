@@ -97,7 +97,7 @@ export default function Contact() {
                 errors={state.errors}
               />
               <div>
-                <p className="pb-12">Your Budget (USD)</p>
+                <label className="pb-12">Your Budget (USD)</label>
                 <div className="flex flex-wrap gap-8">
                   {budgets.map((budget, index) => (
                     <OptionPill
