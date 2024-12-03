@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Button } from "../Button";
 
 const servicesList = [
   {
@@ -6,7 +7,7 @@ const servicesList = [
     key: "design",
     title: "Design",
     redirectURL: null,
-    tags: ["UI/UX Design", "Web Design", "Brand Design", "Graphic Design"],
+    tags: ["Website Design", "UI/UX Design"],
   },
   {
     index: 2,
@@ -16,39 +17,41 @@ const servicesList = [
     tags: [
       "Website Development",
       "E-commerce Development",
-      "Web Applications",
-      "Mobile Applications",
+      "Web-App Development",
+      "Mobile-App Development",
     ],
   },
   {
     index: 3,
-    key: "automations",
-    title: "Automation",
+    key: "digital-marketing",
+    title: "Digital Marketing",
     redirectURL: null,
-    tags: [
-      "Workflow Automation",
-      "Marketing Automation",
-      "Sales Automation",
-      "E-commerce Automation",
-    ],
+    tags: ["SEO", "Google Ads", "Social Media Marketing"],
+  },
+  {
+    index: 3,
+    key: "growth-solutions",
+    title: "Growth Solutions",
+    redirectURL: null,
+    tags: ["Data Analytics", "Process Automation"],
   },
 ];
 
 export const Services = ({ id }) => {
   return (
     <section id={id} className="bg-white">
-      <div className="inner-container flex flex-col items-center gap-12 overflow-hidden !max-w-none">
+      <div className="inner-container flex flex-col items-center gap-12 overflow-hidden">
         <div className="flex flex-col items-center gap-4">
           <h3>Our Services</h3>
-          <div className="flex flex-col gap-6 items-center">
+          <div className="flex flex-col gap-6 items-center ">
             <h2 className="text-center">SOLUTIONS TAILORED FOR YOUR NEEDS</h2>
-            <p className="text-center">
+            <p className="text-center w-full md:w-11/12">
               It is in our DNA to build solutions that help your business grow.
               We take a data-driven approach to design, development and
               marketing to make sure that our solutions perform in the best way
               possible.
             </p>
-            <p className="text-center w-full md:w-2/3">
+            <p className="text-center w-full md:w-11/12">
               Our team is a mix of perfectionists and people who want to get
               shit done. But all of us are united by a mission of delivering the
               best possible outcomes to our clients. Our agency is driven by a
@@ -56,7 +59,7 @@ export const Services = ({ id }) => {
             </p>
           </div>
         </div>
-        <div className="flex flex-col md:flex-row flex-wrap justify-center gap-4 w-full items-stretch">
+        <div className="flex flex-row flex-wrap justify-center gap-4 w-full items-stretch">
           {servicesList.map((service, index) => (
             <ServiceTab
               index={service.index}
@@ -67,6 +70,10 @@ export const Services = ({ id }) => {
             />
           ))}
         </div>
+        <div className="flex flex-row items-stretch gap-2">
+          <Button variant="primary" title="Get Started" link="/works" />
+          <Button variant="secondary" title="Learn More" link="/our-services" />
+        </div>
       </div>
     </section>
   );
@@ -74,12 +81,12 @@ export const Services = ({ id }) => {
 
 const ServiceTab = ({ index, title, redirectURL, tags }) => {
   return (
-    <div className="w-full md:w-1/3 max-w-96">
-      <div className="service-tab">
-        <div className="flex flex-row items-end justify-between p-4">
+    <div className="w-full md:w-5/12 max-w-96 md:max-w-none">
+      <div className="service-tab h-full">
+        <div className="h-full flex flex-row items-end justify-between p-4">
           <div
             id={`service-tab-${index}`}
-            className="relative w-full flex flex-col items-start justify-between gap-12 md:gap-24"
+            className="relative h-full w-full flex flex-col items-start justify-between gap-12 md:gap-24"
           >
             <span className="service-title z-20">{title}</span>
             <div className="flex flex-col gap-4">

@@ -1,23 +1,24 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { calendlyBookingLink, contactLink } from "../utils/links";
-import { Button } from "./Button";
+import { Button } from "../Button";
 import { MdAddShoppingCart } from "react-icons/md";
 import { LuWorkflow } from "react-icons/lu";
-import { GiPublicSpeaker } from "react-icons/gi";
+import { GiHamburger, GiHamburgerMenu, GiPublicSpeaker } from "react-icons/gi";
+import Hamburger from "./Hamburger";
 
 const links = [
+  { title: "Home", link: "/" },
   { title: "Our Services", link: "/#services" },
   { title: "About Us", link: "/#ethos" },
   { title: "Portfolio", link: "/works" },
-  { title: "Blog", link: "/blog" },
 ];
 
 const { default: Image } = require("next/image");
 
 export const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     document.addEventListener("scroll", () => {
@@ -32,6 +33,10 @@ export const Navbar = () => {
     });
   });
 
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   const toggleNavMenu = () => {
     const linksContainer = document.getElementById(
       "mobile-nav-links-container"
@@ -41,13 +46,12 @@ export const Navbar = () => {
 
   return (
     <nav
-      className="nav-container z-50 md:px-20 bg-white"
+      className="nav-container"
       onMouseLeave={() => {
         setShowDropdown("");
       }}
     >
-      <ul className="desktop-nav w-full flex flex-row items-center justify-between rounded-full nav-inner-container">
-        {/* Logo */}
+      <div className="nav-inner-container">
         <div className="min-w-40">
           <Link href="/">
             <Image
@@ -58,32 +62,75 @@ export const Navbar = () => {
             />
           </Link>
         </div>
-        {/* NavLinks */}
-        <div className="w-auto flex flex-row items-center gap-2 justify-center flex-1">
-          {links.map((link, index) => (
-            <Link
-              href={link.link}
-              key={index}
-              className="hover:underline text-black"
-              onMouseEnter={() => {
-                setShowDropdown("services");
+        <div className="mobile-nav">
+          <div className="hamburger">
+            <Hamburger
+              isOpen={isOpen}
+              toggleMenu={() => {
+                console.log("OPen");
+                setIsOpen(!isOpen);
               }}
-            >
-              {link.title}
-            </Link>
-          ))}
-          {/* <Link href="#blog">Blog</Link> */}
+            />
+          </div>
         </div>
-        <div className="min-w-40">
-          <Button
-            variant="primary"
-            link="/contact"
-            title="Get in touch"
-            onClick={() => {}}
-          />
+        {/* NavLinks */}
+        <div className="desktop-nav">
+          <div className="w-auto flex flex-row items-center gap-8 justify-center flex-1">
+            {links.map((link, index) => (
+              <Link
+                href={link.link}
+                key={index}
+                className="hover:underline text-black"
+                onMouseEnter={() => {
+                  setShowDropdown(link.title);
+                }}
+              >
+                {link.title}
+              </Link>
+            ))}
+            {/* <Link href="#blog">Blog</Link> */}
+          </div>
+          <div className="min-w-40">
+            <Button
+              variant="primary"
+              link="/contact"
+              title="Get in touch"
+              onClick={() => {}}
+            />
+          </div>
         </div>
         {/* Contact Us Button */}
-      </ul>
+      </div>
+      <div
+        className={`w-full shadow-md bg-white text-black transition-all duration-300 ease-in-out ${
+          isOpen ? "max-h-screen" : "max-h-0"
+        } overflow-hidden`}
+      >
+        <ul className="flex flex-col items-center space-y-6 py-6">
+          {links.map((link, index) => (
+            <li key={index}>
+              <Link href={link.link}>
+                <p
+                  className=""
+                  onClick={() => {
+                    toggleMenu();
+                  }}
+                >
+                  {link.title}
+                </p>
+              </Link>
+            </li>
+          ))}
+          <div className="min-w-40">
+            <Button
+              variant="primary"
+              link="/contact"
+              title="Get in touch"
+              onClick={() => {}}
+            />
+          </div>
+        </ul>
+      </div>
       <DropdownMenu showDropdown={showDropdown} />
     </nav>
   );
@@ -91,7 +138,11 @@ export const Navbar = () => {
 
 const DropdownMenu = ({ showDropdown }) => {
   return (
-    <div className={`dropdown-menu ${showDropdown ? "open" : "closed"}`}>
+    <div
+      className={`dropdown-menu ${
+        showDropdown == "Our Services" ? "open" : "closed"
+      }`}
+    >
       <ServicesDropdown />
     </div>
   );
@@ -109,10 +160,6 @@ const ServicesDropdown = () => {
         {
           title: "Mobile Design",
           icon: <img src="/icons/mobile-design.png" height={20} width={20} />,
-        },
-        {
-          title: "UI/UX Design",
-          icon: <img src="/icons/ui-ux-design.png" height={20} width={20} />,
         },
       ],
     },
@@ -136,13 +183,13 @@ const ServicesDropdown = () => {
           ),
         },
         {
-          title: "Web Applications",
+          title: "Web App Development",
           icon: (
             <img src="/icons/web-applications.png" height={20} width={20} />
           ),
         },
         {
-          title: "Mobile Applications",
+          title: "Mobile App Development",
           icon: (
             <img src="/icons/mobile-applications.png" height={20} width={20} />
           ),
@@ -150,37 +197,51 @@ const ServicesDropdown = () => {
       ],
     },
     {
-      group: "Automations",
+      group: "Digital Marketing",
       services: [
         {
-          title: "Workflow Automation",
+          title: "SEO",
           icon: (
             <img src="/icons/workflow-automation.png" height={20} width={20} />
           ),
         },
         {
-          title: "Marketing Automation",
+          title: "Google Ads",
           icon: (
             <img src="/icons/marketing-automation.png" height={20} width={20} />
           ),
         },
         {
-          title: "Sales Automation",
+          title: "Social Media Marketing",
           icon: (
             <img src="/icons/sales-automation.png" height={20} width={20} />
           ),
         },
+      ],
+    },
+    {
+      group: "Growth Solutions",
+      services: [
         {
-          title: "E-commerce Automation",
-          icon: <MdAddShoppingCart size={20} />,
+          title: "Data Analytics",
+          icon: (
+            <img src="/icons/workflow-automation.png" height={20} width={20} />
+          ),
+        },
+        {
+          title: "Process Automation",
+          icon: (
+            <img src="/icons/marketing-automation.png" height={20} width={20} />
+          ),
         },
       ],
     },
   ];
+
   return (
-    <div className="max-w-[1920px] pt-4 pb-12 flex flex-row w-full justify-center gap-20">
-      {servicesList.map((serviceGroup) => (
-        <div className="min-w-40 flex flex-col gap-4">
+    <div className="max-w-[1920px] pt-16 pb-16 flex flex-row w-full justify-center gap-20">
+      {servicesList.map((serviceGroup, index) => (
+        <div key={index} className="min-w-40 flex flex-col gap-6">
           {/* Heading */}
           <h4 className="text-[20px] font-semibold text-black">
             {serviceGroup.group}
@@ -188,9 +249,12 @@ const ServicesDropdown = () => {
           <div className="flex flex-col gap-2">
             {serviceGroup.services.map((service, index) => {
               return (
-                <div className="flex flex-row gap-2 items-center">
+                <div key={index} className="flex flex-row gap-2 items-center">
                   {service.icon}
-                  <a className="text-black hover:underline !px-0" href="/">
+                  <a
+                    className="text-black hover:underline font-light !px-0"
+                    href="/"
+                  >
                     {service.title}
                   </a>
                 </div>

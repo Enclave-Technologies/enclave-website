@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Head from "next/head";
+import { Navbar } from "../components/Navbar/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,7 +25,10 @@ export default function RootLayout({ children }) {
         <meta property="og:image" content="/logo-dark.svg" />
         <meta name="twitter:card" content="/logo-dark.svg" />
       </Head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }

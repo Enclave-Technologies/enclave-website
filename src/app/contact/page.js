@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Navbar } from "../components/Navbar";
+import { Navbar } from "../../components/Navbar/Navbar";
 import { useForm, ValidationError } from "@formspree/react";
 
 const services = [
@@ -20,7 +20,7 @@ export default function Contact() {
   const [selectedServices, setSelectedServices] = useState([]);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-start text-black">
+    <main className="flex w-full min-h-screen flex-col items-center justify-start text-black">
       <div id="cursor" />
       <Navbar />
       <section className="w-full flex flex-col items-center">
@@ -35,7 +35,7 @@ export default function Contact() {
             onSubmit={handleSubmit}
           >
             <div className="flex flex-col gap-20">
-              <div className="flex flex-col gap-10">
+              <div className="flex flex-col gap-8">
                 <p>I’m Interested in...</p>
                 <div className="flex flex-wrap gap-4">
                   {services.map((service, index) => {
@@ -97,7 +97,7 @@ export default function Contact() {
                 errors={state.errors}
               />
               <div>
-                <label className="pb-12">Your Budget (USD)</label>
+                <p className="pb-8">Your Budget (USD)</p>
                 <div className="flex flex-wrap gap-8">
                   {budgets.map((budget, index) => (
                     <OptionPill

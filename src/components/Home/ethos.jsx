@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Button } from "../Button";
-import { contactLink } from "@/app/utils/links";
+import { contactLink } from "../../utils/links";
 
 const Ethos = ({ id }) => {
   return (
@@ -69,7 +69,7 @@ const Ethos = ({ id }) => {
           </div>
           <div className="flex flex-row items-center justify-center gap-2">
             <Button variant="primary" link={contactLink} title="Get in touch" />
-            <Button variant="secondary" link={contactLink} title="Learn More" />
+            <Button variant="secondary" link={contactLink} title="Read More" />
           </div>
         </div>
       </div>

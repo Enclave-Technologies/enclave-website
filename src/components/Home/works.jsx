@@ -17,9 +17,9 @@ const ProjectTile = ({ title, tags, imageURL, id, index, year, url }) => {
   }, []);
 
   const imageWidth = useMemo(() => {
-    if (screenWidth > 1024) return 400;
-    else if (screenWidth > 768) return 360;
-    else if (screenWidth > 640) return 320;
+    if (screenWidth > 1024) return 640;
+    else if (screenWidth > 768) return 580;
+    else if (screenWidth > 640) return 480;
     else return 320;
   }, [screenWidth]);
 
@@ -28,16 +28,14 @@ const ProjectTile = ({ title, tags, imageURL, id, index, year, url }) => {
       id={id}
       className="sticky top-0 w-full bg-white min-h-screen flex flex-row justify-center items-center"
     >
-      <div className="w-full max-w-4xl flex flex-col md:flex-row justify-between items-start">
+      <div className="w-full max-w-4xl flex flex-col md:flex-row justify-between items-center md:items-start">
         <span className="text-[90px] md:text-[180px] lg:text-[120px]">
           0{index}.
         </span>
         <div
           className={`min-w-[320px] w-[${imageWidth}px] flex-col justify-start items-center gap-6 inline-flex`}
         >
-          <div
-            className={`min-w-[320px] w-[${imageWidth}px] lg:w-[400px] aspect-square relative bg-white`}
-          >
+          <div className={`w-full aspect-square relative bg-white`}>
             <Image
               src={imageURL}
               style={{ objectFit: "contain" }}
@@ -45,12 +43,8 @@ const ProjectTile = ({ title, tags, imageURL, id, index, year, url }) => {
               alt="avante decor"
             />
           </div>
-          <div
-            className={`min-w-[320px] w-[${imageWidth}px] lg:w-[400px] flex flex-row items-start gap-4`}
-          >
-            <div
-              className={`min-w-[320px] w-[${imageWidth}px] lg:w-[400px] flex flex-row items-start justify-start`}
-            >
+          <div className={`w-full flex flex-row items-start gap-4`}>
+            <div className={`w-full flex flex-row items-start justify-between`}>
               <div className="flex flex-col items-start justify-start gap-2">
                 <h3 className="font-semibold">{title}</h3>
                 <Tags tags={tags} />
@@ -58,9 +52,9 @@ const ProjectTile = ({ title, tags, imageURL, id, index, year, url }) => {
               <div className="flex flex-col items-start justify-start gap-2">
                 <a
                   href={url}
-                  className="flex items-center justify-center bg-black rounded-full w-8 aspect-square"
+                  className="flex items-center justify-center bg-[var(--primary-color)] text-white rounded-full w-auto px-4 py-1"
                 >
-                  <FiArrowUpRight size={16} className="text-white" />
+                  {year}
                 </a>
                 {/* <div className="w-auto">
                   <p className="w-auto text-sm bg-black text-[#FFF] rounded-full shadow p-1 px-2">
@@ -147,8 +141,8 @@ export const Works = ({ id }) => {
           />
         </div>
         <div className="flex flex-row items-stretch gap-2">
-          <Button variant="primary" title="Get Started" link="/works" />
-          <Button variant="secondary" title="View Portfolio" link="/works" />
+          <Button variant="primary" title="Get in touch" link="/works" />
+          <Button variant="secondary" title="Explore Portfolio" link="/works" />
         </div>
       </div>
     </SectionWrapper>
