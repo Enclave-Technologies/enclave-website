@@ -1,16 +1,16 @@
 "use client";
 import Image from "next/image";
-import { Navbar } from "./components/Navbar";
-import { Hero } from "./components/Home/hero";
-import { Works } from "./components/Home/works";
-import { Services } from "./components/Home/services";
-import { CTA } from "./components/Home/cta";
-import { Footer } from "./components/Footer";
-import { Quote } from "./components/Home/quote";
+import { Navbar } from "../components/Navbar/Navbar";
+import { Hero } from "../components/Home/hero";
+import { Works } from "../components/Home/works";
+import { Services } from "../components/Home/services";
+import { CTA } from "../components/Home/cta";
+import { Footer } from "../components/Footer";
+import { Quote } from "../components/Home/quote";
 import { useEffect, useState } from "react";
-import { Partners } from "./components/Home/partners";
-import Ethos from "./components/Home/ethos";
-import AboutUs from "./components/Home/about-us";
+import { Partners } from "../components/Home/partners";
+import Ethos from "../components/Home/ethos";
+import AboutUs from "../components/Home/about-us";
 
 // export const metadata = {
 //   title: "Web Design & Development Studio",
@@ -47,20 +47,19 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between text-black">
       <div className="cursor" />
-      <Navbar />
       <Hero />
-      <AboutUs id="about" />
-      <Partners id="partners" />
-      <Works id="works" />
       <Services id="services" />
+      <Works id="works" />
+      {/* <Partners id="partners" /> */}
       <Ethos id={"ethos"} />
+      {/* <AboutUs id="about" /> */}
+      <Quote id="about" />
+      <CTA />
+      <Footer />
       {/* <section>
         <h3>Empowering Businesses & Individuals</h3>
         <h2>Strategy 2 Delivery</h2>
       </section> */}
-      <Quote id="about" />
-      <CTA />
-      <Footer />
     </main>
   );
 }

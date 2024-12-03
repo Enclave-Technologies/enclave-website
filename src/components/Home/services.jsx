@@ -1,55 +1,65 @@
 import Image from "next/image";
+import { Button } from "../Button";
 
 const servicesList = [
   {
     index: 1,
-    key: "strategy",
-    title: "Strategy",
-    redirectURL: null,
-    tags: ["Brand Strategy", "Application Strategy", "Product Strategy"],
-  },
-  {
-    index: 2,
     key: "design",
     title: "Design",
     redirectURL: null,
-    tags: ["Brand Design", "Web Design", "UI/UX Design"],
+    tags: ["Website Design", "UI/UX Design"],
   },
   {
-    index: 3,
+    index: 2,
     key: "development",
     title: "Development",
     redirectURL: null,
     tags: [
       "Website Development",
-      "Web App Development",
-      "Mobile Appl Development",
+      "E-commerce Development",
+      "Web-App Development",
+      "Mobile-App Development",
     ],
+  },
+  {
+    index: 3,
+    key: "digital-marketing",
+    title: "Digital Marketing",
+    redirectURL: null,
+    tags: ["SEO", "Google Ads", "Social Media Marketing"],
+  },
+  {
+    index: 3,
+    key: "growth-solutions",
+    title: "Growth Solutions",
+    redirectURL: null,
+    tags: ["Data Analytics", "Process Automation"],
   },
 ];
 
 export const Services = ({ id }) => {
   return (
     <section id={id} className="bg-white">
-      <div className="inner-container flex flex-col items-center gap-12 overflow-hidden !max-w-none">
+      <div className="inner-container flex flex-col items-center gap-12 overflow-hidden">
         <div className="flex flex-col items-center gap-4">
-          <h3>Discover</h3>
-          <div className="flex flex-col gap-6 items-center">
-            <h2>Our Services</h2>
-            <p className="text-center">
-              It is our mission to be the best User Experience focused
-              application development agency.
+          <h3>Our Services</h3>
+          <div className="flex flex-col gap-6 items-center ">
+            <h2 className="text-center">SOLUTIONS TAILORED FOR YOUR NEEDS</h2>
+            <p className="text-center w-full md:w-11/12">
+              It is in our DNA to build solutions that help your business grow.
+              We take a data-driven approach to design, development and
+              marketing to make sure that our solutions perform in the best way
+              possible.
             </p>
-            <p className="text-center w-full md:w-2/3">
-              Our UX and UI web design process is centered around empathy -
-              having a complete picture of your end-users and target audiences
-              preferences. As well as a mobile-first approach (responsive
-              design), so that we’re building great experiences that scale
-              across devices.
+            <p className="text-center w-full md:w-11/12">
+              Our team is a mix of perfectionists and people who want to get
+              shit done. But all of us are united by a mission of delivering the
+              best possible outcomes to our clients. Our agency is driven by a
+              strong desire to keep learning, measuring & building.
             </p>
           </div>
         </div>
-        <div className="flex flex-col md:flex-row flex-wrap justify-center gap-4 w-full items-stretch">
+        <div className="flex flex-row flex-wrap justify-center gap-4 w-full items-stretch">
           {servicesList.map((service, index) => (
             <ServiceTab
               index={service.index}
@@ -60,6 +70,10 @@ export const Services = ({ id }) => {
             />
           ))}
         </div>
+        <div className="flex flex-row items-stretch gap-2">
+          <Button variant="primary" title="Get Started" link="/works" />
+          <Button variant="secondary" title="Learn More" link="/our-services" />
+        </div>
       </div>
     </section>
   );
@@ -67,18 +81,16 @@ export const Services = ({ id }) => {
 
 const ServiceTab = ({ index, title, redirectURL, tags }) => {
   return (
-    <div className="w-full md:w-1/3 max-w-96">
-      <div className="service-tab">
-        <div className="flex flex-row items-end justify-between p-4">
+    <div className="w-full md:w-5/12 max-w-96 md:max-w-none">
+      <div className="service-tab h-full">
+        <div className="h-full flex flex-row items-end justify-between p-4">
           <div
             id={`service-tab-${index}`}
-            className="relative w-full flex flex-col items-start justify-between gap-12 md:gap-24"
+            className="relative h-full w-full flex flex-col items-start justify-between gap-12 md:gap-24"
           >
-            <span className="service-title z-20">
-              {index}. {title}
-            </span>
+            <span className="service-title z-20">{title}</span>
             <div className="flex flex-col gap-4">
-              <div className="flex flex-col items-start gap-2 md:gap-4 z-20 max-w-full">
+              <div className="flex flex-col items-start gap-2 md:gap-2 z-20 max-w-full">
                 {tags &&
                   tags.map((tag, index) => (
                     <h3 key={index} className="service-tag">

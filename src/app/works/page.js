@@ -1,9 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Navbar } from "../components/Navbar";
+import { Navbar } from "../../components/Navbar/Navbar";
 import { useForm, ValidationError } from "@formspree/react";
 import Image from "next/image";
-import { Footer } from "../components/Footer";
+import { Footer } from "../../components/Footer";
 import Link from "next/link";
 
 const services = [

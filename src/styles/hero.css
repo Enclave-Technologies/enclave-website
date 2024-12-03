@@ -1,0 +1,7 @@
+.hero-title {
+  @apply text-center;
+}
+
+.hero-title > span {
+  color: #5708ff;
+}

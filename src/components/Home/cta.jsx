@@ -1,7 +1,7 @@
-import { contactLink } from "@/app/utils/links";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../Button";
+import { contactLink } from "../../utils/links";
 
 export const CTA = () => {
   return (
@@ -39,7 +39,11 @@ export const CTA = () => {
             </p>
           </div>
         </div>
-        <Button variant="secondary" link={contactLink} title="Learn More" />
+        <Button
+          variant="primary"
+          link={contactLink}
+          title="Get started today"
+        />
       </div>
     </section>
   );

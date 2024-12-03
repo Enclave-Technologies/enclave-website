@@ -6,9 +6,9 @@ export const Quote = ({ id }) => {
       <div className="inner-container flex flex-col gap-8 md:gap-16 px-4 items-center">
         <div>
           <p className="testimonial text-center">
-            &quot;... their technical expertise & commitment to understanding
-            our problem want helped us unlock groundbreaking customer potential
-            and double our ARR.&quot;
+            &quot;... ... their data driven process has given us visibility into
+            our customers and improved the UX so much that it allowed us to
+            unlock 10x customer acquisition.&quot;
           </p>
         </div>
         <div className="w-full flex flex-col gap-4 items-center justify-center md:flex-row">

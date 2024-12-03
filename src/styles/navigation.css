@@ -1,0 +1,105 @@
+/* --- Navigation Starts --- */
+
+.nav-container {
+  @apply max-w-full w-full px-0 h-auto py-4 fixed top-0 flex flex-col justify-center items-center z-10 bg-white;
+  z-index: 9999;
+  height: auto;
+}
+
+.nav-inner-container {
+  @apply px-24 w-full flex flex-row justify-between text-black z-50;
+  max-width: 1920px;
+}
+
+.desktop-nav {
+  @apply w-full flex flex-row justify-between items-center;
+}
+
+.mobile-nav-links {
+  @apply hidden;
+}
+
+.mobile-nav {
+  @apply hidden w-full flex-row justify-between items-center;
+}
+
+.mobile-nav-links-container {
+  @apply w-full flex flex-col gap-4 px-12 py-4 transition-all duration-300 ease-in-out overflow-hidden;
+  height: 100%;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: black;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.dropdown-menu {
+  width: 100vw;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-height: 0; /* Collapse the dropdown by default */
+  transition: max-height 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+  opacity: 0; /* Initially hidden */
+}
+
+.dropdown-menu.open {
+  max-height: 500px; /* Arbitrary large value to allow the dropdown to expand */
+  opacity: 1;
+}
+
+.dropdown-menu.closed {
+  max-height: 0; /* Collapse when closed */
+  opacity: 0;
+}
+
+@media screen and (max-width: 720px) {
+  .nav-inner-container {
+    @apply w-full py-0 px-4 text-black z-50 flex flex-row items-center justify-between rounded-full;
+  }
+
+  .desktop-nav {
+    @apply hidden;
+  }
+
+  .mobile-nav {
+    @apply relative w-full flex items-center justify-end;
+  }
+
+  .mobile-nav .hamburger {
+    @apply flex flex-col gap-1;
+  }
+
+  .mobile-nav .nav-links-container {
+    @apply hidden;
+  }
+
+  .mobile-nav .nav-links-container .visible {
+    @apply fixed flex top-0 right-0 h-screen w-64 bg-slate-200;
+  }
+}
