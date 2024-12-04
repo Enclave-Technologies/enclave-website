@@ -12,7 +12,7 @@ const subheading =
 export const Hero = () => {
   return (
     <section id="home-hero" className="relative">
-      <div className="inner-container flex-col gap-16">
+      <div className="inner-container flex-col gap-16 md:pt-32">
         <div className="flex flex-col items-center gap-8 z-50 w-full">
           <div className="flex flex-col items-center gap-4">
             <h1 className="hero-title">
@@ -29,11 +29,11 @@ export const Hero = () => {
           src={"/hero-image-2.png"}
           // "/hero-image.png"
           width={400}
-          height={400}
+          height={200}
           style={{
             objectFit: "cover",
             width: "100%",
-            aspectRatio: 2.5 / 1,
+            aspectRatio: 3 / 1,
             borderRadius: 12,
           }}
           alt="Web Design"
