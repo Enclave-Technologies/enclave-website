@@ -5,7 +5,7 @@ import { contactLink } from "../../utils/links";
 
 export const CTA = () => {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden !min-h-[50vh]">
       <Image
         className="absolute -right-40 top-24 md:-right-0 z-0"
         src="/human-sculpture.png"

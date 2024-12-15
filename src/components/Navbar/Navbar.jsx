@@ -55,9 +55,10 @@ export const Navbar = () => {
         <div className="min-w-40">
           <Link href="/">
             <Image
-              src="/logo-dark.svg"
-              width={32}
-              height={32}
+              className="enclave-logo"
+              src="/enclave-studios-logo.svg"
+              width={64}
+              height={64}
               alt="Enclave_Logo_Light"
             />
           </Link>

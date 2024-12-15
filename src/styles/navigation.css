@@ -1,9 +1,22 @@
 /* --- Navigation Starts --- */
 
+.enclave-logo {
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .nav-container {
-  @apply max-w-full w-full px-0 h-auto py-4 fixed top-0 flex flex-col justify-center items-center z-10 bg-white;
+  @apply max-w-full w-full h-auto py-2 fixed top-0 flex flex-col justify-center items-center z-10 bg-white/80;
+  border-radius: 0px 0px 48px 48px;
   z-index: 9999;
   height: auto;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.125);
+  backdrop-filter: blur(10px);
 }
 
 .nav-inner-container {

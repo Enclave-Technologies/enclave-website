@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export const Quote = ({ id }) => {
   return (
-    <section id={id}>
+    <section id={id} className="!min-h-[50vh]">
       <div className="inner-container flex flex-col gap-8 md:gap-16 px-4 items-center">
         <div>
           <p className="testimonial text-center">

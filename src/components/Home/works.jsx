@@ -6,7 +6,7 @@ import { Button } from "../Button";
 import { useEffect, useMemo, useState } from "react";
 
 const SectionWrapper = ({ children }) => {
-  return <section className="">{children}</section>;
+  return <section className="w-full">{children}</section>;
 };
 
 const ProjectTile = ({ title, tags, imageURL, id, index, year, url }) => {
@@ -28,12 +28,12 @@ const ProjectTile = ({ title, tags, imageURL, id, index, year, url }) => {
       id={id}
       className="sticky top-0 w-full bg-white min-h-screen flex flex-row justify-center items-center"
     >
-      <div className="w-full max-w-4xl flex flex-col md:flex-row justify-between items-center md:items-start">
+      <div className="w-full flex flex-col md:flex-row justify-between items-center md:items-start">
         <span className="text-[90px] md:text-[180px] lg:text-[120px]">
           0{index}.
         </span>
         <div
-          className={`min-w-[320px] w-[${imageWidth}px] flex-col justify-start items-center gap-6 inline-flex`}
+          className={`w-full md:w-5/12 flex-col justify-start items-center gap-6 inline-flex`}
         >
           <div className={`w-full aspect-square relative bg-white`}>
             <Image
@@ -91,7 +91,7 @@ export const Works = ({ id }) => {
   return (
     <SectionWrapper>
       <div className="w-full relative py-16 flex flex-col items-center">
-        <h2>FEATURED WORKS</h2>
+        <h2>Our Past Works</h2>
         <div className="w-full pt-0 lg:pt-20 flex flex-col justify-center gap-40">
           {/* <span className="text-[360px]">WORKS</span> */}
           <ProjectTile

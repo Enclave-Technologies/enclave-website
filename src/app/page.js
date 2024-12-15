@@ -45,7 +45,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between text-black">
+    <main className="flex min-h-screen flex-col items-center justify-between text-black relative">
       <div className="cursor" />
       <Hero />
       <Services id="services" />
@@ -53,9 +53,10 @@ export default function Home() {
       {/* <Partners id="partners" /> */}
       <Ethos id={"ethos"} />
       {/* <AboutUs id="about" /> */}
-      <Quote id="about" />
       <CTA />
+      <Quote id="about" />
       <Footer />
+      <div className="gradient" />
       {/* <section>
         <h3>Empowering Businesses & Individuals</h3>
         <h2>Strategy 2 Delivery</h2>

@@ -1,10 +1,12 @@
 import Link from "next/link";
+import { CTA } from "./Home/cta";
+import { Quote } from "./Home/quote";
 
 const { default: Image } = require("next/image");
 
 export const Footer = () => {
   return (
-    <footer className="footer pb-16">
+    <footer className="footer pb-16 !overflow-visible !z-50 relative">
       <Link className="big-button" href="/contact">
         Get in touch
       </Link>
@@ -34,7 +36,7 @@ export const Footer = () => {
             </li>
           </ul>
           <ul>
-            <li className="flex flex-row justify-end gap-4 w-52">
+            <li className="flex flex-row justify-center md:justify-end gap-4 w-52">
               {/* <a>
                 <Image
                   src="/Facebook.svg"

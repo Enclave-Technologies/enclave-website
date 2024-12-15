@@ -1,7 +1,20 @@
 .hero-title {
-  @apply text-center;
+  font-size: 4rem;
+  line-height: 120%;
+}
+
+.hero-title {
+  @apply text-left;
+  font-weight: 400;
 }
 
 .hero-title > span {
-  color: #5708ff;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+@media screen and (max-width: 720px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
 }

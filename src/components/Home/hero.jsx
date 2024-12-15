@@ -13,32 +13,18 @@ export const Hero = () => {
   return (
     <section id="home-hero" className="relative">
       <div className="inner-container flex-col gap-16 md:pt-32">
-        <div className="flex flex-col items-center gap-8 z-50 w-full">
-          <div className="flex flex-col items-center gap-4">
-            <h1 className="hero-title">
-              Tech solutions to <span>accelerate your business growth</span>
+        <div className="flex flex-col items-start gap-8 z-50 w-full">
+          <div className="flex flex-col items-start gap-4">
+            <h1 className="hero-title text-left">
+              We are a <span>design-focused software development studio </span>{" "}
+              helping businesses launch and grow their digital presence.{" "}
             </h1>
-            <h3 className="text-center">
-              We take care of your tech needs so you can focus on growing your
-              business.
-            </h3>
           </div>
-          <Button variant="primary" title={"Get In Touch"} link="/contact" />
-        </div>
-        <Image
-          src={"/hero-image-2.png"}
-          // "/hero-image.png"
-          width={400}
-          height={200}
-          style={{
-            objectFit: "cover",
-            width: "100%",
-            aspectRatio: 3 / 1,
-            borderRadius: 12,
-          }}
-          alt="Web Design"
-          className="z-0 opacity-100"
-        />
+          <div className="flex flex-row items-center justify-start gap-4">
+            <Button variant="primary" title={"Get In Touch"} link="/contact" />
+            <Button variant="secondary" title={"Learn More"} link="/contact" />
+          </div>
+        </div>{" "}
       </div>
     </section>
   );

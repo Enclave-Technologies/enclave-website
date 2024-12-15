@@ -9,7 +9,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  --primary-color: #5708ff;
+  --primary-color: #fb4e29;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,7 +26,7 @@ body {
   background: rgb(var(--background-rgb));
   max-width: 100vw;
   overflow-x: hidden;
-  font-family: "Poppins", sans-serif !important;
+  font-family: "Onest", sans-serif !important;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,6 +55,10 @@ h2 {
   @apply uppercase;
 }
 
+p {
+  @apply text-lg;
+}
+
 h3 {
   @apply text-xl;
 }
@@ -71,12 +75,6 @@ button {
   @apply flex flex-col;
   min-height: 100vh;
   width: 100vw;
-}
-
-.hero-title {
-  @apply font-semibold z-0;
-  font-size: 4rem;
-  line-height: 120%;
 }
 
 .hero-subheading {
@@ -100,14 +98,14 @@ button {
 }
 
 .button {
-  @apply bg-transparent text-black font-normal py-4 px-8 rounded-full w-fit transition-all duration-150 ease-in-out;
+  @apply bg-transparent text-black font-normal py-2 px-6 rounded-full w-fit transition-all duration-150 ease-in-out;
   box-shadow: 2px 2px 2px 2px #00000077;
   border: 1px solid #000;
   cursor: pointer;
 }
 
 .button:hover {
-  @apply text-black font-normal py-4 px-8 rounded-full w-fit transition-all duration-150 ease-in-out;
+  @apply text-black font-normal py-2 px-6 rounded-full w-fit transition-all duration-150 ease-in-out;
   transform: translate(0.5px, 0.5px);
   box-shadow: 1px 1px 1px 1px #00000077;
   /* animation: fill 0.5s ease-in-out forwards; */
@@ -127,9 +125,10 @@ button {
 
 .service-tab {
   @apply bg-transparent w-auto p-2 transition-all duration-300 ease-in-out;
-  border: 1px solid #000;
+  border: 1px solid #fb4e29;
   border-radius: 12px;
   overflow: hidden;
+  box-shadow: -2px 2px 2px rgb(255, 96, 62, 0.25);
 }
 
 .service-tab > div {
@@ -158,11 +157,9 @@ button {
 }
 
 .service-tag {
-  @apply py-2 px-4 capitalize transition-all duration-150 ease-in-out;
+  @apply capitalize transition-all duration-150 ease-in-out;
   font-size: 1rem;
   background-color: transparent;
-  border: 1px solid #000;
-  border-radius: 200px;
 }
 
 .service-arrow {
@@ -212,8 +209,7 @@ button {
 }
 
 .service-tab:hover .service-tag {
-  background-color: rgba(255, 255, 255, 1);
-  color: #000;
+  color: #fff;
   backdrop-filter: blur(33px);
   background-blend-mode: overlay;
 }
@@ -255,6 +251,14 @@ button {
 
 .footer {
   @apply w-screen flex flex-col items-center pt-60;
+}
+
+.gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  aspect-ratio: 1569/1440;
   background: url("/gradient.svg") bottom no-repeat;
   background-size: cover;
   background-blend-mode: lighten;
@@ -279,7 +283,7 @@ li a:hover {
 }
 
 .primary {
-  @apply text-white font-normal py-4 px-8 rounded-full w-fit transition-all duration-150 ease-in-out;
+  @apply text-white font-normal py-2 px-6 rounded-full w-fit transition-all duration-150 ease-in-out;
   /* width: 80px; */
   background-color: var(--primary-color);
   border: 1px solid var(--primary-color);
@@ -289,15 +293,14 @@ li a:hover {
 }
 
 .secondary {
-  @apply bg-transparent text-black font-normal py-4 px-8 rounded-full w-fit transition-all duration-150 ease-in-out;
+  @apply bg-transparent text-black font-normal py-2 px-6 rounded-full w-fit transition-all duration-150 ease-in-out;
   border: 1px solid #000;
   cursor: pointer;
 }
 
 .primary:hover {
-  @apply bg-black font-normal rounded-full w-fit transition-all duration-150 ease-in-out;
+  @apply bg-[#FB7429] font-normal rounded-full w-fit transition-all duration-150 ease-in-out;
   /* width: 80px; */
-  border: 1px solid #000;
   color: #fff !important;
   cursor: pointer;
   position: relative;
@@ -551,7 +554,7 @@ button:hover .button-text-container span {
   }
 
   .service-tag {
-    @apply py-2 px-4 uppercase text-sm transition-all duration-150 ease-in-out;
+    @apply py-1 uppercase text-sm transition-all duration-150 ease-in-out;
     text-wrap: nowrap;
   }
 }

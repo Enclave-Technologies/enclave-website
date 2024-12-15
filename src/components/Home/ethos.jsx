@@ -13,14 +13,12 @@ const Ethos = ({ id }) => {
             <div className="flex flex-col gap-4">
               <h3 className="text-center">Our Development Process</h3>
               <div className="flex flex-col gap-6 text-center items-center">
-                <h2 className="text-center">
-                  Design and Development that Doesn&apos;t Compromise
-                </h2>
-                <p style={{ maxWidth: "70rem" }}>
-                  We employ a 3-step process for developing products led by
-                  product strategy and design thinking followed by development
-                  and result measurement to continually refine your product and
-                  deliver the best possible experience to your end users.
+                <h2 className="text-center">The 3 Magic Steps</h2>
+                <p className="w-full md:w-9/12">
+                  We employ a 3-step process led by strategy and design thinking
+                  followed by development and result measurement to continually
+                  refine your product and deliver the best possible experience
+                  to your end users.
                 </p>
               </div>
             </div>
@@ -61,8 +59,8 @@ const Ethos = ({ id }) => {
           </div>
           <div>
             <Image
-              src="/Venn Diagram.svg"
-              width={600}
+              src="/venn diagram.svg"
+              width={400}
               height={100}
               alt="Our Mission"
             />
@@ -82,12 +80,12 @@ const Step = ({ id, imageURL, title, description }) => {
     <div className="flex flex-col gap-4 items-center flex-1">
       <Image
         src={imageURL}
-        width={90}
+        width={40}
         height={100}
         alt={`Step-{id}`}
         unoptimized
       />
-      <h6 className="text-center text-2xl font-semibold">{title}</h6>
+      <h6 className="text-center text-xl">{title}</h6>
       <p className="text-center">{description}</p>
     </div>
   );
