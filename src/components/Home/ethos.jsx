@@ -59,7 +59,7 @@ const Ethos = ({ id }) => {
           </div>
           <div>
             <Image
-              src="/venn diagram.svg"
+              src="/venn-diagram.svg"
               width={400}
               height={100}
               alt="Our Mission"
