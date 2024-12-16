@@ -55,6 +55,7 @@ h2 {
 
 p {
   @apply text-lg;
+  font-family: "Roboto", sans-serif;
 }
 
 h3 {
