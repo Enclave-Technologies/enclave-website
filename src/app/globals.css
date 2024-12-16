@@ -165,11 +165,13 @@ button {
 
 .service-image {
   @apply transition-all duration-300 ease-in-out;
-  opacity: 0;
+  opacity: 1;
 }
 
 .service-tab:hover .service-image {
   @apply transition-all duration-300 ease-in-out;
+  scale: 2;
+  transform: translate(-20%, -20%);
   opacity: 1;
 }
 

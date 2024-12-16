@@ -93,8 +93,8 @@ const ServiceTab = ({ index, title, redirectURL, tags }) => {
                 <Image
                   className="service-image"
                   src={`/service-images/Service-Image-${index}.png`}
-                  width={120}
-                  height={100}
+                  width={40}
+                  height={40}
                   alt={title}
                   unoptimized
                 />
