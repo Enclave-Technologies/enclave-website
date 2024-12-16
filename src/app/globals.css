@@ -507,7 +507,7 @@ button:hover .button-text-container span {
   }
 
   .hero-title {
-    @apply font-bold z-0 text-4xl;
+    @apply z-0 text-4xl;
     padding: 0 0rem 0 0;
   }
 
