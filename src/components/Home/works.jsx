@@ -89,7 +89,7 @@ export const Tags = ({ tags }) => {
 
 export const Works = ({ id }) => {
   return (
-    <SectionWrapper>
+    <section id={id} className="w-full">
       <div className="w-full relative py-16 flex flex-col items-center">
         <h2>Our Past Works</h2>
         <div className="w-full pt-0 lg:pt-20 flex flex-col justify-center gap-40">
@@ -141,10 +141,10 @@ export const Works = ({ id }) => {
           />
         </div>
         <div className="flex flex-row items-stretch gap-2">
-          <Button variant="primary" title="Get in touch" link="/works" />
+          <Button variant="primary" title="Get In Touch" link="/works" />
           <Button variant="secondary" title="Explore Portfolio" link="/works" />
         </div>
       </div>
-    </SectionWrapper>
+    </section>
   );
 };

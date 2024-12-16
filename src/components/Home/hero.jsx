@@ -22,7 +22,7 @@ export const Hero = () => {
           </div>
           <div className="flex flex-row items-center justify-start gap-4">
             <Button variant="primary" title={"Get In Touch"} link="/contact" />
-            <Button variant="secondary" title={"Learn More"} link="/contact" />
+            <Button variant="secondary" title={"Learn More"} link="#services" />
           </div>
         </div>{" "}
       </div>

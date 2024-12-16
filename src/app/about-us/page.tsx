@@ -8,7 +8,7 @@ const AboutUs = () => {
       <section>
         <h1>About Us</h1>
         <p></p>
-        <Button title="Get in touch" link="/contact" />
+        <Button title="Get In Touch" link="/contact" />
         {/* <Image src="" width={200} height={200} /> */}
       </section>
       <section></section>

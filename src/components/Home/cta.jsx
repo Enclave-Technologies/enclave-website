@@ -42,7 +42,7 @@ export const CTA = () => {
         <Button
           variant="primary"
           link={contactLink}
-          title="Get started today"
+          title="Get Started Today"
         />
       </div>
     </section>

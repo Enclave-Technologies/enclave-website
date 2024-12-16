@@ -95,7 +95,7 @@ export const Navbar = () => {
             <Button
               variant="primary"
               link="/contact"
-              title="Get in touch"
+              title="Get In Touch"
               onClick={() => {}}
             />
           </div>
@@ -126,7 +126,7 @@ export const Navbar = () => {
             <Button
               variant="primary"
               link="/contact"
-              title="Get in touch"
+              title="Get In Touch"
               onClick={() => {}}
             />
           </div>

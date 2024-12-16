@@ -47,28 +47,20 @@ const Ethos = ({ id }) => {
                   "No solution is perfect at once. After launching the project, we support our clients for at least 2-months to make sure they win."
                 }
               />
-              {/* <Step
-                id={"Deployment"}
-                imageURL={"/develop-illustration.svg"}
-                title={"Deploy"}
-                description={
-                  "Our focus is on ensuring a seamless launch that maximizes user adoption and satisfaction while monitoring performance post-launch for continuous improvement."
-                }
-              /> */}
             </div>
           </div>
           <div>
             <Image
               src="/venn-diagram.svg"
-              width={400}
+              width={600}
               height={100}
               alt="Our Mission"
             />
           </div>
-          <div className="flex flex-row items-center justify-center gap-2">
-            <Button variant="primary" link={contactLink} title="Get in touch" />
+          {/* <div className="flex flex-row items-center justify-center gap-2">
+            <Button variant="primary" link={contactLink} title="Get In Touch" />
             <Button variant="secondary" link={contactLink} title="Read More" />
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

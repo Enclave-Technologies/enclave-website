@@ -8,7 +8,7 @@ export const Footer = () => {
   return (
     <footer className="footer pb-16 !overflow-visible !z-50 relative">
       <Link className="big-button" href="/contact">
-        Get in touch
+        Get In Touch
       </Link>
       <div className="max-w-full flex flex-row overflow-x-hidden">
         <span className="footer-scroll-title pr-48">ENCLAVE</span>

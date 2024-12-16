@@ -62,8 +62,8 @@ export const Services = ({ id }) => {
           ))}
         </div>
         <div className="flex flex-row items-stretch gap-2">
-          <Button variant="primary" title="Get Started" link="/works" />
-          <Button variant="secondary" title="Learn More" link="/our-services" />
+          <Button variant="primary" title="Get Started" link="/contact" />
+          <Button variant="secondary" title="Learn More" link="#works" />
         </div>
       </div>
     </section>
