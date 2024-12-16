@@ -1,11 +1,11 @@
 .hero-title {
   font-size: 4rem;
   line-height: 120%;
+  font-weight: 200;
 }
 
 .hero-title {
   @apply text-left;
-  font-weight: 400;
 }
 
 .hero-title > span {
