@@ -74,7 +74,6 @@
   margin: 0;
   padding: 0;
   border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   max-height: 0; /* Collapse the dropdown by default */
   transition: max-height 0.3s ease, opacity 0.3s ease; /* Smooth transition */
