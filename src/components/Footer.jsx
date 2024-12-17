@@ -21,7 +21,7 @@ export const Footer = () => {
         <div className="footer-links-container gap-8">
           <div className="w-auto md:w-52">
             <Image
-              src="/logo-dark.svg"
+              src="/enclave-studios-logo.svg"
               width={42}
               height={42}
               alt="Enclave-Logo-Dark"
@@ -29,10 +29,18 @@ export const Footer = () => {
           </div>
           <ul>
             <li className="flex flex-col md:flex-row gap-12">
-              <a className="text-center">WORK</a>
-              <a className="text-center">SERVICES</a>
-              <a className="text-center">ABOUT</a>
-              <a className="text-center">FAQ</a>
+              <a href="#works" className="text-center">
+                WORK
+              </a>
+              <a href="#services" className="text-center">
+                SERVICES
+              </a>
+              <a href="#about" className="text-center">
+                ABOUT
+              </a>
+              <a href="#faq" className="text-center">
+                FAQ
+              </a>
             </li>
           </ul>
           <ul>
