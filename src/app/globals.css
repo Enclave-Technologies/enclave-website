@@ -31,10 +31,16 @@ body {
 }
 
 section {
-  @apply flex flex-row justify-center py-8 px-4 sm:px-2 md:px-12 lg:px-24;
+  @apply flex flex-row justify-center py-8 px-4 sm:px-4 md:px-24 lg:px-40;
   width: auto;
   min-height: 100vh;
   max-width: 1920px;
+}
+
+.lead {
+  @apply text-lg w-full md:w-3/5;
+  line-height: 150%;
+  font-weight: 400;
 }
 
 .inner-container {
@@ -54,7 +60,6 @@ h2 {
 }
 
 p {
-  @apply text-lg;
   font-family: "Roboto", sans-serif;
 }
 
