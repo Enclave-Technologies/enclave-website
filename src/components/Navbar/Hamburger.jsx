@@ -3,7 +3,7 @@ import React from "react";
 const Hamburger = ({ toggleMenu, isOpen }) => {
   return (
     <button
-      className="block md:hidden focus:outline-none"
+      className="block xl:hidden focus:outline-none px-2 md:px-4"
       onClick={toggleMenu}
       aria-label="Toggle navigation menu"
     >

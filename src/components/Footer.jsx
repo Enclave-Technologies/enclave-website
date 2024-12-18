@@ -7,9 +7,11 @@ const { default: Image } = require("next/image");
 export const Footer = () => {
   return (
     <footer className="footer pb-16 !overflow-visible !z-50 relative">
-      <Link className="big-button" href="/contact">
-        Get In Touch
-      </Link>
+      <div className="flex w-full px-4 sm:px-4 md:px-24 lg:px-32 xl:px-40">
+        <Link className="big-button !rounded-full text-center" href="/contact">
+          Get In Touch
+        </Link>
+      </div>
       <div className="max-w-full flex flex-row overflow-x-hidden">
         <span className="footer-scroll-title pr-48">ENCLAVE</span>
         <span className="footer-scroll-title pr-48">ENCLAVE</span>

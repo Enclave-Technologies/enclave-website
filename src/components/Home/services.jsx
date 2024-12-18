@@ -59,7 +59,7 @@ export const Services = ({ id }) => {
             />
           ))}
         </div>
-        <div className="flex flex-row items-stretch gap-2 w-full">
+        <div className="flex flex-col md:flex-row items-stretch gap-2 w-full">
           <Button variant="primary" title="Get Started" link="/contact" />
           <Button variant="secondary" title="Learn More" link="#works" />
         </div>

@@ -31,7 +31,7 @@ body {
 }
 
 section {
-  @apply flex flex-row justify-center py-8 px-4 sm:px-4 md:px-24 lg:px-40;
+  @apply flex flex-row justify-center py-8 px-4 sm:px-4 md:px-24 lg:px-32 xl:px-40;
   width: auto;
   min-height: 100vh;
   max-width: 1920px;
@@ -241,11 +241,12 @@ button {
 }
 
 .gradient {
+  z-index: -1;
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100vw;
-  aspect-ratio: 1569/1440;
+  aspect-ratio: 1400/1440;
   background: url("/gradient.svg") bottom no-repeat;
   background-size: cover;
   background-blend-mode: lighten;

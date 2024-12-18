@@ -68,7 +68,6 @@ export const Navbar = () => {
             <Hamburger
               isOpen={isOpen}
               toggleMenu={() => {
-                console.log("OPen");
                 setIsOpen(!isOpen);
               }}
             />
@@ -103,7 +102,7 @@ export const Navbar = () => {
         {/* Contact Us Button */}
       </div>
       <div
-        className={`w-full shadow-md bg-white text-black transition-all duration-300 ease-in-out ${
+        className={`w-full text-black transition-all duration-300 ease-in-out ${
           isOpen ? "max-h-screen" : "max-h-0"
         } overflow-hidden`}
       >

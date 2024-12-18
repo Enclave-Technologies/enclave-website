@@ -16,7 +16,7 @@
   z-index: 9999;
   height: auto;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.125);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
 }
 
 .nav-inner-container {
@@ -45,7 +45,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 24px;
+  min-width: 24px;
 }
 
 .hamburger span {
@@ -90,7 +90,7 @@
   opacity: 0;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 1024px) {
   .nav-inner-container {
     @apply w-full py-0 px-4 text-black z-50 flex flex-row items-center justify-between rounded-full;
   }
