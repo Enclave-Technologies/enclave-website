@@ -93,7 +93,7 @@ export const Navbar = () => {
           </div>
           <div className="min-w-40">
             <Button
-              variant="primary"
+              variant="primary navigation"
               link="/contact"
               title="Get In Touch"
               onClick={() => {}}

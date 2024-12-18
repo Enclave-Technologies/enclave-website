@@ -140,7 +140,7 @@ export const Works = ({ id }) => {
             year={2022}
           />
         </div>
-        <div className="flex flex-row items-stretch gap-2">
+        <div className="flex flex-row items-stretch gap-2 w-full">
           <Button variant="primary" title="Get In Touch" link="/works" />
           <Button variant="secondary" title="Explore Portfolio" link="/works" />
         </div>

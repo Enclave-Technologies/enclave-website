@@ -38,7 +38,7 @@ const servicesList = [
 export const Services = ({ id }) => {
   return (
     <section id={id} className="bg-white">
-      <div className="inner-container flex flex-col items-center gap-12 overflow-hidden">
+      <div className="inner-container flex flex-col items-center gap-12">
         <div className="flex flex-col gap-4 items-start">
           <h2 className="text-center">Our Services</h2>
           <p className="lead">
@@ -59,7 +59,7 @@ export const Services = ({ id }) => {
             />
           ))}
         </div>
-        <div className="flex flex-row items-stretch gap-2">
+        <div className="flex flex-row items-stretch gap-2 w-full">
           <Button variant="primary" title="Get Started" link="/contact" />
           <Button variant="secondary" title="Learn More" link="#works" />
         </div>

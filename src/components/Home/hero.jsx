@@ -13,7 +13,7 @@ export const Hero = () => {
   return (
     <section id="home-hero" className="relative">
       <div className="inner-container flex-col gap-16 md:pt-32">
-        <div className="flex flex-col items-start gap-8 z-50 w-full">
+        <div className="flex flex-col items-start gap-12 z-50 w-full">
           <div className="flex flex-col items-start gap-4">
             <h1 className="hero-title text-left">
               We are a <span>design-focused software development studio </span>{" "}
