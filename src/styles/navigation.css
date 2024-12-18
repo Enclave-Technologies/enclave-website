@@ -20,7 +20,7 @@
 }
 
 .nav-inner-container {
-  @apply px-24 w-full flex flex-row justify-between text-black z-50;
+  @apply md:px-24 lg:px-32 xl:px-40 w-full flex flex-row justify-between text-black z-50;
   max-width: 1920px;
 }
 
