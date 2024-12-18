@@ -128,10 +128,9 @@ button {
 
 .service-tab {
   @apply bg-transparent w-auto p-2 transition-all duration-300 ease-in-out;
-  border: 1px solid #fb4e29;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: -2px 2px 2px rgb(255, 96, 62, 0.25);
+  box-shadow: 0px 2px 10px rgb(190, 183, 182, 0.5);
 }
 
 .service-tab > div {
@@ -182,7 +181,7 @@ button {
 }
 
 .service-tab:hover {
-  @apply bg-black transition-all duration-300 ease-in-out;
+  @apply transition-all duration-300 ease-in-out;
 }
 
 .service-arrow-black {
@@ -206,15 +205,14 @@ button {
 }
 
 .service-tab:hover .service-title {
-  @apply text-white transition-all duration-300 ease-in-out;
+  @apply transition-all duration-300 ease-in-out;
 }
 
 .service-tab:hover .service-number {
-  @apply text-white transition-all duration-300 ease-in-out;
+  @apply transition-all duration-300 ease-in-out;
 }
 
 .service-tab:hover .service-tag {
-  color: #fff;
   backdrop-filter: blur(33px);
   background-blend-mode: overlay;
 }

@@ -39,16 +39,14 @@ export const Services = ({ id }) => {
   return (
     <section id={id} className="bg-white">
       <div className="inner-container flex flex-col items-center gap-12 overflow-hidden">
-        <div className="flex flex-col items-center gap-4">
-          <div className="flex flex-col gap-6 items-center ">
-            <h2 className="text-center">Our Services</h2>
-            <p className="text-center w-full md:w-9/12">
-              We build solutions in a way that are sure to help your business
-              grow. At each stage of development, we take a data-driven approach
-              to design, development and marketing to make sure that our
-              solutions perform in the best way possible.
-            </p>
-          </div>
+        <div className="flex flex-col gap-4 items-start">
+          <h2 className="text-center">Our Services</h2>
+          <p className="lead">
+            We build solutions in a way that are sure to help your business
+            grow. At each stage of development, we take a data-driven approach
+            to design, development and marketing to make sure that our solutions
+            perform in the best way possible.
+          </p>
         </div>
         <div className="flex flex-col md:flex-row justify-center gap-8 w-full items-stretch">
           {servicesList.map((service, index) => (
@@ -84,9 +82,9 @@ const ServiceTab = ({ index, title, redirectURL, tags }) => {
               <div className="flex flex-col items-start gap-2 md:gap-2 z-20 max-w-full">
                 {tags &&
                   tags.map((tag, index) => (
-                    <h3 key={index} className="service-tag">
+                    <p key={index} className="service-tag">
                       {index + 1}. {tag}
-                    </h3>
+                    </p>
                   ))}
               </div>
               <div className="service-image-container absolute bottom-0 right-0 z-10">

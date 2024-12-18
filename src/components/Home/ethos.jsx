@@ -9,9 +9,9 @@ const Ethos = ({ id }) => {
     <section id={id}>
       <div className="inner-container flex flex-col gap-32 items-center">
         <div className="w-full flex flex-col items-start justify-start gap-12">
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-2">
             <h3 className="text-sm">Our Development Process</h3>
-            <div className="flex flex-col gap-6 items-start">
+            <div className="flex flex-col gap-4 items-start">
               <h2 className="text-center">The 3 Magic Steps</h2>
               <p className="lead">
                 We employ a 3-step process led by strategy and design thinking
