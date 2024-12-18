@@ -12,7 +12,7 @@
 
 .nav-container {
   @apply max-w-full w-full h-auto py-2 fixed top-0 flex flex-col justify-center items-center z-10 bg-white/80;
-  border-radius: 0px 0px 20px 20px;
+  border-radius: 0px 0px 48px 48px;
   z-index: 9999;
   height: auto;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.125);
