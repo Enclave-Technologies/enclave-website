@@ -101,14 +101,14 @@ button {
 }
 
 .button {
-  @apply bg-transparent text-black font-normal py-3 px-6 rounded-full w-fit transition-all duration-150 ease-in-out;
+  @apply bg-transparent text-black font-normal py-3 px-6 rounded-xl w-fit transition-all duration-150 ease-in-out;
   box-shadow: 2px 2px 2px 2px #00000077;
   border: 1px solid #000;
   cursor: pointer;
 }
 
 .button:hover {
-  @apply text-black font-normal py-3 px-6 rounded-full w-fit transition-all duration-150 ease-in-out;
+  @apply text-black font-normal py-3 px-6 rounded-xl w-fit transition-all duration-150 ease-in-out;
   transform: translate(0.5px, 0.5px);
   box-shadow: 1px 1px 1px 1px #00000077;
   /* animation: fill 0.5s ease-in-out forwards; */
@@ -233,7 +233,7 @@ button {
 }
 
 .big-button {
-  @apply font-normal py-4 px-16 rounded-full w-fit uppercase transition-all duration-150 ease-in-out;
+  @apply font-normal py-4 px-16 rounded-xl w-fit uppercase transition-all duration-150 ease-in-out;
   font-size: 120px;
   border: 4px solid #000;
   cursor: pointer;
@@ -286,7 +286,7 @@ li a:hover {
 }
 
 .primary {
-  @apply text-white font-normal py-3 px-6 rounded-full w-fit transition-all duration-150 ease-in-out;
+  @apply text-white font-normal py-3 px-6 rounded-xl w-fit transition-all duration-150 ease-in-out;
   /* width: 80px; */
   background-color: var(--primary-color);
   border: 1px solid var(--primary-color);
@@ -296,13 +296,13 @@ li a:hover {
 }
 
 .secondary {
-  @apply bg-transparent text-black font-normal py-3 px-6 rounded-full w-fit transition-all duration-150 ease-in-out;
+  @apply bg-transparent text-black font-normal py-3 px-6 rounded-xl w-fit transition-all duration-150 ease-in-out;
   border: 1px solid #000;
   cursor: pointer;
 }
 
 .primary:hover {
-  @apply bg-[#FB7429] font-normal rounded-full w-fit transition-all duration-150 ease-in-out;
+  @apply bg-[#FB7429] font-normal rounded-xl w-fit transition-all duration-150 ease-in-out;
   /* width: 80px; */
   color: #fff !important;
   cursor: pointer;
