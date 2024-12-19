@@ -54,7 +54,7 @@ export default function Home() {
       <Ethos id={"ethos"} />
       {/* <AboutUs id="about" /> */}
       <CTA />
-      {/* <Quote id="about" /> */}
+      <Quote id="about" />
       <Footer />
       <div className="gradient" />
       {/* <section>
