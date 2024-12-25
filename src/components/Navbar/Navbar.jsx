@@ -131,7 +131,7 @@ export const Navbar = () => {
           </div>
         </ul>
       </div>
-      <DropdownMenu showDropdown={showDropdown} />
+      {/* <DropdownMenu showDropdown={showDropdown} /> */}
     </nav>
   );
 };
@@ -155,11 +155,25 @@ const ServicesDropdown = () => {
       services: [
         {
           title: "Web Design",
-          icon: <img src="/icons/web-design.png" height={20} width={20} />,
+          icon: (
+            <img
+              src="/icons/web-design.png"
+              height={20}
+              width={20}
+              alt="icon-web-design"
+            />
+          ),
         },
         {
           title: "Mobile Design",
-          icon: <img src="/icons/mobile-design.png" height={20} width={20} />,
+          icon: (
+            <img
+              src="/icons/mobile-design.png"
+              height={20}
+              width={20}
+              alt="icon-web-design"
+            />
+          ),
         },
       ],
     },
@@ -169,7 +183,12 @@ const ServicesDropdown = () => {
         {
           title: "Website Development",
           icon: (
-            <img src="/icons/website-development.png" height={20} width={20} />
+            <img
+              src="/icons/website-development.png"
+              height={20}
+              width={20}
+              alt="icon-web-development"
+            />
           ),
         },
         {
@@ -179,19 +198,30 @@ const ServicesDropdown = () => {
               src="/icons/e-commerce-development.png"
               height={20}
               width={20}
+              alt="icon-web-development"
             />
           ),
         },
         {
           title: "Web App Development",
           icon: (
-            <img src="/icons/web-applications.png" height={20} width={20} />
+            <img
+              src="/icons/web-applications.png"
+              height={20}
+              width={20}
+              alt="icon-webapp-development"
+            />
           ),
         },
         {
           title: "Mobile App Development",
           icon: (
-            <img src="/icons/mobile-applications.png" height={20} width={20} />
+            <img
+              src="/icons/mobile-applications.png"
+              height={20}
+              width={20}
+              alt="icon-webapp-development"
+            />
           ),
         },
       ],
@@ -202,13 +232,23 @@ const ServicesDropdown = () => {
         {
           title: "SEO",
           icon: (
-            <img src="/icons/workflow-automation.png" height={20} width={20} />
+            <img
+              src="/icons/workflow-automation.png"
+              height={20}
+              width={20}
+              alt="icon-google-ads"
+            />
           ),
         },
         {
           title: "Google Ads",
           icon: (
-            <img src="/icons/marketing-automation.png" height={20} width={20} />
+            <img
+              src="/icons/marketing-automation.png"
+              height={20}
+              width={20}
+              alt="icon-google-ads"
+            />
           ),
         },
         {
