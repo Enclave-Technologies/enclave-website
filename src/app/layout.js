@@ -27,7 +27,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" style={{ scrollBehavior: "smooth" }}>
-      <Head>
+      <head>
         <title>{metadata.title}</title>
         {/* Basic Meta Tags */}
         <title>{metadata.title}</title>
@@ -54,13 +54,13 @@ export default function RootLayout({ children }) {
         <meta name="twitter:image" content={metadata.image} />
 
         {/* Start --- Ahrefs Analytics --- Start */}
-        <Script
+        <script
           src="https://analytics.ahrefs.com/analytics.js"
           data-key="8Th8f99w5qmawU/EcE+w+Q"
           defer="true"
         />
         {/* End --- Ahrefs Analytics --- End */}
-      </Head>
+      </head>
       <body className={onest.className}>
         <Navbar />
         {children}
