@@ -3,6 +3,7 @@ import "./globals.css";
 import Head from "next/head";
 import { Navbar } from "../components/Navbar/Navbar";
 import { url } from "inspector";
+import Script from "next/script";
 
 const onest = Onest({ subsets: ["latin"] });
 
@@ -51,13 +52,13 @@ export default function RootLayout({ children }) {
         <meta name="twitter:title" content={metadata.title} />
         <meta name="twitter:description" content={metadata.description} />
         <meta name="twitter:image" content={metadata.image} />
-        <link rel="canonical" href="www.enclave.live" />
+
         {/* Start --- Ahrefs Analytics --- Start */}
-        <script
+        <Script
           src="https://analytics.ahrefs.com/analytics.js"
           data-key="8Th8f99w5qmawU/EcE+w+Q"
           defer="true"
-        ></script>
+        />
         {/* End --- Ahrefs Analytics --- End */}
       </Head>
       <body className={onest.className}>
