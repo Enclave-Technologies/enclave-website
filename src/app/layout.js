@@ -64,6 +64,13 @@ export default function RootLayout({ children }) {
         <meta property="og:locale" name="og:locale" content="en_GB" />
         <meta property="author" name="author" content="Enclave Studios" />
         <link rel="canonical" href="www.enclave.live" />
+        {/* Start --- Ahrefs Analytics --- Start */}
+        <script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="8Th8f99w5qmawU/EcE+w+Q"
+          defer="true"
+        ></script>
+        {/* End --- Ahrefs Analytics --- End */}
       </Head>
       <body className={onest.className}>
         <Navbar />
