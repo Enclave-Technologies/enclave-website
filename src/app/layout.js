@@ -2,16 +2,25 @@ import { Inter, Onest } from "next/font/google";
 import "./globals.css";
 import Head from "next/head";
 import { Navbar } from "../components/Navbar/Navbar";
+import { url } from "inspector";
 
 const onest = Onest({ subsets: ["latin"] });
 
 export const metadata = {
   title: {
     template: "%s | Enclave",
-    default: "Enclave Studios: Launch & Grow Your Digital Presence",
+    default: "Enclave Studios: Growing Your Digital Presence",
   },
   description:
     "We are a technology studio based in Hong Kong. We help businesses launch and grow their digital presence with website development, search engine opimisation (SEO) and digital marketing services.",
+  keywords:
+    "tech, design, web development, website design, website development, app development, digital marketing, SEO, growth marketing",
+  favicon: "/favicon.ico",
+  url: "https://www.enclave.live",
+  type: "website",
+  image: "/enclave-logo-filled.png",
+  site_name: "Enclave Studios",
+  creator: "@enclave_studios_",
 };
 
 export default function RootLayout({ children }) {
@@ -19,50 +28,29 @@ export default function RootLayout({ children }) {
     <html lang="en" style={{ scrollBehavior: "smooth" }}>
       <Head>
         <title>{metadata.title}</title>
-        <meta
-          name="keywords"
-          content="Website, Design, Development, SEO, Digital, Marketing, Search, Engine, Optimisation"
-        />
-        <meta
-          property="description"
-          name="description"
-          content={metadata.description}
-        />
-        <meta property="og:type" name="og:type" content="website" />
-        <meta property="og:url" name="og:url" content="https://enclave.live" />
-        <meta property="og:title" name="og:title" content={metadata.title} />
-        <meta
-          property="og:description"
-          name="og:description"
-          content={metadata.description}
-        />
-        <meta
-          property="og:image"
-          name="og:image"
-          content="/enclave-logo-filled.png"
-        />
-        <meta
-          property="twitter:card"
-          name="twitter:card"
-          content="/enclave-logo-filled.png"
-        />
-        <meta
-          property="twitter:title"
-          name="twitter:title"
-          content="Enclave Studios: Launch & Grow Your Digital Presence"
-        />
-        <meta
-          property="twitter:description"
-          name="twitter:description"
-          content={metadata.description}
-        />
-        <meta
-          property="og:site_name"
-          name="og:site_name"
-          content="Enclave Studios"
-        />
-        <meta property="og:locale" name="og:locale" content="en_GB" />
-        <meta property="author" name="author" content="Enclave Studios" />
+        {/* Basic Meta Tags */}
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        <meta name="keywords" content={metadata.keywords} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href={metadata.favicon} />
+        <link rel="canonical" href={metadata.url} />
+
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content={metadata.title} />
+        <meta property="og:description" content={metadata.description} />
+        <meta property="og:url" content={metadata.url} />
+        <meta property="og:type" content={metadata.type} />
+        <meta property="og:image" content={metadata.image} />
+        <meta property="og:site_name" content={metadata.site_name} />
+
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content={metadata.creator} />
+        <meta name="twitter:creator" content={metadata.creator} />
+        <meta name="twitter:title" content={metadata.title} />
+        <meta name="twitter:description" content={metadata.description} />
+        <meta name="twitter:image" content={metadata.image} />
         <link rel="canonical" href="www.enclave.live" />
         {/* Start --- Ahrefs Analytics --- Start */}
         <script
