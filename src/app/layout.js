@@ -60,6 +60,27 @@ export default function RootLayout({ children }) {
           defer="true"
         />
         {/* End --- Ahrefs Analytics --- End */}
+
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-11516049939"
+        ></script>
+        <script>
+          {(() => {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+              dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+            gtag("config", "AW-11516049939");
+          })()}
+        </script>
+        {/* Event snippet for Page view conversion page  */}
+        <script>
+          {gtag("event", "conversion", {
+            send_to: "AW-11516049939/WWtmCKeh4vsZEJP0o_Mq",
+          })}
+        </script>
       </head>
       <body className={onest.className}>
         <Navbar />
