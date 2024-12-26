@@ -1,9 +1,6 @@
-import { Inter, Onest } from "next/font/google";
+import { Onest } from "next/font/google";
 import "./globals.css";
-import Head from "next/head";
 import { Navbar } from "../components/Navbar/Navbar";
-import { url } from "inspector";
-import Script from "next/script";
 
 const onest = Onest({ subsets: ["latin"] });
 
@@ -64,22 +61,30 @@ export default function RootLayout({ children }) {
           async
           src="https://www.googletagmanager.com/gtag/js?id=AW-11516049939"
         ></script>
-        <script>
-          {(() => {
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag() {
               dataLayer.push(arguments);
             }
             gtag("js", new Date());
             gtag("config", "AW-11516049939");
-          })()}
-        </script>
+          `,
+          }}
+        />
+
         {/* Event snippet for Page view conversion page  */}
-        <script>
-          {gtag("event", "conversion", {
-            send_to: "AW-11516049939/WWtmCKeh4vsZEJP0o_Mq",
-          })}
-        </script>
+        <script>{``}</script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            gtag("event", "conversion", {
+              send_to: "AW-11516049939/WWtmCKeh4vsZEJP0o_Mq",
+            })
+          `,
+          }}
+        />
       </head>
       <body className={onest.className}>
         <Navbar />
