@@ -82,7 +82,7 @@ const Step = ({ id, imageURL, title, description }) => {
         unoptimized
       />
       <div className="flex flex-col gap-4">
-        <h6 className=" text-xl">{title}</h6>
+        <h4 className=" text-xl">{title}</h4>
         <p className="">{description}</p>
       </div>
     </div>

@@ -10,7 +10,7 @@ const onest = Onest({ subsets: ["latin"] });
 export const metadata = {
   title: {
     template: "%s | Enclave",
-    default: "Enclave Studios: Growing Your Digital Presence",
+    default: "Enclave Studios: Web Design & Development Studio",
   },
   description:
     "We are a technology studio based in Hong Kong. We help businesses launch and grow their digital presence with website development, search engine opimisation (SEO) and digital marketing services.",
@@ -28,9 +28,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" style={{ scrollBehavior: "smooth" }}>
       <head>
-        <title>{metadata.title}</title>
         {/* Basic Meta Tags */}
-        <title>{metadata.title}</title>
+        <title>{metadata.title.default}</title>
         <meta name="description" content={metadata.description} />
         <meta name="keywords" content={metadata.keywords} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
