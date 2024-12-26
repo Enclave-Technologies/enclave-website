@@ -10,7 +10,7 @@ export const metadata = {
     default: "Enclave Studios: Web Design & Development Studio",
   },
   description:
-    "We are a technology studio based in Hong Kong. We help businesses launch and grow their digital presence with website development, search engine opimisation (SEO) and digital marketing services.",
+    "Hong Kong's notable technology studio. Enclave helps businesses launch and grow their digital presence with website development, search engine opimisation (SEO) and digital marketing services.",
   keywords:
     "tech, design, web development, website design, website development, app development, digital marketing, SEO, growth marketing",
   favicon: "/favicon.ico",
