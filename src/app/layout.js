@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
         <link rel="canonical" href={metadata.url} />
 
         {/* Open Graph Meta Tags */}
-        <meta property="og:title" content={metadata.title} />
+        <meta property="og:title" content={metadata.title.default} />
         <meta property="og:description" content={metadata.description} />
         <meta property="og:url" content={metadata.url} />
         <meta property="og:type" content={metadata.type} />
@@ -45,7 +45,7 @@ export default function RootLayout({ children }) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content={metadata.creator} />
         <meta name="twitter:creator" content={metadata.creator} />
-        <meta name="twitter:title" content={metadata.title} />
+        <meta name="twitter:title" content={metadata.title.default} />
         <meta name="twitter:description" content={metadata.description} />
         <meta name="twitter:image" content={metadata.image} />
 
