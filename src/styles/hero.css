@@ -9,7 +9,7 @@
 }
 
 .hero-title > span {
-  /* color: var(--primary-color); */
+  color: var(--primary-color);
   font-weight: 500;
 }
 
@@ -23,7 +23,7 @@
   @apply flex flex-col py-8 px-4 sm:px-4 md:px-24 lg:px-32 xl:px-40;
   min-height: 100vh;
   width: 100vw;
-  /* background: linear-gradient(to bottom, #fff2ed, #fdfdfd); */
+  background: linear-gradient(to bottom, #fff2ed, #fdfdfd);
 }
 
 .hero-subheading {
