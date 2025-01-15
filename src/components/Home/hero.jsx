@@ -15,9 +15,10 @@ export const Hero = () => {
       <div className="inner-container flex-col md:flex-row gap-16 md:pt-32">
         <div className="flex flex-col items-start gap-12 z-50">
           <div className="flex flex-col items-start gap-4">
-            <h1 className="hero-title text-left">
-              We are a <span>design-focused software development studio </span>{" "}
-              helping businesses launch and grow their digital presence.{" "}
+            <h1 className="hero-title text-left flex flex-col">
+              <span>Devel</span>
+              <span>Development Studio</span>{" "}
+              {/* helping businesses launch and grow their digital presence.{" "} */}
             </h1>
           </div>
           <div className="flex flex-row items-center justify-start gap-4">

@@ -8,10 +8,10 @@ const onest = Onest({ subsets: ["latin"] });
 export const metadata = {
   title: {
     template: "%s | Enclave",
-    default: "Enclave Studios: Web Design & Development Studio",
+    default: "App Development Studio | Hong Kong",
   },
   description:
-    "Hong Kong's notable technology studio. Enclave helps businesses launch and grow their digital presence with website development, search engine opimisation (SEO) and digital marketing services.",
+    "Enclave is a fast-growing web & mobile applications development studio headquartered in Hong Kong. We specialize at developing scalable, high-quality web & mobile applications quickly without breaking the bank.",
   keywords:
     "tech, design, web development, website design, website development, app development, digital marketing, SEO, growth marketing",
   favicon: "/favicon.ico",
@@ -90,14 +90,14 @@ export default function RootLayout({ children }) {
       <body className={`${onest.className} relative`}>
         <Navbar />
         {children}
-        <div
+        {/* <div
           className=".whatsapp-outer-container"
           style={{ backdropFilter: "blur(12px)" }}
         >
           <div clas>
             <MdWhatsapp size={36} />
           </div>
-        </div>
+        </div> */}
       </body>
     </html>
   );
