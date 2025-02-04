@@ -95,6 +95,15 @@ export const Works = ({ id }) => {
         <div className="w-full pt-0 lg:pt-20 flex flex-col justify-center gap-40">
           {/* <span className="text-[360px]">WORKS</span> */}
           <ProjectTile
+            id={"atelier-shan"}
+            title="Atelier Shan"
+            imageURL={"/project-images/atelier-shan.png"}
+            tags={["UI/UX Design", "Website Development", "SEO Optimization"]}
+            index={1}
+            url="https://atelier-shan.webflow.io/"
+            year={"2024-2025"}
+          />
+          <ProjectTile
             id={"project-1"}
             title="Athena Social"
             imageURL={"/project-images/athena-social.png"}

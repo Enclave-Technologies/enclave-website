@@ -14,6 +14,7 @@ export const Partners = ({ id }) => {
                 "nbhd",
                 "mvmt",
                 "athena",
+                "atelier-shan",
                 "athena-2",
                 "fca",
                 "hollo",

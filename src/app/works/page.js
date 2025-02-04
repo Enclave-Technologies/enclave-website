@@ -18,6 +18,16 @@ const services = [
 
 const workItems = [
   {
+    label: "Atelier Shan",
+    image: "/project-images/atelier-shan.png",
+    link: "https://atelier-shan.webflow.io/",
+  },
+  {
+    label: "Xccelerate",
+    image: "/work-items/work-item-4.png",
+    link: "https://xccelerate.co",
+  },
+  {
     label: "ATHENA.IO",
     image: "/work-items/work-item-1.png",
     link: "https://athenasocial.webflow.io/",
@@ -31,11 +41,6 @@ const workItems = [
     label: "MOVEMENT",
     image: "/work-items/work-item-3.png",
     link: "https://movementfitnesshk.com",
-  },
-  {
-    label: "Xccelerate",
-    image: "/work-items/work-item-4.png",
-    link: "https://xccelerate.co",
   },
 ];
 
@@ -87,7 +92,7 @@ export default function Works() {
         <div
           id="works"
           className="z-40 w-full flex flex-col "
-          style={{ backgroundColor: "#0B0B0B" }}
+          // style={{ backgroundColor: "#0B0B0B" }}
         >
           {workItems.map((item, index) => (
             <WorkItem
@@ -100,7 +105,7 @@ export default function Works() {
         </div>
       </div>
       <div id="works-cursor-button">
-        <p>OPEN PROJECT</p>
+        <p>VISIT PROJECT</p>
       </div>
       <Footer />
     </main>
@@ -136,7 +141,7 @@ const WorkItem = ({ index, link, label, image }) => {
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
     >
-      <div className="flex items-center justify-center w-full min-h-screen backdrop-blur-3xl">
+      <div className="flex items-center justify-center w-full min-h-screen bg-white">
         <h1
           className="text-center uppercase absolute text-white z-50 mix-blend-exclusion font-bold text-6xl md:text-9xl"
           style={{ color: "#FF8D8D" }}
