@@ -5,7 +5,7 @@ import { contactLink } from "../../utils/links";
 
 export const CTA = () => {
   return (
-    <section className="max-w-none relative overflow-hidden !min-h-[30vh] !py-8 bg-[#FFF2ED]">
+    <section className="max-w-none w-screen relative overflow-hidden !min-h-[30vh] !py-8 bg-[#FFF2ED]">
       <div className="absolute left-0 bottom-0 z-0 w-40 sm:w-80 xl:w-[480px] flex flex-row justify-start">
         <Image
           style={{ transform: "scaleX(-1)" }}

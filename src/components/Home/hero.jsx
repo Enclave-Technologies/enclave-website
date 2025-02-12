@@ -11,22 +11,32 @@ const subheading =
 
 export const Hero = () => {
   return (
-    <section id="home-hero" className="relative">
-      <div className="inner-container flex-col md:flex-row gap-16 md:pt-32">
-        <div className="flex flex-col items-start gap-12 z-50">
-          <div className="flex flex-col items-start gap-4">
-            <h1 className="hero-title text-left flex flex-col">
-              <span>Web design & development studio</span> helping businesses
-              launch and grow their digital presence.{" "}
-              {/* helping businesses launch and grow their digital presence.{" "} */}
-            </h1>
-          </div>
-          <div className="flex flex-row items-center justify-start gap-4">
-            <Button variant="primary" title={"Get In Touch"} link="/contact" />
-            <Button variant="secondary" title={"Learn More"} link="#services" />
+    <div id="home-hero" className="relative items-center">
+      <section id="home-hero-section" className="relative">
+        <div className="inner-container flex-col md:flex-row gap-16 md:pt-32">
+          <div className="flex flex-col items-start gap-12 z-50">
+            <div className="flex flex-col items-start gap-4">
+              <h1 className="hero-title text-left flex flex-col">
+                <span>Data-Driven Growth Studio</span> helping businesses launch
+                and grow their digital presence.{" "}
+                {/* helping businesses launch and grow their digital presence.{" "} */}
+              </h1>
+            </div>
+            <div className="flex flex-row items-center justify-start gap-4">
+              <Button
+                variant="primary"
+                title={"Get In Touch"}
+                link="/contact"
+              />
+              <Button
+                variant="secondary"
+                title={"Learn More"}
+                link="#services"
+              />
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
