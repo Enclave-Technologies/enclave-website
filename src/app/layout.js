@@ -6,16 +6,12 @@ import { MdWhatsapp } from "react-icons/md";
 const onest = Onest({ subsets: ["latin"] });
 
 export const metadata = {
-  title: {
-    template: "%s | Enclave",
-    default: "App Development Studio | Hong Kong",
-  },
+  title: "Data-Driven Growth Studio | Hong Kong",
   description:
-    "Enclave is a fast-growing web & mobile applications development studio headquartered in Hong Kong. We specialize at developing scalable, high-quality web & mobile applications quickly without breaking the bank.",
-  keywords:
-    "tech, design, web development, website design, website development, app development, digital marketing, SEO, growth marketing",
+    "We help businesses generate more leads and drive measurable growth by leveraging data-driven growth solutions tailored to their unique needs.",
+  keywords: "web design, website development, seo, digital marketing",
   favicon: "/favicon.ico",
-  url: "https://www.enclave.live",
+  url: "https://enclave.live",
   type: "website",
   site_name: "Enclave Studios",
   creator: "@enclave_studios_",
@@ -27,7 +23,8 @@ export default function RootLayout({ children }) {
     <html lang="en" style={{ scrollBehavior: "smooth" }}>
       <head>
         {/* Basic Meta Tags */}
-        <title>{metadata.title.default}</title>
+        <title>{metadata.title}</title>
+        <meta name="title" content={metadata.title} />
         <meta name="description" content={metadata.description} />
         <meta name="keywords" content={metadata.keywords} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -35,7 +32,7 @@ export default function RootLayout({ children }) {
         <link rel="canonical" href={metadata.url} />
 
         {/* Open Graph Meta Tags */}
-        <meta property="og:title" content={metadata.title.default} />
+        <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />
         <meta property="og:url" content={metadata.url} />
         <meta property="og:type" content={metadata.type} />
@@ -46,7 +43,7 @@ export default function RootLayout({ children }) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content={metadata.creator} />
         <meta name="twitter:creator" content={metadata.creator} />
-        <meta name="twitter:title" content={metadata.title.default} />
+        <meta name="twitter:title" content={metadata.title} />
         <meta name="twitter:description" content={metadata.description} />
         <meta name="twitter:image" content={metadata.og_image} />
 
