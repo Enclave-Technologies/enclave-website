@@ -49,9 +49,10 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between text-black relative">
       <div className="cursor" />
-      {/* <Hero /> */}
       <NewHero />
-      <Services id="services" />
+      <div className="services-section">
+        <Services id="services" />
+      </div>
       <Works id="works" />
       {/* <Partners id="partners" /> */}
       <Ethos id={"ethos"} />

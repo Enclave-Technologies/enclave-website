@@ -1,13 +1,18 @@
 "use client";
-import Image from "next/image";
 import { Navbarr } from "../Navbar/Navbarr";
-import Link from "next/link";
 import { Button } from "../Button";
 import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const NewHero = () => {
   const scrollTextRef = useRef(null);
+  const heroRef = useRef(null);
+  const contentRef = useRef(null);
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   useEffect(() => {
     const scrollText = scrollTextRef.current;
@@ -15,35 +20,82 @@ const NewHero = () => {
       const textWidth = scrollText.offsetWidth;
       scrollText.style.setProperty("--text-width", `${textWidth}px`);
     }
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".services-section",
+        start: "top bottom",
+        end: "top center",
+        scrub: 0.5,
+        pin: false,
+        anticipatePin: 1,
+        onUpdate: (self) => {
+          setIsCollapsed(self.progress > 0.5);
+        },
+      },
+    });
+
+    // Animate the hero section
+    tl.to(contentRef.current, {
+      opacity: 0,
+      y: -30,
+      duration: 0.3,
+      ease: "power2.inOut",
+    }).to(
+      heroRef.current,
+      {
+        height: "80px",
+        duration: 0.7,
+        ease: "power3.inOut",
+      },
+      "-=0.2"
+    );
+
+    return () => {
+      if (tl.scrollTrigger) {
+        tl.scrollTrigger.kill();
+      }
+      tl.kill();
+    };
   }, []);
 
   return (
-    <section className="relative w-screen min-h-screen bg-[#FFF2ED] overflow-hidden p-0">
-      <div
-        className="absolute inset-0 z-10 rounded-[48px] mx-6 my-4"
-        style={{
-          background:
-            "linear-gradient(113.44deg, rgba(255, 255, 255, 0.4) 22.6%, rgba(255, 255, 255, 0.1) 92.47%)",
-          boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.2)",
-          backdropFilter: "blur(12px)",
-        }}
-      />
-
-      <div className="absolute inset-0 -top-[200px] flex items-center pointer-events-none select-none">
+    <div
+      ref={heroRef}
+      className={`relative top-0 left-0 w-full z-50 bg-[#FFF2ED] transition-colors duration-300 ${
+        isCollapsed ? "bg-white" : "bg-[#FFF2ED]"
+      }`}
+      style={{ height: "100vh", overflow: "hidden" }}
+    >
+      {!isCollapsed && (
         <div
-          ref={scrollTextRef}
-          className="whitespace-nowrap animate-scroll-text text-[160px] md:text-[200px] font-bold text-[#FB4E29] tracking-tight pl-4 md:pl-0"
-        >
-          • Design • Development • Analytics & Optimization&nbsp;
-        </div>
-      </div>
+          className="absolute inset-0 z-10 rounded-[48px] mx-6 my-4"
+          style={{
+            background:
+              "linear-gradient(113.44deg, rgba(255, 255, 255, 0.4) 22.6%, rgba(255, 255, 255, 0.1) 92.47%)",
+            boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.2)",
+            backdropFilter: "blur(12px)",
+          }}
+        />
+      )}
 
-      <div className="relative z-20 w-full h-screen flex flex-col">
+      {!isCollapsed && (
+        <div className="absolute inset-0 -top-[200px] flex items-center pointer-events-none select-none">
+          <div
+            ref={scrollTextRef}
+            className="whitespace-nowrap animate-scroll-text text-[160px] md:text-[200px] font-bold text-[#FB4E29] tracking-tight pl-4 md:pl-0"
+          >
+            • Design • Development • Analytics & Optimization&nbsp;
+          </div>
+        </div>
+      )}
+
+      <div className="relative z-20 w-full h-full flex flex-col">
         <div className="absolute top-3 left-0 right-0 bg-transparent">
-          <Navbarr />
+          <Navbarr isCollapsed={isCollapsed} />
         </div>
 
-        <div className="flex-1 flex items-end">
+        <div ref={contentRef} className="flex-1 flex items-end">
           <div className="px-6 md:px-16 lg:px-24 pb-24">
             <div className="max-w-[1920px]">
               <motion.div
@@ -64,7 +116,7 @@ const NewHero = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.2 }}
-                  className="text-base md:text-lg font-normal leading-relaxed max-w-[420px] px-4 md:pl-0"
+                  className="text-base md:text-lg font-normal leading-relaxed max-w-[420px] pl-4 md:pl-0"
                 >
                   We are a web design & development studio helping businesses
                   launch and grow their digital presence.
@@ -87,7 +139,7 @@ const NewHero = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
