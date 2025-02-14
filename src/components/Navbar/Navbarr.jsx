@@ -2,267 +2,99 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button } from "../Button";
-import { MdAddShoppingCart } from "react-icons/md";
-import { LuWorkflow } from "react-icons/lu";
-import { GiHamburger, GiHamburgerMenu, GiPublicSpeaker } from "react-icons/gi";
+import Image from "next/image";
 import Hamburger from "./Hamburger";
 
 const links = [
-  { title: "Home", link: "/" },
-  { title: "Our Services", link: "/#services" },
-  { title: "About Us", link: "/#ethos" },
-  { title: "Portfolio", link: "/works" },
+  { title: "WORK", link: "/#works" },
+  { title: "SERVICES", link: "/#services" },
+  { title: "ABOUT", link: "/#about" },
+  { title: "INSIGHTS", link: "/insights" },
 ];
 
-const { default: Image } = require("next/image");
-
 export const Navbarr = () => {
-  const [showDropdown, setShowDropdown] = useState("");
   const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    document.addEventListener("scroll", () => {
-      const headerHeight = document.querySelector("nav").offsetHeight / 3;
-      const nav = document.querySelector("nav");
-      const scrollY = window.scrollY;
-      if (scrollY > headerHeight) {
-        nav.classList.add("scrolled");
-      } else {
-        nav.classList.remove("scrolled");
-      }
-    });
-  });
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const toggleNavMenu = () => {
-    const linksContainer = document.getElementById(
-      "mobile-nav-links-container"
-    );
-    linksContainer.classList.toggle("!hidden");
-  };
-
   return (
-    <nav
-      className="nav-container"
-      onMouseLeave={() => {
-        setShowDropdown("");
-      }}
-    >
-      <div className="nav-inner-container">
-        <div className="min-w-40">
+    <nav className="w-full py-6 px-6 md:px-16 lg:px-24">
+      <div className="max-w-[1920px] mx-auto flex items-center justify-between">
+        <div className="w-[64px]">
           <Link href="/">
             <Image
               className="enclave-logo"
               src="/enclave-studios-logo.svg"
               width={64}
               height={64}
-              alt="Enclave_Logo_Light"
+              alt="Enclave Studios"
+              priority
             />
           </Link>
         </div>
-        <div className="mobile-nav">
-          <div className="hamburger">
-            <Hamburger
-              isOpen={isOpen}
-              toggleMenu={() => {
-                setIsOpen(!isOpen);
-              }}
-            />
-          </div>
+
+        <div className="hidden md:flex items-center space-x-12">
+          {links.map((link, index) => (
+            <Link
+              key={index}
+              href={link.link}
+              className="text-black hover:text-[#FB4E29] transition-colors duration-200 text-sm font-medium"
+            >
+              {link.title}
+            </Link>
+          ))}
         </div>
-        {/* NavLinks */}
-        <div className="desktop-nav">
-          <div className="w-auto flex flex-row items-center gap-8 justify-center flex-1">
+
+        <div className="hidden md:block w-[140px]">
+          <Button
+            variant="primary navigation"
+            title="CONTACT US"
+            link="/contact"
+            rounded={true}
+          />
+        </div>
+
+        <div className="md:hidden">
+          <Hamburger isOpen={isOpen} toggleMenu={() => setIsOpen(!isOpen)} />
+        </div>
+      </div>
+
+      <div
+        className={`md:hidden fixed inset-0 bg-white z-50 transition-transform duration-300 ease-in-out ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="h-full flex flex-col p-6">
+          <div className="flex justify-between items-center mb-12">
+            <Image
+              className="enclave-logo"
+              src="/enclave-studios-logo.svg"
+              width={64}
+              height={64}
+              alt="Enclave Studios"
+            />
+            <Hamburger isOpen={isOpen} toggleMenu={() => setIsOpen(!isOpen)} />
+          </div>
+          <div className="flex flex-col space-y-8">
             {links.map((link, index) => (
               <Link
-                href={link.link}
                 key={index}
-                className="hover:underline text-black"
-                onMouseEnter={() => {
-                  setShowDropdown(link.title);
-                }}
+                href={link.link}
+                onClick={() => setIsOpen(false)}
+                className="text-2xl font-medium"
               >
                 {link.title}
               </Link>
             ))}
-            {/* <Link href="#blog">Blog</Link> */}
-          </div>
-          <div className="min-w-40">
-            <Button
-              variant="primary navigation"
-              link="/contact"
-              title="CONTACT US"
-              onClick={() => {}}
-            />
+            <div className="w-full max-w-[200px]">
+              <Button
+                variant="primary navigation"
+                title="CONTACT US"
+                link="/contact"
+                rounded={true}
+              />
+            </div>
           </div>
         </div>
-        {/* Contact Us Button */}
       </div>
-      <div
-        className={`w-full text-black transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-screen" : "max-h-0"
-        } overflow-hidden`}
-      >
-        <ul className="flex flex-col items-center space-y-6 py-6">
-          {links.map((link, index) => (
-            <li key={index}>
-              <Link href={link.link}>
-                <p
-                  className=""
-                  onClick={() => {
-                    toggleMenu();
-                  }}
-                >
-                  {link.title}
-                </p>
-              </Link>
-            </li>
-          ))}
-          <div className="min-w-40">
-            <Button
-              variant="primary"
-              link="/contact"
-              title="CONTACT US"
-              onClick={() => {}}
-            />
-          </div>
-        </ul>
-      </div>
-      <DropdownMenu showDropdown={showDropdown} />
     </nav>
-  );
-};
-
-const DropdownMenu = ({ showDropdown }) => {
-  return (
-    <div
-      className={`dropdown-menu ${
-        showDropdown == "Our Services" ? "open" : "closed"
-      }`}
-    >
-      <ServicesDropdown />
-    </div>
-  );
-};
-
-const ServicesDropdown = () => {
-  const servicesList = [
-    {
-      group: "Design",
-      services: [
-        {
-          title: "Web Design",
-          icon: <img src="/icons/web-design.png" height={20} width={20} />,
-        },
-        {
-          title: "Mobile Design",
-          icon: <img src="/icons/mobile-design.png" height={20} width={20} />,
-        },
-      ],
-    },
-    {
-      group: "Development",
-      services: [
-        {
-          title: "Website Development",
-          icon: (
-            <img src="/icons/website-development.png" height={20} width={20} />
-          ),
-        },
-        {
-          title: "E-commerce Development",
-          icon: (
-            <img
-              src="/icons/e-commerce-development.png"
-              height={20}
-              width={20}
-            />
-          ),
-        },
-        {
-          title: "Web App Development",
-          icon: (
-            <img src="/icons/web-applications.png" height={20} width={20} />
-          ),
-        },
-        {
-          title: "Mobile App Development",
-          icon: (
-            <img src="/icons/mobile-applications.png" height={20} width={20} />
-          ),
-        },
-      ],
-    },
-    {
-      group: "Digital Marketing",
-      services: [
-        {
-          title: "SEO",
-          icon: (
-            <img src="/icons/workflow-automation.png" height={20} width={20} />
-          ),
-        },
-        {
-          title: "Google Ads",
-          icon: (
-            <img src="/icons/marketing-automation.png" height={20} width={20} />
-          ),
-        },
-        {
-          title: "Social Media Marketing",
-          icon: (
-            <img src="/icons/sales-automation.png" height={20} width={20} />
-          ),
-        },
-      ],
-    },
-    {
-      group: "Growth Solutions",
-      services: [
-        {
-          title: "Data Analytics",
-          icon: (
-            <img src="/icons/workflow-automation.png" height={20} width={20} />
-          ),
-        },
-        {
-          title: "Process Automation",
-          icon: (
-            <img src="/icons/marketing-automation.png" height={20} width={20} />
-          ),
-        },
-      ],
-    },
-  ];
-
-  return (
-    <div className="max-w-[1920px] pt-16 pb-16 flex flex-row w-full justify-center gap-20">
-      {servicesList.map((serviceGroup, index) => (
-        <div key={index} className="min-w-40 flex flex-col gap-6">
-          {/* Heading */}
-          <h4 className="text-[20px] font-semibold text-black">
-            {serviceGroup.group}
-          </h4>
-          <div className="flex flex-col gap-2">
-            {serviceGroup.services.map((service, index) => {
-              return (
-                <div key={index} className="flex flex-row gap-2 items-center">
-                  {service.icon}
-                  <a
-                    className="text-black hover:underline font-light !px-0"
-                    href="/"
-                  >
-                    {service.title}
-                  </a>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      ))}
-    </div>
   );
 };

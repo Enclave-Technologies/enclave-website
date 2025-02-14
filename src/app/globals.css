@@ -551,15 +551,4 @@ button:hover .button-text-container span {
   }
 }
 
-@keyframes scroll-text {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-50% - 0.5rem));
-  }
-}
 
-.animate-scroll-text {
-  animation: scroll-text 20s linear infinite;
-}

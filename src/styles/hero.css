@@ -38,7 +38,7 @@
   @apply flex flex-col p-0;
   min-height: 100vh;
   width: 100vw;
-  background: #FAFAFA;
+  background: #fafafa;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -65,4 +65,17 @@
   line-height: 120%;
   text-transform: none;
   text-align: center;
+}
+
+@keyframes scroll-text {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 0.5rem));
+  }
+}
+
+.animate-scroll-text {
+  animation: scroll-text 20s linear infinite;
 }
