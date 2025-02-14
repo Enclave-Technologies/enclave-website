@@ -12,7 +12,7 @@ export const Button = ({ variant = "primary", link, title }) => {
           <span className="button-text w-fit">{title}</span>
         </span>
         {variant == "primary" && (
-          <Image src={`/icons/arrow-1.svg`} width={16} height={16} />
+          <Image src={`/icons/arrow-1.svg`} width={16} height={16} alt="" />
         )}
       </button>
     </Link>

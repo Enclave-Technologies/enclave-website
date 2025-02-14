@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
         <meta name="twitter:card" content="/logo-dark.svg" />
       </Head>
       <body className={onest.className}>
-        <Navbar />
+        {/* <Navbar /> */}
         {children}
       </body>
     </html>

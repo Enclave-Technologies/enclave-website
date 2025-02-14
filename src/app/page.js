@@ -12,6 +12,8 @@ import { Partners } from "../components/Home/partners";
 import Ethos from "../components/Home/ethos";
 import AboutUs from "../components/Home/about-us";
 
+import NewHero from "../components/Home/new-hero";
+
 // export const metadata = {
 //   title: "Web Design & Development Studio",
 // };
@@ -47,7 +49,8 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between text-black relative">
       <div className="cursor" />
-      <Hero />
+      {/* <Hero /> */}
+      <NewHero />
       <Services id="services" />
       <Works id="works" />
       {/* <Partners id="partners" /> */}
