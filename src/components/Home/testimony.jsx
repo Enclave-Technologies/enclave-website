@@ -22,7 +22,7 @@ const TestimonialCard = ({ text, author, company, image }) => (
         />
       </div>
       <div>
-        <h4 className="font-medium text-xs">{author}</h4>
+        <h4 className="font-medium text-sm">{author}</h4>
         <p className="text-xs text-gray-500">{company}</p>
       </div>
     </div>
