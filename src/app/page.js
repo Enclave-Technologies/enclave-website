@@ -15,7 +15,7 @@ import NewHero from "../components/Home/new-hero";
 import Steps from "../components/Home/steps";
 import OurServices from "../components/Home/our-services";
 import Team from "../components/Home/team";
-
+import FAQs from "../components/Home/faq";
 // export const metadata = {
 //   title: "Web Design & Development Studio",
 // };
@@ -59,6 +59,7 @@ export default function Home() {
       <Steps id="steps" />
       <OurServices id="our-services" />
       <Team id="team" />
+      <FAQs id="faqs" />
 
       {/* <Works id="works" /> */}
       {/* <Partners id="partners" /> */}
