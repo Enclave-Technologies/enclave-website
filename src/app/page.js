@@ -12,7 +12,7 @@ import AboutUs from "../components/Home/about-us";
 
 import Testimony from "../components/Home/testimony";
 import NewHero from "../components/Home/new-hero";
-
+import Steps from "../components/Home/steps";
 // export const metadata = {
 //   title: "Web Design & Development Studio",
 // };
@@ -53,15 +53,16 @@ export default function Home() {
       <div className="services-section">
         <Testimony id="testimony" />
       </div>
+      <Steps id="steps" />
 
       {/* <Works id="works" /> */}
       {/* <Partners id="partners" /> */}
-      <Ethos id={"ethos"} />
+      {/* <Ethos id={"ethos"} /> */}
       {/* <AboutUs id="about" /> */}
-      <CTA />
+      {/* <CTA /> */}
       {/* <Quote id="about" /> */}
-      <Footer />
-      <div className="gradient" />
+      {/* <Footer /> */}
+      {/* <div className="gradient" /> */}
       {/* <section>
         <h3>Empowering Businesses & Individuals</h3>
         <h2>Strategy 2 Delivery</h2>
