@@ -13,6 +13,8 @@ import AboutUs from "../components/Home/about-us";
 import Testimony from "../components/Home/testimony";
 import NewHero from "../components/Home/new-hero";
 import Steps from "../components/Home/steps";
+import OurServices from "../components/Home/our-services";
+
 // export const metadata = {
 //   title: "Web Design & Development Studio",
 // };
@@ -54,6 +56,7 @@ export default function Home() {
         <Testimony id="testimony" />
       </div>
       <Steps id="steps" />
+      <OurServices id="our-services" />
 
       {/* <Works id="works" /> */}
       {/* <Partners id="partners" /> */}
