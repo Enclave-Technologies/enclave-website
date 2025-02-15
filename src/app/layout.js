@@ -1,7 +1,6 @@
 import { Inter, Onest } from "next/font/google";
 import "./globals.css";
 import Head from "next/head";
-import { Navbar } from "../components/Navbar/Navbar";
 
 const onest = Onest({ subsets: ["latin"] });
 
@@ -25,10 +24,7 @@ export default function RootLayout({ children }) {
         <meta property="og:image" content="/logo-dark.svg" />
         <meta name="twitter:card" content="/logo-dark.svg" />
       </Head>
-      <body className={onest.className}>
-        {/* <Navbar /> */}
-        {children}
-      </body>
+      <body className={onest.className}>{children}</body>
     </html>
   );
 }

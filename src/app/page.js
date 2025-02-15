@@ -1,7 +1,5 @@
 "use client";
-import Image from "next/image";
-import { Navbar } from "../components/Navbar/Navbar";
-import { Hero } from "../components/Home/hero";
+
 import { Works } from "../components/Home/works";
 import { Services } from "../components/Home/services";
 import { CTA } from "../components/Home/cta";
@@ -12,6 +10,7 @@ import { Partners } from "../components/Home/partners";
 import Ethos from "../components/Home/ethos";
 import AboutUs from "../components/Home/about-us";
 
+import Testimony from "../components/Home/testimony";
 import NewHero from "../components/Home/new-hero";
 
 // export const metadata = {
@@ -50,10 +49,12 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between text-black relative">
       <div className="cursor" />
       <NewHero />
+
       <div className="services-section">
-        <Services id="services" />
+        <Testimony id="testimony" />
       </div>
-      <Works id="works" />
+
+      {/* <Works id="works" /> */}
       {/* <Partners id="partners" /> */}
       <Ethos id={"ethos"} />
       {/* <AboutUs id="about" /> */}
