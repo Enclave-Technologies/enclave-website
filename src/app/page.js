@@ -14,6 +14,7 @@ import Testimony from "../components/Home/testimony";
 import NewHero from "../components/Home/new-hero";
 import Steps from "../components/Home/steps";
 import OurServices from "../components/Home/our-services";
+import Team from "../components/Home/team";
 
 // export const metadata = {
 //   title: "Web Design & Development Studio",
@@ -57,6 +58,7 @@ export default function Home() {
       </div>
       <Steps id="steps" />
       <OurServices id="our-services" />
+      <Team id="team" />
 
       {/* <Works id="works" /> */}
       {/* <Partners id="partners" /> */}
