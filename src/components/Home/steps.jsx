@@ -28,14 +28,14 @@ const StepCard = ({ step, index }) => (
 
 const BackgroundPattern = () => (
   <div className="absolute left-0 top-0 w-full md:w-2/5 h-full">
-    <div className="absolute inset-0 bg-[linear-gradient(106.81deg,#29FB4E_0%,#29D6FB_47.5%,#4E29FB_100%)] opacity-10" />
     <div
       className="absolute inset-0 opacity-20"
       style={{
         backgroundImage: `url('/steps-bg.png')`,
-        backgroundSize: "600px 600px",
+        backgroundSize: "600px 100%",
         backgroundPosition: "left top",
-        backgroundRepeat: "repeat",
+        backgroundRepeat: "no-repeat",
+        objectFit: "cover",
       }}
     />
   </div>

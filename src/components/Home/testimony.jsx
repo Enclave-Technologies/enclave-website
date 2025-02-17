@@ -85,22 +85,21 @@ const ScrollingRow = ({ items, direction = "right" }) => {
   );
 };
 
-const BackgroundTiles = () => (
-  <div className="absolute inset-0 z-0 grid grid-cols-8 gap-2 p-4 opacity-50">
-    {Array.from({ length: 64 }).map((_, index) => (
-      <div key={index} className="rounded-[8px] bg-red-100 backdrop-blur-sm" />
-    ))}
-  </div>
-);
-
 const Testimony = ({ id }) => {
   return (
     <section
       className="relative w-screen min-h-screen overflow-hidden mt-48 py-32 bg-white"
       id={id}
     >
-      <div className="absolute inset-0" />
-      <BackgroundTiles />
+      <div
+        className="absolute inset-0 opacity-50"
+        style={{
+          backgroundImage: "url('/testimonials-bg.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      />
 
       <div className="relative z-20 w-full flex flex-col items-center justify-center">
         <div className="max-w-2xl mx-auto text-center px-6 mb-20">
