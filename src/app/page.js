@@ -1,7 +1,5 @@
 "use client";
-import Image from "next/image";
-import { Navbar } from "../components/Navbar/Navbar";
-import { Hero } from "../components/Home/hero";
+
 import { Works } from "../components/Home/works";
 import { Services } from "../components/Home/services";
 import { CTA } from "../components/Home/cta";
@@ -12,6 +10,12 @@ import { Partners } from "../components/Home/partners";
 import Ethos from "../components/Home/ethos";
 import AboutUs from "../components/Home/about-us";
 
+import Testimony from "../components/Home/testimony";
+import NewHero from "../components/Home/new-hero";
+import Steps from "../components/Home/steps";
+import OurServices from "../components/Home/our-services";
+import Team from "../components/Home/team";
+import FAQs from "../components/Home/faq";
 // export const metadata = {
 //   title: "Web Design & Development Studio",
 // };
@@ -47,16 +51,24 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between text-black relative">
       <div className="cursor" />
-      <Hero />
-      <Services id="services" />
-      <Works id="works" />
+      <NewHero  />
+
+      <div className="services-section">
+        <Testimony id="testimony" />
+      </div>
+      <Steps id="steps" />
+      <OurServices id="our-services" />
+      <Team id="team" />
+      <FAQs id="faqs" />
+
+      {/* <Works id="works" /> */}
       {/* <Partners id="partners" /> */}
-      <Ethos id={"ethos"} />
+      {/* <Ethos id={"ethos"} /> */}
       {/* <AboutUs id="about" /> */}
-      <CTA />
+      {/* <CTA /> */}
       {/* <Quote id="about" /> */}
-      <Footer />
-      <div className="gradient" />
+      {/* <Footer /> */}
+      {/* <div className="gradient" /> */}
       {/* <section>
         <h3>Empowering Businesses & Individuals</h3>
         <h2>Strategy 2 Delivery</h2>
