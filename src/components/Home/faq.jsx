@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import { Button } from "../Button";
 
-const FAQItem = ({ question, answer }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
+const FAQItem = ({ question, answer, isOpen, onClick }) => {
   return (
     <div className="border-b border-gray-200">
       <button
-        className="w-full px-6 py-6 flex justify-between items-center text-left"
-        onClick={() => setIsOpen(!isOpen)}
+        className="w-full px-6 py-6 flex justify-between items-center text-left hover:bg-gray-50 transition-colors"
+        onClick={onClick}
       >
         <span className="text-lg pr-4">{question}</span>
         <svg
@@ -17,7 +15,7 @@ const FAQItem = ({ question, answer }) => {
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className={`transform transition-transform flex-shrink-0 ${
+          className={`transform transition-transform duration-200 flex-shrink-0 ${
             isOpen ? "rotate-180" : ""
           }`}
         >
@@ -25,11 +23,11 @@ const FAQItem = ({ question, answer }) => {
         </svg>
       </button>
       <div
-        className={`overflow-hidden transition-all duration-300 ${
-          isOpen ? "max-h-96" : "max-h-0"
+        className={`overflow-hidden transition-all duration-200 ease-out ${
+          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="px-6 pb-4">
+        <div className="px-6 pb-6">
           <p className="text-[#6E605D] text-lg leading-relaxed">{answer}</p>
         </div>
       </div>
@@ -38,26 +36,28 @@ const FAQItem = ({ question, answer }) => {
 };
 
 const FAQs = ({ id }) => {
+  const [openIndex, setOpenIndex] = useState(null);
+
   const faqData = [
     {
       question: "What is Data-Driven Analysis?",
       answer:
-        "Data-Driven Analysis is a comprehensive approach to understanding and improving your business through systematic collection and interpretation of data. It involves using real-time metrics, customer behavior patterns, and market trends to make informed decisions.",
+        "Data-Driven Analysis involves using data to inform business decisions. It helps identify trends, optimize processes, and improve overall performance. By leveraging insights from data, businesses can enhance their strategies and achieve better results.",
     },
     {
       question: "How does it work?",
       answer:
-        "We begin by identifying your key business metrics and setting up tracking systems. Then, we collect and analyze data using advanced tools and methodologies. Finally, we provide actionable insights and recommendations based on the findings.",
+        "Data-Driven Analysis works by collecting and analyzing data from various sources. This analysis reveals actionable insights that guide decision-making. The process often involves statistical methods and data visualization techniques.",
     },
     {
       question: "What are the benefits?",
       answer:
-        "Benefits include improved decision-making, increased efficiency, better resource allocation, enhanced customer understanding, competitive advantage, and measurable ROI on your marketing and operational investments.",
+        "The benefits of Data-Driven Analysis include improved accuracy in decision-making, enhanced customer understanding, and increased operational efficiency. It enables businesses to tailor their strategies based on real data rather than assumptions. Ultimately, this leads to higher conversion rates and revenue growth.",
     },
     {
       question: "Who can benefit?",
       answer:
-        "Any business looking to improve their operations and decision-making can benefit. This includes startups, small businesses, enterprises, and organizations across various industries.",
+        "Any business looking to optimize its performance can benefit from Data-Driven Analysis. This includes e-commerce companies, startups, and established enterprises. By utilizing data insights, organizations can make informed decisions that drive growth.",
     },
     {
       question: "Is it expensive?",
@@ -81,7 +81,14 @@ const FAQs = ({ id }) => {
             </p>
             <div className="overflow-hidden">
               {faqData.map((faq, index) => (
-                <FAQItem key={index} {...faq} />
+                <FAQItem
+                  key={index}
+                  {...faq}
+                  isOpen={openIndex === index}
+                  onClick={() =>
+                    setOpenIndex(openIndex === index ? null : index)
+                  }
+                />
               ))}
             </div>
           </div>

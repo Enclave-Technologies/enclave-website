@@ -3,24 +3,21 @@ export const stepsData = [
     id: 1,
     title: "Strategy & Alignment",
     description:
-      "We begin by understanding your business goals, target audience, and project requirements. This foundational step ensures we're aligned on objectives and can create a roadmap for success.",
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=500&auto=format&fit=crop",
+      "A strong foundation is the key to a successful project. We work meticulously with our partners to ensure alignment on the final outcomes & discuss development plans.",
+    image: "/strategy.png",
   },
   {
     id: 2,
     title: "Design & Development",
     description:
-      "Our team creates beautiful, intuitive designs and transforms them into powerful, scalable solutions. We focus on user experience while ensuring technical excellence.",
-    image:
-      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=500&auto=format&fit=crop",
+      "Once the foundation has been laid down, it’s time to start designing and developing. Our team of talented designers and developers work with dedication to make sure the final product meets our client’s requirements.",
+    image: "/design.png",
   },
   {
     id: 3,
     title: "Measure & Iterate",
     description:
-      "Post-launch, we continuously monitor performance, gather user feedback, and make data-driven improvements to optimize your product's success and user satisfaction.",
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=500&auto=format&fit=crop",
+      "No solution is perfect at once. After launching the project, we support our clients for at least 2-months to make sure they win.",
+    image: "/iterate.png",
   },
 ];
