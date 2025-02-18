@@ -88,7 +88,7 @@ const ScrollingRow = ({ items, direction = "right" }) => {
 const Testimony = ({ id }) => {
   return (
     <section
-      className="relative w-screen min-h-screen overflow-hidden mt-48 py-32 bg-white"
+      className="relative w-screen min-h-screen overflow-hidden mt-10 py-32 bg-white"
       id={id}
     >
       <div

@@ -5,39 +5,20 @@ import { Button } from "../Button";
 import Image from "next/image";
 import Hamburger from "./Hamburger";
 
-const defaultLinks = [
-  { title: "WORK", link: "/#works" },
-  { title: "SERVICES", link: "/#services" },
-  { title: "ABOUT", link: "/#about" },
-  { title: "INSIGHTS", link: "/insights" },
+const links = [
+  { title: "Website Design", link: "/#marketing" },
+  { title: "App Development", link: "/#technology" },
+  { title: "SEO", link: "/#data" },
+  { title: "About Us", link: "/#portfolio" },
+  { title: "FAQs", link: "/#about" },
 ];
 
-const collapsedLinks = [
-  { title: "Marketing Solutions", link: "/#marketing" },
-  { title: "Technology Solutions", link: "/#technology" },
-  { title: "Data Solutions", link: "/#data" },
-  { title: "Our Portfolio", link: "/#portfolio" },
-  { title: "About Us", link: "/#about" },
-];
-
-export const Navbarr = ({ isCollapsed = false }) => {
+export const Navbarr = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const links = isCollapsed ? collapsedLinks : defaultLinks;
 
   return (
-    <nav className="fixed top-4 left-0 right-0 z-50 px-6 md:px-16 lg:px-24">
-      <div
-        className={`max-w-[1728px] mx-auto h-[80px] flex items-center justify-between px-8 transition-all duration-500 ${
-          isCollapsed ? "rounded-[48px]" : "rounded-none"
-        }`}
-        style={{
-          background: isCollapsed
-            ? "linear-gradient(113.44deg, rgba(255, 255, 255, 0.4) 22.6%, rgba(255, 255, 255, 0.1) 92.47%)"
-            : "transparent",
-          boxShadow: isCollapsed ? "0px 0px 15px rgba(0, 0, 0, 0.2)" : "none",
-          backdropFilter: isCollapsed ? "blur(15px)" : "none",
-        }}
-      >
+    <>
+      <div className="w-full flex items-center justify-between px-10">
         <div className="w-[64px]">
           <Link href="/">
             <Image
@@ -66,7 +47,7 @@ export const Navbarr = ({ isCollapsed = false }) => {
         <div className="hidden md:block w-[140px]">
           <Button
             variant="primary navigation"
-            title={isCollapsed ? "Get Started" : "CONTACT US"}
+            title="Contact Us"
             link="/contact"
             rounded={true}
           />
@@ -107,7 +88,7 @@ export const Navbarr = ({ isCollapsed = false }) => {
             <div className="w-full max-w-[200px]">
               <Button
                 variant="primary navigation"
-                title={isCollapsed ? "Get Started" : "CONTACT US"}
+                title="Contact Us"
                 link="/contact"
                 rounded={true}
               />
@@ -115,6 +96,6 @@ export const Navbarr = ({ isCollapsed = false }) => {
           </div>
         </div>
       </div>
-    </nav>
+    </>
   );
 };
