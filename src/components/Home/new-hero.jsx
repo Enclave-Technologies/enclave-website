@@ -32,7 +32,6 @@ const NewHero = () => {
         onUpdate: (self) => {
           const progress = self.progress;
 
-          // Hero height and background
           const newHeight = gsap.utils.interpolate(
             window.innerHeight,
             80,
@@ -43,7 +42,6 @@ const NewHero = () => {
             1 - progress
           })`;
 
-          // Content opacity - fade out faster
           if (contentRef.current) {
             const contentOpacity = Math.max(0, 1 - progress * 1.5);
             contentRef.current.style.opacity = contentOpacity;
@@ -52,14 +50,8 @@ const NewHero = () => {
             }px)`;
           }
 
-          // Transform nav container from full hero to navbar size
           if (navContainerRef.current) {
-            // Interpolate margin and padding
-            const marginX = gsap.utils.interpolate(24, 6, progress);
-            const marginY = gsap.utils.interpolate(16, 4, progress);
             navContainerRef.current.style.margin = `16px 24px`;
-
-            // Keep the glassmorphism effect consistent
             navContainerRef.current.style.background = `linear-gradient(113.44deg, rgba(255, 255, 255, ${
               0.4 + progress * 0.2
             }) 22.6%, rgba(255, 255, 255, ${0.1 + progress * 0.15}) 92.47%)`;
@@ -68,7 +60,6 @@ const NewHero = () => {
               "0px 0px 15px rgba(0, 0, 0, 0.2)";
           }
 
-          // Scroll text opacity
           if (scrollTextRef.current) {
             scrollTextRef.current.style.opacity = Math.max(
               0,
@@ -125,7 +116,7 @@ const NewHero = () => {
             height: "calc(100% - 32px)",
           }}
         >
-          <div className="w-full h-[80px] absolute px-8 top-4 left-0 right-0">
+          <div className="w-full h-[80px] absolute px-8 top-3 left-0 right-0">
             <Navbarr />
           </div>
 
@@ -188,7 +179,7 @@ const NewHero = () => {
           </div>
         </div>
       </div>
-      <div style={{ height: "100vh" }} />
+      <div style={{ height: "10vh" }} />
     </>
   );
 };

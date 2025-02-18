@@ -51,7 +51,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between text-black relative">
       <div className="cursor" />
-      <NewHero  />
+      <NewHero />
 
       <div className="services-section">
         <Testimony id="testimony" />
