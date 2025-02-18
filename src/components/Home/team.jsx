@@ -27,16 +27,11 @@ const TeamCard = ({ image, size = "normal" }) => (
 
 const Team = ({ id }) => {
   const teamImages = {
-    large:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=680&h=680&fit=crop",
-    right1:
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=214&h=214&fit=crop",
-    right2:
-      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=214&h=214&fit=crop",
-    bottom1:
-      "https://images.unsplash.com/photo-1580518337843-f959e992563b?q=80&w=214&h=214&fit=crop",
-    bottom2:
-      "https://images.unsplash.com/photo-1596496050827-8299e0220de1?q=80&w=214&h=214&fit=crop",
+    large: "",
+    right1: "",
+    right2: "",
+    bottom1: "",
+    bottom2: "",
   };
 
   return (
@@ -63,11 +58,37 @@ const Team = ({ id }) => {
 
           <div className="lg:col-span-2">
             <div className="grid grid-cols-3 gap-6 auto-rows-[214px]">
-              <TeamCard image={teamImages.large} size="large" />
-              <TeamCard image={teamImages.right1} />
-              <TeamCard image={teamImages.right2} />
-              <TeamCard image={teamImages.bottom1} />
-              <TeamCard image={teamImages.bottom2} />
+              <TeamCard
+                image={
+                  teamImages.large ||
+                  "https://images.pexels.com/photos/28216688/pexels-photo-28216688/free-photo-of-autumn-camping.png?auto=compress&cs=tinysrgb&w=1200"
+                }
+                size="large"
+              />
+              <TeamCard
+                image={
+                  teamImages.right1 ||
+                  "https://images.pexels.com/photos/28216688/pexels-photo-28216688/free-photo-of-autumn-camping.png?auto=compress&cs=tinysrgb&w=1200"
+                }
+              />
+              <TeamCard
+                image={
+                  teamImages.right2 ||
+                  "https://images.pexels.com/photos/28216688/pexels-photo-28216688/free-photo-of-autumn-camping.png?auto=compress&cs=tinysrgb&w=1200"
+                }
+              />
+              <TeamCard
+                image={
+                  teamImages.bottom1 ||
+                  "https://images.pexels.com/photos/28216688/pexels-photo-28216688/free-photo-of-autumn-camping.png?auto=compress&cs=tinysrgb&w=1200"
+                }
+              />
+              <TeamCard
+                image={
+                  teamImages.bottom2 ||
+                  "https://images.pexels.com/photos/28216688/pexels-photo-28216688/free-photo-of-autumn-camping.png?auto=compress&cs=tinysrgb&w=1200"
+                }
+              />
             </div>
           </div>
         </div>

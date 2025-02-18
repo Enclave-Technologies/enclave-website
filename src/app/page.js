@@ -16,9 +16,6 @@ import Steps from "../components/Home/steps";
 import OurServices from "../components/Home/our-services";
 import Team from "../components/Home/team";
 import FAQs from "../components/Home/faq";
-// export const metadata = {
-//   title: "Web Design & Development Studio",
-// };
 
 export default function Home() {
   const [domLoaded, setDomLoaded] = useState(false);

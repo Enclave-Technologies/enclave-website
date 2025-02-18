@@ -56,7 +56,7 @@ const Steps = ({ id }) => {
       gsap.to(card, {
         scrollTrigger: {
           trigger: card,
-          start: "top 80%", // Trigger when card is 80% in view
+          start: "top 80%",
           end: "top 60%",
           toggleActions: "play none none reverse",
           markers: false,
@@ -64,7 +64,7 @@ const Steps = ({ id }) => {
         opacity: 1,
         y: 0,
         duration: 0.8,
-        delay: index * 0.2, // Stagger the animations
+        delay: index * 0.2,
         ease: "power2.out",
       });
     });
