@@ -16,6 +16,7 @@ import Steps from "../components/Home/steps";
 import OurServices from "../components/Home/our-services";
 import Team from "../components/Home/team";
 import FAQs from "../components/Home/faq";
+import Projects from "../components/Home/projects";
 
 export default function Home() {
   const [domLoaded, setDomLoaded] = useState(false);
@@ -54,6 +55,7 @@ export default function Home() {
         <Testimony id="testimony" />
       </div>
       <Steps id="steps" />
+      <Projects id="projects" />
       <OurServices id="our-services" />
       <Team id="team" />
       <FAQs id="faqs" />
