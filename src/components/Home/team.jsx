@@ -51,8 +51,9 @@ const Team = ({ id }) => {
               Meet the Team
             </h2>
             <p className="text-[#6E605D] text-lg leading-relaxed mb-8">
-              At Enclave, we pride ourselves on our collaborative approach,
-              working closely with you to understand your vision and goals.
+              At Enclave Studios, we pride ourselves on our commitment to
+              bringing the best into this world. Using data our team makes sure
+              that your growth is quantitative and sustainable.
             </p>
           </div>
 

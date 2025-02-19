@@ -60,48 +60,50 @@ const ServiceCard = ({ title, services, image }) => (
 const OurServices = ({ id }) => {
   const services = {
     digital: {
-      title: "Website & SEO",
+      title: "Data Analytics",
       services: [
-        "Data Analytics",
-        "App Analytics",
-        "Search Engine Optimization",
-        "Search Engine Marketing",
-      ],
-      image: "/design-services.png",
-    },
-    design: {
-      title: "Design",
-      services: [
-        "Graphic Design",
-        "UI/UX Design",
-        "Social Media Design",
-        "Logo Design *",
-      ],
-      image: "/seo-services.png",
-    },
-    development: {
-      title: "Data Services",
-      services: [
-        "Website Development",
-        "App Development",
-        "E-Commerce Development",
-        "Custom Solutions Development",
+        "Growth Insights",
+        "Marketing Analytics",
+        "Business Intelligence (BI)",
+        "Custom Data Solutions",
       ],
       image: "/data-services.png",
+    },
+    seo: {
+      title: "Search Engine Optimization",
+      services: [
+        "Search Engine Optimization (SRO)",
+        "Blog Writing",
+        "Seach Engine Marketing (SEM)",
+        "Website Development",
+      ],
+      image: "/design-services.png",
+
+    },
+    development: {
+      title: "AI Integration",
+      services: [
+        "Sales and Marketing Automations",
+        "ML Deployment",
+        "Process Automation",
+        "AI Deployment",
+      ],
+      image: "/seo-services.png",
     },
   };
 
   return (
-    <section id={id} className="relative w-full py-32 px-4 md:px-10">
-      <div
-        className="absolute w-[784px] h-[274px] left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 opacity-50"
-        style={{
-          background:
-            "linear-gradient(107.56deg, #6DFB29 2.2%, #29D6FB 29.17%, #B729FB 95.31%)",
-          filter: "blur(250px)",
-          zIndex: 0,
-        }}
-      />
+    <section
+      id={id}
+      className="relative  w-screen min-h-screen overflow-hidden py-32 px-4 md:px-10"
+      style={{
+        backgroundImage: "url('/testimonials-bg.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div className="absolute w-[784px] h-[274px] left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 opacity-50" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -109,9 +111,9 @@ const OurServices = ({ id }) => {
             <h4 className="text-[#FB4E29] text-lg font-medium mb-4">
               Our Services
             </h4>
-            <h2 className="text-4xl lg:text-5xl font-semibold mb-6 md:mb-12 capitalize">
-              Let&apos;s Build Something Extraordinary Together!
-            </h2>
+            <p className="text-4xl lg:text-5xl font-semibold mb-6 md:mb-8">
+              We grow your business with data-backed solutions.
+            </p>
             <div className="inline-block">
               <Button
                 variant="secondary"
@@ -121,7 +123,7 @@ const OurServices = ({ id }) => {
             </div>
           </div>
 
-          <ServiceCard {...services.design} />
+          <ServiceCard {...services.seo} />
           <ServiceCard {...services.digital} />
           <ServiceCard {...services.development} />
         </div>

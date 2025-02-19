@@ -1,8 +1,7 @@
-"use client";
 import { Navbarr } from "../Navbar/Navbarr";
 import { Button } from "../Button";
 import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
@@ -13,6 +12,7 @@ const NewHero = () => {
   const heroRef = useRef(null);
   const contentRef = useRef(null);
   const navContainerRef = useRef(null);
+  const [showStickyNav, setShowStickyNav] = useState(false);
 
   useEffect(() => {
     const scrollText = scrollTextRef.current;
@@ -31,7 +31,6 @@ const NewHero = () => {
         pin: true,
         onUpdate: (self) => {
           const progress = self.progress;
-
           const newHeight = gsap.utils.interpolate(
             window.innerHeight,
             80,
@@ -66,29 +65,9 @@ const NewHero = () => {
               1 - progress * 1.5
             );
           }
-        },
-      },
-    });
 
-    // Create a timeline to handle the navbar after the hero section
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: ".services-section",
-        start: "top top",
-        end: "bottom bottom",
-        onEnter: () => {
-          if (navContainerRef.current) {
-            navContainerRef.current.style.position = "fixed";
-            navContainerRef.current.style.top = "4px";
-            navContainerRef.current.style.left = "0";
-            navContainerRef.current.style.right = "0";
-            navContainerRef.current.style.margin = "4px 6px";
-          }
-        },
-        onLeaveBack: () => {
-          if (navContainerRef.current) {
-            navContainerRef.current.style.position = "absolute";
-          }
+          // Toggle sticky nav visibility
+          setShowStickyNav(progress >= 0.99);
         },
       },
     });
@@ -102,8 +81,14 @@ const NewHero = () => {
     <>
       <div
         ref={heroRef}
-        className="fixed top-0 left-0 w-full z-40 bg-[#FFF2ED]"
-        style={{ height: "100vh" }}
+        className="fixed top-0 left-0 w-full z-40 bg-[#FFF2ED] pb-20"
+        style={{
+          // backgroundImage: "url('/testimonials-bg.png')",
+          // backgroundSize: "cover",
+          // backgroundPosition: "center",
+          // backgroundRepeat: "no-repeat",
+          height: "100vh",
+        }}
       >
         <div
           ref={navContainerRef}
@@ -147,8 +132,8 @@ const NewHero = () => {
                       transition={{ delay: 0.2 }}
                       className="text-base text-[#121212] md:text-lg font-normal leading-relaxed max-w-[450px] pl-4 md:pl-0"
                     >
-                      Technology consulting and implementation studio helping
-                      businesses launch and grow their digital presence.
+                      Data and AI Consultants helping startups grow with
+                      data-backed solutions.
                     </motion.p>
                   </motion.div>
 
@@ -179,7 +164,22 @@ const NewHero = () => {
           </div>
         </div>
       </div>
-      <div style={{ height: "10vh" }} />
+
+      {showStickyNav && (
+        <div
+          className="fixed top-4 left-0 right-0 z-50 mx-6 rounded-[48px] h-[80px] transition-all duration-300"
+          style={{
+            background:
+              "linear-gradient(113.44deg, rgba(255, 255, 255, 0.6) 22.6%, rgba(255, 255, 255, 0.25) 92.47%)",
+            boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.2)",
+            backdropFilter: "blur(12px)",
+          }}
+        >
+          <div className="w-full h-full px-8 flex items-center">
+            <Navbarr />
+          </div>
+        </div>
+      )}
     </>
   );
 };

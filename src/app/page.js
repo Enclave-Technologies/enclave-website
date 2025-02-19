@@ -52,11 +52,12 @@ export default function Home() {
       <NewHero />
 
       <div className="services-section">
-        <Testimony id="testimony" />
+        <OurServices id="our-services" />
       </div>
+
+      <Testimony id="testimony" />
       <Steps id="steps" />
       <Projects id="projects" />
-      <OurServices id="our-services" />
       <Team id="team" />
       <FAQs id="faqs" />
 

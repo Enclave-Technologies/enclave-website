@@ -1,4 +1,3 @@
-"use client";
 import { testimonials } from "../../data/testimonials";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
@@ -6,18 +5,31 @@ import gsap from "gsap";
 import { Button } from "../Button";
 
 const TestimonialCard = ({ text, author, company, image }) => (
-  <div className="w-[400px] min-h-[250px] bg-white rounded-[8px] p-6 mx-3 flex flex-col justify-between shadow-lg hover:scale-[1.02] transition-transform duration-300">
-    <p className="text-sm leading-relaxed mb-4 text-gray-600 flex flex-wrap whitespace-normal">
+  <div
+    className="w-[472px] min-h-[240px] p-4 mx-3 flex flex-col items-start gap-6 transition-transform duration-300 hover:scale-[1.02]"
+    style={{
+      boxSizing: "border-box",
+      background:
+        "linear-gradient(113.44deg, rgba(255, 255, 255, 0.4) 22.6%, rgba(255, 255, 255, 0.1) 92.47%)",
+      boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.2)",
+      backdropFilter: "blur(15px)",
+      borderRadius: "8px",
+      flex: "none",
+      alignSelf: "stretch",
+      flexGrow: 0,
+    }}
+  >
+    <p className="text-sm leading-relaxed text-gray-600 flex flex-wrap whitespace-normal">
       {text}
     </p>
-    <div className="flex items-center pt-4 border-t border-gray-100">
-      <div className="w-12 h-12 rounded-full overflow-hidden mr-4 border-2 border-[#FB4E29]">
+    <div className="flex items-center mt-auto pt-4">
+      <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
         <Image
           src={image}
           width={48}
           height={48}
           alt={author}
-          className="object-cover w-full h-full"
+          className="object-contain w-full h-full"
           unoptimized
         />
       </div>
@@ -88,29 +100,23 @@ const ScrollingRow = ({ items, direction = "right" }) => {
 const Testimony = ({ id }) => {
   return (
     <section
-      className="relative w-screen min-h-screen overflow-hidden mt-10 py-32 bg-white"
+      className="relative w-screen min-h-screen overflow-hidden py-32 bg-white"
       id={id}
     >
-      <div
-        className="absolute inset-0 opacity-50"
-        style={{
-          backgroundImage: "url('/testimonials-bg.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      />
+      <div className="absolute inset-0 opacity-50" />
 
       <div className="relative z-20 w-full flex flex-col items-center justify-center">
         <div className="max-w-2xl mx-auto text-center px-6 mb-20">
-          <h2 className="text-4xl font-bold mb-8 capitalize">
-            Why settle for generic?
-          </h2>
-          <p className="text-base mb-12 max-w-xl mx-auto">
-            Develop your next project with an agency that works tirelessly with
-            you to make sure your project is beneficial for your business.
-            We&apos;ll unlock access to everything you need to know to build
-            your next monumental custom project.
+          <p
+            className="text-4xl font-bold mb-6 max-w-lg"
+            style={{ lineHeight: "1.2" }}
+          >
+            Grow your business with data-backed solutions.
+          </p>
+          <p className="text-base mb-10 max-w-lg mx-auto">
+            Don't settle for mediocre. Partner with the best growth solution
+            studio with proven track-record and unmatched customer service. You
+            won't know when you grew from 0 to 100.
           </p>
           <div className="inline-block">
             <Button
