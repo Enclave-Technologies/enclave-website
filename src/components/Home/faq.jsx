@@ -109,7 +109,7 @@ const FAQs = ({ id }) => {
                   Any Questions?
                 </h3>
                 <p className="text-[#6E605D] text-base">
-                  We're happy to help you with your inquiries!
+                  We&apos;re happy to help you with your inquiries!
                 </p>
               </div>
               <div className="">

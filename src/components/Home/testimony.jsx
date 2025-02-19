@@ -114,9 +114,9 @@ const Testimony = ({ id }) => {
             Grow your business with data-backed solutions.
           </p>
           <p className="text-base mb-10 max-w-lg mx-auto">
-            Don't settle for mediocre. Partner with the best growth solution
+            Don&apos;t settle for mediocre. Partner with the best growth solution
             studio with proven track-record and unmatched customer service. You
-            won't know when you grew from 0 to 100.
+            won&apos;t know when you grew from 0 to 100.
           </p>
           <div className="inline-block">
             <Button

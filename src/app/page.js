@@ -1,14 +1,6 @@
 "use client";
 
-import { Works } from "../components/Home/works";
-import { Services } from "../components/Home/services";
-import { CTA } from "../components/Home/cta";
-import { Footer } from "../components/Footer";
-import { Quote } from "../components/Home/quote";
 import { useEffect, useState } from "react";
-import { Partners } from "../components/Home/partners";
-import Ethos from "../components/Home/ethos";
-import AboutUs from "../components/Home/about-us";
 
 import Testimony from "../components/Home/testimony";
 import NewHero from "../components/Home/new-hero";
@@ -57,22 +49,10 @@ export default function Home() {
 
       <Testimony id="testimony" />
       <Steps id="steps" />
-      <Projects id="projects" />
+      {/* <Projects id="projects" /> */}
       <Team id="team" />
       <FAQs id="faqs" />
-
-      {/* <Works id="works" /> */}
-      {/* <Partners id="partners" /> */}
-      {/* <Ethos id={"ethos"} /> */}
-      {/* <AboutUs id="about" /> */}
-      {/* <CTA /> */}
-      {/* <Quote id="about" /> */}
-      {/* <Footer /> */}
-      {/* <div className="gradient" /> */}
-      {/* <section>
-        <h3>Empowering Businesses & Individuals</h3>
-        <h2>Strategy 2 Delivery</h2>
-      </section> */}
+      <div id="footer" className="w-full h-screen" />
     </main>
   );
 }
