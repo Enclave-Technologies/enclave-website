@@ -49,7 +49,7 @@ export default function Home() {
 
       <Testimony id="testimony" />
       <Steps id="steps" />
-      {/* <Projects id="projects" /> */}
+      <Projects id="projects" />
       <Team id="team" />
       <FAQs id="faqs" />
       <div id="footer" className="w-full h-screen" />
