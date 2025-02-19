@@ -1,26 +1,23 @@
 export const stepsData = [
   {
     id: 1,
-    title: "Strategy & Alignment",
+    title: "Strategy & Goal Setting",
     description:
-      "We begin by understanding your business goals, target audience, and project requirements. This foundational step ensures we're aligned on objectives and can create a roadmap for success.",
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=500&auto=format&fit=crop",
+      "A strong foundation is the key to a successful project. We work meticulously with our partners to ensure we understand their goals and work backwards to achieve them.",
+    image: "/strategy.png",
   },
   {
     id: 2,
-    title: "Design & Development",
+    title: "Design Thinking",
     description:
-      "Our team creates beautiful, intuitive designs and transforms them into powerful, scalable solutions. We focus on user experience while ensuring technical excellence.",
-    image:
-      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=500&auto=format&fit=crop",
+      "Once the right goals have been set, we formulate a plan around achieving those goals in the most efficient and cost-effective way possible.",
+    image: "/design.png",
   },
   {
     id: 3,
-    title: "Measure & Iterate",
+    title: "Implementation",
     description:
-      "Post-launch, we continuously monitor performance, gather user feedback, and make data-driven improvements to optimize your product's success and user satisfaction.",
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=500&auto=format&fit=crop",
+      "Any good plan is useless if it is not put into action. Our team makes sure that your vision and goals are achieved without any hiccups or discomfort to your organisation.",
+    image: "/iterate.png",
   },
 ];

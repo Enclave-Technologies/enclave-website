@@ -1,14 +1,6 @@
 "use client";
 
-import { Works } from "../components/Home/works";
-import { Services } from "../components/Home/services";
-import { CTA } from "../components/Home/cta";
-import { Footer } from "../components/Footer";
-import { Quote } from "../components/Home/quote";
 import { useEffect, useState } from "react";
-import { Partners } from "../components/Home/partners";
-import Ethos from "../components/Home/ethos";
-import AboutUs from "../components/Home/about-us";
 
 import Testimony from "../components/Home/testimony";
 import NewHero from "../components/Home/new-hero";
@@ -16,9 +8,7 @@ import Steps from "../components/Home/steps";
 import OurServices from "../components/Home/our-services";
 import Team from "../components/Home/team";
 import FAQs from "../components/Home/faq";
-// export const metadata = {
-//   title: "Web Design & Development Studio",
-// };
+import Projects from "../components/Home/projects";
 
 export default function Home() {
   const [domLoaded, setDomLoaded] = useState(false);
@@ -51,28 +41,18 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between text-black relative">
       <div className="cursor" />
-      <NewHero  />
+      <NewHero />
 
       <div className="services-section">
-        <Testimony id="testimony" />
+        <OurServices id="our-services" />
       </div>
+
+      <Testimony id="testimony" />
       <Steps id="steps" />
-      <OurServices id="our-services" />
+      <Projects id="projects" />
       <Team id="team" />
       <FAQs id="faqs" />
-
-      {/* <Works id="works" /> */}
-      {/* <Partners id="partners" /> */}
-      {/* <Ethos id={"ethos"} /> */}
-      {/* <AboutUs id="about" /> */}
-      {/* <CTA /> */}
-      {/* <Quote id="about" /> */}
-      {/* <Footer /> */}
-      {/* <div className="gradient" /> */}
-      {/* <section>
-        <h3>Empowering Businesses & Individuals</h3>
-        <h2>Strategy 2 Delivery</h2>
-      </section> */}
+      <div id="footer" className="w-full h-screen" />
     </main>
   );
 }

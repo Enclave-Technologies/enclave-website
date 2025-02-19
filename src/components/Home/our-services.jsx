@@ -3,8 +3,18 @@ import { Button } from "../Button";
 import Image from "next/image";
 
 const ServiceCard = ({ title, services, image }) => (
-  <div className="bg-white rounded-[12px] p-8 shadow-lg hover:shadow-2xl hover:translate-y-[-4px] transition-all duration-300">
-    <h3 className="text-[24px] font-bold mb-6">{title}</h3>
+  <div
+    className="bg-white rounded-[8px] p-8 hover:translate-y-[-5px] transition-all duration-500"
+    style={{
+      background:
+        "linear-gradient(113.44deg, rgba(255, 255, 255, 0.4) 22.6%, rgba(255, 255, 255, 0.1) 92.47%)",
+      boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.2)",
+      backdropFilter: "blur(15px)",
+    }}
+  >
+    <h3 className="text-[32px] font-bold mb-6 text-[#100805] leading-[130%]">
+      {title}
+    </h3>
     <div className="grid grid-cols-2 gap-4 mb-6">
       {services.map((service, index) => (
         <div key={index} className="flex items-start gap-2">
@@ -41,7 +51,7 @@ const ServiceCard = ({ title, services, image }) => (
         width={120}
         height={120}
         alt={title}
-        className="w-[120px] h-full object-cover bg-gray-100 rounded-lg"
+        className="w-full h-full object-contain"
       />
     </div>
   </div>
@@ -50,51 +60,60 @@ const ServiceCard = ({ title, services, image }) => (
 const OurServices = ({ id }) => {
   const services = {
     digital: {
-      title: "Digital Marketing",
+      title: "Data Analytics",
       services: [
-        "Website Development",
-        "E-Commerce Development",
-        "App Development",
-        "Custom Solutions Development",
+        "Growth Insights",
+        "Marketing Analytics",
+        "Business Intelligence (BI)",
+        "Custom Data Solutions",
       ],
-      image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=500&auto=format&fit=crop",
+      image: "/data-services.png",
     },
-    design: {
-      title: "Design",
+    seo: {
+      title: "Search Engine Optimization",
       services: [
-        "Graphic Design",
-        "UI/UX Design",
-        "Social Media Design",
-        "Logo Design *",
+        "Search Engine Optimization (SRO)",
+        "Blog Writing",
+        "Seach Engine Marketing (SEM)",
+        "Website Development",
       ],
-      image:
-        "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=500&auto=format&fit=crop",
+      image: "/design-services.png",
+
     },
     development: {
-      title: "Development",
+      title: "AI Integration",
       services: [
-        "Data Analytics",
-        "App Analytics",
-        "Search Engine Optimization",
-        "Search Engine Marketing",
+        "Sales and Marketing Automations",
+        "ML Deployment",
+        "Process Automation",
+        "AI Deployment",
       ],
-      image:
-        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=500&auto=format&fit=crop",
+      image: "/seo-services.png",
     },
   };
 
   return (
-    <section id={id} className="w-full bg-white py-32 px-4 md:px-10">
-      <div className="max-w-7xl mx-auto">
+    <section
+      id={id}
+      className="relative  w-screen min-h-screen overflow-hidden py-32 px-4 md:px-10"
+      style={{
+        backgroundImage: "url('/testimonials-bg.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div className="absolute w-[784px] h-[274px] left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 opacity-50" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="md:pr-8 md:ml-0 ml-4">
             <h4 className="text-[#FB4E29] text-lg font-medium mb-4">
               Our Services
             </h4>
-            <h2 className="text-4xl lg:text-5xl font-semibold mb-6 md:mb-12 capitalize">
-              Let&apos;s Build Something Extraordinary Together!
-            </h2>
+            <p className="text-4xl lg:text-5xl font-semibold mb-6 md:mb-8">
+              We grow your business with data-backed solutions.
+            </p>
             <div className="inline-block">
               <Button
                 variant="secondary"
@@ -104,8 +123,8 @@ const OurServices = ({ id }) => {
             </div>
           </div>
 
+          <ServiceCard {...services.seo} />
           <ServiceCard {...services.digital} />
-          <ServiceCard {...services.design} />
           <ServiceCard {...services.development} />
         </div>
       </div>

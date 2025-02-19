@@ -1,23 +1,21 @@
 import React, { useState } from "react";
 import { Button } from "../Button";
 
-const FAQItem = ({ question, answer }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
+const FAQItem = ({ question, answer, isOpen, onClick }) => {
   return (
     <div className="border-b border-gray-200">
       <button
-        className="w-full px-6 py-6 flex justify-between items-center text-left"
-        onClick={() => setIsOpen(!isOpen)}
+        className="w-full py-6 flex justify-between items-center text-left hover:bg-gray-50 transition-colors"
+        onClick={onClick}
       >
-        <span className="text-lg pr-4">{question}</span>
+        <span className="text-base font-medium pr-4">{question}</span>
         <svg
           width="24"
           height="24"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className={`transform transition-transform flex-shrink-0 ${
+          className={`transform transition-transform duration-200 flex-shrink-0 ${
             isOpen ? "rotate-180" : ""
           }`}
         >
@@ -25,12 +23,12 @@ const FAQItem = ({ question, answer }) => {
         </svg>
       </button>
       <div
-        className={`overflow-hidden transition-all duration-300 ${
-          isOpen ? "max-h-96" : "max-h-0"
+        className={`overflow-hidden transition-all duration-200 ease-out ${
+          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="px-6 pb-4">
-          <p className="text-[#6E605D] text-lg leading-relaxed">{answer}</p>
+        <div className="px-6 pb-6">
+          <p className="text-[#6E605D] text-base leading-relaxed">{answer}</p>
         </div>
       </div>
     </div>
@@ -38,31 +36,33 @@ const FAQItem = ({ question, answer }) => {
 };
 
 const FAQs = ({ id }) => {
+  const [openIndex, setOpenIndex] = useState(null);
+
   const faqData = [
     {
-      question: "What is Data-Driven Analysis?",
+      question: "How do we ensure growth?",
       answer:
-        "Data-Driven Analysis is a comprehensive approach to understanding and improving your business through systematic collection and interpretation of data. It involves using real-time metrics, customer behavior patterns, and market trends to make informed decisions.",
+        "We ensure that the goals we set with organisations are quantitive. Using data-driven decision making, we ensure that your organisation grows.",
     },
     {
-      question: "How does it work?",
+      question: "What if it doesn’t work?",
       answer:
-        "We begin by identifying your key business metrics and setting up tracking systems. Then, we collect and analyze data using advanced tools and methodologies. Finally, we provide actionable insights and recommendations based on the findings.",
+        "We refund 50% of our contract fee if the project is not successful to our clients. Since data indicates growth, neither clients, nor us can deny or fake growth.",
     },
     {
-      question: "What are the benefits?",
+      question: "My website doesn’t get enough leads. What should I do?",
       answer:
-        "Benefits include improved decision-making, increased efficiency, better resource allocation, enhanced customer understanding, competitive advantage, and measurable ROI on your marketing and operational investments.",
+        "Not getting enough leads is a symptom of broken sales and marketing funnels or target the wrong audience. A consultation and implementation of the right marketing principles helps increase leads and conversion rates.",
     },
     {
-      question: "Who can benefit?",
+      question: "I’m not sure why my business isn’t growing. What should I do?",
       answer:
-        "Any business looking to improve their operations and decision-making can benefit. This includes startups, small businesses, enterprises, and organizations across various industries.",
+        "Defining growth metrics, aligning operational efforts and measuring growth using data is the only way to diagnose what’s stopping your business from growing to it’s full potential.",
     },
     {
-      question: "Is it expensive?",
+      question: "How can I contact you?",
       answer:
-        "The cost of Data-Driven Analysis varies depending on the complexity and scope of the project. However, the investment often pays off through increased efficiency and revenue. Many businesses find that the long-term benefits outweigh the initial costs.",
+        "You can email us at hello@enclave.live with your query. Our team will respond within 1-2 days to your request.",
     },
   ];
 
@@ -75,13 +75,20 @@ const FAQs = ({ id }) => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16">
           <div className="col-span-1 lg:col-span-2">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">FAQs</h2>
-            <p className="text-[#6E605D] text-lg leading-relaxed mb-12 max-w-full md:max-w-[450px]">
-              Find answers to your most pressing questions about Data-Driven
-              Analysis and its benefits.
+            <p className="text-[#6E605D] text-base leading-relaxed mb-12 max-w-full md:max-w-[450px]">
+              Find answers to your most pressing questions about our services
+              and experience.
             </p>
             <div className="overflow-hidden">
               {faqData.map((faq, index) => (
-                <FAQItem key={index} {...faq} />
+                <FAQItem
+                  key={index}
+                  {...faq}
+                  isOpen={openIndex === index}
+                  onClick={() =>
+                    setOpenIndex(openIndex === index ? null : index)
+                  }
+                />
               ))}
             </div>
           </div>
@@ -101,14 +108,14 @@ const FAQs = ({ id }) => {
                 <h3 className="text-3xl lg:text-4xl font-bold">
                   Any Questions?
                 </h3>
-                <p className="text-[#6E605D] text-lg">
-                  We&apos;re here to help you with your inquiries!
+                <p className="text-[#6E605D] text-base">
+                  We&apos;re happy to help you with your inquiries!
                 </p>
               </div>
               <div className="">
                 <Button
                   variant="primary navigation"
-                  title="Book Consultation"
+                  title="Send Enquiry"
                   link="/contact"
                 />
               </div>
