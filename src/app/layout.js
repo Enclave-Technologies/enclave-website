@@ -6,8 +6,8 @@ const onest = Onest({ subsets: ["latin"] });
 
 export const metadata = {
   title: {
-    template: "%s | Enclave",
-    default: "Enclave Studioes",
+    template: "%s | Enclave Studios",
+    default: "Enclave Studios",
   },
   description:
     "We are a technology studio based in Hong Kong. We help businesses with web design and development, mobile app design and development and growth hacking.",

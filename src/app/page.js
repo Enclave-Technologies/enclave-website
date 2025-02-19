@@ -9,6 +9,7 @@ import OurServices from "../components/Home/our-services";
 import Team from "../components/Home/team";
 import FAQs from "../components/Home/faq";
 import Projects from "../components/Home/projects";
+import NewServices from "../components/Home/new-services";
 
 export default function Home() {
   const [domLoaded, setDomLoaded] = useState(false);
@@ -44,12 +45,13 @@ export default function Home() {
       <NewHero />
 
       <div className="services-section">
-        <OurServices id="our-services" />
+        <Testimony id="testimony" />
+        {/* <OurServices id="our-services" /> */}
       </div>
 
-      <Testimony id="testimony" />
-      <Steps id="steps" />
+      <NewServices id="new-services" />
       <Projects id="projects" />
+      <Steps id="steps" />
       <Team id="team" />
       <FAQs id="faqs" />
       <div id="footer" className="w-full h-screen" />

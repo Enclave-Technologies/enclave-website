@@ -2,55 +2,77 @@ import { useState, useRef, useEffect } from "react";
 import { projectsData } from "../../data/projects";
 import Image from "next/image";
 import { FiExternalLink } from "react-icons/fi";
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useMotionValueEvent,
-} from "framer-motion";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import Link from "next/link";
 
 const ProjectPreview = ({ project, isActive }) => (
   <div
-    className={`w-full max-w-[500px] h-[511px] flex flex-col justify-end p-6 gap-6 rounded-2xl transition-all duration-500 ${
+    className={`w-full max-w-full md:h-[511px] h-[80vh] flex flex-col justify-end p-6 gap-6 rounded-2xl transition-all duration-500 ${
       isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
     }`}
     style={{
-      background:
-        "linear-gradient(113.44deg, rgba(255, 255, 255, 0.4) 22.6%, rgba(255, 255, 255, 0.1) 92.47%)",
+      background: "white",
       boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.2)",
       backdropFilter: "blur(15px)",
       boxSizing: "border-box",
     }}
   >
-    <div className="relative w-full flex-grow">
-      <Image
-        src={project.image}
-        alt={project.title}
-        fill
-        className="object-contain rounded-lg"
-      />
+    <div className=" w-full h-full flex gap-4 items-start justify-start">
+      <div className="flex flex-col gap-4 justify-between h-full items-center w-full ">
+        <div className="relative w-full h-full flex-1 flex items-center justify-center">
+          <Image
+            src={project.image}
+            alt={project.title}
+            width={200}
+            height={350}
+            className="object-contain md:w-[200px] w-[150px] h-[220px] pt-[100px] md:pt-0"
+          />
+        </div>
+        <Link
+          href={project.url}
+          target="_blank"
+          className="flex flex-row gap-2 items-center border border-[#FB4E29] rounded-lg py-3 px-6 w-fit"
+        >
+          <p className="text-sm text-[#FB4E29] text-start">
+            Visit Featured Website
+          </p>
+          <FiExternalLink color="#FB4E29" size={20} />
+        </Link>
+      </div>
+
+      <div className="w-full h-full md:flex  flex-col items-center justify-center">
+        <div className="flex flex-col gap-8 items-center justify-center">
+          {project.metrics.map((metric, index) => (
+            <div key={index} className="flex flex-col">
+              <h2 className="text-3xl font-bold text-black text-center">
+                {metric.value}
+              </h2>
+              <p className="text-base text-[#6E605D] text-center">
+                {metric.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
+
     <div className="flex flex-row justify-between items-center w-full">
       <div className="flex flex-row gap-2 overflow-x-auto pb-2 w-full">
         {project.keywords.map((keyword, index) => (
           <span
             key={index}
-            className="p-3 bg-[#FB4E29] text-white rounded-full text-xs whitespace-nowrap"
+            style={{
+              background:
+                "linear-gradient(107.56deg, #FBB729 2.2%, #FB296D 95.31%)",
+            }}
+            className="px-4 py-2 text-white rounded-full text-xs whitespace-nowrap"
           >
             {keyword}
           </span>
         ))}
       </div>
-      <a
-        href={project.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex-shrink-0 ml-4"
-      >
-        <FiExternalLink color="#FB4E29" size={20} />
-      </a>
     </div>
-    <p className="text-sm text-start">{project.description}</p>
+    <p className="text-sm text-[#6E605D] text-start">{project.description}</p>
   </div>
 );
 
@@ -114,7 +136,7 @@ const Projects = ({ id }) => {
         ref={spacerRef}
         style={{
           // display: isFixed ? "flex" : "none",
-          height: `${(projectsData.length - 2) * 100}vh`,
+          height: `${(projectsData.length - 1.5) * 100}vh`,
         }}
         className="pointer-events-none"
       />
@@ -134,30 +156,18 @@ const Projects = ({ id }) => {
           opacity: isFixed ? 1 : 0,
           transition: "all 0.3s ease-in-out",
           pointerEvents: isFixed ? "auto" : "none",
+          backgroundImage: "url('/testimonials-bg.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
       >
         <div className="w-full py-8 px-4 md:px-10 h-screen flex flex-col justify-center items-center">
-          <div
-            className="absolute inset-0 opacity-20 transition-opacity duration-300 m-auto"
-            style={{
-              backgroundImage: `url(${projectsData[activeProject]?.image})`,
-              backgroundSize: "contain",
-              backgroundPosition: "center",
-              height: "70%",
-              width: "70%",
-              backgroundRepeat: "no-repeat",
-              left: "50%",
-              top: "80%",
-              transform: "translate(-50%, -50%)",
-              pointerEvents: "none",
-            }}
-          />
-
-          <div className=" mx-auto relative z-10">
+          <div className="relative z-10 w-[80vw]">
             <div className="flex flex-col-reverse md:flex-col lg:flex-row justify-start md:justify-center items-center gap-16">
               <div className="w-full lg:w-1/2">
-                <h4 className="text-[#FB4E29] text-lg font-medium mb-8">
-                  Featured Projects
+                <h4 className="text-[#FB4E29] text-lg font-bold mb-8">
+                  Featured Partners
                 </h4>
                 <div className="space-y-6">
                   {projectsData.map((project, index) => (
@@ -172,14 +182,14 @@ const Projects = ({ id }) => {
                           className={`text-2xl md:text-3xl font-medium transition-colors duration-300 ${
                             activeProject === index
                               ? "text-black"
-                              : "text-gray-400"
+                              : "text-gray-500"
                           }`}
                         >
                           {project.title}
                         </h3>
                       </div>
                       <div
-                        className="h-[2px] w-full transition-all duration-300"
+                        className="h-[4px] w-full transition-all duration-300"
                         style={{
                           background:
                             activeProject === index ? "#FB4E29" : "#E9E7E7",
@@ -195,7 +205,7 @@ const Projects = ({ id }) => {
                   {projectsData.map((project, index) => (
                     <div
                       key={project.id}
-                      className={`absolute top-1/2 left-0 w-full -translate-y-1/2 transition-all duration-500 ${
+                      className={`absolute md:top-1/2 top-[95%] left-0 w-full -translate-y-1/2 transition-all duration-500 ${
                         activeProject === index ? "z-10" : "z-0"
                       }`}
                     >

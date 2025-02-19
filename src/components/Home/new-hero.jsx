@@ -300,7 +300,7 @@ const NewHero = () => {
                     <div className="flex justify-center items-center gap-3">
                       <Link
                         target="_blank"
-                        href="https://www.instagram.com/enclave.live/"
+                        href="https://www.instagram.com/enclave_studios_/"
                       >
                         <GrInstagram size={30} />
                       </Link>

@@ -1,16 +1,16 @@
 export const stepsData = [
   {
     id: 1,
-    title: "Strategy & Goal Setting",
+    title: "Diagnosis",
     description:
-      "A strong foundation is the key to a successful project. We work meticulously with our partners to ensure we understand their goals and work backwards to achieve them.",
+      "Without knowing what the problem is, we can’t solve the problem. Through our diagnostic approach we find the root problem before we begin strategizing and implementing solutions so you get the best bang for your buck.",
     image: "/strategy.png",
   },
   {
     id: 2,
-    title: "Design Thinking",
+    title: "Strategization",
     description:
-      "Once the right goals have been set, we formulate a plan around achieving those goals in the most efficient and cost-effective way possible.",
+      "A strong foundation is the key to a successful project. We work meticulously with our partners to ensure we understand their goals and work backwards to achieve them.",
     image: "/design.png",
   },
   {

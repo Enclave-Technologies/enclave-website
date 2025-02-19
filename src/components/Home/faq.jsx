@@ -45,7 +45,7 @@ const FAQs = ({ id }) => {
         "We ensure that the goals we set with organisations are quantitive. Using data-driven decision making, we ensure that your organisation grows.",
     },
     {
-      question: "What if it doesn’t work?",
+      question: "What if our services don’t provide the desired results?",
       answer:
         "We refund 50% of our contract fee if the project is not successful to our clients. Since data indicates growth, neither clients, nor us can deny or fake growth.",
     },
