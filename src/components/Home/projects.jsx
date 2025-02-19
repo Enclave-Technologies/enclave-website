@@ -122,10 +122,10 @@ const Projects = ({ id }) => {
       <motion.section
         ref={sectionRef}
         id={id}
-        className="w-full overflow-hidden flex flex-col justify-center items-center"
+        className="w-full overflow-hidden flex flex-col justify-center md:justify-start items-center px-10"
         style={{
           position: isFixed ? "fixed" : "relative",
-          top: '0%',
+          top: "0%",
           left: 0,
           right: 0,
           backgroundColor: "white",
@@ -136,7 +136,7 @@ const Projects = ({ id }) => {
           pointerEvents: isFixed ? "auto" : "none",
         }}
       >
-        <div className="w-full h-full py-8 px-4 md:px-10">
+        <div className="w-full py-8 px-4 md:px-10 h-screen flex flex-col justify-center items-center">
           <div
             className="absolute inset-0 opacity-20 transition-opacity duration-300 m-auto"
             style={{
@@ -153,8 +153,8 @@ const Projects = ({ id }) => {
             }}
           />
 
-          <div className="max-w-7xl mx-auto relative z-10">
-            <div className="flex flex-col lg:flex-row justify-between items-start gap-16">
+          <div className=" mx-auto relative z-10">
+            <div className="flex flex-col-reverse md:flex-col lg:flex-row justify-start md:justify-center items-center gap-16">
               <div className="w-full lg:w-1/2">
                 <h4 className="text-[#FB4E29] text-lg font-medium mb-8">
                   Featured Projects
@@ -190,12 +190,12 @@ const Projects = ({ id }) => {
                 </div>
               </div>
 
-              <div className="w-full lg:w-1/2 relative">
-                <div className="">
+              <div className="w-full lg:w-1/2 relative min-h-[511px] flex">
+                <div className="w-full">
                   {projectsData.map((project, index) => (
                     <div
                       key={project.id}
-                      className={`absolute top-0 left-0 w-full transition-all duration-500 ${
+                      className={`absolute top-1/2 left-0 w-full -translate-y-1/2 transition-all duration-500 ${
                         activeProject === index ? "z-10" : "z-0"
                       }`}
                     >

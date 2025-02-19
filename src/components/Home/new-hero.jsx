@@ -316,7 +316,7 @@ const NewHero = () => {
                       <a href="mailto:hello@enclave.live">hello@enclave.live</a>
                       <a href="tel:+85268999999">+852 6899 9999</a>
                     </p>
-                    <p className="text-sm text-[#121212]">
+                    <p className="text-sm text-[#121212] text-center">
                       © {new Date().getFullYear()} Enclave Technologies Ltd. All
                       rights reserved.
                     </p>
