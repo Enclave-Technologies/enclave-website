@@ -155,9 +155,13 @@ const NewHero = () => {
     <>
       <div
         ref={heroRef}
-        className="fixed top-0 left-0 w-full z-40 bg-[#FFF2ED]"
+        className="fixed top-0 left-0 w-full bg-[#FFF2ED]"
         style={{
           height: "100vh",
+          zIndex: isFooter ? 40 : showStickyNav ? -1 : 40,
+          opacity: showStickyNav && !isFooter ? 0 : 100,
+          pointerEvents: showStickyNav && !isFooter ? "none" : "auto",
+          visibility: showStickyNav && !isFooter ? "hidden" : "visible",
         }}
       >
         <div
@@ -337,7 +341,7 @@ const NewHero = () => {
         </div>
       </div>
 
-      {showStickyNav && (
+      {showStickyNav && !isFooter && (
         <div
           className="fixed top-4 left-0 right-0 z-50 mx-6 rounded-[48px] h-[80px] transition-all duration-300"
           style={{
