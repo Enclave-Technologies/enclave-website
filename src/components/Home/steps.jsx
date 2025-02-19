@@ -7,7 +7,7 @@ import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger);
 
 const StepCard = ({ step, index }) => (
-  <div className="flex flex-col md:flex-row items-start p-0 w-full h-auto md:h-[200px] bg-gradient-to-r from-white/40 to-white/10 backdrop-blur-[15px] shadow-[0px_0px_15px_rgba(0,0,0,0.2)] rounded-[12px] transition-transform duration-300 hover:scale-[1.02]">
+  <div className="flex flex-col md:flex-row items-start p-0 w-full h-auto md:h-[200px] bg-gradient-to-r from-white/40 to-white/10 backdrop-blur-[15px] shadow-[0px_0px_5px_rgba(0,0,0,0.2)] rounded-[12px] transition-transform duration-300 hover:scale-[1.02]">
     <div className="w-full md:w-[200px] h-[200px] bg-gray-100 rounded-t-[12px] md:rounded-l-[12px]">
       <Image
         src={step.image}
@@ -95,10 +95,10 @@ const Steps = ({ id }) => {
 
           <div className="w-full lg:w-3/5">
             <p className="text-[#6E605D] text-lg leading-relaxed mb-12 md:mb-16 max-w-3xl">
-              We always employ a 3-step process led by strategy and design
-              thinking followed by development and result measurement to
-              continually refine your product and deliver the best possible
-              experience to your end users.
+              We employ a 3-step process led by strategy and goal setting
+              followed by design thinking and implementation to make sure we
+              solve the right problem to unlock the true potential of your
+              organization.
             </p>
 
             <div ref={stepsRef} className="space-y-6">

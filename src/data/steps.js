@@ -1,23 +1,23 @@
 export const stepsData = [
   {
     id: 1,
-    title: "Strategy & Alignment",
+    title: "Strategy & Goal Setting",
     description:
-      "A strong foundation is the key to a successful project. We work meticulously with our partners to ensure alignment on the final outcomes & discuss development plans.",
+      "A strong foundation is the key to a successful project. We work meticulously with our partners to ensure we understand their goals and work backwards to achieve them.",
     image: "/strategy.png",
   },
   {
     id: 2,
-    title: "Design & Development",
+    title: "Design Thinking",
     description:
-      "Once the foundation has been laid down, it’s time to start designing and developing. Our team of talented designers and developers work with dedication to make sure the final product meets our client’s requirements.",
+      "Once the right goals have been set, we formulate a plan around achieving those goals in the most efficient and cost-effective way possible.",
     image: "/design.png",
   },
   {
     id: 3,
-    title: "Measure & Iterate",
+    title: "Implementation",
     description:
-      "No solution is perfect at once. After launching the project, we support our clients for at least 2-months to make sure they win.",
+      "Any good plan is useless if it is not put into action. Our team makes sure that your vision and goals are achieved without any hiccups or discomfort to your organisation.",
     image: "/iterate.png",
   },
 ];

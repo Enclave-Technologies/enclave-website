@@ -9,8 +9,8 @@ const links = [
   { title: "Digital Marketing", link: "/#marketing" },
   { title: "Website Design", link: "/#technology" },
   { title: "Data Analytics", link: "/#data" },
-  { title: "About Us", link: "/#portfolio" },
-  { title: "FAQs", link: "/#about" },
+  { title: "About Us", link: "/#team" },
+  { title: "FAQs", link: "/#faqs" },
 ];
 
 export const Navbarr = () => {

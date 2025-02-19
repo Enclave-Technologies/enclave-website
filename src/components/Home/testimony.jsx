@@ -11,7 +11,7 @@ const TestimonialCard = ({ text, author, company, image }) => (
       boxSizing: "border-box",
       background:
         "linear-gradient(113.44deg, rgba(255, 255, 255, 0.4) 22.6%, rgba(255, 255, 255, 0.1) 92.47%)",
-      boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.2)",
+      boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.2)",
       backdropFilter: "blur(15px)",
       borderRadius: "8px",
       flex: "none",
