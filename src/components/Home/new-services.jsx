@@ -14,38 +14,38 @@ const NewServices = ({ id }) => {
 
   const services = {
     digital: {
-      title: "Data Analytics",
+      title: "Social Media Optimization",
       description:
         "We help you understand your audience and make data-driven decisions to grow your business.",
       services: [
-        "Growth Insights",
-        "Marketing Analytics",
-        "Business Intelligence (BI)",
-        "Custom Data Solutions",
+        "LinkedIn Marketing",
+        "Youtube Marketing",
+        "Instagram Marketing",
+        "Facebook Marketing",
       ],
       image: "/data-services.png",
     },
     seo: {
-      title: "Digital Marketing",
+      title: "Search Engine Optimization",
       description:
-        "We help you reach your audience through digital channels to grow your business.",
+        "Soluions to grow your visibility on Google and drive more organic traffic to your business.",
       services: [
-        "Search Engine Optimization (SEO)",
-        "Seach Engine Marketing (SEM)",
-        "Seach Media Marketing (SMM)",
-        "Website Development",
+        "Keyword Planning",
+        "SEO strategization",
+        "Content Creation",
+        "Technical SEO",
       ],
       image: "/design-services.png",
     },
     development: {
-      title: "AI Integration",
+      title: "Website Design & Development",
       description:
         "We help you integrate AI into your business to automate processes and grow your business.",
       services: [
-        "Sales and Marketing Automations",
-        "ML Deployment",
-        "Process Automation",
-        "AI Deployment",
+        "Website Design",
+        "Website Development",
+        "Website Copywriting",
+        "Deployment & Analytics",
       ],
       image: "/seo-services.png",
     },
