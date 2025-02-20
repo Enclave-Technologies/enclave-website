@@ -9,7 +9,7 @@ const links = [
   { title: "Digital Marketing", link: "/#marketing" },
   { title: "Data Analytics", link: "/#data" },
   { title: "AI Integrations", link: "/#technology" },
-  { title: "About Us", link: "/#team" },
+  { title: "About Us", link: "/#steps" },
   { title: "FAQs", link: "/#faqs" },
 ];
 
@@ -19,7 +19,7 @@ export const Navbarr = () => {
   return (
     <>
       <div className="w-full flex items-center justify-between px-0 md:px-10">
-        <div className="w-[64px]">
+        <div className="w-[64px] relative z-[1001]">
           <Link href="/">
             <Image
               className="enclave-logo"
@@ -32,11 +32,14 @@ export const Navbarr = () => {
           </Link>
         </div>
 
-        <div className="hidden md:flex items-center justify-center flex-1 space-x-12">
+        <div className="hidden md:flex items-center justify-center flex-1 space-x-12 relative z-[1001]">
           {links.map((link, index) => (
             <Link
               key={index}
               href={link.link}
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
               className="text-black hover:text-[#FB4E29] transition-colors duration-200 text-sm font-medium"
             >
               {link.title}
@@ -44,7 +47,7 @@ export const Navbarr = () => {
           ))}
         </div>
 
-        <div className="hidden md:block w-[140px]">
+        <div className="hidden md:block w-[140px] relative z-[1001]">
           <Button
             variant="primary navigation"
             title="Contact Us"
@@ -53,7 +56,7 @@ export const Navbarr = () => {
           />
         </div>
 
-        <div className="md:hidden">
+        <div className="md:hidden relative z-[1001]">
           <Hamburger isOpen={isOpen} toggleMenu={() => setIsOpen(!isOpen)} />
         </div>
       </div>

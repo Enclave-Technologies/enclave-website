@@ -6,21 +6,6 @@ import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const BackgroundPattern = () => (
-  <div className="absolute left-0 top-0 w-full md:w-2/5 h-full">
-    <div
-      className="absolute inset-0 opacity-20"
-      style={{
-        backgroundImage: `url('/steps-bg.png')`,
-        backgroundSize: "600px 100%",
-        backgroundPosition: "left top",
-        backgroundRepeat: "no-repeat",
-        objectFit: "cover",
-      }}
-    />
-  </div>
-);
-
 const NewServices = ({ id }) => {
   const marketingRef = useRef(null);
   const dataRef = useRef(null);
@@ -86,7 +71,7 @@ const NewServices = ({ id }) => {
         },
         opacity: 1,
         y: 0,
-        duration: 0.8,
+        duration: 0.5,
         delay: delay,
         ease: "power2.out",
       });

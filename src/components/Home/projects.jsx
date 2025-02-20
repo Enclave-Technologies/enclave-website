@@ -44,7 +44,7 @@ const ProjectPreview = ({ project, isActive }) => (
         <div className="flex flex-col gap-8 items-center justify-center">
           {project.metrics.map((metric, index) => (
             <div key={index} className="flex flex-col">
-              <h2 className="text-3xl font-bold text-black text-center">
+              <h2 className="text-2xl font-bold text-black text-center">
                 {metric.value}
               </h2>
               <p className="text-base text-[#6E605D] text-center">

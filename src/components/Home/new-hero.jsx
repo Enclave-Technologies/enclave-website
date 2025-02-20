@@ -166,7 +166,7 @@ const NewHero = () => {
       >
         <div
           ref={navContainerRef}
-          className="absolute inset-0 z-50 rounded-[48px] mx-6 my-4 flex items-center transition-all duration-300"
+          className="absolute inset-0 z-50 rounded-[48px] mx-6 my-4 flex items-center transition-all duration-300 pointer-events-none"
           style={{
             background:
               "linear-gradient(113.44deg, rgba(255, 255, 255, 0.4) 22.6%, rgba(255, 255, 255, 0.1) 92.47%)",
@@ -175,7 +175,7 @@ const NewHero = () => {
             height: "calc(100% - 32px)",
           }}
         >
-          <div className="w-full h-[80px] absolute px-8 top-4 left-0 right-0">
+          <div className="w-full h-[80px] absolute px-8 top-4 left-0 right-0 pointer-events-auto">
             <Navbarr />
           </div>
 
@@ -227,7 +227,7 @@ const NewHero = () => {
                   </div>
 
                   <Link
-                    href="/#our-services"
+                    href="/#testimony"
                     className="flex justify-center items-center"
                   >
                     <svg
@@ -318,7 +318,7 @@ const NewHero = () => {
                   <div className="flex w-full justify-between items-center flex-col md:flex-row">
                     <p className="text-sm text-[#121212] flex gap-4 items-center">
                       <a href="mailto:hello@enclave.live">hello@enclave.live</a>
-                      <a href="tel:+85268999999">+852 6899 9999</a>
+                      <a href="tel:+85259291909">+852 5929 1909</a>
                     </p>
                     <p className="text-sm text-[#121212] text-center">
                       © {new Date().getFullYear()} Enclave Technologies Ltd. All

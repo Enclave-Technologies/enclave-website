@@ -63,7 +63,7 @@ const Steps = ({ id }) => {
         },
         opacity: 1,
         y: 0,
-        duration: 0.8,
+        duration: 0.5,
         delay: index * 0.2,
         ease: "power2.out",
       });
