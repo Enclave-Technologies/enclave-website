@@ -167,7 +167,7 @@ const NewHero = () => {
       >
         <div
           ref={navContainerRef}
-          className="absolute inset-0 z-50 rounded-[48px] mx-6 my-4 flex items-center transition-all duration-300 pointer-events-none"
+          className="absolute inset-0 z-[40] rounded-[48px] mx-6 my-4 flex items-center"
           style={{
             background:
               "linear-gradient(113.44deg, rgba(255, 255, 255, 0.4) 22.6%, rgba(255, 255, 255, 0.1) 92.47%)",
@@ -176,18 +176,18 @@ const NewHero = () => {
             height: "calc(100% - 32px)",
           }}
         >
-          <div className="w-full h-[80px] absolute px-8 top-4 left-0 right-0 pointer-events-auto">
+          <div className="w-full h-[80px] absolute px-8 top-4 left-0 right-0 z-[45]">
             <Navbarr />
           </div>
 
-          <div className="relative z-20 w-full h-full flex flex-col">
+          <div className="relative z-[41] w-full h-full flex flex-col pointer-events-auto">
             <div
               ref={contentRef}
-              className="hero-content flex-1 flex items-end"
+              className="hero-content flex-1 flex items-end pointer-events-auto"
             >
               {!isFooter ? (
-                <div className="px-6 md:px-16 lg:px-24 pb-24 flex w-full justify-between items-end">
-                  <div className="max-w-[1920px]">
+                <div className="px-6 md:px-16 lg:px-24 pb-24 flex w-full justify-between items-end pointer-events-auto">
+                  <div className="max-w-[1920px] pointer-events-auto">
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -208,8 +208,8 @@ const NewHero = () => {
                         transition={{ delay: 0.2 }}
                         className="text-base text-[#121212] md:text-lg font-normal leading-relaxed max-w-[450px] pl-4 md:pl-0"
                       >
-                        Digital Marketing and Data Consulting studio
-                        helping business grow with data-backed solutions.
+                        Digital Marketing and Data Consulting studio helping
+                        business grow with data-backed solutions.
                       </motion.p>
                     </motion.div>
 
@@ -217,7 +217,7 @@ const NewHero = () => {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.3, duration: 0.6 }}
-                      className="mt-8 max-w-[80%] md:max-w-xs pl-4 md:pl-0"
+                      className="mt-8 max-w-[80%] md:max-w-xs pl-4 md:pl-0 z-[42] relative pointer-events-auto"
                     >
                       <Button
                         variant="primary navigation"
@@ -227,42 +227,49 @@ const NewHero = () => {
                     </motion.div>
                   </div>
 
-                  <Link
-                    href="/#testimony"
-                    className="flex justify-center items-center"
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.4 }}
+                    className="z-[42] relative pointer-events-auto"
                   >
-                    <svg
-                      width="48"
-                      height="48"
-                      viewBox="0 0 48 48"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <Link
+                      href="/#testimony"
+                      className="flex justify-center items-center hover:scale-110 transition-transform duration-300"
                     >
-                      <rect
-                        x="1"
-                        y="1"
-                        width="46"
-                        height="46"
-                        rx="23"
-                        stroke="#FB4E29"
-                        stroke-width="2"
-                      />
-                      <path
-                        d="M24 19.3333V28.6666"
-                        stroke="#FB4E29"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M28.6673 24L24.0007 28.6667L19.334 24"
-                        stroke="#FB4E29"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </Link>
+                      <svg
+                        width="48"
+                        height="48"
+                        viewBox="0 0 48 48"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          x="1"
+                          y="1"
+                          width="46"
+                          height="46"
+                          rx="23"
+                          stroke="#FB4E29"
+                          strokeWidth="2"
+                        />
+                        <path
+                          d="M24 19.3333V28.6666"
+                          stroke="#FB4E29"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M28.6673 24L24.0007 28.6667L19.334 24"
+                          stroke="#FB4E29"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </Link>
+                  </motion.div>
                 </div>
               ) : (
                 <div className="px-6 md:px-16 lg:px-24 pb-24 flex flex-col w-full justify-center items-center gap-8">

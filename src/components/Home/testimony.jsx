@@ -125,7 +125,7 @@ const Testimony = ({ id }) => {
             track-record and unmatched customer service. You won&apos;t know
             when you grew from 0 to 100.
           </p>
-          <div className="inline-block">
+          <div className="relative pointer-events-auto z-[1001]">
             <Button
               variant="primary navigation"
               title="Discover What's Next"
