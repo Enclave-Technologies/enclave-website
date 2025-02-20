@@ -162,10 +162,7 @@ const NewHero = () => {
           opacity: showStickyNav && !isFooter ? 0 : 100,
           pointerEvents: showStickyNav && !isFooter ? "none" : "auto",
           visibility: showStickyNav && !isFooter ? "hidden" : "visible",
-          // backgroundImage: "url('/testimonials-bg.png')",
-          // backgroundSize: "cover",
-          // backgroundPosition: "center",
-          // backgroundRepeat: "no-repeat",
+          backgroundColor: "rgb(255, 242, 237)",
         }}
       >
         <div

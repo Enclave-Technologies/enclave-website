@@ -137,6 +137,8 @@ const Projects = ({ id }) => {
         style={{
           // display: isFixed ? "flex" : "none",
           height: `${(projectsData.length - 1.5) * 100}vh`,
+          transform: "translateY(-70vh)",
+          marginTop: "-70vh",
         }}
         className="pointer-events-none"
       />
