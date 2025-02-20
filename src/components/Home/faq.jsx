@@ -27,7 +27,7 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
           isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="px-6 pb-6">
+        <div className="pb-6">
           <p className="text-[#6E605D] text-base leading-relaxed">{answer}</p>
         </div>
       </div>
@@ -74,7 +74,7 @@ const FAQs = ({ id }) => {
       <div className="max-w-7xl mx-auto relative">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16">
           <div className="col-span-1 lg:col-span-2">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">FAQs</h2>
+            <p className="text-4xl lg:text-5xl font-bold mb-6">FAQs</p>
             <p className="text-[#6E605D] text-base leading-relaxed mb-12 max-w-full md:max-w-[450px]">
               Find answers to your most pressing questions about our services
               and experience.

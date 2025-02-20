@@ -6,21 +6,6 @@ import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const BackgroundPattern = () => (
-    <div className="absolute left-0 top-0 w-full md:w-2/5 h-full">
-        <div
-            className="absolute inset-0 opacity-20"
-            style={{
-                backgroundImage: `url('/steps-bg.png')`,
-                backgroundSize: "600px 100%",
-                backgroundPosition: "left top",
-                backgroundRepeat: "no-repeat",
-                objectFit: "cover",
-            }}
-        />
-    </div>
-);
-
 const NewServices = ({ id }) => {
     const marketingRef = useRef(null);
     const dataRef = useRef(null);
@@ -86,7 +71,7 @@ const NewServices = ({ id }) => {
                 },
                 opacity: 1,
                 y: 0,
-                duration: 0.8,
+                duration: 0.5,
                 delay: delay,
                 ease: "power2.out",
             });
@@ -116,9 +101,9 @@ const NewServices = ({ id }) => {
 
                     <div className="w-[80vw]">
                         <div
-                            ref={dataRef}
-                            className="space-y-6 flex flex-col-reverse md:flex-row gap-4 items-center justify-between w-full"
-                            id="data"
+                            ref={marketingRef}
+                            className="space-y-6 flex flex-col md:flex-row gap-4 items-center justify-between w-full"
+                            id="marketing"
                         >
                             <Image
                                 src={services.digital.image}
@@ -127,6 +112,7 @@ const NewServices = ({ id }) => {
                                 alt={services.digital.title}
                                 className="w-[50vh] h-[50vh] flex-1 object-contain"
                             />
+
                             <div className="flex-1">
                                 <h4 className="text-2xl md:text-4xl font-semibold mb-2">
                                     {services.digital.title}
@@ -155,9 +141,9 @@ const NewServices = ({ id }) => {
                         </div>
 
                         <div
-                            ref={marketingRef}
-                            className="space-y-6 flex flex-col md:flex-row gap-4 items-center justify-between w-full"
-                            id="marketing"
+                            ref={dataRef}
+                            className="space-y-6 flex flex-col-reverse md:flex-row gap-4 items-center justify-between w-full"
+                            id="data"
                         >
                             <div className="flex-1">
                                 <h4 className="text-2xl md:text-4xl font-semibold mb-2">
@@ -204,6 +190,7 @@ const NewServices = ({ id }) => {
                                 alt={services.development.title}
                                 className="w-[50vh] h-[50vh] flex-1 object-contain"
                             />
+
                             <div className="flex-1">
                                 <h4 className="text-2xl md:text-4xl font-semibold mb-2">
                                     {services.development.title}

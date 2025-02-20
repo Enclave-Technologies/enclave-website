@@ -42,17 +42,26 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between text-black relative">
       <div className="cursor" />
-      <NewHero />
 
-      <div className="services-section">
+      <div
+        style={{
+          width: "100vw",
+          backgroundImage: "url('/testimonials-bg.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed",
+        }}
+      >
+        {/* <div style={{ height: "100vh" }} /> */}
+        <NewHero />
         <Testimony id="testimony" />
-        {/* <OurServices id="our-services" /> */}
       </div>
 
       <NewServices id="new-services" />
       <Projects id="projects" />
       <Steps id="steps" />
-      <Team id="team" />
+      {/* <Team id="team" /> */}
       <FAQs id="faqs" />
       <div id="footer" className="w-full h-screen" />
     </main>

@@ -100,32 +100,30 @@ const ScrollingRow = ({ items, direction = "right" }) => {
 const Testimony = ({ id }) => {
   return (
     <section
-      className="relative w-screen min-h-[80vh] flex flex-col items-center justify-center overflow-hidden py-32 pt-52 bg-white"
+      className="relative w-full min-h-[90vh] flex flex-col items-center justify-center overflow-hidden mt-0"
       id={id}
       style={{
-        backgroundImage: "url('/testimonials-bg.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
+        transform: "translateY(-90vh)",
+        marginBottom: "-90vh",
       }}
     >
       <div className="absolute inset-0 opacity-50" />
 
       <div className="relative z-20 w-full flex flex-col items-center justify-center">
-        <div className="max-w-2xl mx-auto text-center px-6 mb-20">
+        <div className="max-w-2xl mx-auto text-center px-6 mb-20 flex flex-col items-center justify-center">
           <p
-            className="text-4xl font-bold mb-6 max-w-lg capitalize"
+            className="text-4xl font-bold mb-6 max-w-lg capitalize text-center"
             style={{ lineHeight: "1.2" }}
           >
             Grow your business with data-backed solutions.
           </p>
-          <p className="text-xl text-[#FB4E29] font-bold mb-6 max-w-lg capitalize">
+          <p className="text-xl text-[#FB4E29] font-bold mb-6 max-w-lg capitalize text-center">
             Don&apos;t settle for mediocre.
           </p>
-          <p className="text-base mb-10 max-w-xl mx-auto">
+          <p className="text-base mb-10 max-w-xl mx-auto text-center">
             Partner with the best growth solution studio with proven
-            track-record and unmatched customer service. You won’t know when you
-            grew from 0 to 100.
+            track-record and unmatched customer service. You won&apos;t know
+            when you grew from 0 to 100.
           </p>
           <div className="inline-block">
             <Button

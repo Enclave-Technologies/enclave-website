@@ -55,15 +55,15 @@ const Steps = ({ id }) => {
     cards.forEach((card, index) => {
       gsap.to(card, {
         scrollTrigger: {
-          trigger: card,
-          start: "top 80%",
-          end: "top 60%",
+          trigger: containerRef.current,
+          start: `top+=${window.innerHeight * 0.3} bottom`, // Trigger when 30% of viewport from the transformed position
+          end: `top+=${window.innerHeight * 0.5} bottom`, // End a bit later
           toggleActions: "play none none reverse",
           markers: false,
         },
         opacity: 1,
         y: 0,
-        duration: 0.8,
+        duration: 0.5,
         delay: index * 0.2,
         ease: "power2.out",
       });
@@ -79,6 +79,10 @@ const Steps = ({ id }) => {
       id={id}
       ref={containerRef}
       className="relative w-full min-h-screen bg-white overflow-hidden py-20 px-4 md:px-10"
+      style={{
+        transform: "translateY(-60vh)",
+        marginBottom: "-60vh",
+      }}
     >
       <BackgroundPattern />
 
