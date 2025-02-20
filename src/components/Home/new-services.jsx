@@ -95,7 +95,7 @@ const NewServices = ({ id }) => {
               Our Services
             </h4>
             <p className="text-2xl lg:text-4xl font-bold mb-0 md:mb-6 text-center max-w-lg mx-auto">
-              Your Business Deserves to Be the Best It Can Be
+              Because Your Business Deserves the Best
             </p>
           </div>
 

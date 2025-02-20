@@ -155,13 +155,17 @@ const NewHero = () => {
     <>
       <div
         ref={heroRef}
-        className="fixed top-0 left-0 w-full bg-[#FFF2ED]"
+        className="fixed top-0 left-0 w-full"
         style={{
           height: "100vh",
           zIndex: isFooter ? 40 : showStickyNav ? -1 : 40,
           opacity: showStickyNav && !isFooter ? 0 : 100,
           pointerEvents: showStickyNav && !isFooter ? "none" : "auto",
           visibility: showStickyNav && !isFooter ? "hidden" : "visible",
+          // backgroundImage: "url('/testimonials-bg.png')",
+          // backgroundSize: "cover",
+          // backgroundPosition: "center",
+          // backgroundRepeat: "no-repeat",
         }}
       >
         <div
