@@ -208,8 +208,8 @@ const NewHero = () => {
                         transition={{ delay: 0.2 }}
                         className="text-base text-[#121212] md:text-lg font-normal leading-relaxed max-w-[450px] pl-4 md:pl-0"
                       >
-                        Data and AI Consultants helping startups grow with
-                        data-backed solutions.
+                        Digital Marketing and Data Consulting studio
+                        helping business grow with data-backed solutions.
                       </motion.p>
                     </motion.div>
 
