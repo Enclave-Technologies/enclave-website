@@ -2,7 +2,12 @@ import { useState, useRef, useEffect } from "react";
 import { projectsData } from "../../data/projects";
 import Image from "next/image";
 import { FiExternalLink } from "react-icons/fi";
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useMotionValueEvent,
+  useInView,
+} from "framer-motion";
 import Link from "next/link";
 
 const ProjectPreview = ({ project, isActive }) => (
@@ -81,6 +86,7 @@ const Projects = ({ id }) => {
   const [isFixed, setIsFixed] = useState(false);
   const sectionRef = useRef(null);
   const spacerRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   const { scrollY } = useScroll();
   const { scrollYProgress } = useScroll({
@@ -135,7 +141,6 @@ const Projects = ({ id }) => {
       <div
         ref={spacerRef}
         style={{
-          // display: isFixed ? "flex" : "none",
           height: `${(projectsData.length - 1.5) * 100}vh`,
           transform: "translateY(-70vh)",
           marginTop: "-70vh",
@@ -156,7 +161,6 @@ const Projects = ({ id }) => {
           zIndex: isFixed ? 40 : -1,
           display: isFixed ? "flex" : "none",
           opacity: isFixed ? 1 : 0,
-          transition: "all 0.3s ease-in-out",
           pointerEvents: isFixed ? "auto" : "none",
           backgroundImage: "url('/testimonials-bg.png')",
           backgroundSize: "cover",
@@ -164,7 +168,15 @@ const Projects = ({ id }) => {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="w-full py-8 px-4 md:px-10 h-screen flex flex-col justify-center items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
+          transition={{
+            duration: 1,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="w-full py-8 px-4 md:px-10 h-screen flex flex-col justify-center items-center"
+        >
           <div className="relative z-10 w-[80vw]">
             <div className="flex flex-col-reverse md:flex-col lg:flex-row justify-start md:justify-center items-center gap-16">
               <div className="w-full lg:w-1/2">
@@ -221,7 +233,7 @@ const Projects = ({ id }) => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </motion.section>
     </>
   );

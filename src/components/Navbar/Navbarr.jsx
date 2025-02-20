@@ -6,9 +6,9 @@ import Image from "next/image";
 import Hamburger from "./Hamburger";
 
 const links = [
-  { title: "Digital Marketing", link: "/#marketing" },
-  { title: "Data Analytics", link: "/#data" },
-  { title: "AI Integrations", link: "/#technology" },
+  { title: "SEO", link: "/#marketing" },
+  { title: "SMO", link: "/#data" },
+  { title: "Web Design & Development", link: "/#technology" },
   { title: "About Us", link: "/#steps" },
   { title: "FAQs", link: "/#faqs" },
 ];

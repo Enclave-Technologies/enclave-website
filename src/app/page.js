@@ -5,8 +5,6 @@ import { useEffect, useState } from "react";
 import Testimony from "../components/Home/testimony";
 import NewHero from "../components/Home/new-hero";
 import Steps from "../components/Home/steps";
-import OurServices from "../components/Home/our-services";
-import Team from "../components/Home/team";
 import FAQs from "../components/Home/faq";
 import Projects from "../components/Home/projects";
 import NewServices from "../components/Home/new-services";
@@ -53,7 +51,6 @@ export default function Home() {
           backgroundAttachment: "fixed",
         }}
       >
-        {/* <div style={{ height: "100vh" }} /> */}
         <NewHero />
         <Testimony id="testimony" />
       </div>

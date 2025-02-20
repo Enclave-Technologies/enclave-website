@@ -48,7 +48,6 @@ const Steps = ({ id }) => {
   useEffect(() => {
     const cards = stepsRef.current.querySelectorAll(".step-card");
 
-    // Set initial state
     gsap.set(cards, { opacity: 0, y: 50 });
 
     // Create individual animations for each card
@@ -56,8 +55,8 @@ const Steps = ({ id }) => {
       gsap.to(card, {
         scrollTrigger: {
           trigger: containerRef.current,
-          start: `top+=${window.innerHeight * 0.3} bottom`, // Trigger when 30% of viewport from the transformed position
-          end: `top+=${window.innerHeight * 0.5} bottom`, // End a bit later
+          start: `top+=${window.innerHeight * 0.3} bottom`,
+          end: `top+=${window.innerHeight * 0.5} bottom`, 
           toggleActions: "play none none reverse",
           markers: false,
         },
