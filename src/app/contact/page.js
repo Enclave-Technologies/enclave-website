@@ -4,12 +4,13 @@ import { Navbar } from "../../components/Navbar/Navbar";
 import { useForm, ValidationError } from "@formspree/react";
 
 const services = [
-  "UI/UX Design",
-  "Website Development",
-  "Mobile App Development",
-  "E-commerce Development",
-  "Process Automation",
   "Search Engine Optimization",
+  "Social Media Marketing",
+  "Content Marketing",
+  "Email Marketing",
+  "Google Ads",
+  "Facebook Ads",
+  "Website Redesign",
 ];
 
 const budgets = ["2-10K", "10-20K", "20-50K", "50-100K", "100K+"];
