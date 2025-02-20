@@ -112,12 +112,12 @@ const Testimony = ({ id }) => {
       <div className="relative z-20 w-full flex flex-col items-center justify-center">
         <div className="max-w-2xl mx-auto text-center px-6 mb-20 flex flex-col items-center justify-center">
           <p
-            className="text-4xl font-bold mb-6 max-w-lg capitalize text-center"
+            className="text-2xl md:text-4xl font-bold mb-6 max-w-lg capitalize text-center"
             style={{ lineHeight: "1.2" }}
           >
             Grow your business with data-backed solutions.
           </p>
-          <p className="text-xl text-[#FB4E29] font-bold mb-6 max-w-lg capitalize text-center">
+          <p className="md:text-xl text-lg text-[#FB4E29] font-bold mb-6 max-w-lg capitalize text-center">
             Don&apos;t settle for mediocre.
           </p>
           <p className="text-base mb-10 max-w-xl mx-auto text-center">

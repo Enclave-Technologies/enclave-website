@@ -30,7 +30,7 @@ const ProjectPreview = ({ project, isActive }) => (
             alt={project.title}
             width={200}
             height={350}
-            className="object-contain md:w-[200px] w-[150px] h-[220px] pt-[100px] md:pt-0"
+            className="object-contain md:w-[200px] w-full md:h-[220px] h-[40vh] pt-[100px] md:pt-0"
           />
         </div>
         <Link
@@ -45,7 +45,7 @@ const ProjectPreview = ({ project, isActive }) => (
         </Link>
       </div>
 
-      <div className="w-full h-full md:flex  flex-col items-center justify-center">
+      <div className="w-full h-full md:flex  flex-col items-center justify-center hidden">
         <div className="flex flex-col gap-8 items-center justify-center">
           {project.metrics.map((metric, index) => (
             <div key={index} className="flex flex-col">
@@ -179,7 +179,7 @@ const Projects = ({ id }) => {
         >
           <div className="relative z-10 w-[80vw]">
             <div className="flex flex-col-reverse md:flex-col lg:flex-row justify-start md:justify-center items-center gap-16">
-              <div className="w-full lg:w-1/2">
+              <div className="w-full lg:w-1/2 opacity-0 md:opacity-100">
                 <h4 className="text-[#FB4E29] text-lg font-bold mb-8">
                   Featured Partners
                 </h4>
@@ -219,10 +219,13 @@ const Projects = ({ id }) => {
                   {projectsData.map((project, index) => (
                     <div
                       key={project.id}
-                      className={`absolute md:top-1/2 top-[95%] left-0 w-full -translate-y-1/2 transition-all duration-500 ${
+                      className={`absolute md:top-1/2 top-[93%] left-0 w-full -translate-y-1/2 transition-all duration-500 ${
                         activeProject === index ? "z-10" : "z-0"
                       }`}
                     >
+                      <h4 className="text-[#FB4E29] text-lg font-semibold mb-3 md:hidden block">
+                        Featured Partners
+                      </h4>
                       <ProjectPreview
                         project={project}
                         isActive={activeProject === index}

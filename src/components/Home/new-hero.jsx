@@ -186,7 +186,7 @@ const NewHero = () => {
               className="hero-content flex-1 flex items-end pointer-events-auto"
             >
               {!isFooter ? (
-                <div className="px-6 md:px-16 lg:px-24 pb-24 flex w-full justify-between items-end pointer-events-auto">
+                <div className="px-6 md:px-16 lg:px-24 pb-8 md:pb-24 flex w-full justify-between items-end pointer-events-auto">
                   <div className="max-w-[1920px] pointer-events-auto">
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
@@ -235,7 +235,7 @@ const NewHero = () => {
                   >
                     <Link
                       href="/#testimony"
-                      className="flex justify-center items-center hover:scale-110 transition-transform duration-300"
+                      className="flex justify-center items-center hover:scale-110 transition-transform duration-300 w-8 md:w-12"
                     >
                       <svg
                         width="48"
@@ -272,9 +272,9 @@ const NewHero = () => {
                   </motion.div>
                 </div>
               ) : (
-                <div className="px-6 md:px-16 lg:px-24 pb-24 flex flex-col w-full justify-center items-center gap-8">
+                <div className="px-6 md:px-16 lg:px-24  pb-8 md:pb-24 flex flex-col w-full justify-center items-center gap-8">
                   <div className="flex w-full justify-between items-end">
-                    <div className="max-w-[1920px]">
+                    <div className="md:max-w-[1920px] max-w-full flex-1 flex flex-col">
                       <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -292,10 +292,10 @@ const NewHero = () => {
                       </motion.div>
 
                       <motion.div
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 20 }} 
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3, duration: 0.6 }}
-                        className="mt-8 max-w-[80%] md:max-w-xs pl-4 md:pl-0"
+                        className="mt-0 md:mt-8 max-w-[80%] md:max-w-xs pl-4 md:pl-0"
                       >
                         <Button
                           variant="primary navigation"
@@ -305,7 +305,7 @@ const NewHero = () => {
                       </motion.div>
                     </div>
 
-                    <div className="flex justify-center items-center gap-3">
+                    <div className="flex flex-col md:flex-row justify-center items-center gap-3">
                       <Link
                         target="_blank"
                         href="https://www.instagram.com/enclave_studios_/"
