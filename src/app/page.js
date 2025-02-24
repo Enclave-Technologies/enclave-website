@@ -58,7 +58,9 @@ export default function Home() {
       <NewServices id="new-services" />
       <Projects id="projects" />
       <Steps id="steps" />
+
       {/* <Team id="team" /> */}
+
       <FAQs id="faqs" />
       <div id="footer" className="w-full h-screen" />
     </main>

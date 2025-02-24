@@ -136,12 +136,10 @@ const Projects = ({ id }) => {
         }}
       >
         <div className="w-full py-8 px-4 md:px-10 h-screen flex flex-col justify-center items-center">
-          <div className="relative z-10 w-[80vw]">
+          <div className="relative z-10 md:w-[80vw] w-full">
             <div className="flex flex-col-reverse md:flex-col lg:flex-row justify-start md:justify-center items-center gap-16">
               <motion.div
-                className="w-full lg:w-1/2 md:opacity-100"
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
+                className="w-full lg:w-1/2 opacity-0 md:opacity-100"
                 transition={{ duration: 0.5 }}
               >
                 <h4 className="text-[#FB4E29] text-lg font-bold mb-8">
@@ -196,7 +194,7 @@ const Projects = ({ id }) => {
                   {projectsData.map((project, index) => (
                     <motion.div
                       key={project.id}
-                      className="absolute md:top-1 top-[93%] left-0 w-full -translate-y-1/2"
+                      className="absolute md:top-1 top-[15vh] left-0 w-full -translate-y-1/2"
                       initial={{ opacity: 0, y: 50 }}
                       animate={{
                         opacity: activeProject === index ? 1 : 0,
@@ -208,7 +206,7 @@ const Projects = ({ id }) => {
                         ease: [0.16, 1, 0.3, 1],
                       }}
                     >
-                      <h4 className="text-[#FB4E29] text-lg font-semibold mb-3 md:hidden block">
+                      <h4 className="text-[#FB4E29] text-lg font-semibold mb-1 md:hidden block">
                         Featured Partners
                       </h4>
                       <ProjectPreview
