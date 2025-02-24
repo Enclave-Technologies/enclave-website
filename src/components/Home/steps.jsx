@@ -21,7 +21,7 @@ const StepCard = ({ step, index }) => (
       />
     </div>
     <div className="flex-1 p-6">
-      <h3 className="text-[22px] font-bold mb-3">{step.title}</h3>
+      <h3 className="text-[22px] md:font-bold font-semibold mb-3">{step.title}</h3>
       <p className="text-[#6E605D] text-sm leading-relaxed">
         {step.description}
       </p>
@@ -36,7 +36,7 @@ const Steps = ({ id }) => {
     <section
       ref={containerRef}
       id={id}
-      className="relative w-full min-h-screen bg-white"
+      className="relative w-full min-h-screen bg-white px-4 md:px-10"
     >
       <div className="absolute left-0 top-0 w-full md:w-2/5 h-full">
         <div
@@ -51,8 +51,8 @@ const Steps = ({ id }) => {
         />
       </div>
 
-      <div className="relative z-10 w-full flex">
-        <div className="w-1/2 sticky top-0 h-screen flex items-center p-16">
+      <div className="relative z-10 w-full px-4 md:px-8 flex flex-col md:flex-row">
+        <div className="w-full md:w-2/5 md:sticky md:top-0 relative md:h-screen flex items-center md:p-16 p-6">
           <div>
             <h4 className="text-[#FB4E29] text-lg font-medium mb-4">
               Our Process
@@ -63,8 +63,8 @@ const Steps = ({ id }) => {
           </div>
         </div>
 
-        <div className="w-1/2">
-          <div className="py-[30vh] px-16 flex flex-col space-y-24">
+        <div className="w-full md:w-3/5">
+          <div className="md:py-[20vh] py-0 md:px-16 px-6 flex flex-col space-y-10">
             <p className="text-[#6E605D] text-lg leading-relaxed max-w-xl">
               We employ a 3-step process led by strategy and goal setting
               followed by design thinking and implementation to make sure we
