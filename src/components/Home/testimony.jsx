@@ -100,14 +100,15 @@ const ScrollingRow = ({ items, direction = "right" }) => {
 const Testimony = ({ id }) => {
   return (
     <section
-      className="relative w-full min-h-[90vh] flex flex-col items-center justify-center overflow-hidden mt-0"
+      className="relative w-full min-h-[90vh] flex flex-col items-center justify-center overflow-hidden"
       id={id}
       style={{
-        transform: "translateY(-90vh)",
-        marginBottom: "-90vh",
+        marginTop: "-75vh",
+        position: "relative",
+        zIndex: 41,
       }}
     >
-      <div className="absolute inset-0 opacity-50" />
+      <div className="absolute inset-0 opacity-50 pointer-events-none" />
 
       <div className="relative z-20 w-full flex flex-col items-center justify-center">
         <div className="max-w-2xl mx-auto text-center px-6 mb-20 flex flex-col items-center justify-center">
@@ -125,7 +126,7 @@ const Testimony = ({ id }) => {
             track-record and unmatched customer service. You won&apos;t know
             when you grew from 0 to 100.
           </p>
-          <div className="relative pointer-events-auto z-[1001]">
+          <div className="relative z-[1001]">
             <Button
               variant="primary navigation"
               title="Discover What's Next"
