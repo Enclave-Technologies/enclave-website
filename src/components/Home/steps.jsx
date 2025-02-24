@@ -56,7 +56,7 @@ const Steps = ({ id }) => {
         scrollTrigger: {
           trigger: containerRef.current,
           start: `top+=${window.innerHeight * 0.3} bottom`,
-          end: `top+=${window.innerHeight * 0.5} bottom`, 
+          end: `top+=${window.innerHeight * 0.5} bottom`,
           toggleActions: "play none none reverse",
           markers: false,
         },
@@ -78,10 +78,6 @@ const Steps = ({ id }) => {
       id={id}
       ref={containerRef}
       className="relative w-full min-h-screen bg-white overflow-hidden py-20 px-4 md:px-10"
-      style={{
-        transform: "translateY(-60vh)",
-        marginBottom: "-60vh",
-      }}
     >
       <BackgroundPattern />
 
