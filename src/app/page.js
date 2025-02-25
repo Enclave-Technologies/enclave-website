@@ -46,7 +46,7 @@ export default function Home() {
         style={{
           width: "100%",
           backgroundImage: "url('/testimonials-bg.png')",
-          backgroundSize: "cover",
+          // backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           backgroundAttachment: "fixed",

@@ -1,9 +1,7 @@
 import { useState, useRef } from "react";
 import { projectsData } from "../../data/projects";
 import Image from "next/image";
-import { FiExternalLink } from "react-icons/fi";
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import Link from "next/link";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "../Button";
 
 const ProjectPreview = ({ project, progress = 0 }) => (
@@ -56,8 +54,9 @@ const ProjectPreview = ({ project, progress = 0 }) => (
       </div>
     </div>
 
-    <div className="flex flex-col md:justify-between justify-start md:gap-0 gap-4 items-center w-full overflow-x-auto h-full">
-      <div className="flex md:hidden flex-row gap-4 items-start justify-start w-full">
+    <div className="flex flex-col md:justify-between justify-start md:gap-0 gap-4 items-center w-full  h-full">
+      <div className="flex flex-col md:justify-between justify-start md:gap-0 gap-4 items-center w-full overflow-x-auto">
+     <div className="flex md:hidden flex-row gap-4 items-start justify-start w-full ">
         {project.metrics.map((metric) => (
           <div key={metric.description} className="flex flex-col">
             <h2 className="md:text-2xl text-lg font-bold text-black text-center">
@@ -84,6 +83,7 @@ const ProjectPreview = ({ project, progress = 0 }) => (
           </span>
         ))}
       </div>
+     </div>
     </div>
     <p className="text-sm text-[#6E605D] text-start md:flex hidden">
       {project.description}
