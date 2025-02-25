@@ -44,10 +44,10 @@ export default function Home() {
       <div
         style={{
           width: "100vw",
-          backgroundImage: "url('/hero-bgg.png')",
+          backgroundImage: "url('/testimonials-bg.png')",
           backgroundSize: "contain",
           backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
+          backgroundRepeat: "repeat",
           // backgroundAttachment: "fixed !important",
         }}
       >
