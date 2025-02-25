@@ -42,14 +42,14 @@ const Steps = ({ id }) => {
     >
       <div className="absolute left-0 top-0 w-4/5 lg:w-2/5 h-full">
         <div
-          className="absolute inset-0"
+          className="sticky top-0"
           style={{
+            height: "100vh",
             backgroundImage: `url('/steps-bg.png')`,
             backgroundSize: "90%",
             backgroundPosition: "left top",
             backgroundRepeat: "no-repeat",
             objectFit: "cover",
-            // backgroundAttachment: "fixed !important",
           }}
         />
       </div>
