@@ -549,6 +549,10 @@ button:hover .button-text-container span {
     @apply py-1 uppercase text-sm transition-all duration-150 ease-in-out;
     text-wrap: nowrap;
   }
+
+  .mobile-background {
+    background-size: contain;
+  }
 }
 
 .project-preview:hover {
