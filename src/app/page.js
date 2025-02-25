@@ -42,14 +42,13 @@ export default function Home() {
       {/* <div className="cursor" /> */}
 
       <div
-        className="mobile-background"
         style={{
           width: "100vw",
           backgroundImage: "url('/testimonials-bg.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed",
+          backgroundAttachment: "fixed !important",
         }}
       >
         <NewHero />

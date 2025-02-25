@@ -49,7 +49,7 @@ const Steps = ({ id }) => {
             backgroundPosition: "left top",
             backgroundRepeat: "no-repeat",
             objectFit: "cover",
-            backgroundAttachment: "fixed",
+            backgroundAttachment: "fixed !important",
           }}
         />
       </div>

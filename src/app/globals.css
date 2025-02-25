@@ -564,6 +564,7 @@ button:hover .button-text-container span {
 @supports (-webkit-touch-callout: none) {
   .mobile-background {
     background-size: cover;
+    background-position: center;
   }
 }
 
