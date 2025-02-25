@@ -21,7 +21,9 @@ const StepCard = ({ step, index }) => (
       />
     </div>
     <div className="flex-1 p-6">
-      <h3 className="text-[22px] md:font-bold font-semibold mb-3">{step.title}</h3>
+      <h3 className="text-[22px] md:font-bold font-semibold mb-3">
+        {step.title}
+      </h3>
       <p className="text-[#6E605D] text-sm leading-relaxed">
         {step.description}
       </p>
@@ -47,12 +49,13 @@ const Steps = ({ id }) => {
             backgroundPosition: "left top",
             backgroundRepeat: "no-repeat",
             objectFit: "cover",
+            backgroundAttachment: "fixed",
           }}
         />
       </div>
 
       <div className="relative z-10 w-full px-4 md:px-8 flex flex-col md:flex-row">
-        <div className="w-full md:w-2/5 md:sticky md:top-0 relative md:h-screen flex items-center md:p-16 p-6">
+        <div className="w-full md:w-2/5 md:sticky md:top-0 relative md:h-screen flex items-start md:p-16 p-6 md:py-[20vh] py-0">
           <div>
             <h4 className="text-[#FB4E29] text-lg font-medium mb-4">
               Our Process

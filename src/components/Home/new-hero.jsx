@@ -351,7 +351,7 @@ const NewHero = () => {
 
       {showStickyNav && !isFooter && (
         <div
-          className="fixed top-4 left-0 right-0 z-50 mx-6 rounded-[48px] h-[80px] transition-all duration-300"
+          className="fixed top-4 left-0 right-0 z-50 mx-6 rounded-[48px] md:h-[80px] h-[60px] transition-all duration-300"
           style={{
             background:
               "linear-gradient(113.44deg, rgba(255, 255, 255, 0.6) 22.6%, rgba(255, 255, 255, 0.25) 92.47%)",

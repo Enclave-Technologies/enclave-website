@@ -20,7 +20,7 @@ export const projectsData = [
       "An AI-powered social media management platform that helps businesses create, schedule, and analyze their social media content. The platform features advanced analytics, automated content suggestions, and a user-friendly interface that has helped clients achieve an average 60% improvement in engagement rates.",
     keywords: ["Brand Design", "UI/UX Design", "Web Development"],
     url: "https://athenasocial.webflow.io/",
-    image: "/project-images/athena-social.png",
+    image: "/project-images/athena-social-nobg.png",
     metrics: [
       { value: "500+", description: "Active Users" },
       { value: "60%", description: "Engagement Rate Increase" },

@@ -11,29 +11,29 @@ const ProjectPreview = ({ project, progress = 0 }) => (
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0, y: -20 }}
     transition={{ duration: 0.8, ease: "easeInOut" }}
-    className="w-full max-w-full md:h-[511px] h-[80vh] flex flex-col justify-end p-6 gap-6 rounded-2xl transition-all duration-500 hover:scale-[1.02]"
+    className="w-full md:bg-white bg-transparent max-w-full md:h-[511px] h-full flex flex-col justify-end p-4 md:p-6 gap-6 rounded-2xl transition-all duration-500 hover:scale-[1.02]"
     style={{
-      background: "white",
+      // background: "white",
       boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.08)",
       backdropFilter: "blur(15px)",
       boxSizing: "border-box",
     }}
   >
-    <div className="w-full h-full flex gap-4 items-start justify-start">
-      <div className="flex flex-col gap-4 justify-between h-full items-center w-full">
+    <div className="w-full h-full flex gap-4 items-start justify-start md:flex-row flex-col">
+      <div className="flex flex-col md:gap-4 gap-2 justify-between h-full items-center w-full">
         <div className="relative w-full h-full flex-1 flex items-center justify-center">
           <Image
             src={project.image}
             alt={project.title}
             width={200}
             height={350}
-            className="object-contain md:w-[200px] w-full md:h-[220px] h-[40vh] pt-[100px] md:pt-0"
+            className="object-contain md:w-[200px] w-full md:h-[220px] h-[35vh]"
           />
         </div>
         <Link
           href={project.url}
           target="_blank"
-          className="flex flex-row gap-2 items-center border border-[#FB4E29] rounded-lg py-3 px-6 w-fit"
+          className="flex flex-row gap-2 border border-[#FB4E29] rounded-lg py-3 px-6 md:w-fit w-full items-center justify-center"
         >
           <p className="text-sm text-[#FB4E29] text-start">
             Visit Featured Website
@@ -42,14 +42,14 @@ const ProjectPreview = ({ project, progress = 0 }) => (
         </Link>
       </div>
 
-      <div className="w-full h-full md:flex flex-col items-center justify-center hidden">
-        <div className="flex flex-col gap-8 items-center justify-center">
+      <div className="w-full h-full items-center justify-center hidden md:flex">
+        <div className="flex md:flex-col flex-row gap-8 items-center justify-center overflow-x-auto w-full">
           {project.metrics.map((metric) => (
             <div key={metric.description} className="flex flex-col">
-              <h2 className="text-2xl font-bold text-black text-center">
+              <h2 className="md:text-2xl text-xl font-bold text-black text-center">
                 {metric.value}
               </h2>
-              <p className="text-base text-[#6E605D] text-center">
+              <p className="md:text-base text-sm w-full  whitespace-nowrap text-[#6E605D] text-center">
                 {metric.description}
               </p>
             </div>
@@ -58,8 +58,21 @@ const ProjectPreview = ({ project, progress = 0 }) => (
       </div>
     </div>
 
-    <div className="flex flex-row justify-between items-center w-full">
-      <div className="flex flex-row gap-2 overflow-x-auto pb-2 w-full">
+    <div className="flex flex-col md:justify-between justify-start md:gap-0 gap-4 items-center w-full overflow-x-auto h-full">
+      <div className="flex md:hidden flex-row gap-4 items-start justify-start w-full">
+        {project.metrics.map((metric) => (
+          <div key={metric.description} className="flex flex-col">
+            <h2 className="md:text-2xl text-lg font-bold text-black text-center">
+              {metric.value}
+            </h2>
+            <p className="md:text-base text-sm w-full  whitespace-nowrap text-[#6E605D] text-center">
+              {metric.description}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <div className="flex flex-row gap-2 pb-2 w-full">
         {project.keywords.map((keyword, index) => (
           <span
             key={index}
@@ -74,7 +87,9 @@ const ProjectPreview = ({ project, progress = 0 }) => (
         ))}
       </div>
     </div>
-    <p className="text-sm text-[#6E605D] text-start">{project.description}</p>
+    <p className="text-sm text-[#6E605D] text-start md:flex hidden">
+      {project.description}
+    </p>
   </motion.div>
 );
 
@@ -189,12 +204,12 @@ const Projects = ({ id }) => {
                 </div>
               </motion.div>
 
-              <div className="w-full lg:w-1/2 relative min-h-[511px] flex">
+              <div className="w-full lg:w-1/2 relative md:min-h-[511px] flex">
                 <div className="w-full">
                   {projectsData.map((project, index) => (
                     <motion.div
                       key={project.id}
-                      className="absolute md:top-1 top-[15vh] left-0 w-full -translate-y-1/2"
+                      className="absolute md:top-1 top-0 left-0 w-full -translate-y-1/2"
                       initial={{ opacity: 0, y: 50 }}
                       animate={{
                         opacity: activeProject === index ? 1 : 0,
@@ -209,6 +224,13 @@ const Projects = ({ id }) => {
                       <h4 className="text-[#FB4E29] text-lg font-semibold mb-1 md:hidden block">
                         Featured Partners
                       </h4>
+                      <div className="flex md:hidden w-full mt-4">
+                        {activeProject === index && (
+                          <h5 className="text-2xl font-bold text-black border-b-4 border-[#FB4E29] mb-4 w-full">
+                            {project.title}
+                          </h5>
+                        )}
+                      </div>
                       <ProjectPreview
                         project={project}
                         progress={activeProject === index ? 1 : 0}
