@@ -12,7 +12,7 @@ const ProjectPreview = ({ project, progress = 0 }) => (
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0, y: -20 }}
     transition={{ duration: 0.8, ease: "easeInOut" }}
-    className="w-full md:bg-white bg-transparent max-w-full md:h-[511px] h-full flex flex-col justify-end p-4 md:p-6 gap-6 rounded-2xl transition-transform duration-300 hover:scale-[1.05] hover:shadow-lg"
+    className="project-preview w-full md:bg-white bg-transparent max-w-full md:h-[511px] h-full flex flex-col justify-end p-4 md:p-6 gap-6 rounded-2xl transition-transform duration-300"
     style={{
       boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.08)",
       backdropFilter: "blur(15px)",

@@ -42,6 +42,7 @@ export default function Home() {
       {/* <div className="cursor" /> */}
 
       <div
+        className="w-full md:object-cover object-contain"
         style={{
           width: "100%",
           backgroundImage: "url('/testimonials-bg.png')",
