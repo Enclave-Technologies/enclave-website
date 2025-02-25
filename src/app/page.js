@@ -39,11 +39,11 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between text-black relative">
-      <div className="cursor" />
+      {/* <div className="cursor" /> */}
 
       <div
         style={{
-          width: "100vw",
+          width: "100%",
           backgroundImage: "url('/testimonials-bg.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",

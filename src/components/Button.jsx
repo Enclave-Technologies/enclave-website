@@ -1,11 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { FiExternalLink } from "react-icons/fi";
+
 export const Button = ({
   variant = "primary",
   link,
   title,
   rounded = false,
+  secondary = false,
 }) => {
   return (
     <Link href={link} className="flex-1">
@@ -21,6 +24,8 @@ export const Button = ({
         {variant == "primary" && (
           <Image src={`/icons/arrow-1.svg`} width={16} height={16} alt="" />
         )}
+
+        {variant == "secondary" && <FiExternalLink color="#FB4E29" size={20} />}
       </button>
     </Link>
   );

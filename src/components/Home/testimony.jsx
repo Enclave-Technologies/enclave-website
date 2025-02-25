@@ -111,7 +111,7 @@ const Testimony = ({ id }) => {
       <div className="absolute inset-0 opacity-50 pointer-events-none" />
 
       <div className="relative z-20 w-full flex flex-col items-center justify-center">
-        <div className="max-w-2xl mx-auto text-center px-6 mb-20 flex flex-col items-center justify-center">
+        <div className="max-w-2xl mx-auto text-center md:px-6 px-0 mb-20 flex flex-col items-center justify-center">
           <p
             className="text-2xl md:text-4xl font-bold mb-6 max-w-lg capitalize text-center"
             style={{ lineHeight: "1.2" }}
@@ -121,7 +121,7 @@ const Testimony = ({ id }) => {
           <p className="md:text-xl text-lg text-[#FB4E29] font-bold mb-6 max-w-lg capitalize text-center">
             Don&apos;t settle for mediocre.
           </p>
-          <p className="text-base mb-10 max-w-xl mx-auto text-center">
+          <p className="text-base mb-10 md:max-w-xl max-w-full mx-auto text-center">
             Partner with the best growth solution studio with proven
             track-record and unmatched customer service. You won&apos;t know
             when you grew from 0 to 100.

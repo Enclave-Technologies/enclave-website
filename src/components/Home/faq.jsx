@@ -69,10 +69,10 @@ const FAQs = ({ id }) => {
   return (
     <section
       id={id}
-      className="relative w-full overflow-hidden bg-[#FAFAFA] py-32 px-4 md:px-10"
+      className="relative w-full overflow-hidden bg-[#FAFAFA] py-32 px-0 md:px-10"
     >
       <div className="max-w-7xl mx-auto relative">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 px-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 md:px-10 px-6">
           <div className="col-span-1 lg:col-span-2">
             <p className="text-4xl lg:text-5xl font-bold mb-6">FAQs</p>
             <p className="text-[#6E605D] text-base leading-relaxed mb-12 max-w-full md:max-w-[450px]">

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { FiExternalLink } from "react-icons/fi";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import Link from "next/link";
+import { Button } from "../Button";
 
 const ProjectPreview = ({ project, progress = 0 }) => (
   <motion.div
@@ -11,9 +12,8 @@ const ProjectPreview = ({ project, progress = 0 }) => (
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0, y: -20 }}
     transition={{ duration: 0.8, ease: "easeInOut" }}
-    className="w-full md:bg-white bg-transparent max-w-full md:h-[511px] h-full flex flex-col justify-end p-4 md:p-6 gap-6 rounded-2xl transition-all duration-500 hover:scale-[1.02]"
+    className="w-full md:bg-white bg-transparent max-w-full md:h-[511px] h-full flex flex-col justify-end p-4 md:p-6 gap-6 rounded-2xl transition-transform duration-300 hover:scale-[1.05] hover:shadow-lg"
     style={{
-      // background: "white",
       boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.08)",
       backdropFilter: "blur(15px)",
       boxSizing: "border-box",
@@ -30,16 +30,14 @@ const ProjectPreview = ({ project, progress = 0 }) => (
             className="object-contain md:w-[200px] w-full md:h-[220px] h-[35vh]"
           />
         </div>
-        <Link
-          href={project.url}
+
+        <Button
+          variant="secondary"
+          title="Visit Featured Website"
+          link={project.url}
           target="_blank"
-          className="flex flex-row gap-2 border border-[#FB4E29] rounded-lg py-3 px-6 md:w-fit w-full items-center justify-center"
-        >
-          <p className="text-sm text-[#FB4E29] text-start">
-            Visit Featured Website
-          </p>
-          <FiExternalLink color="#FB4E29" size={20} />
-        </Link>
+          secondary={true}
+        />
       </div>
 
       <div className="w-full h-full items-center justify-center hidden md:flex">
@@ -132,7 +130,7 @@ const Projects = ({ id }) => {
   return (
     <section
       ref={containerRef}
-      className="relative w-full px-0"
+      className="relative w-full px-0 py-0"
       style={{
         minHeight: `${(projectsData.length + 1) * 100}vh`,
         marginTop: "25vh",
@@ -150,7 +148,7 @@ const Projects = ({ id }) => {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="w-full py-8 px-4 md:px-10 h-screen flex flex-col justify-center items-center">
+        <div className="w-full py-8 px-6 md:px-10 h-screen flex flex-col justify-center items-center">
           <div className="relative z-10 md:w-[80vw] w-full">
             <div className="flex flex-col-reverse md:flex-col lg:flex-row justify-start md:justify-center items-center gap-16">
               <motion.div

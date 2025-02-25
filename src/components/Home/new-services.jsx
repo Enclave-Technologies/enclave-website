@@ -86,9 +86,9 @@ const NewServices = ({ id }) => {
     <section
       id={id}
       ref={containerRef}
-      className="relative w-full min-h-screen bg-white overflow-hidden py-20 px-4 md:px-10"
+      className="relative w-full min-h-screen bg-white overflow-hidden py-20 px-0 md:px-10"
     >
-      <div className="relative z-10 w-full px-4 md:px-8">
+      <div className="relative z-10 w-full px-6 md:px-8">
         <div className="flex gap-16 flex-col justify-center items-center w-full">
           <div className="mb-8 lg:mb-0">
             <h4 className="text-[#FB4E29] text-lg font-medium mb-2 md:mb-4 text-center">
@@ -99,7 +99,7 @@ const NewServices = ({ id }) => {
             </p>
           </div>
 
-          <div className="w-[80vw]">
+          <div className="md:w-[80vw] w-full">
             <div
               ref={marketingRef}
               className="space-y-6 flex flex-col md:flex-row gap-4 items-center justify-between w-full"
