@@ -550,9 +550,6 @@ button:hover .button-text-container span {
     text-wrap: nowrap;
   }
 
-  .mobile-background {
-    background-size: contain;
-  }
 }
 
 .project-preview:hover {
@@ -561,11 +558,10 @@ button:hover .button-text-container span {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-@supports (-webkit-touch-callout: none) {
-  .mobile-background {
-    background-size: cover;
-    background-position: center;
-  }
+.mobile-background {
+  background-size: cover;
+  background-position: center;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  background-attachment: scroll;
 }
-
-

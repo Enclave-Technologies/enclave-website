@@ -54,7 +54,7 @@ const Steps = ({ id }) => {
         />
       </div>
 
-      <div className="relative z-10 w-full px-0 lg:px-8 flex flex-col lg:flex-row">
+      <div className="relative z-10 w-full px-0 lg:px-8 flex flex-col lg:flex-row py-12 lg:py-0">
         <div className="w-full lg:w-2/5 lg:sticky lg:top-0 relative lg:h-screen flex items-start lg:p-16 p-6 lg:py-[20vh] py-0">
           <div>
             <h4 className="text-[#FB4E29] text-lg font-medium mb-4">
