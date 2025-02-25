@@ -133,7 +133,7 @@ const Projects = ({ id }) => {
       className="relative w-full px-0 py-0"
       style={{
         minHeight: `${(projectsData.length + 1) * 100}vh`,
-        marginTop: "25vh",
+        // marginTop: "25vh",
       }}
       id={id}
     >

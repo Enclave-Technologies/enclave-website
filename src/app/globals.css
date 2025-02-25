@@ -565,3 +565,18 @@ button:hover .button-text-container span {
   -webkit-transform: translate3d(0, 0, 0);
   background-attachment: scroll;
 }
+
+.fixed-background::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/testimonials-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  pointer-events: none;
+}

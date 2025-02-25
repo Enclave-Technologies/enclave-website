@@ -41,16 +41,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between text-black relative">
       {/* <div className="cursor" /> */}
 
-      <div
-        style={{
-          width: "100vw",
-          backgroundImage: "url('/testimonials-bg.png')",
-          backgroundSize: "contain",
-          backgroundPosition: "center",
-          backgroundRepeat: "repeat",
-          // backgroundAttachment: "fixed !important",
-        }}
-      >
+      <div className="fixed-background">
         <NewHero />
         <Testimony id="testimony" />
       </div>
