@@ -40,16 +40,16 @@ const Steps = ({ id }) => {
       id={id}
       className="relative w-full min-h-screen bg-white px-0 lg:px-10"
     >
-      <div className="absolute left-0 top-0 w-full lg:w-2/5 h-full">
+      <div className="absolute left-0 top-0 w-4/5 lg:w-2/5 h-full">
         <div
           className="absolute inset-0"
           style={{
             backgroundImage: `url('/steps-bg.png')`,
-            backgroundSize: "40%",
+            backgroundSize: "90%",
             backgroundPosition: "left top",
             backgroundRepeat: "no-repeat",
-            objectFit: "unset",
-            backgroundAttachment: "fixed !important",
+            objectFit: "cover",
+            // backgroundAttachment: "fixed !important",
           }}
         />
       </div>

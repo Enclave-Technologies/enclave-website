@@ -48,7 +48,7 @@ export default function Home() {
           backgroundSize: "cover",
           backgroundPosition: "unset",
           backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed !important",
+          // backgroundAttachment: "fixed !important",
         }}
       >
         <NewHero />
