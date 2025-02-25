@@ -561,4 +561,10 @@ button:hover .button-text-container span {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+@supports (-webkit-touch-callout: none) {
+  .mobile-background {
+    background-size: cover;
+  }
+}
+
 
