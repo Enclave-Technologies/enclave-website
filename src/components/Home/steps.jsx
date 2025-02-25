@@ -48,7 +48,7 @@ const Steps = ({ id }) => {
             backgroundSize: "40%",
             backgroundPosition: "left top",
             backgroundRepeat: "no-repeat",
-            objectFit: "cover",
+            objectFit: "unset",
             backgroundAttachment: "fixed !important",
           }}
         />
