@@ -49,105 +49,75 @@ const Blogs = () => {
   const sampleBlogs = [
     {
       id: 1,
-      attributes: {
-        title: "The Future of Digital Marketing: Trends to Watch in 2025",
-        excerpt:
-          "Explore emerging trends that will shape the digital marketing landscape in the coming years.",
-        publishedAt: "2023-01-15",
-        readTime: "5 minute read",
-        coverImage: {
-          data: {
-            attributes: {
-              url: "https://picsum.photos/seed/marketing1/800/600",
-            },
-          },
-        },
+      title: "The Future of Digital Marketing: Trends to Watch in 2025",
+      description:
+        "Explore emerging trends that will shape the digital marketing landscape in the coming years.",
+      updatedAt: "2023-01-15",
+      readTime: "5 minute read",
+      cover: {
+        url: "https://picsum.photos/seed/marketing1/800/600",
       },
     },
     {
       id: 2,
-      attributes: {
-        title:
-          "How to Create a High-Converting Website: Design and Development Tips",
-        excerpt:
-          "Learn best practices for designing and developing websites that convert visitors into customers.",
-        publishedAt: "2023-02-10",
-        readTime: "7 minute read",
-      },
+      title:
+        "How to Create a High-Converting Website: Design and Development Tips",
+      description:
+        "Learn best practices for designing and developing websites that convert visitors into customers.",
+      updatedAt: "2023-02-10",
+      readTime: "7 minute read",
     },
     {
       id: 3,
-      attributes: {
-        title: "SEO Best Practices: Strategies for 2025",
-        excerpt:
-          "Keyword research identifies relevant search terms potential customers use. By targeting the right keywords, businesses can improve content relevance, attract more visitors, and drive conversions.",
-        publishedAt: "2023-03-08",
-        readTime: "6 minute read",
-        coverImage: {
-          data: {
-            attributes: {
-              url: "https://picsum.photos/seed/seo1/800/600",
-            },
-          },
-        },
+      title: "SEO Best Practices: Strategies for 2025",
+      description:
+        "Keyword research identifies relevant search terms potential customers use. By targeting the right keywords, businesses can improve content relevance, attract more visitors, and drive conversions.",
+      updatedAt: "2023-03-08",
+      readTime: "6 minute read",
+      cover: {
+        url: "https://picsum.photos/seed/seo1/800/600",
       },
     },
     {
       id: 4,
-      attributes: {
-        title:
-          "Data Analytics in Digital Marketing: Turning Insights into Action",
-        excerpt:
-          "Understand how to leverage data analytics to drive better marketing decisions and improve ROI.",
-        publishedAt: "2023-04-12",
-        readTime: "8 minute read",
-      },
+      title:
+        "Data Analytics in Digital Marketing: Turning Insights into Action",
+      description:
+        "Understand how to leverage data analytics to drive better marketing decisions and improve ROI.",
+      updatedAt: "2023-04-12",
+      readTime: "8 minute read",
     },
     {
       id: 5,
-      attributes: {
-        title:
-          "The Role of AI in Digital Marketing: Opportunities and Challenges",
-        excerpt:
-          "Examine how artificial intelligence is transforming digital marketing strategies and what it means for businesses.",
-        publishedAt: "2023-05-20",
-        readTime: "9 minute read",
-        coverImage: {
-          data: {
-            attributes: {
-              url: "https://picsum.photos/seed/ai1/800/600",
-            },
-          },
-        },
+      title:
+        "The Role of AI in Digital Marketing: Opportunities and Challenges",
+      description:
+        "Examine how artificial intelligence is transforming digital marketing strategies and what it means for businesses.",
+      updatedAt: "2023-05-20",
+      readTime: "9 minute read",
+      cover: {
+        url: "https://picsum.photos/seed/ai1/800/600",
       },
     },
     {
       id: 6,
-      attributes: {
-        title: "Building a Comprehensive Digital Marketing Strategy",
-        excerpt:
-          "A complete guide to developing and implementing an effective digital marketing strategy for your business.",
-        publishedAt: "2023-06-15",
-        readTime: "7 minute read",
-        coverImage: {
-          data: {
-            attributes: {
-              url: "https://picsum.photos/seed/strategy1/800/600",
-            },
-          },
-        },
+      title: "Building a Comprehensive Digital Marketing Strategy",
+      description:
+        "A complete guide to developing and implementing an effective digital marketing strategy for your business.",
+      updatedAt: "2023-06-15",
+      readTime: "7 minute read",
+      cover: {
+        url: "https://picsum.photos/seed/strategy1/800/600",
       },
     },
     {
       id: 7,
-      attributes: {
-        title:
-          "Website Performance Optimization: Techniques for Speed and Efficiency",
-        excerpt:
-          "Learn how to optimize your website for faster loading times and better user experience.",
-        publishedAt: "2023-07-10",
-        readTime: "6 minute read",
-      },
+      title:
+        "Website Performance Optimization: Techniques for Speed and Efficiency",
+      description:
+        "Learn how to optimize your website for faster loading times and better user experience.",
+      updatedAt: "2023-07-10",
+      readTime: "6 minute read",
     },
   ];
 
@@ -262,25 +232,19 @@ const Blogs = () => {
                   <div className="aspect-[4/3] bg-gray-300 w-full h-full">
                     {/* Placeholder for blog image */}
                     <div className="flex items-center justify-center h-full">
-                      {blog.attributes.coverImage &&
-                      blog.attributes.coverImage.data &&
-                      !imageErrors[blog.id] ? (
+                      {blog?.cover?.url && !imageErrors[blog?.id] ? (
                         <Image
                           src={
-                            blog.attributes.coverImage.data.attributes.url.startsWith(
-                              "http"
-                            )
-                              ? blog.attributes.coverImage.data.attributes.url
-                              : `http://localhost:1337${blog.attributes.coverImage.data.attributes.url}`
+                            blog?.cover?.url.startsWith("http")
+                              ? blog?.cover?.url
+                              : `http://localhost:1337${blog?.cover?.url}`
                           }
-                          alt={blog.attributes.title}
+                          alt={blog?.title}
                           className="object-cover w-full h-full"
                           width={400}
                           height={300}
-                          unoptimized={blog.attributes.coverImage.data.attributes.url.startsWith(
-                            "http"
-                          )}
-                          onError={() => handleImageError(blog.id)}
+                          unoptimized={blog?.cover?.url.startsWith("http")}
+                          onError={() => handleImageError(blog?.id)}
                         />
                       ) : (
                         <svg
@@ -309,22 +273,22 @@ const Blogs = () => {
                         href={`/blogs/${blog.id}`}
                         className="hover:text-[#FB4E29] transition-colors"
                       >
-                        {blog.attributes.title}
+                        {blog?.title}
                       </Link>
                     </h2>
                     <p className="text-[#6E605D] mb-4 line-clamp-2">
-                      {blog.attributes.excerpt}
+                      {blog?.description}
                     </p>
                   </div>
 
                   <div className="flex justify-between items-center">
                     <span className="text-[#26120D] text-sm">
-                      {blog.attributes.publishedAt
-                        ? formatDate(blog.attributes.publishedAt)
+                      {blog?.updatedAt
+                        ? formatDate(blog?.updatedAt)
                         : "DD/MM/YYYY"}
                     </span>
                     <span className="text-[#6E605D] text-sm">
-                      {blog.attributes.readTime || "XX minute read"}
+                      {blog?.readTime || "XX minute read"}
                     </span>
                   </div>
                 </div>
@@ -355,25 +319,19 @@ const Blogs = () => {
                 <div className="relative">
                   <div className="aspect-[16/9] bg-gray-300">
                     <div className="flex items-center justify-center h-full">
-                      {blog.attributes.coverImage &&
-                      blog.attributes.coverImage.data &&
-                      !imageErrors[blog.id] ? (
+                      {blog?.cover?.url && !imageErrors[blog?.id] ? (
                         <Image
                           src={
-                            blog.attributes.coverImage.data.attributes.url.startsWith(
-                              "http"
-                            )
-                              ? blog.attributes.coverImage.data.attributes.url
-                              : `http://localhost:1337${blog.attributes.coverImage.data.attributes.url}`
+                            blog?.cover?.url.startsWith("http")
+                              ? blog?.cover?.url
+                              : `http://localhost:1337${blog?.cover?.url}`
                           }
-                          alt={blog.attributes.title}
+                          alt={blog?.title}
                           className="object-cover w-full h-full"
                           width={400}
                           height={300}
-                          unoptimized={blog.attributes.coverImage.data.attributes.url.startsWith(
-                            "http"
-                          )}
-                          onError={() => handleImageError(blog.id)}
+                          unoptimized={blog?.cover?.url.startsWith("http")}
+                          onError={() => handleImageError(blog?.id)}
                         />
                       ) : (
                         <svg
@@ -400,17 +358,17 @@ const Blogs = () => {
                       href={`/blogs/${blog.id}`}
                       className="hover:text-[#FB4E29] transition-colors"
                     >
-                      {blog.attributes.title}
+                      {blog?.title}
                     </Link>
                   </h2>
                   <div className="flex justify-between items-center mt-4">
                     <span className="text-[#26120D] text-sm">
-                      {blog.attributes.publishedAt
-                        ? formatDate(blog.attributes.publishedAt)
+                      {blog?.updatedAt
+                        ? formatDate(blog?.updatedAt)
                         : "DD/MM/YYYY"}
                     </span>
                     <span className="text-[#6E605D] text-sm">
-                      {blog.attributes.readTime || "XX minute read"}
+                      {blog?.readTime || "XX minute read"}
                     </span>
                   </div>
                 </div>
