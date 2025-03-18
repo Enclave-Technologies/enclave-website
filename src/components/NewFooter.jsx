@@ -9,8 +9,8 @@ import { Button } from "./Button";
 const NewFooter = () => {
   return (
     <footer className="px-4 sm:px-6 lg:px-8 py-12 w-full mx-auto mb-20 md:mb-5">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 md:gap-8 mb-10">
-        <div className="col-span-1 lg:col-span-1">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-0 md:gap-8 mb-10">
+        <div className="col-span-1 lg:col-span-5">
           <Link href="/" className="mb-4">
             <Image
               src="/enclave-studios-logo.svg"
@@ -20,7 +20,7 @@ const NewFooter = () => {
               className="mb-4"
             />
           </Link>
-          <p className="text-[#121212] mb-6">
+          <p className="text-[#121212] mb-6 max-w-md">
             We are a data driven website design & development studio helping
             businesses launch and grow their digital presence.
           </p>
@@ -35,16 +35,14 @@ const NewFooter = () => {
           </div>
         </div>
 
-        <div className="hidden lg:block"></div>
+        <div className="hidden lg:block lg:col-span-2"></div>
 
         {/* Enclave Studios section */}
-        <div className="col-span-1">
-          <h3 className="font-bold text-xl mb-4">Enclave Studios</h3>
+        <div className="col-span-1 lg:col-span-2">
+          <h3 className="text-[#121212] font-bold text-lg mb-6">
+            Enclave Studios
+          </h3>
           <ul className="space-y-5">
-            <h3 className="text-[#121212] font-bold text-lg mb-2">
-              Enclave Studios
-            </h3>
-
             <li>
               <Link
                 href="/services"
@@ -81,13 +79,9 @@ const NewFooter = () => {
         </div>
 
         {/* Contact Us section */}
-        <div className="col-span-1">
-          <h3 className="font-bold text-xl mb-4">Contact Us</h3>
+        <div className="col-span-1 lg:col-span-3">
+          <h3 className="text-[#121212] font-bold text-lg mb-6">Contact Us</h3>
           <ul className="space-y-5">
-            <h3 className="text-[#121212] font-bold text-lg mb-2">
-              Contact Us
-            </h3>
-
             <li>
               <a
                 href="mailto:hello@enclave.live"

@@ -245,11 +245,18 @@ const Blogs = () => {
 
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Left Side */}
-          <div className="lg:w-2/3 space-y-8">
+          <div className="lg:w-2/3 space-y-10">
             {displayBlogs.slice(0, 5).map((blog) => (
               <div
                 key={blog.id}
-                className="bg-gray-100 rounded-lg overflow-hidden flex flex-col md:flex-row"
+                className="overflow-hidden flex flex-col md:flex-row"
+                style={{
+                  background:
+                    "linear-gradient(113.44deg, rgba(255, 255, 255, 0.4) 22.6%, rgba(255, 255, 255, 0.1) 92.47%)",
+                  boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.2)",
+                  backdropFilter: "blur(15px)",
+                  borderRadius: "12px",
+                }}
               >
                 <div className="md:w-2/5 relative">
                   <div className="aspect-[4/3] bg-gray-300 w-full h-full">
@@ -336,7 +343,14 @@ const Blogs = () => {
             {displayBlogs.slice(5, 7).map((blog) => (
               <div
                 key={blog.id}
-                className="bg-gray-100 rounded-lg overflow-hidden"
+                className="overflow-hidden"
+                style={{
+                  background:
+                    "linear-gradient(113.44deg, rgba(255, 255, 255, 0.4) 22.6%, rgba(255, 255, 255, 0.1) 92.47%)",
+                  boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.2)",
+                  backdropFilter: "blur(15px)",
+                  borderRadius: "12px",
+                }}
               >
                 <div className="relative">
                   <div className="aspect-[16/9] bg-gray-300">
