@@ -16,13 +16,13 @@ const Chat = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-
-
   return (
     <Link
       href="https://api.whatsapp.com/send/?phone=85259291909&text&type=phone_number&app_absent=0"
       target="_blank"
-      className={`fixed bottom-8 right-8 z-[1000] flex items-center gap-4 px-4 py-3 rounded-full shadow-lg transition-all duration-300`}
+      className={`fixed bottom-8 right-8 z-[1000] flex items-center gap-4 rounded-full shadow-lg transition-all duration-300 ${
+        collapsed ? "p-1" : "p-3"
+      }`}
       style={{
         background:
           "linear-gradient(113.44deg, rgba(255, 255, 255, 0.4) 22.6%, rgba(255, 255, 255, 0.1) 92.47%)",
