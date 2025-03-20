@@ -1,59 +1,44 @@
-import { testimonials } from "../../data/testimonials";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Button } from "../Button";
 
-const TestimonialCard = ({ text, author, company, image }) => (
-  <div
-    className="w-[472px] min-h-[240px] p-4 mx-3 flex flex-col items-start gap-6 transition-transform duration-300 hover:scale-[1.02]"
-    style={{
-      boxSizing: "border-box",
-      background:
-        "linear-gradient(113.44deg, rgba(255, 255, 255, 0.4) 22.6%, rgba(255, 255, 255, 0.1) 92.47%)",
-      boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.2)",
-      backdropFilter: "blur(15px)",
-      borderRadius: "8px",
-      flex: "none",
-      alignSelf: "stretch",
-      flexGrow: 0,
-    }}
-  >
-    <p className="text-sm leading-relaxed text-gray-600 flex flex-wrap whitespace-normal">
-      {text}
-    </p>
-    <div className="flex items-center mt-auto pt-4">
-      <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
-        <Image
-          src={image}
-          width={48}
-          height={48}
-          alt={author}
-          className="object-contain w-full h-full"
-          unoptimized
-        />
-      </div>
-      <div>
-        <h4 className="font-medium text-sm">{author}</h4>
-        <p className="text-xs text-gray-500">{company}</p>
-      </div>
-    </div>
-  </div>
-);
-
-const ScrollingRow = ({ items, direction = "right" }) => {
+const LogoMarquee = ({ direction = "left" }) => {
   const rowRef = useRef(null);
   const scrollTween = useRef(null);
 
+  const logos = [
+    "google.png",
+    "aws.png",
+    "payphone.png",
+    "movement.png",
+    "meta.png",
+    "figma.png",
+    "webflow.png",
+    "semrush.png",
+    "wix.png",
+    "xcelerate.png",
+    "first.png",
+    "accelrte.png",
+    "blogo.png",
+    "h.png",
+    "nju.png",
+    "para.png",
+    "roju.png",
+    "atelier.png",
+  ];
+
   useEffect(() => {
     const row = rowRef.current;
-    const cards = row.children;
-    const totalWidth = Array.from(cards).reduce(
-      (width, card) => width + card.offsetWidth + 16,
+    if (!row) return;
+
+    const items = row.children;
+    const totalWidth = Array.from(items).reduce(
+      (width, item) => width + item.offsetWidth + 30,
       0
     );
 
-    const clonedItems = Array.from(cards).map((card) => card.cloneNode(true));
+    const clonedItems = Array.from(items).map((item) => item.cloneNode(true));
     clonedItems.forEach((clone) => row.appendChild(clone));
 
     const startPosition = direction === "left" ? 0 : -totalWidth;
@@ -71,26 +56,47 @@ const ScrollingRow = ({ items, direction = "right" }) => {
       },
     });
 
-    const handleMouseEnter = () => scrollTween.current.pause();
-    const handleMouseLeave = () => scrollTween.current.play();
+    const handleMouseEnter = () => {
+      if (scrollTween.current) {
+        scrollTween.current.pause();
+      }
+    };
 
-    row.addEventListener("mouseenter", handleMouseEnter);
-    row.addEventListener("mouseleave", handleMouseLeave);
+    const handleMouseLeave = () => {
+      if (scrollTween.current) {
+        scrollTween.current.play();
+      }
+    };
+
+    const container = row.parentElement;
+    container.addEventListener("mouseenter", handleMouseEnter);
+    container.addEventListener("mouseleave", handleMouseLeave);
 
     return () => {
       if (scrollTween.current) {
         scrollTween.current.kill();
       }
-      row.removeEventListener("mouseenter", handleMouseEnter);
-      row.removeEventListener("mouseleave", handleMouseLeave);
+      container.removeEventListener("mouseenter", handleMouseEnter);
+      container.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, [direction]);
 
   return (
-    <div className="w-full min-h-[250px] flex items-center overflow-hidden">
-      <div ref={rowRef} className="flex">
-        {items.map((item) => (
-          <TestimonialCard key={item.id} {...item} />
+    <div className="w-full overflow-hidden py-6 md:py-8">
+      <div ref={rowRef} className="flex items-center gap-6">
+        {logos.map((logo, index) => (
+          <div
+            key={index}
+            className="mx-2 md:mx-3 flex-shrink-0 opacity-70 hover:opacity-100 transition-opacity duration-300"
+          >
+            <Image
+              src={`/affiliate-logos/${logo}`}
+              alt={`Partner ${index + 1}`}
+              width={120}
+              height={40}
+              className="h-8 md:h-10 w-auto object-contain"
+            />
+          </div>
         ))}
       </div>
     </div>
@@ -100,50 +106,58 @@ const ScrollingRow = ({ items, direction = "right" }) => {
 const Testimony = ({ id }) => {
   return (
     <section
-      className="relative w-full min-h-[90vh] flex flex-col items-center justify-center overflow-hidden"
+      className="relative w-full min-h-[100vh] flex flex-col items-center justify-between overflow-hidden bg-[#FAFAFA]"
       id={id}
-      style={{
-        marginTop: "-75vh",
-        position: "relative",
-        zIndex: 41,
-      }}
     >
-      <div className="absolute inset-0 opacity-50 pointer-events-none" />
-
-      <div className="relative z-20 w-full flex flex-col items-center justify-center">
-        <div className="max-w-2xl mx-auto text-center md:px-6 px-0 mb-20 flex flex-col items-center justify-center">
-          <p
-            className="text-2xl md:text-4xl font-bold mb-6 max-w-lg capitalize text-center"
-            style={{ lineHeight: "1.2" }}
+      <div
+        className="w-full flex-1 flex flex-col items-center justify-center px-8 py-16 md:py-24 mt-[80px]"
+        style={{
+          backgroundImage: "url('/heroobg.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          width: "100vw",
+        }}
+      >
+        <div className="flex flex-col items-center justify-center">
+          <h1
+            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-[#121212] max-w-lg text-center"
+            style={{
+              lineHeight: "1.2",
+            }}
           >
-            Grow your business with data-backed solutions.
+            Crafting Bespoke Digital Solutions
+          </h1>
+
+          <h2 className="text-xl md:text-2xl text-[#FB4E29] font-bold mb-4 normal-case text-center">
+            Empowering Businesses with Technology Integration
+          </h2>
+
+          <p className="text-base md:text-lg text-[#26120D] mb-10 text-center max-w-lg">
+            Enabling businesses to establish bold digital identities, and create
+            impactful digital solutions.
           </p>
-          <p className="md:text-xl text-lg text-[#FB4E29] font-bold mb-6 max-w-lg capitalize text-center">
-            Don&apos;t settle for mediocre.
-          </p>
-          <p className="text-base mb-10 md:max-w-xl max-w-full mx-auto text-center">
-            Partner with the best growth solution studio with proven
-            track-record and unmatched customer service. You won&apos;t know
-            when you grew from 0 to 100.
-          </p>
-          <div className="relative z-[1001]">
+
+          <div className="flex flex-wrap gap-4 justify-center sm:min-w-[300px] min-w-full mx-auto">
             <Button
               variant="primary navigation"
-              title="Discover What's Next"
+              title="Get in Touch"
               link="/contact"
+              rounded={true}
+            />
+
+            <Button
+              variant="secondary navigation"
+              title="See More"
+              link="/#new-services"
+              rounded={true}
             />
           </div>
         </div>
+      </div>
 
-        {/* <div className="relative z-20 space-y-4 w-screen h-full">
-          {testimonials.map((row) => (
-            <ScrollingRow
-              key={row.row}
-              items={row.items}
-              direction={row.row === 1 ? "left" : "right"}
-            />
-          ))}
-        </div> */}
+      <div className="w-screen bg-[#FAFAFA] py-8 md:py-12">
+        <LogoMarquee direction="left" />
       </div>
     </section>
   );

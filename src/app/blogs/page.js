@@ -4,9 +4,9 @@ import Blogs from "../../components/blogs/Blogs";
 
 const BlogsPage = () => {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-between">
+    <main className="min-h-screen">
       <Blogs />
-    </div>
+    </main>
   );
 };
 

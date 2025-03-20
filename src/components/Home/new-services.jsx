@@ -1,17 +1,11 @@
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import React from "react";
 import Image from "next/image";
-import { IoMdCheckmarkCircleOutline } from "react-icons/io";
-
-gsap.registerPlugin(ScrollTrigger);
+import Link from "next/link";
+import { Button } from "../Button";
+import Testimonial from "../Testimonial";
+import GradientMetric from "../GradientMetric";
 
 const NewServices = ({ id }) => {
-  const marketingRef = useRef(null);
-  const dataRef = useRef(null);
-  const techRef = useRef(null);
-  const containerRef = useRef(null);
-
   const services = {
     digital: {
       title: "Social Media Optimization",
@@ -51,144 +45,113 @@ const NewServices = ({ id }) => {
     },
   };
 
-  useEffect(() => {
-    const sections = [
-      { ref: marketingRef, delay: 0 },
-      { ref: dataRef, delay: 0.2 },
-      { ref: techRef, delay: 0.4 },
-    ];
-
-    sections.forEach(({ ref, delay }) => {
-      gsap.set(ref.current, { opacity: 0, y: 50 });
-
-      gsap.to(ref.current, {
-        scrollTrigger: {
-          trigger: ref.current,
-          start: "top 80%",
-          end: "top 60%",
-          toggleActions: "play none none reverse",
-          markers: false,
-        },
-        opacity: 1,
-        y: 0,
-        duration: 0.5,
-        delay: delay,
-        ease: "power2.out",
-      });
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
-
   return (
     <section
       id={id}
-      ref={containerRef}
-      className="relative w-full min-h-screen bg-white overflow-hidden py-20 px-0 md:px-10"
+      className="w-full py-20 px-8 md:py-32 flex flex-col items-center justify-center overflow-hidden bg-[#FAFAFA] "
     >
-      <div className="relative z-10 w-full px-6 md:px-8">
-        <div className="flex gap-16 flex-col justify-center items-center w-full">
-          <div className="mb-8 lg:mb-0">
-            <h4 className="text-[#FB4E29] text-lg font-medium mb-2 md:mb-4 text-center">
-              Our Services
+      <div className="w-full max-w-7xl mx-auto">
+        <div className="text-center mb-8">
+          <h4 className="text-[#FB4E29] text-lg font-bold">
+            Modular Solutions
+          </h4>
+          <h2 className="text-2xl md:text-4xl font-bold mt-2 mb-4 capitalize">
+            Supercharging Your Digital Presence
+          </h2>
+          <p className="text-[#26120D] max-w-2xl mx-auto">
+            Providing end-to-end solutions for brands in the ever evolving
+            digital landscape
+          </p>
+        </div>
+
+        <div className="flex items-center justify-center w-full">
+          <div className="mb-12 flex items-center justify-center w-fit">
+            <Button
+              variant="primary navigation"
+              title="Book a Consultation"
+              link="https://api.whatsapp.com/send/?phone=85259291909&text&type=phone_number&app_absent=0"
+              rounded={true}
+              target="_blank"
+            />
+          </div>
+        </div>
+
+        <div className="flex items-center justify-center mt-12">
+          <Image
+            src="/services-graphic.png"
+            alt="Our Services"
+            width={1000}
+            height={1000}
+            className="w-[90%] h-[90%] object-cover hidden md:flex"
+          />
+
+          <Image
+            src="/moble-graphic.png"
+            alt="Our Services"
+            width={1000}
+            height={1000}
+            className="w-[100%] h-[100%] object-cover md:hidden flex"
+          />
+        </div>
+
+        <div className="flex flex-col items-center justify-center gap-6 w-full mt-24">
+          <Testimonial
+            quote="I'm so happy! Their solutions design process has tripled our online visibility, helped us rank #1 on Google and skyrocketed our website sales."
+            name="Aman Selarka"
+            title="Head of Product"
+            companyLogo="/affiliate-logos/payphone.png"
+            companyName="Payphone"
+          />
+        </div>
+
+        <div className="w-full max-w-7xl mx-auto mt-32">
+          <div className="text-center">
+            <h4 className="text-[#FB4E29] text-lg font-bold mb-2">
+              Key Performance Indicators
             </h4>
-            <p className="text-2xl lg:text-4xl font-bold mb-0 md:mb-6 text-center max-w-lg mx-auto">
-              Because Your Business Deserves the Best
+            <h2 className="text-2xl md:text-3xl font-bold mb-2 capitalize">
+              Numbers That Just Make Sense
+            </h2>
+            <p className="text-[#26120D] text-base">
+              Relentlessly KPI-Driven, Driving Measurable Results
             </p>
           </div>
 
-          <div className="md:w-[80vw] w-full">
-            <div
-              ref={marketingRef}
-              className="space-y-6 flex flex-col md:flex-row gap-4 items-center justify-between w-full"
-              id="marketing"
-            >
-              <Image
-                src={services.seo.image}
-                width={120}
-                height={120}
-                alt={services.seo.title}
-                className="w-[50vh] h-[50vh] flex-1 object-contain"
-              />
+          <div className="hidden md:grid grid-cols-3 gap-8 my-20">
+            <GradientMetric
+              value="20M"
+              description="dollars in client revenue driven by our tailored solutions and strategies"
+            />
 
-              <div className="flex-1">
-                <h4 className="text-2xl md:text-4xl font-semibold mb-2">
-                  {services.seo.title}
-                </h4>
-                <p className="text-base text-[#6E605D] mb-6 max-w-[400px]">
-                  {services.seo.description}
-                </p>
+            <GradientMetric
+              value="80K"
+              description="unique visitors engaging with the websites we build every month"
+            />
 
-                {services.seo.services.map((service, index) => (
-                  <div key={index} className="flex items-center gap-2 mb-2">
-                    <IoMdCheckmarkCircleOutline color="#FB4E29" size={18} />
-                    <span className="text-[#6E605D] text-sm">{service}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <GradientMetric
+              value="50+"
+              description="projects successfully delivered across multiple industries"
+            />
+          </div>
 
-            <div
-              ref={dataRef}
-              className="space-y-6 flex flex-col-reverse md:flex-row gap-4 items-center justify-between w-full"
-              id="data"
-            >
-              <div className="flex-1">
-                <h4 className="text-2xl md:text-4xl font-semibold mb-2">
-                  {services.digital.title}
-                </h4>
-                <p className="text-base text-[#6E605D] mb-6 max-w-[400px]">
-                  {services.digital.description}
-                </p>
+          <div className="md:hidden flex flex-col space-y-12 mt-12">
+            <GradientMetric
+              value="20M"
+              description="dollars in client revenue driven by our tailored solutions and strategies"
+              maxWidth="max-w-[250px]"
+            />
 
-                {services.digital.services.map((service, index) => (
-                  <div key={index} className="flex items-center gap-2 mb-2">
-                    <IoMdCheckmarkCircleOutline color="#FB4E29" size={18} />
-                    <span className="text-[#6E605D] text-sm">{service}</span>
-                  </div>
-                ))}
-              </div>
+            <GradientMetric
+              value="80K"
+              description="unique visitors engaging with the websites we build every month"
+              maxWidth="max-w-[250px]"
+            />
 
-              <Image
-                src={services.digital.image}
-                width={120}
-                height={120}
-                alt={services.digital.title}
-                className="w-[50vh] h-[50vh] flex-1 object-contain"
-              />
-            </div>
-
-            <div
-              ref={techRef}
-              className="space-y-6 flex flex-col md:flex-row gap-4 items-center justify-between w-full"
-              id="technology"
-            >
-              <Image
-                src={services.development.image}
-                width={120}
-                height={120}
-                alt={services.development.title}
-                className="w-[50vh] h-[50vh] flex-1 object-contain"
-              />
-
-              <div className="flex-1">
-                <h4 className="text-2xl md:text-4xl font-semibold mb-2">
-                  {services.development.title}
-                </h4>
-                <p className="text-base text-[#6E605D] mb-6 max-w-[400px]">
-                  {services.development.description}
-                </p>
-
-                {services.development.services.map((service, index) => (
-                  <div key={index} className="flex items-center gap-2 mb-2">
-                    <IoMdCheckmarkCircleOutline color="#FB4E29" size={18} />
-                    <span className="text-[#6E605D] text-sm">{service}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <GradientMetric
+              value="50+"
+              description="projects successfully delivered across multiple industries"
+              maxWidth="max-w-[250px]"
+            />
           </div>
         </div>
       </div>

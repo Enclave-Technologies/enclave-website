@@ -6,11 +6,10 @@ import Image from "next/image";
 import Hamburger from "./Hamburger";
 
 const links = [
-  { title: "SEO", link: "/#marketing" },
-  { title: "SMO", link: "/#data" },
-  { title: "Website Development", link: "/#technology" },
-  { title: "Featured Partners", link: "/#projects" },
-  { title: "FAQs", link: "/#faqs" },
+  { title: "Home", link: "/#" },
+  { title: "Works", link: "/#projects" },
+  { title: "Services", link: "/#our-services" },
+  { title: "About Us", link: "/#team" },
 ];
 
 export const Navbarr = () => {

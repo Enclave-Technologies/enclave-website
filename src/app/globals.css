@@ -549,7 +549,6 @@ button:hover .button-text-container span {
     @apply py-1 uppercase text-sm transition-all duration-150 ease-in-out;
     text-wrap: nowrap;
   }
-
 }
 
 .project-preview:hover {
@@ -566,17 +565,7 @@ button:hover .button-text-container span {
   background-attachment: scroll;
 }
 
-.fixed-background::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: url('/testimonials-bg.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -1;
-  pointer-events: none;
+.home-font {
+  font-family: "Albert Sans", sans-serif !important;
+  max-width: 100vw;
 }

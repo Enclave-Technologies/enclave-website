@@ -1,107 +1,106 @@
 import React from "react";
-import Image from "next/image";
+import Link from "next/link";
 
-const TeamCard = ({ image, size = "normal" }) => (
-  <div
-    className={`overflow-hidden rounded-[12px] p-3 bg-white ${
-      size === "large" ? "col-span-2 row-span-2" : "col-span-1 row-span-1"
-    }`}
-    style={{
-      background:
-        "linear-gradient(113.44deg, rgba(255, 255, 255, 0.4) 22.6%, rgba(255, 255, 255, 0.1) 92.47%)",
-      boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.2)",
-      backdropFilter: "blur(12px)",
-    }}
-  >
-    <div className="w-full h-full relative">
-      <Image
-        src={image}
-        alt="Team member"
-        width={size === "large" ? 680 : 214}
-        height={size === "large" ? 680 : 214}
-        className="w-full h-full object-cover"
-      />
-    </div>
+const TeamMember = ({ name, title }) => (
+  <div className="box-border flex sm:flex-row flex-col sm:justify-between justify-center sm:items-center items-start p-6 w-full sm:h-[75px] h-[100px] bg-[#FFEDEA] border border-[#FB4E29] rounded-lg">
+    <h3 className="font-semibold text-lg text-[#121212]">{name}</h3>
+    <div className="text-[#26120D] text-base">{title}</div>
   </div>
 );
 
 const Team = ({ id }) => {
-  const teamImages = {
-    large: "",
-    right1: "",
-    right2: "",
-    bottom1: "",
-    bottom2: "",
-  };
+  const teamMembers = [
+    {
+      id: 1,
+      name: "Siddharth Agarwal",
+      title: "CEO & Co-Founder",
+    },
+    {
+      id: 2,
+      name: "Avishek Majumder",
+      title: "CTO & Co-Founder",
+    },
+    {
+      id: 3,
+      name: "Aida Naingolan",
+      title: "Director of UI/UX Design",
+    },
+    {
+      id: 4,
+      name: "Pease Adeniji",
+      title: "Lead Software Engineer",
+    },
+    {
+      id: 7,
+      name: "Sneha Nawalkha",
+      title: "Fractional CMO",
+    },
+    {
+      id: 9,
+      name: "You",
+      title: (
+        <p
+          className="flex items-center gap-2 cursor-pointer"
+          onClick={() => {
+            window.open(
+              "https://www.linkedin.com/company/enclave-studios-hk/jobs/",
+              "_blank"
+            );
+          }}
+        >
+          <span>View Openings</span>
+          <svg
+            width="16"
+            height="17"
+            viewBox="0 0 16 17"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4.66797 11.4606L11.3346 4.79395"
+              stroke="#121212"
+              stroke-width="1.33333"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M4.66797 4.79395H11.3346V11.4606"
+              stroke="#121212"
+              stroke-width="1.33333"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </p>
+      ),
+    },
+  ];
 
   return (
     <section
       id={id}
-      className="relative w-full bg-white py-32 px-4 md:px-10 overflow-hidden"
+      className="flex flex-col items-center py-16 md:py-20 lg:py-24 px-8 w-full bg-[#FAFAFA]"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-[#29FB4E]/5 via-[#29D6FB]/5 to-[#4E29FB]/5" />
-
-      <div className="max-w-7xl mx-auto relative">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="lg:pr-8">
-            <h4 className="text-[#FB4E29] text-lg font-medium mb-4">
-              About Us
-            </h4>
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6 capitalize">
-              Meet the Team
-            </h2>
-            <p className="text-[#6E605D] text-lg leading-relaxed mb-8">
-              At Enclave Studios, we pride ourselves on our commitment to
-              bringing the best into this world. Using data our team makes sure
-              that your growth is quantitative and sustainable.
-            </p>
-          </div>
-
-          <div className="lg:col-span-2">
-            <div className="grid grid-cols-3 gap-6 auto-rows-[214px]">
-              <TeamCard
-                image={
-                  teamImages.large ||
-                  "https://images.pexels.com/photos/28216688/pexels-photo-28216688/free-photo-of-autumn-camping.png?auto=compress&cs=tinysrgb&w=1200"
-                }
-                size="large"
-              />
-              <TeamCard
-                image={
-                  teamImages.right1 ||
-                  "https://images.pexels.com/photos/28216688/pexels-photo-28216688/free-photo-of-autumn-camping.png?auto=compress&cs=tinysrgb&w=1200"
-                }
-              />
-              <TeamCard
-                image={
-                  teamImages.right2 ||
-                  "https://images.pexels.com/photos/28216688/pexels-photo-28216688/free-photo-of-autumn-camping.png?auto=compress&cs=tinysrgb&w=1200"
-                }
-              />
-              <TeamCard
-                image={
-                  teamImages.bottom1 ||
-                  "https://images.pexels.com/photos/28216688/pexels-photo-28216688/free-photo-of-autumn-camping.png?auto=compress&cs=tinysrgb&w=1200"
-                }
-              />
-              <TeamCard
-                image={
-                  teamImages.bottom2 ||
-                  "https://images.pexels.com/photos/28216688/pexels-photo-28216688/free-photo-of-autumn-camping.png?auto=compress&cs=tinysrgb&w=1200"
-                }
-              />
-            </div>
-          </div>
+      <div className="max-w-7xl mx-auto w-full">
+        <div className="text-center mb-8">
+          <h4 className="text-[#FB4E29] text-lg font-bold">Our Team</h4>
+          <h2 className="text-2xl md:text-4xl font-bold mt-2 mb-4 capitalize">
+            A Global Network Of Talent
+          </h2>
+          <p className="text-[#26120D] max-w-lg mx-auto">
+            We&apos;ve assembled a team of dedicated professionals from diverse
+            backgrounds who share the same passion for your brand as you do.
+          </p>
         </div>
 
-        <div className="absolute bottom-8 right-0 md:right-10">
-          <Image
-            src="/enclave-studios-logo.svg"
-            width={120}
-            height={120}
-            alt="Enclave Studios"
-            className="enclave-logo"
-          />
+        <div className="flex flex-col gap-3">
+          {teamMembers.map((member) => (
+            <TeamMember
+              key={member.id}
+              name={member.name}
+              title={member.title}
+            />
+          ))}
         </div>
       </div>
     </section>

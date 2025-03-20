@@ -8,7 +8,7 @@ import { Button } from "./Button";
 
 const NewFooter = () => {
   return (
-    <footer className="px-4 sm:px-6 lg:px-8 py-12 w-full mx-auto mb-20 md:mb-5">
+    <footer className="px-8 py-12 w-full max-w-7xl mx-auto md:mb-5">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-0 md:gap-8 mb-10">
         <div className="col-span-1 lg:col-span-5">
           <Link href="/" className="mb-4">
@@ -35,14 +35,14 @@ const NewFooter = () => {
           </div>
         </div>
 
-        <div className="hidden lg:block lg:col-span-2"></div>
+        <div className="block lg:col-span-2"></div>
 
         {/* Enclave Studios section */}
-        <div className="col-span-1 lg:col-span-2">
+        <div className="col-span-1 lg:col-span-2 md:mt-0 mt-8">
           <h3 className="text-[#121212] font-bold text-lg mb-6">
             Enclave Studios
           </h3>
-          <ul className="space-y-5">
+          <ul className="md:space-y-5 space-y-3">
             <li>
               <Link
                 href="/services"
@@ -67,21 +67,13 @@ const NewFooter = () => {
                 About Us
               </Link>
             </li>
-            <li>
-              <Link
-                href="/faq"
-                className="text-[#26120D] text-sm hover:text-[#FB4E29]"
-              >
-                FAQ
-              </Link>
-            </li>
           </ul>
         </div>
 
         {/* Contact Us section */}
-        <div className="col-span-1 lg:col-span-3">
+        <div className="col-span-1 lg:col-span-3 md:mt-0 mt-8">
           <h3 className="text-[#121212] font-bold text-lg mb-6">Contact Us</h3>
-          <ul className="space-y-5">
+          <ul className="md:space-y-5 space-y-3">
             <li>
               <a
                 href="mailto:hello@enclave.live"
@@ -109,14 +101,14 @@ const NewFooter = () => {
 
       <div className="w-full h-px bg-gray-300 my-8"></div>
 
-      <div className="flex flex-col sm:flex-row justify-between items-center">
-        <div className="mb-4 sm:mb-0">
-          <p className="text-[#1B0D09] text-xs">
+      <div className="flex flex-col-reverse sm:flex-row justify-between items-center">
+        <div className="">
+          <p className="text-[#1B0D09] text-xs text-center md:text-left">
             © {new Date().getFullYear()} Enclave Technologies Ltd. All rights
             reserved.
           </p>
         </div>
-        <div className="flex space-x-4">
+        <div className="flex space-x-4 md:mb-0 mb-4">
           <a
             href="https://www.instagram.com/enclave_studios_/"
             target="_blank"
