@@ -100,7 +100,7 @@ const Testimony = ({ id }) => {
       >
         <div className="flex flex-col items-center justify-center">
           <h1
-            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-[#121212] max-w-lg text-center"
+            className="text-4xl lg:text-6xl font-bold mb-6 text-[#121212] max-w-lg text-center"
             style={{
               lineHeight: "1.2",
             }}
@@ -128,7 +128,7 @@ const Testimony = ({ id }) => {
             <Button
               variant="secondary navigation"
               title="See More"
-              link="/#new-services"
+              link="/#our-services"
               rounded={true}
             />
           </div>

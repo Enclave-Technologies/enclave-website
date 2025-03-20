@@ -25,14 +25,14 @@ const NewFooter = () => {
             businesses launch and grow their digital presence.
           </p>
 
-          <div className="flex justify-center w-fit">
+          {/* <div className="flex justify-center w-fit">
             <Button
               variant="primary navigation"
               title="Book a Consultation"
               link="/contact"
               rounded={true}
             />
-          </div>
+          </div> */}
         </div>
 
         <div className="block lg:col-span-2"></div>
@@ -45,23 +45,23 @@ const NewFooter = () => {
           <ul className="md:space-y-5 space-y-3">
             <li>
               <Link
-                href="/services"
+                href="/works"
                 className="text-[#26120D] text-sm hover:text-[#FB4E29]"
               >
-                Our Services
+                Works
               </Link>
             </li>
             <li>
               <Link
-                href="/case-studies"
+                href="/#our-services"
                 className="text-[#26120D] text-sm hover:text-[#FB4E29]"
               >
-                Client Stories
+                Services
               </Link>
             </li>
             <li>
               <Link
-                href="/about"
+                href="/#team"
                 className="text-[#26120D] text-sm hover:text-[#FB4E29]"
               >
                 About Us
@@ -84,10 +84,11 @@ const NewFooter = () => {
             </li>
             <li>
               <a
-                href="tel:+85259291909"
+                href="https://api.whatsapp.com/send/?phone=85259291909&text&type=phone_number&app_absent=0"
+                target="_blank"
                 className="text-[#26120D] text-sm hover:text-[#FB4E29]"
               >
-                +852 5929 1909
+                Whatsapp: +852 5929 1909
               </a>
             </li>
             <li className="text-[#26120D] text-sm transform-none decoration-none">

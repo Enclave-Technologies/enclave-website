@@ -46,11 +46,11 @@ export default function Home() {
       <Chat />
 
       <Testimony id="testimony" />
+      <OurServices id="our-services" />
 
       <NewServices id="new-services" />
       <Projects id="projects" />
-      <Steps id="steps" />
-      <OurServices id="our-services" />
+      {/* <Steps id="steps" /> */}
       <Team id="team" />
 
       <div className="w-full">

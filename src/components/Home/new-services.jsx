@@ -52,31 +52,19 @@ const NewServices = ({ id }) => {
     >
       <div className="w-full max-w-7xl mx-auto">
         <div className="text-center mb-8">
-          <h4 className="text-[#FB4E29] text-lg font-bold">
+          <h4 className="text-[#FB4E29] text-lg md:text-2xl font-bold">
             Modular Solutions
           </h4>
-          <h2 className="text-2xl md:text-4xl font-bold mt-2 mb-4 capitalize">
-            Supercharging Your Digital Presence
+          <h2 className="text-3xl md:text-5xl font-bold mt-2 mb-4 capitalize">
+            Solidify Your Digital Presence
           </h2>
-          <p className="text-[#26120D] max-w-2xl mx-auto">
+          <p className="text-[#26120D] max-w-2xl mx-auto text-base md:text-lg">
             Providing end-to-end solutions for brands in the ever evolving
             digital landscape
           </p>
         </div>
 
-        <div className="flex items-center justify-center w-full">
-          <div className="mb-12 flex items-center justify-center w-fit">
-            <Button
-              variant="primary navigation"
-              title="Book a Consultation"
-              link="https://api.whatsapp.com/send/?phone=85259291909&text&type=phone_number&app_absent=0"
-              rounded={true}
-              target="_blank"
-            />
-          </div>
-        </div>
-
-        <div className="flex items-center justify-center mt-12">
+        <div className="flex items-center justify-center my-16">
           <Image
             src="/services-graphic.png"
             alt="Our Services"
@@ -94,7 +82,19 @@ const NewServices = ({ id }) => {
           />
         </div>
 
-        <div className="flex flex-col items-center justify-center gap-6 w-full mt-24">
+        <div className="flex items-center justify-center w-full">
+          <div className="mb-12 flex items-center justify-center w-fit">
+            <Button
+              variant="primary navigation"
+              title="Book a Consultation"
+              link="https://api.whatsapp.com/send/?phone=85259291909&text&type=phone_number&app_absent=0"
+              rounded={true}
+              target="_blank"
+            />
+          </div>
+        </div>
+
+        {/* <div className="flex flex-col items-center justify-center gap-6 w-full mt-24">
           <Testimonial
             quote="I'm so happy! Their solutions design process has tripled our online visibility, helped us rank #1 on Google and skyrocketed our website sales."
             name="Aman Selarka"
@@ -102,17 +102,17 @@ const NewServices = ({ id }) => {
             companyLogo="/affiliate-logos/payphone.png"
             companyName="Payphone"
           />
-        </div>
+        </div> */}
 
-        <div className="w-full max-w-7xl mx-auto mt-32">
+        <div className="w-full max-w-7xl mx-auto mt-28">
           <div className="text-center">
-            <h4 className="text-[#FB4E29] text-lg font-bold mb-2">
+            <h4 className="text-[#FB4E29] text-lg md:text-2xl font-bold mb-2">
               Key Performance Indicators
             </h4>
-            <h2 className="text-2xl md:text-3xl font-bold mb-2 capitalize">
+            <h2 className="text-3xl md:text-5xl font-bold mb-2 capitalize">
               Numbers That Just Make Sense
             </h2>
-            <p className="text-[#26120D] text-base">
+            <p className="text-[#26120D] text-base md:text-lg">
               Relentlessly KPI-Driven, Driving Measurable Results
             </p>
           </div>
@@ -120,36 +120,36 @@ const NewServices = ({ id }) => {
           <div className="hidden md:grid grid-cols-3 gap-8 my-20">
             <GradientMetric
               value="20M"
-              description="dollars in client revenue driven by our tailored solutions and strategies"
+              description="dollars in client revenue driven by our tailored solutions and strategies."
             />
 
             <GradientMetric
               value="80K"
-              description="unique visitors engaging with the websites we build every month"
+              description="unique visitors engaging with the websites we build every month."
             />
 
             <GradientMetric
               value="50+"
-              description="projects successfully delivered across multiple industries"
+              description="projects successfully delivered across multiple industries."
             />
           </div>
 
           <div className="md:hidden flex flex-col space-y-12 mt-12">
             <GradientMetric
               value="20M"
-              description="dollars in client revenue driven by our tailored solutions and strategies"
+              description="dollars in client revenue driven by our tailored solutions and strategies."
               maxWidth="max-w-[250px]"
             />
 
             <GradientMetric
               value="80K"
-              description="unique visitors engaging with the websites we build every month"
+              description="unique visitors engaging with the websites we build every month."
               maxWidth="max-w-[250px]"
             />
 
             <GradientMetric
               value="50+"
-              description="projects successfully delivered across multiple industries"
+              description="projects successfully delivered across multiple industries."
               maxWidth="max-w-[250px]"
             />
           </div>

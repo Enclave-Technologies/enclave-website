@@ -14,7 +14,7 @@ const ProjectCard = ({
   <Link
     href={externalLink}
     target="_blank"
-    className="flex flex-col justify-between items-start p-6 w-full md:h-[432px] h-[300px] rounded-[16px] overflow-hidden relative group transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+    className="flex flex-col justify-between items-start p-4 md:p-6 w-full md:h-[432px] h-[320px] rounded-[16px] overflow-hidden relative group transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
     style={{
       background: `linear-gradient(180deg, ${gradientColors[0]} 0%, ${gradientColors[1]} 100%), url(${image})`,
       backgroundSize: "cover",
@@ -22,7 +22,7 @@ const ProjectCard = ({
       backgroundRepeat: "no-repeat",
     }}
   >
-    <h3 className="font-bold text-[24px] leading-[140%] text-white w-full group-hover:scale-105 transition-transform duration-300">
+    <h3 className="font-bold text-[24px] md:text-[28px] leading-[140%] text-white w-full group-hover:scale-105 transition-transform duration-300">
       {title}
     </h3>
 
@@ -33,9 +33,9 @@ const ProjectCard = ({
             <Image
               src={logoImage}
               alt={title}
-              width={160}
+              width={150}
               height={40}
-              className="object-contain h-10 w-fit"
+              className="object-contain h-10 md:w-fit w-[80%]"
             />
           )}
         </div>
@@ -74,7 +74,7 @@ const ProjectCard = ({
         </div>
       </div>
 
-      <p className="font-semibold text-base leading-[150%] text-white transition-all duration-300 group-hover:text-white/90">
+      <p className="font-semibold text-base md:text-lg leading-[150%] text-white transition-all duration-300 group-hover:text-white/90">
         {description}
       </p>
     </div>
@@ -131,24 +131,22 @@ const Projects = ({ id }) => {
       <div className="w-full max-w-7xl mx-auto flex flex-col items-center gap-6 md:gap-12">
         <div className="flex flex-col items-center gap-6 max-w-[782px]">
           <div className="flex flex-col items-center gap-2">
-            <h4 className="text-[#FB4E29] text-lg font-bold mb-3">
+            <h4 className="text-[#FB4E29] text-lg md:text-2xl font-bold mb-3">
               Featured Works
             </h4>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold capitalize max-w-xl text-center">
+            <h2
+              className="text-3xl lg:text-5xl font-bold capitalize max-w-2xl text-center"
+              style={{
+                lineHeight: "1.3",
+              }}
+            >
               Pioneering Projects That Redefine What&apos;s Possible
             </h2>
           </div>
 
-          <p className="text-base text-[#26120D] text-center leading-[150%]">
+          <p className="text-base md:text-lg text-[#26120D] text-center leading-[150%]">
             Transforming startups, SMEs and industry giants into digital leaders
           </p>
-
-          <Button
-            variant="primary navigation"
-            title="Explore All Projects"
-            link="/works"
-            rounded={true}
-          />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 w-full mt-14">
@@ -179,6 +177,13 @@ const Projects = ({ id }) => {
             />
           ))}
         </div>
+
+        <Button
+          variant="primary navigation"
+          title="Explore All Projects"
+          link="/works"
+          rounded={true}
+        />
       </div>
     </section>
   );

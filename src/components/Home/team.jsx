@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Button } from "../Button";
 
 const TeamMember = ({ name, title }) => (
-  <div className="box-border flex sm:flex-row flex-col sm:justify-between justify-center sm:items-center items-start p-6 w-full sm:h-[75px] h-[100px] bg-[#FFEDEA] border border-[#FB4E29] rounded-lg">
+  <div className="box-border flex sm:flex-row flex-col sm:justify-between justify-center sm:items-center items-start p-6 w-full sm:h-[75px] h-[100px] bg-[#E9E7E7] rounded-lg">
     <h3 className="font-semibold text-lg text-[#121212]">{name}</h3>
     <div className="text-[#26120D] text-base">{title}</div>
   </div>
@@ -30,6 +30,12 @@ const Team = ({ id }) => {
       id: 4,
       name: "Pease Adeniji",
       title: "Lead Software Engineer",
+    },
+
+    {
+      id: 5,
+      name: "Rajkumar Chaudhari",
+      title: "Website Engineer",
     },
     {
       id: 7,
@@ -84,11 +90,13 @@ const Team = ({ id }) => {
     >
       <div className="max-w-7xl mx-auto w-full">
         <div className="text-center mb-8">
-          <h4 className="text-[#FB4E29] text-lg font-bold">Our Team</h4>
-          <h2 className="text-2xl md:text-4xl font-bold mt-2 mb-4 capitalize">
+          <h4 className="text-[#FB4E29] text-lg md:text-2xl font-bold">
+            Our Team
+          </h4>
+          <h2 className="text-3xl md:text-5xl font-bold mt-2 mb-4 capitalize">
             A Global Network Of Talent
           </h2>
-          <p className="text-[#26120D] max-w-lg mx-auto">
+          <p className="text-[#26120D] max-w-lg mx-auto text-base md:text-lg">
             We&apos;ve assembled a team of dedicated professionals from diverse
             backgrounds who share the same passion for your brand as you do.
           </p>

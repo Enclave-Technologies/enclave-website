@@ -20,7 +20,7 @@ const OurServices = ({ id }) => {
       className="flex flex-col justify-center items-center py-16 px-8 w-full bg-[#FAFAFA]"
     >
       <div className="max-w-7xl w-full mx-auto">
-        <div className="text-center mb-14 mx-auto">
+        {/* <div className="text-center mb-14 mx-auto">
           <h4 className="text-[#FB4E29] text-lg font-bold mb-3 ">
             Our Services
           </h4>
@@ -32,7 +32,7 @@ const OurServices = ({ id }) => {
             Eliminate disconnected systems and scattered systems with our
             unified approach
           </p>
-        </div>
+        </div> */}
 
         <div className="flex flex-col md:gap-12 gap-6">
           <div className="box-border flex md:flex-row flex-col items-start md:p-[32px] p-4 md:gap-[48px] gap-6 w-full max-w-[1440px] md:h-[500px] h-full bg-gradient-to-br from-[rgba(255,255,255,0.4)] to-[rgba(255,255,255,0.1)] shadow-[0px_0px_15px_rgba(0,0,0,0.2)] backdrop-blur-[15px] rounded-[20px]">
@@ -75,7 +75,7 @@ const OurServices = ({ id }) => {
                   resonate. We craft bespoke digital experiences that merge
                   innovation with creativity, delivering intuitive, visually
                   stunning platforms that captivate audiences, reflect your
-                  brand&apos;s essence, and adapt to future opportunities.
+                  brand’s essence, and adapt to future opportunities.
                 </p>
               </div>
             </div>
