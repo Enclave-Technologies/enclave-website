@@ -42,7 +42,6 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between text-black relative home-font bg-[#FAFAFA]">
       {/* <div className="cursor" /> */}
       <Navbarr />
-
       <Testimony id="testimony" />
 
       <NewServices id="new-services" />
