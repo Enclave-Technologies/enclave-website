@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { Button } from "../Button";
 
 const TeamMember = ({ name, title }) => (
   <div className="box-border flex sm:flex-row flex-col sm:justify-between justify-center sm:items-center items-start p-6 w-full sm:h-[75px] h-[100px] bg-[#FFEDEA] border border-[#FB4E29] rounded-lg">
@@ -101,6 +102,32 @@ const Team = ({ id }) => {
               title={member.title}
             />
           ))}
+        </div>
+      </div>
+
+      <div className="flex flex-col items-center w-full max-w-7xl mt-14 md:mt-20 lg:mt-24">
+        <div
+          className="relative flex flex-col justify-between items-start p-6 md:p-8 w-full h-[320px] rounded-xl shadow-[0px_0px_15px_rgba(0,0,0,0.2)] backdrop-blur-[15px] overflow-hidden"
+          style={{
+            background:
+              "linear-gradient(180deg, #E9E7E7 0%, rgba(233, 231, 231, 0) 100%), url('/service-images/007.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <h3 className="font-bold text-2xl lg:text-4xl text-[#121212] leading-[120%] max-w-[600px] z-10 normal-case flex-1">
+            Enable Your Business with the Right Technology Solutions
+          </h3>
+
+          <div>
+            <Button
+              variant="primary navigation"
+              title="Book a 1-1 Consultation"
+              link="https://api.whatsapp.com/send/?phone=85259291909&text&type=phone_number&app_absent=0"
+              rounded={true}
+              target="_blank"
+            />
+          </div>
         </div>
       </div>
     </section>

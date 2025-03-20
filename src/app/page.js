@@ -10,6 +10,7 @@ import { Navbarr } from "../components/Navbar/Navbarr";
 import Team from "../components/Home/team";
 import NewFooter from "../components/NewFooter";
 import OurServices from "../components/Home/our-services";
+import Chat from "../components/Home/chat";
 export default function Home() {
   const [domLoaded, setDomLoaded] = useState(false);
 
@@ -42,13 +43,14 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between text-black relative home-font bg-[#FAFAFA]">
       {/* <div className="cursor" /> */}
       <Navbarr />
+      <Chat />
+
       <Testimony id="testimony" />
 
       <NewServices id="new-services" />
       <Projects id="projects" />
       <Steps id="steps" />
       <OurServices id="our-services" />
-
       <Team id="team" />
 
       <div className="w-full">

@@ -6,7 +6,7 @@ import Image from "next/image";
 import Hamburger from "./Hamburger";
 
 const links = [
-  { title: "Home", link: "/#" },
+  { title: "Home", link: "/" },
   { title: "Works", link: "/#projects" },
   { title: "Services", link: "/#our-services" },
   { title: "About Us", link: "/#team" },
@@ -70,8 +70,8 @@ export const Navbarr = () => {
         </div>
 
         <div
-          className={`md:hidden fixed top-[-20px] left-[-24px] h-screen bg-white w-screen inset-0 transition-all duration-300 ease-in-out ${
-            isOpen ? "translate-x-0" : "translate-x-full"
+          className={`md:hidden fixed top-[-20px] left-0 h-screen bg-white w-screen  transition-all duration-300 ease-in-out ${
+            isOpen ? "translate-x-0 " : "translate-x-full"
           }`}
           style={{
             zIndex: 999,

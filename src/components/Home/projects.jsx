@@ -11,7 +11,9 @@ const ProjectCard = ({
   gradientColors,
   externalLink = "#",
 }) => (
-  <div
+  <Link
+    href={externalLink}
+    target="_blank"
     className="flex flex-col justify-between items-start p-6 w-full md:h-[432px] h-[300px] rounded-[16px] overflow-hidden relative"
     style={{
       background: `linear-gradient(180deg, ${gradientColors[0]} 0%, ${gradientColors[1]} 100%), url(${image})`,
@@ -26,7 +28,7 @@ const ProjectCard = ({
 
     <div className="flex flex-col gap-3 w-full">
       <div className="flex justify-between items-center w-full">
-        <div className="h-10">
+        <div className="h-10 flex items-start justify-start">
           {logoImage && (
             <Image
               src={logoImage}
@@ -38,13 +40,12 @@ const ProjectCard = ({
           )}
         </div>
 
-        <Link href={externalLink} target="_blank">
-          <div className="w-6 h-6 flex items-center justify-center">
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
+        <div className="w-6 h-6 flex items-center justify-center">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
               xmlns="http://www.w3.org/2000/svg"
               className="text-white"
             >
@@ -69,16 +70,15 @@ const ProjectCard = ({
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
-            </svg>
-          </div>
-        </Link>
+          </svg>
+        </div>
       </div>
 
       <p className="font-semibold text-base leading-[150%] text-white">
         {description}
       </p>
     </div>
-  </div>
+  </Link>
 );
 
 const Projects = ({ id }) => {

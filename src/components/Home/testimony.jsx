@@ -56,28 +56,10 @@ const LogoMarquee = ({ direction = "left" }) => {
       },
     });
 
-    const handleMouseEnter = () => {
-      if (scrollTween.current) {
-        scrollTween.current.pause();
-      }
-    };
-
-    const handleMouseLeave = () => {
-      if (scrollTween.current) {
-        scrollTween.current.play();
-      }
-    };
-
-    const container = row.parentElement;
-    container.addEventListener("mouseenter", handleMouseEnter);
-    container.addEventListener("mouseleave", handleMouseLeave);
-
     return () => {
       if (scrollTween.current) {
         scrollTween.current.kill();
       }
-      container.removeEventListener("mouseenter", handleMouseEnter);
-      container.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, [direction]);
 
@@ -85,16 +67,13 @@ const LogoMarquee = ({ direction = "left" }) => {
     <div className="w-full overflow-hidden py-6 md:py-8">
       <div ref={rowRef} className="flex items-center gap-6">
         {logos.map((logo, index) => (
-          <div
-            key={index}
-            className="mx-2 md:mx-3 flex-shrink-0 opacity-70 hover:opacity-100 transition-opacity duration-300"
-          >
+          <div key={index} className="mx-2 md:mx-3 flex-shrink-0 opacity-70">
             <Image
               src={`/affiliate-logos/${logo}`}
               alt={`Partner ${index + 1}`}
               width={120}
               height={40}
-              className="h-8 md:h-10 w-auto object-contain"
+              className="h-8 md:h-10 w-auto object-contain grayscale"
             />
           </div>
         ))}
