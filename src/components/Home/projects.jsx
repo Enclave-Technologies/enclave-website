@@ -28,7 +28,7 @@ const ProjectCard = ({
 
     <div className="flex flex-col gap-3 w-full">
       <div className="flex justify-between items-center w-full">
-        <div className="h-10 flex items-start justify-start">
+        <div className="h-10 flex items-start justify-start w-fit">
           {logoImage && (
             <Image
               src={logoImage}

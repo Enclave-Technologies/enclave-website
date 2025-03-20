@@ -82,15 +82,15 @@ const NewServices = ({ id }) => {
             alt="Our Services"
             width={1000}
             height={1000}
-            className="w-[90%] h-[90%] object-cover hidden md:flex"
+            className="w-[90%] h-[90%] object-cover hidden sm:flex"
           />
 
           <Image
             src="/moble-graphic.png"
             alt="Our Services"
-            width={1000}
-            height={1000}
-            className="w-[100%] h-[100%] object-cover md:hidden flex"
+            width={500}
+            height={500}
+            className="w-[70%] h-[70%] object-cover sm:hidden flex"
           />
         </div>
 

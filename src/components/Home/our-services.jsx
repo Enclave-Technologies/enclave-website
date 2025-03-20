@@ -50,8 +50,6 @@ const OurServices = ({ id }) => {
                   stage for scalable, future-ready solutions.
                 </p>
               </div>
-
-              <NumberCircle number="01" />
             </div>
 
             <div className="w-full h-full flex-1">
@@ -80,8 +78,6 @@ const OurServices = ({ id }) => {
                   brand&apos;s essence, and adapt to future opportunities.
                 </p>
               </div>
-
-              <NumberCircle number="02" />
             </div>
 
             <div className="w-full h-full flex-1">
@@ -111,8 +107,6 @@ const OurServices = ({ id }) => {
                   business.
                 </p>
               </div>
-
-              <NumberCircle number="03" />
             </div>
 
             <div className="w-full h-full flex-1">
@@ -141,8 +135,6 @@ const OurServices = ({ id }) => {
                   measurable results in an ever-evolving digital world.
                 </p>
               </div>
-
-              <NumberCircle number="04" />
             </div>
 
             <div className="w-full h-full flex-1">
