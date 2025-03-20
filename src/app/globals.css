@@ -584,5 +584,6 @@ button:hover .button-text-container span {
   textarea,
   select {
     font-family: "Albert Sans", sans-serif !important;
+    font-style: normal !important;
   }
 }

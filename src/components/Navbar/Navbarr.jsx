@@ -7,7 +7,7 @@ import Hamburger from "./Hamburger";
 
 const links = [
   { title: "Home", link: "/" },
-  { title: "Works", link: "/#projects" },
+  { title: "Works", link: "/works" },
   { title: "Services", link: "/#our-services" },
   { title: "About Us", link: "/#team" },
 ];

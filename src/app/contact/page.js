@@ -1,7 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Navbar } from "../../components/Navbar/Navbar";
 import { useForm, ValidationError } from "@formspree/react";
+import { Navbarr } from "../../components/Navbar/Navbarr";
+import NewFooter from "../../components/NewFooter";
 
 const services = [
   "UI/UX Design",
@@ -21,8 +22,8 @@ export default function Contact() {
 
   return (
     <main className="flex w-full min-h-screen flex-col items-center justify-start text-black">
-      <div id="cursor" />
-      <Navbar />
+      {/* <div id="cursor" /> */}
+      <Navbarr />
       <section className="w-full flex flex-col items-center">
         <div className="inner-container min-h-screen flex flex-col items-start justify-center gap-24 md:!pr-96">
           <h1 className="text-6xl font-bold pt-12">
@@ -161,6 +162,10 @@ export default function Contact() {
           </form>
         </div>
       </section>
+
+      <div className="w-full">
+        <NewFooter id="footer" />
+      </div>
     </main>
   );
 }

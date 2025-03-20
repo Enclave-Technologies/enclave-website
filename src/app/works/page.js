@@ -5,6 +5,8 @@ import { useForm, ValidationError } from "@formspree/react";
 import Image from "next/image";
 import { Footer } from "../../components/Footer";
 import Link from "next/link";
+import { Navbarr } from "../../components/Navbar/Navbarr";
+import NewFooter from "../../components/NewFooter";
 
 const services = [
   "Website for my business",
@@ -70,8 +72,8 @@ export default function Works() {
       className="flex min-h-screen flex-col items-center justify-start text-black"
       style={{ minWidth: "100vw" }}
     >
-      <div id="cursor" />
-      <Navbar />
+      {/* <div id="cursor" /> */}
+      <Navbarr />
       <div className="w-full">
         <div className="sticky top-0 left-0 min-h-screen min-w-full flex flex-col items-center justify-center gap-24 z-0">
           <h1
@@ -102,7 +104,10 @@ export default function Works() {
       <div id="works-cursor-button">
         <p>OPEN PROJECT</p>
       </div>
-      <Footer />
+      
+      <div className="w-full">
+        <NewFooter id="footer" />
+      </div>
     </main>
   );
 }
