@@ -100,7 +100,7 @@ const Testimony = ({ id }) => {
       >
         <div className="flex flex-col items-center justify-center">
           <h1
-            className="text-4xl lg:text-6xl font-bold mb-6 text-[#121212] max-w-lg text-center"
+            className="text-[40px] md:text-[56px] lg:text-[72px] font-bold mb-6 text-[#121212] max-w-2xl text-center"
             style={{
               lineHeight: "1.2",
             }}
@@ -108,7 +108,7 @@ const Testimony = ({ id }) => {
             Crafting Bespoke Digital Solutions
           </h1>
 
-          <h2 className="text-xl md:text-2xl text-[#FB4E29] font-bold mb-4 normal-case text-center">
+          <h2 className="text-[20px] md:text-[24px] lg:text-[28px] text-[#FB4E29] font-bold mb-4 normal-case text-center">
             Empowering Businesses with Technology Integration
           </h2>
 

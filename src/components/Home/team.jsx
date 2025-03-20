@@ -90,13 +90,13 @@ const Team = ({ id }) => {
     >
       <div className="max-w-7xl mx-auto w-full">
         <div className="text-center mb-8">
-          <h4 className="text-[#FB4E29] text-lg md:text-2xl font-bold">
+          <h4 className="text-[#FB4E29] text-[20px] md:text-[24px] lg:text-[28px] font-bold">
             Our Team
           </h4>
-          <h2 className="text-3xl md:text-5xl font-bold mt-2 mb-4 capitalize">
+          <h2 className="text-[32px] md:text-[40px] lg:text-[48px] font-bold mt-2 mb-4 capitalize">
             A Global Network Of Talent
           </h2>
-          <p className="text-[#26120D] max-w-lg mx-auto text-base md:text-lg">
+          <p className="text-[#26120D] max-w-2xl mx-auto text-[18px] md:text-[20px] leading-[150%]">
             We&apos;ve assembled a team of dedicated professionals from diverse
             backgrounds who share the same passion for your brand as you do.
           </p>
@@ -115,7 +115,7 @@ const Team = ({ id }) => {
 
       <div className="flex flex-col items-center w-full max-w-7xl mt-14 md:mt-20 lg:mt-24">
         <div
-          className="relative flex flex-col justify-between items-start p-6 md:p-8 w-full h-[320px] rounded-xl shadow-[0px_0px_15px_rgba(0,0,0,0.2)] backdrop-blur-[15px] overflow-hidden"
+          className="relative flex flex-col justify-between items-start p-4 md:p-8 w-full h-[320px] rounded-xl shadow-[0px_0px_15px_rgba(0,0,0,0.2)] backdrop-blur-[15px] overflow-hidden"
           style={{
             background:
               "linear-gradient(180deg, #E9E7E7 0%, rgba(233, 231, 231, 0) 100%), url('/service-images/007.png')",
@@ -123,11 +123,11 @@ const Team = ({ id }) => {
             backgroundPosition: "center",
           }}
         >
-          <h3 className="font-bold text-2xl lg:text-4xl text-[#121212] leading-[120%] max-w-[600px] z-10 normal-case flex-1">
+          <h3 className="font-bold text-[28px] md:text-[36px] lg:text-[40px] text-[#121212] leading-[120%] max-w-[600px] z-10 normal-case flex-1">
             Enable Your Business with the Right Technology Solutions
           </h3>
 
-          <div>
+          <div className="flex items-center justify-center w-full sm:w-fit">
             <Button
               variant="primary navigation"
               title="Book a 1-1 Consultation"

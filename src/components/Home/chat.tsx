@@ -89,7 +89,7 @@ const Chat = () => {
           <span
             className={`font-semibold text-base text-[#121212] whitespace-nowrap`}
           >
-            Chat with us
+            Send us a message
           </span>
           <svg
             width="24"

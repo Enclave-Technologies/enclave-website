@@ -7,8 +7,8 @@ import Hamburger from "./Hamburger";
 
 const links = [
   { title: "Home", link: "/" },
-  { title: "Works", link: "/works" },
   { title: "Services", link: "/#our-services" },
+  { title: "Works", link: "/#projects" },
   { title: "About Us", link: "/#team" },
 ];
 
@@ -19,21 +19,19 @@ export const Navbarr = () => {
     <div
       className="fixed top-0 left-0 right-0 z-50  md:h-[70px] h-[60px] transition-all duration-300"
       style={{
-        background:
-          "linear-gradient(113.44deg, rgba(255, 255, 255, 0.6) 22.6%, rgba(255, 255, 255, 0.25) 92.47%)",
+        background: "white",
         boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.2)",
         backdropFilter: "blur(12px)",
       }}
     >
       <div className="w-full h-full px-8 flex items-center">
         <div className="w-full flex items-center justify-between px-0 md:px-10">
-          <div className="w-[64px] relative z-[1001]">
+          <div className="w-[140px] relative z-[1001]">
             <Link href="/">
               <Image
-                className="enclave-logo"
-                src="/enclave-studios-logo.svg"
-                width={64}
-                height={64}
+                src="/new-enclave-logo.svg"
+                width={50}
+                height={50}
                 alt="Enclave Studios"
                 priority
               />

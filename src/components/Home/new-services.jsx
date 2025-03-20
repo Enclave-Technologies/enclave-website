@@ -52,13 +52,13 @@ const NewServices = ({ id }) => {
     >
       <div className="w-full max-w-7xl mx-auto">
         <div className="text-center mb-8">
-          <h4 className="text-[#FB4E29] text-lg md:text-2xl font-bold">
+          <h4 className="text-[#FB4E29] text-[20px] md:text-[24px] lg:text-[28px] font-bold">
             Modular Solutions
           </h4>
-          <h2 className="text-3xl md:text-5xl font-bold mt-2 mb-4 capitalize">
+          <h2 className="text-[32px] md:text-[40px] lg:text-[48px] font-bold mt-2 mb-4 capitalize">
             Solidify Your Digital Presence
           </h2>
-          <p className="text-[#26120D] max-w-2xl mx-auto text-base md:text-lg">
+          <p className="text-[#26120D] max-w-3xl mx-auto text-[18px] md:text-[20px] leading-[150%]">
             Providing end-to-end solutions for brands in the ever evolving
             digital landscape
           </p>
@@ -106,13 +106,13 @@ const NewServices = ({ id }) => {
 
         <div className="w-full max-w-7xl mx-auto mt-28">
           <div className="text-center">
-            <h4 className="text-[#FB4E29] text-lg md:text-2xl font-bold mb-2">
+            <h4 className="text-[#FB4E29] text-[20px] md:text-[24px] lg:text-[28px] font-bold mb-2">
               Key Performance Indicators
             </h4>
-            <h2 className="text-3xl md:text-5xl font-bold mb-2 capitalize">
+            <h2 className="text-[32px] md:text-[40px] lg:text-[48px] font-bold mb-2 capitalize">
               Numbers That Just Make Sense
             </h2>
-            <p className="text-[#26120D] text-base md:text-lg">
+            <p className="text-[#26120D] text-[18px] md:text-[20px] leading-[150%]">
               Relentlessly KPI-Driven, Driving Measurable Results
             </p>
           </div>
