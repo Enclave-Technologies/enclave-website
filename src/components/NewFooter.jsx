@@ -90,7 +90,7 @@ const NewFooter = () => {
                 +852 5929 1909
               </a>
             </li>
-            <li className="text-[#26120D] text-sm">
+            <li className="text-[#26120D] text-sm transform-none decoration-none">
               39/F, Dah Sing Financial Centre,
               <br />
               248 Queen&apos;s Road East, Wan Chai

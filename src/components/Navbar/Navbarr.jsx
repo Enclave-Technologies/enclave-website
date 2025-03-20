@@ -17,7 +17,7 @@ export const Navbarr = () => {
 
   return (
     <div
-      className="fixed top-5 left-[5vw] right-[5vw] z-50  rounded-[48px] md:h-[70px] h-[60px] transition-all duration-300"
+      className="fixed top-0 left-0 right-0 z-50  md:h-[70px] h-[60px] transition-all duration-300"
       style={{
         background:
           "linear-gradient(113.44deg, rgba(255, 255, 255, 0.6) 22.6%, rgba(255, 255, 255, 0.25) 92.47%)",
@@ -58,7 +58,7 @@ export const Navbarr = () => {
           <div className="hidden md:block w-[140px] relative z-[1001]">
             <Button
               variant="primary navigation"
-              title="Contact Us"
+              title="Get In Touch"
               link="/contact"
               rounded={true}
             />
@@ -70,7 +70,7 @@ export const Navbarr = () => {
         </div>
 
         <div
-          className={`md:hidden fixed top-[-20px] left-0 h-screen bg-white w-screen  transition-all duration-300 ease-in-out ${
+          className={`md:hidden fixed top-[-20px] left-0 h-[105vh] bg-white w-screen  transition-all duration-300 ease-in-out ${
             isOpen ? "translate-x-0 " : "translate-x-full"
           }`}
           style={{
@@ -78,7 +78,7 @@ export const Navbarr = () => {
             backdropFilter: "blur(15px)",
           }}
         >
-          <div className="h-full mt-10  flex flex-col p-6">
+          <div className="h-full mt-16  flex flex-col p-6">
             <div className="flex  w-full pb-8 px-8 flex-col items-center space-y-6 text-center pt-8">
               {links.map((link, index) => (
                 <Link
@@ -93,7 +93,7 @@ export const Navbarr = () => {
               <div className="w-full pt-4" onClick={() => setIsOpen(false)}>
                 <Button
                   variant="primary navigation"
-                  title="Contact Us"
+                  title="Get In Touch"
                   link="/contact"
                   rounded={true}
                 />

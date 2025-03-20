@@ -14,7 +14,7 @@ const ProjectCard = ({
   <Link
     href={externalLink}
     target="_blank"
-    className="flex flex-col justify-between items-start p-6 w-full md:h-[432px] h-[300px] rounded-[16px] overflow-hidden relative"
+    className="flex flex-col justify-between items-start p-6 w-full md:h-[432px] h-[300px] rounded-[16px] overflow-hidden relative group transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
     style={{
       background: `linear-gradient(180deg, ${gradientColors[0]} 0%, ${gradientColors[1]} 100%), url(${image})`,
       backgroundSize: "cover",
@@ -22,13 +22,13 @@ const ProjectCard = ({
       backgroundRepeat: "no-repeat",
     }}
   >
-    <h3 className="font-bold text-[24px] leading-[140%] text-white w-full">
+    <h3 className="font-bold text-[24px] leading-[140%] text-white w-full group-hover:scale-105 transition-transform duration-300">
       {title}
     </h3>
 
     <div className="flex flex-col gap-3 w-full">
       <div className="flex justify-between items-center w-full">
-        <div className="h-10 flex items-start justify-start w-fit">
+        <div className="h-10 flex items-start justify-start w-fit transition-opacity duration-300 group-hover:opacity-100 opacity-90">
           {logoImage && (
             <Image
               src={logoImage}
@@ -40,44 +40,46 @@ const ProjectCard = ({
           )}
         </div>
 
-        <div className="w-6 h-6 flex items-center justify-center">
+        <div className="w-6 h-6 flex items-center justify-center relative">
           <svg
             width="18"
             height="18"
             viewBox="0 0 24 24"
             fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="text-white"
-            >
-              <path
-                d="M12.5 8.5L21 0"
-                stroke="#FAFAFA"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M14 0H21V7"
-                stroke="#FAFAFA"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M21 13V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H11"
-                stroke="#FAFAFA"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
+            xmlns="http://www.w3.org/2000/svg"
+            className="text-white transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+          >
+            <path
+              d="M12.5 8.5L21 0"
+              stroke="#FAFAFA"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M14 0H21V7"
+              stroke="#FAFAFA"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M21 13V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H11"
+              stroke="#FAFAFA"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
           </svg>
         </div>
       </div>
 
-      <p className="font-semibold text-base leading-[150%] text-white">
+      <p className="font-semibold text-base leading-[150%] text-white transition-all duration-300 group-hover:text-white/90">
         {description}
       </p>
     </div>
+
+    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300"></div>
   </Link>
 );
 

@@ -568,4 +568,21 @@ button:hover .button-text-container span {
 .home-font {
   font-family: "Albert Sans", sans-serif !important;
   max-width: 100vw;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  a,
+  li,
+  button,
+  input,
+  textarea,
+  select {
+    font-family: "Albert Sans", sans-serif !important;
+  }
 }
