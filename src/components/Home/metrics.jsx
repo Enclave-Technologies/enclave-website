@@ -13,7 +13,8 @@ const Metrics = () => {
             Our Impact
           </h2>
           <p className="text-[#6E605D] max-w-2xl mx-auto text-lg">
-            We've delivered tangible results for businesses across the globe.
+            We&apos;ve delivered tangible results for businesses across the
+            globe.
           </p>
         </div>
 
