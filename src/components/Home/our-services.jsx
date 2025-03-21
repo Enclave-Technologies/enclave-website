@@ -35,7 +35,7 @@ const OurServices = ({ id }) => {
         </div> */}
 
         <div className="flex flex-col md:gap-12 gap-6">
-          <div className="box-border flex md:flex-row flex-col items-start md:p-[32px] p-4 md:gap-[48px] gap-6 w-full max-w-[1440px] md:h-[500px] h-full bg-gradient-to-br from-[rgba(255,255,255,0.4)] to-[rgba(255,255,255,0.1)] shadow-[0px_0px_15px_rgba(0,0,0,0.2)] backdrop-blur-[15px] rounded-[20px]">
+          <div className="box-border flex md:flex-row flex-col items-start md:p-[32px] p-4 md:gap-[48px] gap-6 w-full max-w-[1440px] md:h-[608px] h-full bg-gradient-to-br from-[rgba(255,255,255,0.4)] to-[rgba(255,255,255,0.1)] shadow-[0px_0px_15px_rgba(0,0,0,0.2)] backdrop-blur-[15px] rounded-[20px]">
             <div className="flex md:flex-col flex-col-reverse justify-between items-start p-0 md:gap-[48px] gap-6 h-full flex-1">
               <div className="flex flex-col items-start p-0 md:gap-[16px] gap-4">
                 <h3 className="font-bold text-[36px] md:text-[48px] lg:text-[56px] md:max-w-sm max-w-full leading-[120%] text-[#100805]">
@@ -52,7 +52,7 @@ const OurServices = ({ id }) => {
               </div>
             </div>
 
-            <div className="w-full h-full flex-1">
+            <div className="w-full h-full flex-1" >
               <Image
                 src="/service-images/001.png"
                 alt="Solutions Development"
@@ -63,7 +63,7 @@ const OurServices = ({ id }) => {
             </div>
           </div>
 
-          <div className="box-border flex md:flex-row flex-col items-start md:p-[32px] p-4 md:gap-[48px] gap-6 w-full max-w-[1440px] md:h-[500px] h-full bg-gradient-to-br from-[rgba(255,255,255,0.4)] to-[rgba(255,255,255,0.1)] shadow-[0px_0px_15px_rgba(0,0,0,0.2)] backdrop-blur-[15px] rounded-[20px]">
+          <div className="box-border flex md:flex-row flex-col items-start md:p-[32px] p-4 md:gap-[48px] gap-6 w-full max-w-[1440px] md:h-[608px] h-full bg-gradient-to-br from-[rgba(255,255,255,0.4)] to-[rgba(255,255,255,0.1)] shadow-[0px_0px_15px_rgba(0,0,0,0.2)] backdrop-blur-[15px] rounded-[20px]">
             <div className="flex md:flex-col flex-col-reverse justify-between items-start p-0 md:gap-[48px] gap-6 h-full flex-1">
               <div className="flex flex-col items-start p-0 md:gap-[16px] gap-4">
                 <h3 className="font-bold text-[36px] md:text-[48px] lg:text-[56px] md:max-w-sm max-w-full leading-[120%] text-[#100805]">
@@ -92,7 +92,7 @@ const OurServices = ({ id }) => {
             </div>
           </div>
 
-          <div className="box-border flex md:flex-row flex-col items-start md:p-[32px] p-4 md:gap-[48px] gap-6 w-full max-w-[1440px] md:h-[500px] h-full bg-gradient-to-br from-[rgba(255,255,255,0.4)] to-[rgba(255,255,255,0.1)] shadow-[0px_0px_15px_rgba(0,0,0,0.2)] backdrop-blur-[15px] rounded-[20px]">
+          <div className="box-border flex md:flex-row flex-col items-start md:p-[32px] p-4 md:gap-[48px] gap-6 w-full max-w-[1440px] md:h-[608px] h-full bg-gradient-to-br from-[rgba(255,255,255,0.4)] to-[rgba(255,255,255,0.1)] shadow-[0px_0px_15px_rgba(0,0,0,0.2)] backdrop-blur-[15px] rounded-[20px]">
             <div className="flex md:flex-col flex-col-reverse justify-between items-start p-0 md:gap-[48px] gap-6 h-full flex-1">
               <div className="flex flex-col items-start p-0 md:gap-[16px] gap-4">
                 <h3 className="font-bold text-[36px] md:text-[48px] lg:text-[56px] md:max-w-sm max-w-full leading-[120%] text-[#100805]">
@@ -120,7 +120,7 @@ const OurServices = ({ id }) => {
             </div>
           </div>
 
-          <div className="box-border flex md:flex-row flex-col items-start md:p-[32px] p-4 md:gap-[48px] gap-6 w-full max-w-[1440px] md:h-[500px] h-full bg-gradient-to-br from-[rgba(255,255,255,0.4)] to-[rgba(255,255,255,0.1)] shadow-[0px_0px_15px_rgba(0,0,0,0.2)] backdrop-blur-[15px] rounded-[20px]">
+          <div className="box-border flex md:flex-row flex-col items-start md:p-[32px] p-4 md:gap-[48px] gap-6 w-full max-w-[1440px] md:h-[608px] h-full bg-gradient-to-br from-[rgba(255,255,255,0.4)] to-[rgba(255,255,255,0.1)] shadow-[0px_0px_15px_rgba(0,0,0,0.2)] backdrop-blur-[15px] rounded-[20px]">
             <div className="flex md:flex-col flex-col-reverse justify-between items-start p-0 md:gap-[48px] gap-6 h-full flex-1">
               <div className="flex flex-col items-start p-0 md:gap-[16px] gap-4">
                 <h3 className="font-bold text-[36px] md:text-[48px] lg:text-[56px] md:max-w-sm max-w-full leading-[120%] text-[#100805]">

@@ -574,7 +574,11 @@ button:hover .button-text-container span {
   h3,
   h4,
   h5,
-  h6,
+  h6 {
+    font-family: "Onest", sans-serif !important;
+    font-style: normal !important;
+  }
+
   p,
   span,
   a,

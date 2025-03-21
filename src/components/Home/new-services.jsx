@@ -85,7 +85,7 @@ const NewServices = ({ id }) => {
         <div className="flex items-center justify-center w-full">
           <div className="mb-12 flex items-center justify-center w-fit">
             <Button
-              variant="primary navigation"
+              variant="primary"
               title="Book a Consultation"
               link="https://api.whatsapp.com/send/?phone=85259291909&text&type=phone_number&app_absent=0"
               rounded={true}

@@ -17,7 +17,7 @@ export const Navbarr = () => {
 
   return (
     <div
-      className="fixed top-0 left-0 right-0 z-50  md:h-[70px] h-[60px] transition-all duration-300"
+      className="fixed top-0 left-0 right-0 z-50  md:h-[56px] py-2 transition-all duration-300"
       style={{
         background: "white",
         boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.2)",
@@ -30,8 +30,8 @@ export const Navbarr = () => {
             <Link href="/">
               <Image
                 src="/new-enclave-logo.svg"
-                width={50}
-                height={50}
+                width={40}
+                height={40}
                 alt="Enclave Studios"
                 priority
               />
@@ -54,12 +54,12 @@ export const Navbarr = () => {
           </div>
 
           <div className="hidden md:block w-[140px] relative z-[1001]">
-            <Button
-              variant="primary navigation"
-              title="Get In Touch"
-              link="/contact"
-              rounded={true}
-            />
+            <Link
+              href="/contact"
+              className="bg-[#FB4E29] text-white px-4 py-2 rounded-full transition-colors duration-200 text-sm font-medium"
+            >
+              Get In Touch
+            </Link>
           </div>
 
           <div className="md:hidden relative z-[1001]">

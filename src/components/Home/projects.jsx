@@ -22,7 +22,7 @@ const ProjectCard = ({
       backgroundRepeat: "no-repeat",
     }}
   >
-    <h3 className="font-bold text-[28px] leading-[140%] text-white w-full group-hover:scale-105 transition-transform duration-300">
+    <h3 className="font-bold text-[28px] leading-[140%] text-white w-full">
       {title}
     </h3>
 
@@ -42,33 +42,32 @@ const ProjectCard = ({
 
         <div className="w-6 h-6 flex items-center justify-center relative">
           <svg
-            width="18"
-            height="18"
+            width="24"
+            height="24"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="text-white transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
           >
             <path
-              d="M12.5 8.5L21 0"
+              d="M18 13.0034V19.0034C18 19.5339 17.7893 20.0426 17.4142 20.4176C17.0391 20.7927 16.5304 21.0034 16 21.0034H5C4.46957 21.0034 3.96086 20.7927 3.58579 20.4176C3.21071 20.0426 3 19.5339 3 19.0034V8.00342C3 7.47298 3.21071 6.96428 3.58579 6.5892C3.96086 6.21413 4.46957 6.00342 5 6.00342H11"
               stroke="#FAFAFA"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             />
             <path
-              d="M14 0H21V7"
+              d="M15 3.00342H21V9.00342"
               stroke="#FAFAFA"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             />
             <path
-              d="M21 13V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H11"
+              d="M10 14.0034L21 3.00342"
               stroke="#FAFAFA"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             />
           </svg>
         </div>

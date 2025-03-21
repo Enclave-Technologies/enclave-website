@@ -12,18 +12,18 @@ const Hamburger = ({ toggleMenu, isOpen }) => {
     >
       <div className="w-8 h-8 flex flex-col justify-center items-center">
         <span
-          className={`block h-0.5 w-6 bg-[#FB4E29] transform transition-all duration-300 ease-in-out ${
-            isOpen ? "rotate-45 translate-y-1.5" : "-translate-y-1"
+          className={`block h-0.5 w-6 bg-[#FB4E29] absolute transform transition-all duration-300 ease-in-out ${
+            isOpen ? "rotate-45" : "-translate-y-1.5"
           }`}
         />
         <span
-          className={`block h-0.5 w-6 bg-[#FB4E29] transition-all duration-300 ease-in-out ${
+          className={`block h-0.5 w-6 bg-[#FB4E29] absolute transition-all duration-300 ease-in-out ${
             isOpen ? "opacity-0" : "opacity-100"
           }`}
         />
         <span
-          className={`block h-0.5 w-6 bg-[#FB4E29] transform transition-all duration-300 ease-in-out ${
-            isOpen ? "-rotate-45 -translate-y-1.5" : "translate-y-1"
+          className={`block h-0.5 w-6 bg-[#FB4E29] absolute transform transition-all duration-300 ease-in-out ${
+            isOpen ? "-rotate-45" : "translate-y-1.5"
           }`}
         />
       </div>
