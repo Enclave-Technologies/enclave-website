@@ -550,3 +550,40 @@ button:hover .button-text-container span {
     text-wrap: nowrap;
   }
 }
+
+.project-preview:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mobile-background {
+  background-size: cover;
+  background-position: center;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  background-attachment: scroll;
+}
+
+.home-font {
+  font-family: "Albert Sans", sans-serif !important;
+  max-width: 100vw;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  a,
+  li,
+  button,
+  input,
+  textarea,
+  select {
+    font-family: "Albert Sans", sans-serif !important;
+    font-style: normal !important;
+  }
+}

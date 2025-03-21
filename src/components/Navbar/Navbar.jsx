@@ -22,8 +22,8 @@ export const Navbar = () => {
 
   useEffect(() => {
     document.addEventListener("scroll", () => {
-      const headerHeight = document.querySelector("nav").offsetHeight / 3;
-      const nav = document.querySelector("nav");
+      const headerHeight = document?.querySelector("nav")?.offsetHeight / 3;
+      const nav = document?.querySelector("nav");
       const scrollY = window.scrollY;
       if (scrollY > headerHeight) {
         nav.classList.add("scrolled");

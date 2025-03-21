@@ -8,6 +8,14 @@
   @apply text-left;
 }
 
+.hero-titlee {
+  @apply font-bold;
+  color: var(--primary-color);
+  font-size: 320px;
+  width: 100%;
+  animation: scroll 40s linear infinite;
+}
+
 .hero-title > span {
   color: var(--primary-color);
   font-weight: 500;
@@ -33,6 +41,29 @@
   background: linear-gradient(to bottom, #fff2ed, #fdfdfd);
 }
 
+#home-heroo {
+  @apply flex flex-col p-0;
+  min-height: 100vh;
+  width: 100vw;
+  background: #fafafa;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.hero-inner-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 .hero-subheading {
   @apply px-0;
   font-size: 1.2rem;
@@ -42,3 +73,43 @@
   text-transform: none;
   text-align: center;
 }
+
+@keyframes scroll-text {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 0.5rem));
+  }
+}
+
+.animate-scroll-text {
+  animation: scroll-text 20s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 30s linear infinite;
+}
+
+.animate-scroll-right {
+  animation: scroll-right 30s linear infinite;
+}
+

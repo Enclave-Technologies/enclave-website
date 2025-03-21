@@ -1,21 +1,22 @@
 import { Onest } from "next/font/google";
 import "./globals.css";
+<<<<<<< HEAD
 import { Navbar } from "../components/Navbar/Navbar";
 import { MdWhatsapp } from "react-icons/md";
+=======
+import Head from "next/head";
+import Script from "next/script";
+>>>>>>> dev
 
 const onest = Onest({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Data-Driven Growth Studio | Hong Kong",
+  title: {
+    template: "Website & App Development Studio in Hong Kong | Enclave Studios",
+    default: "Enclave Studios",
+  },
   description:
-    "We help businesses generate more leads and drive measurable growth by leveraging data-driven growth solutions tailored to their unique needs.",
-  keywords: "web design, website development, seo, digital marketing",
-  favicon: "/favicon.ico",
-  url: "https://enclave.live",
-  type: "website",
-  site_name: "Enclave Studios",
-  creator: "@enclave_studios_",
-  og_image: "/og-image.png",
+    "Enclave is a website and application prototyping and development studio in Hong Kong specialising in web and AI applications development. From ideation, prototyping to development and launch.",
 };
 
 export default function RootLayout({ children }) {
@@ -34,58 +35,24 @@ export default function RootLayout({ children }) {
         {/* Open Graph Meta Tags */}
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />
-        <meta property="og:url" content={metadata.url} />
-        <meta property="og:type" content={metadata.type} />
-        <meta property="og:image" content={metadata.og_image} />
-        <meta property="og:site_name" content={metadata.site_name} />
-
-        {/* Twitter Meta Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content={metadata.creator} />
-        <meta name="twitter:creator" content={metadata.creator} />
-        <meta name="twitter:title" content={metadata.title} />
-        <meta name="twitter:description" content={metadata.description} />
-        <meta name="twitter:image" content={metadata.og_image} />
-
-        {/* Start --- Ahrefs Analytics --- Start */}
-        <script
-          src="https://analytics.ahrefs.com/analytics.js"
-          data-key="8Th8f99w5qmawU/EcE+w+Q"
-          defer="true"
-        />
-        {/* End --- Ahrefs Analytics --- End */}
-
-        <script
+        <meta property="og:image" content="/logo-dark.svg" />
+        <meta name="twitter:card" content="/logo-dark.svg" />
+      </Head>
+      <body className={onest.className}>
+        <Script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=AW-11516049939"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-              dataLayer.push(arguments);
-            }
-            gtag("js", new Date());
-            gtag("config", "AW-11516049939");
-          `,
-          }}
-        />
+          src="https://www.googletagmanager.com/gtag/js?id=G-80NXJV4T5M"
+        ></Script>
 
-        {/* Event snippet for Page view conversion page  */}
-        <script>{``}</script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-            gtag("event", "conversion", {
-              send_to: "AW-11516049939/WWtmCKeh4vsZEJP0o_Mq",
-            })
-          `,
-          }}
-        />
-      </head>
-      <body className={`${onest.className} relative`}>
-        <Navbar />
+        <Script id="google-analytics">
+          {`
+                    window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-80NXJV4T5M');
+  `}
+        </Script>
         {children}
         {/* <div
           className=".whatsapp-outer-container"

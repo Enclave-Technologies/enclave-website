@@ -1,21 +1,16 @@
 "use client";
-import Image from "next/image";
-import { Navbar } from "../components/Navbar/Navbar";
-import { Hero } from "../components/Home/hero";
-import { Works } from "../components/Home/works";
-import { Services } from "../components/Home/services";
-import { CTA } from "../components/Home/cta";
-import { Footer } from "../components/Footer";
-import { Quote } from "../components/Home/quote";
+
 import { useEffect, useState } from "react";
-import { Partners } from "../components/Home/partners";
-import Ethos from "../components/Home/ethos";
-import AboutUs from "../components/Home/about-us";
 
-// export const metadata = {
-//   title: "Web Design & Development Studio",
-// };
-
+import Testimony from "../components/Home/testimony";
+import Steps from "../components/Home/steps";
+import Projects from "../components/Home/projects";
+import NewServices from "../components/Home/new-services";
+import { Navbarr } from "../components/Navbar/Navbarr";
+import Team from "../components/Home/team";
+import NewFooter from "../components/NewFooter";
+import OurServices from "../components/Home/our-services";
+import Chat from "../components/Home/chat";
 export default function Home() {
   const [domLoaded, setDomLoaded] = useState(false);
 
@@ -45,22 +40,22 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between text-black relative">
-      <div className="cursor" />
-      <Hero />
-      <Partners id="partners" />
-      <Services id="services" />
-      <Works id="works" />
-      <Ethos id={"ethos"} />
-      {/* <AboutUs id="about" /> */}
-      <CTA />
-      <Quote id="about" />
-      <Footer />
-      <div className="gradient" />
-      {/* <section>
-        <h3>Empowering Businesses & Individuals</h3>
-        <h2>Strategy 2 Delivery</h2>
-      </section> */}
+    <main className="flex min-h-screen flex-col items-center justify-between text-black relative home-font bg-[#FAFAFA]">
+      {/* <div className="cursor" /> */}
+      <Navbarr />
+      <Chat />
+
+      <Testimony id="testimony" />
+      <OurServices id="our-services" />
+
+      <NewServices id="new-services" />
+      <Projects id="projects" />
+      {/* <Steps id="steps" /> */}
+      <Team id="team" />
+
+      <div className="w-full">
+        <NewFooter id="footer" />
+      </div>
     </main>
   );
 }
