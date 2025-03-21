@@ -1,246 +1,190 @@
-import { useState, useRef } from "react";
-import { projectsData } from "../../data/projects";
+import React from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import Link from "next/link";
 import { Button } from "../Button";
 
-const ProjectPreview = ({ project, progress = 0 }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    exit={{ opacity: 0, y: -20 }}
-    transition={{ duration: 0.8, ease: "easeInOut" }}
-    className="project-preview w-full md:bg-white bg-transparent max-w-full md:h-[511px] h-full flex flex-col justify-end p-4 md:p-6 gap-6 rounded-2xl transition-transform duration-300"
+const ProjectCard = ({
+  title,
+  description,
+  image,
+  logoImage,
+  gradientColors,
+  externalLink = "#",
+}) => (
+  <Link
+    href={externalLink}
+    target="_blank"
+    className="flex flex-col justify-between items-start p-4 md:p-6 w-full md:h-[432px] h-[320px] rounded-[16px] overflow-hidden relative group transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
     style={{
-      boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.08)",
-      backdropFilter: "blur(15px)",
-      boxSizing: "border-box",
+      background: `linear-gradient(180deg, ${gradientColors[0]} 0%, ${gradientColors[1]} 100%), url(${image})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
     }}
   >
-    <div className="w-full h-full flex gap-4 items-start justify-start md:flex-row flex-col">
-      <div className="flex flex-col md:gap-4 gap-2 justify-between h-full items-center w-full">
-        <div className="relative w-full h-full flex-1 flex items-center justify-center">
-          <Image
-            src={project.image}
-            alt={project.title}
-            width={200}
-            height={350}
-            className="object-contain md:w-[200px] w-full md:h-[220px] h-[35vh]"
-          />
+    <h3 className="font-bold text-[28px] leading-[140%] text-white w-full group-hover:scale-105 transition-transform duration-300">
+      {title}
+    </h3>
+
+    <div className="flex flex-col gap-3 w-full">
+      <div className="flex justify-between items-center w-full">
+        <div className="h-10 flex items-start justify-start w-fit transition-opacity duration-300 group-hover:opacity-100 opacity-90">
+          {logoImage && (
+            <Image
+              src={logoImage}
+              alt={title}
+              width={150}
+              height={40}
+              className="object-contain h-10 md:w-fit w-[90%]"
+            />
+          )}
         </div>
 
-        <Button
-          variant="secondary"
-          title="Visit Featured Website"
-          link={project.url}
-          target="_blank"
-          secondary={true}
-        />
-      </div>
-
-      <div className="w-full h-full items-center justify-center hidden md:flex">
-        <div className="flex md:flex-col flex-row gap-8 items-center justify-center overflow-x-auto w-full">
-          {project.metrics.map((metric) => (
-            <div key={metric.description} className="flex flex-col">
-              <h2 className="md:text-2xl text-xl font-bold text-black text-center">
-                {metric.value}
-              </h2>
-              <p className="md:text-base text-sm w-full  whitespace-nowrap text-[#6E605D] text-center">
-                {metric.description}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-
-    <div className="flex flex-col md:justify-between justify-start md:gap-0 gap-4 items-center w-full  h-full">
-      <div className="flex flex-col md:justify-between justify-start md:gap-0 gap-4 items-center w-full overflow-x-auto">
-     <div className="flex md:hidden flex-row gap-4 items-start justify-start w-full ">
-        {project.metrics.map((metric) => (
-          <div key={metric.description} className="flex flex-col">
-            <h2 className="md:text-2xl text-lg font-bold text-black text-center">
-              {metric.value}
-            </h2>
-            <p className="md:text-base text-sm w-full  whitespace-nowrap text-[#6E605D] text-center">
-              {metric.description}
-            </p>
-          </div>
-        ))}
-      </div>
-
-      <div className="flex flex-row gap-2 pb-2 w-full">
-        {project.keywords.map((keyword, index) => (
-          <span
-            key={index}
-            style={{
-              background:
-                "linear-gradient(107.56deg, #FBB729 2.2%, #FB296D 95.31%)",
-            }}
-            className="px-4 py-2 text-white rounded-full text-xs whitespace-nowrap"
+        <div className="w-6 h-6 flex items-center justify-center relative">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="text-white transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
           >
-            {keyword}
-          </span>
-        ))}
+            <path
+              d="M12.5 8.5L21 0"
+              stroke="#FAFAFA"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M14 0H21V7"
+              stroke="#FAFAFA"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M21 13V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H11"
+              stroke="#FAFAFA"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
       </div>
-     </div>
+
+      <p className="font-semibold text-[18px] leading-[150%] text-white transition-all duration-300 group-hover:text-white/90">
+        {description}
+      </p>
     </div>
-    <p className="text-sm text-[#6E605D] text-start md:flex hidden">
-      {project.description}
-    </p>
-  </motion.div>
+
+    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300"></div>
+  </Link>
 );
 
 const Projects = ({ id }) => {
-  const [activeProject, setActiveProject] = useState(0);
-  const containerRef = useRef(null);
-  const sectionRef = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
-
-  useScroll().scrollY.onChange((latest) => {
-    if (!containerRef.current) return;
-
-    const container = containerRef.current;
-    const { top } = container.getBoundingClientRect();
-    const viewportHeight = window.innerHeight;
-
-    const progress = Math.abs(top) / (container.offsetHeight - viewportHeight);
-
-    // Ensure first project is visible earlier and transitions are smoother
-    const adjustedProgress = Math.max(0, Math.min(1, progress * 1.1));
-    const projectIndex = Math.floor(
-      adjustedProgress * (projectsData.length - 1)
-    );
-
-    setActiveProject(
-      Math.max(0, Math.min(projectIndex, projectsData.length - 1))
-    );
-  });
-
-  const opacity = useTransform(
-    scrollYProgress,
-    [0, 0.1, 0.99, 1],
-    [1, 1, 1, 0]
-  );
+  const projects = [
+    {
+      title: "Website Development",
+      description:
+        "Crafts flexible, multi-faceted spaces for beauty therapists",
+      image: "/company-logos/atelier.png",
+      logoImage: "/affiliate-logos/atelier-logo.png",
+      gradientColors: ["rgba(109, 79, 59, 0.2)", "rgba(109, 79, 59, 0.9)"],
+      externalLink: "https://atelier-shan.webflow.io/",
+    },
+    {
+      title: "Social Media Development",
+      description:
+        "Facilitates community of fitness enthusiasts via social media",
+      image: "/company-logos/roju.png",
+      logoImage: "/affiliate-logos/athena-logo.png",
+      gradientColors: ["rgba(255, 0, 92, 0.2)", "rgba(255, 0, 92, 0.9)"],
+      externalLink: "https://athenasocial.webflow.io/",
+    },
+    {
+      title: "Software Development",
+      description:
+        "Builds AI-Powered identity infrastructure with web3 solutions",
+      image: "/company-logos/para.png",
+      logoImage: "/affiliate-logos/Vector.png",
+      gradientColors: ["rgba(254, 110, 0, 0.2)", "rgba(254, 110, 0, 0.9)"],
+      externalLink:
+        "https://explorer.parallelchain.io/explorer?network=Mainnet",
+    },
+    {
+      title: "Solutions Prototyping",
+      description: "Creates edu-tech solutions to deliver technology courses",
+      image: "/company-logos/xccelerate.png",
+      logoImage: "/affiliate-logos/Xccelerate-logo.png",
+      gradientColors: ["rgba(68, 81, 255, 0.2)", "rgba(68, 81, 255, 0.9)"],
+      externalLink: "https://www.xccelerate.co/",
+    },
+  ];
 
   return (
     <section
-      ref={containerRef}
-      className="relative w-full px-0 py-0"
-      style={{
-        minHeight: `${(projectsData.length + 1) * 100}vh`,
-        // marginTop: "25vh",
-      }}
       id={id}
+      className="flex flex-col items-center py-16 md:py-0 px-8 w-full gap-12 bg-[#FAFAFA]"
     >
-      <motion.div
-        ref={sectionRef}
-        className="sticky top-0 w-full h-screen flex items-center justify-center overflow-hidden"
-        style={{
-          opacity,
-          backgroundImage: "url('/testimonials-bg.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <div className="w-full py-8 px-6 md:px-10 h-screen flex flex-col justify-center items-center">
-          <div className="relative z-10 md:w-[80vw] w-full">
-            <div className="flex flex-col-reverse md:flex-col lg:flex-row justify-start md:justify-center items-center gap-16">
-              <motion.div
-                className="w-full lg:w-1/2 opacity-0 md:opacity-100"
-                transition={{ duration: 0.5 }}
-              >
-                <h4 className="text-[#FB4E29] text-lg font-bold mb-8">
-                  Featured Partners
-                </h4>
-                <div className="space-y-6">
-                  {projectsData.map((project, index) => (
-                    <motion.button
-                      key={project.id}
-                      onClick={() => {
-                        const element = containerRef.current;
-                        const projectPosition =
-                          (index / (projectsData.length - 1)) *
-                          (element.scrollHeight - window.innerHeight);
-                        window.scrollTo({
-                          top: element.offsetTop + projectPosition,
-                          behavior: "smooth",
-                        });
-                      }}
-                      className="w-full text-left group"
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                    >
-                      <div className="flex items-center gap-4 mb-2">
-                        <h3
-                          className={`text-2xl md:text-3xl font-medium transition-colors duration-500 ${
-                            activeProject === index
-                              ? "text-black"
-                              : "text-gray-500"
-                          }`}
-                        >
-                          {project.title}
-                        </h3>
-                      </div>
-                      <motion.div
-                        className="h-[4px] w-full"
-                        initial={false}
-                        animate={{
-                          backgroundColor:
-                            activeProject === index ? "#FB4E29" : "#E9E7E7",
-                        }}
-                        transition={{ duration: 0.5 }}
-                      />
-                    </motion.button>
-                  ))}
-                </div>
-              </motion.div>
-
-              <div className="w-full lg:w-1/2 relative md:min-h-[511px] flex">
-                <div className="w-full">
-                  {projectsData.map((project, index) => (
-                    <motion.div
-                      key={project.id}
-                      className="absolute md:top-1 top-0 left-0 w-full -translate-y-1/2"
-                      initial={{ opacity: 0, y: 50 }}
-                      animate={{
-                        opacity: activeProject === index ? 1 : 0,
-                        y: activeProject === index ? 0 : 50,
-                        zIndex: activeProject === index ? 10 : 0,
-                      }}
-                      transition={{
-                        duration: 1,
-                        ease: [0.16, 1, 0.3, 1],
-                      }}
-                    >
-                      <h4 className="text-[#FB4E29] text-lg font-semibold mb-1 md:hidden block">
-                        Featured Partners
-                      </h4>
-                      <div className="flex md:hidden w-full mt-4">
-                        {activeProject === index && (
-                          <h5 className="text-2xl font-bold text-black border-b-4 border-[#FB4E29] mb-4 w-full">
-                            {project.title}
-                          </h5>
-                        )}
-                      </div>
-                      <ProjectPreview
-                        project={project}
-                        progress={activeProject === index ? 1 : 0}
-                      />
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </div>
+      <div className="w-full max-w-7xl mx-auto flex flex-col items-center gap-6 md:gap-12">
+        <div className="flex flex-col items-center gap-6 max-w-[782px]">
+          <div className="flex flex-col items-center gap-2">
+            <h4 className="text-[#FB4E29] text-[20px] md:text-[24px] lg:text-[28px] font-bold mb-3">
+              Featured Works
+            </h4>
+            <h2
+              className="text-[32px] md:text-[40px] lg:text-[48px] font-bold capitalize max-w-2xl text-center"
+              style={{
+                lineHeight: "1.3",
+              }}
+            >
+              Pioneering Projects That Redefine What&apos;s Possible
+            </h2>
           </div>
+
+          <p className="text-[18px] md:text-[20px] leading-[150%] text-[#26120D] text-center">
+            Transforming startups, SMEs and industry giants into digital leaders
+          </p>
         </div>
-      </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 w-full mt-14">
+          {projects.slice(0, 2).map((project, index) => (
+            <ProjectCard
+              key={index}
+              title={project.title}
+              description={project.description}
+              image={project.image}
+              logoImage={project.logoImage}
+              gradientColors={project.gradientColors}
+              externalLink={project.externalLink}
+            />
+          ))}
+        </div>
+
+        {/* Second Row of Projects */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 w-full">
+          {projects.slice(2, 4).map((project, index) => (
+            <ProjectCard
+              key={index + 2}
+              title={project.title}
+              description={project.description}
+              image={project.image}
+              logoImage={project.logoImage}
+              gradientColors={project.gradientColors}
+              externalLink={project.externalLink}
+            />
+          ))}
+        </div>
+
+        <Button
+          variant="primary navigation"
+          title="Explore All Projects"
+          link="/works"
+          rounded={true}
+        />
+      </div>
     </section>
   );
 };

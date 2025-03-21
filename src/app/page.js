@@ -3,12 +3,14 @@
 import { useEffect, useState } from "react";
 
 import Testimony from "../components/Home/testimony";
-import NewHero from "../components/Home/new-hero";
 import Steps from "../components/Home/steps";
-import FAQs from "../components/Home/faq";
 import Projects from "../components/Home/projects";
 import NewServices from "../components/Home/new-services";
-
+import { Navbarr } from "../components/Navbar/Navbarr";
+import Team from "../components/Home/team";
+import NewFooter from "../components/NewFooter";
+import OurServices from "../components/Home/our-services";
+import Chat from "../components/Home/chat";
 export default function Home() {
   const [domLoaded, setDomLoaded] = useState(false);
 
@@ -38,22 +40,22 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between text-black relative">
+    <main className="flex min-h-screen flex-col items-center justify-between text-black relative home-font bg-[#FAFAFA]">
       {/* <div className="cursor" /> */}
+      <Navbarr />
+      <Chat />
 
-      <div className="fixed-background">
-        <NewHero />
-        <Testimony id="testimony" />
-      </div>
+      <Testimony id="testimony" />
+      <OurServices id="our-services" />
 
       <NewServices id="new-services" />
       <Projects id="projects" />
-      <Steps id="steps" />
+      {/* <Steps id="steps" /> */}
+      <Team id="team" />
 
-      {/* <Team id="team" /> */}
-
-      <FAQs id="faqs" />
-      <div id="footer" className="w-full h-screen" />
+      <div className="w-full">
+        <NewFooter id="footer" />
+      </div>
     </main>
   );
 }
