@@ -1,12 +1,7 @@
 import { Onest } from "next/font/google";
 import "./globals.css";
-<<<<<<< HEAD
-import { Navbar } from "../components/Navbar/Navbar";
-import { MdWhatsapp } from "react-icons/md";
-=======
 import Head from "next/head";
 import Script from "next/script";
->>>>>>> dev
 
 const onest = Onest({ subsets: ["latin"] });
 
@@ -22,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" style={{ scrollBehavior: "smooth" }}>
-      <head>
+      <Head>
         {/* Basic Meta Tags */}
         <title>{metadata.title}</title>
         <meta name="title" content={metadata.title} />
