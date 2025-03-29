@@ -1,9 +1,10 @@
-import { Onest } from "next/font/google";
+import { Albert_Sans, Onest } from "next/font/google";
 import "./globals.css";
 import Head from "next/head";
 import Script from "next/script";
 
-const onest = Onest({ subsets: ["latin"] });
+const onest = Onest({ subsets: ["latin"], variable: "--font-onest" });
+const albert = Albert_Sans({ subsets: ["latin"], variable: "--font-albert" });
 
 export const metadata = {
   title: {
@@ -16,7 +17,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" style={{ scrollBehavior: "smooth" }}>
+    <html
+      lang="en"
+      style={{ scrollBehavior: "smooth" }}
+      className={`${onest.variable} ${albert.variable}`}
+    >
       <Head>
         {/* Basic Meta Tags */}
         <title>{metadata.title}</title>
@@ -33,7 +38,8 @@ export default function RootLayout({ children }) {
         <meta property="og:image" content="/logo-dark.svg" />
         <meta name="twitter:card" content="/logo-dark.svg" />
       </Head>
-      <body className={onest.className}>
+
+      <body>
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-80NXJV4T5M"

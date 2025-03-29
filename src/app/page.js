@@ -11,6 +11,7 @@ import Team from "../components/Home/team";
 import NewFooter from "../components/NewFooter";
 import OurServices from "../components/Home/our-services";
 import Chat from "../components/Home/chat";
+import KPIs from "../components/Home/KPIs";
 export default function Home() {
   const [domLoaded, setDomLoaded] = useState(false);
 
@@ -40,22 +41,23 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between text-black relative home-font bg-[#FAFAFA]">
+    <main className="flex min-h-screen flex-col items-center justify-between text-black relative home-font gap-32 bg-[#FAFAFA]">
       {/* <div className="cursor" /> */}
-      <Navbarr />
-      <Chat />
+      <div className="z-10">
+        <Navbarr />
+        {/* <Chat /> */}
 
-      <Testimony id="testimony" />
-      <OurServices id="our-services" />
+        <Testimony id="testimony" />
+        <OurServices id="our-services" />
+        <Projects id="projects" />
 
-      <NewServices id="new-services" />
-      <Projects id="projects" />
-      {/* <Steps id="steps" /> */}
-      <Team id="team" />
-
-      <div className="w-full">
-        <NewFooter id="footer" />
+        {/* <NewServices id="new-services" /> */}
+        <KPIs id="new-services" />
+        <Steps id="steps" />
+        <Team id="team" />
       </div>
+      <div className="hidden md:flex min-h-screen w-full bg-transparent"></div>
+      <NewFooter id="footer" />
     </main>
   );
 }

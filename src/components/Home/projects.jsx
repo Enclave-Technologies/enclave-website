@@ -73,9 +73,9 @@ const ProjectCard = ({
         </div>
       </div>
 
-      <p className="font-semibold text-[18px] leading-[150%] text-white transition-all duration-300 group-hover:text-white/90">
+      {/* <p className="font-semibold text-[18px] leading-[150%] text-white transition-all duration-300 group-hover:text-white/90">
         {description}
-      </p>
+      </p> */}
     </div>
 
     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300"></div>
@@ -85,7 +85,7 @@ const ProjectCard = ({
 const Projects = ({ id }) => {
   const projects = [
     {
-      title: "Website Development",
+      title: "Atelier Shan",
       description:
         "Crafts flexible, multi-faceted spaces for beauty therapists",
       image: "/company-logos/atelier.png",
@@ -94,7 +94,7 @@ const Projects = ({ id }) => {
       externalLink: "https://atelier-shan.webflow.io/",
     },
     {
-      title: "Social Media Development",
+      title: "Athena Social",
       description:
         "Facilitates community of fitness enthusiasts via social media",
       image: "/company-logos/roju.png",
@@ -103,7 +103,7 @@ const Projects = ({ id }) => {
       externalLink: "https://athenasocial.webflow.io/",
     },
     {
-      title: "Software Development",
+      title: "ParallelChain",
       description:
         "Builds AI-Powered identity infrastructure with web3 solutions",
       image: "/company-logos/para.png",
@@ -113,7 +113,7 @@ const Projects = ({ id }) => {
         "https://explorer.parallelchain.io/explorer?network=Mainnet",
     },
     {
-      title: "Solutions Prototyping",
+      title: "Xccelerate",
       description: "Creates edu-tech solutions to deliver technology courses",
       image: "/company-logos/xccelerate.png",
       logoImage: "/affiliate-logos/Xccelerate-logo.png",
@@ -125,7 +125,7 @@ const Projects = ({ id }) => {
   return (
     <section
       id={id}
-      className="flex flex-col items-center py-16 md:py-0 px-8 w-full gap-12 bg-[#FAFAFA]"
+      className="flex flex-col items-center py-16 md:py-32 px-8 w-full gap-12 bg-[#FAFAFA]"
     >
       <div className="w-full max-w-7xl mx-auto flex flex-col items-center gap-6 md:gap-12">
         <div className="flex flex-col items-center gap-6 max-w-[782px]">
@@ -148,7 +148,7 @@ const Projects = ({ id }) => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 w-full mt-14">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 w-full mt-14">
           {projects.slice(0, 2).map((project, index) => (
             <ProjectCard
               key={index}
@@ -163,7 +163,7 @@ const Projects = ({ id }) => {
         </div>
 
         {/* Second Row of Projects */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 w-full">
           {projects.slice(2, 4).map((project, index) => (
             <ProjectCard
               key={index + 2}

@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "../Button";
 import Image from "next/image";
 import Hamburger from "./Hamburger";
@@ -9,23 +9,40 @@ const links = [
   { title: "Home", link: "/" },
   { title: "Services", link: "/#our-services" },
   { title: "Works", link: "/#projects" },
-  { title: "About Us", link: "/#team" },
+  { title: "About Us", link: "/#new-services" },
 ];
 
 export const Navbarr = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  useEffect(() => {
+    document.addEventListener("scroll", navbarScroll);
+    var prevScrollpos = window.pageYOffset;
+    function navbarScroll() {
+      var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        document.getElementById("navbar").style.top = "0px";
+      } else {
+        document.getElementById("navbar").style.top = "-80px";
+      }
+      prevScrollpos = currentScrollPos;
+    }
+  }, []);
+
   return (
     <div
-      className="fixed top-0 left-0 right-0 z-50  md:h-[56px] py-2 transition-all duration-300"
+      id="navbar"
+      className="fixed top-0 left-0 z-50 md:h-[56px] py-2 px-8 transition-all duration-300 flex justify-center max-w-screen w-full"
       style={{
-        background: "white",
-        boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.2)",
+        background: "#FAFAFA",
+        // boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.2)",
         backdropFilter: "blur(12px)",
+        borderBottom: "1px solid rgba(0, 0, 0, 0.2)",
+        borderStyle: "dashed",
       }}
     >
-      <div className="w-full h-full px-8 flex items-center">
-        <div className="w-full flex items-center justify-between px-0 md:px-10">
+      <div className="w-full h-full flex items-center max-w-screen md:max-w-7xl">
+        <div className="w-full flex items-center justify-between md:px-0">
           <div className="w-[140px] relative z-[1001]">
             <Link href="/">
               <Image
@@ -46,17 +63,18 @@ export const Navbarr = () => {
                 onClick={(e) => {
                   e.stopPropagation();
                 }}
-                className="text-black hover:text-[#FB4E29] transition-colors duration-200 text-sm font-medium"
+                className="text-black hover:text-[#FB4E29] transition-colors duration-200 text-lg font-medium"
               >
                 {link.title}
               </Link>
             ))}
           </div>
 
-          <div className="hidden md:block w-[140px] relative z-[1001]">
+          <div className="hidden md:flex h-[40px] w-auto relative z-[1001]">
             <Link
-              href="/contact"
-              className="bg-[#FB4E29] text-white px-4 py-2 rounded-full transition-colors duration-200 text-sm font-medium"
+              href="https://api.whatsapp.com/send/?phone=64006201&text&type=phone_number&app_absent=0"
+              target="_blank"
+              className="bg-[#FB4E29] flex items-center justify-center h-full w-full text-white px-4 py-2 rounded-full transition-colors duration-200 text-base font-medium"
             >
               Get In Touch
             </Link>

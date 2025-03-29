@@ -2,10 +2,22 @@ import React from "react";
 import Link from "next/link";
 import { Button } from "../Button";
 
-const TeamMember = ({ name, title }) => (
-  <div className="box-border flex sm:flex-row flex-col sm:justify-between justify-center sm:items-center items-start p-6 w-full sm:h-[75px] h-[100px] bg-[#E9E7E7] rounded-lg">
-    <h3 className="font-semibold text-lg text-[#121212]">{name}</h3>
-    <div className="text-[#26120D] text-base">{title}</div>
+const TeamMember = ({ name, title, final }) => (
+  <div
+    className={`box-border flex sm:flex-row flex-col sm:justify-between justify-center sm:items-center items-start p-6 w-[340px] md:w-[720px] py-4 ${
+      !final ? "bg-[#E9E7E7]" : "bg-[#FB4E29]"
+    } rounded-full`}
+  >
+    <h3
+      className={`font-semibold text-lg ${
+        !final ? "text-[#121212]" : "text-[#FFF]"
+      }`}
+    >
+      {name}
+    </h3>
+    <div className={`${!final ? "text-[#121212]" : "text-[#FFF]"} text-base`}>
+      {title}
+    </div>
   </div>
 );
 
@@ -65,14 +77,14 @@ const Team = ({ id }) => {
           >
             <path
               d="M4.66797 11.4606L11.3346 4.79395"
-              stroke="#121212"
+              stroke="#FFF"
               stroke-width="1.33333"
               stroke-linecap="round"
               stroke-linejoin="round"
             />
             <path
               d="M4.66797 4.79395H11.3346V11.4606"
-              stroke="#121212"
+              stroke="#FFF"
               stroke-width="1.33333"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -86,7 +98,7 @@ const Team = ({ id }) => {
   return (
     <section
       id={id}
-      className="flex flex-col items-center py-16 md:py-20 lg:py-24 px-8 w-full bg-[#FAFAFA]"
+      className="flex flex-col items-center py-16 md:py-20 lg:py-24 px-8 w-full bg-[#FAFAFA] min-h-screen"
     >
       <div className="max-w-7xl mx-auto w-full">
         <div className="text-center mb-8">
@@ -102,18 +114,19 @@ const Team = ({ id }) => {
           </p>
         </div>
 
-        <div className="flex flex-col gap-3">
-          {teamMembers.map((member) => (
+        <div className="flex flex-col gap-1 items-center">
+          {teamMembers.map((member, index) => (
             <TeamMember
               key={member.id}
               name={member.name}
               title={member.title}
+              final={index == teamMembers.length - 1}
             />
           ))}
         </div>
       </div>
 
-      <div className="flex flex-col items-center w-full max-w-7xl mt-14 md:mt-20 lg:mt-24">
+      {/* <div className="flex flex-col items-center w-full max-w-7xl mt-14 md:mt-20 lg:mt-24">
         <div
           className="relative flex flex-col justify-between items-start p-4 md:p-8 w-full h-[320px] rounded-xl shadow-[0px_0px_15px_rgba(0,0,0,0.2)] backdrop-blur-[15px] overflow-hidden"
           style={{
@@ -137,7 +150,7 @@ const Team = ({ id }) => {
             />
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };

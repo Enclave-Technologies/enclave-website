@@ -79,37 +79,39 @@ export default function Works() {
     >
       {/* <div id="cursor" /> */}
       <Navbarr />
-      <div className="w-full">
-        <div className="sticky top-0 left-0 min-h-screen min-w-full flex flex-col items-center justify-center gap-24 z-0">
-          <h1
-            className="text-center font-bold text-6xl md:text-9xl"
-            style={{ fontSize: "md: 20rem" }}
+      <div className="z-10 bg-[#FAFAFA] w-full">
+        <div className="w-full">
+          <div className="sticky top-0 left-0 min-h-screen min-w-full flex flex-col items-center justify-center gap-24 z-0">
+            <h1
+              className="text-center font-bold text-6xl md:text-9xl"
+              style={{ fontSize: "md: 20rem" }}
+            >
+              WORKS
+            </h1>
+            <Link href="#works" className="bouncing-arrow">
+              <p className="text-white text-2xl">&#8650;</p>
+            </Link>
+          </div>
+          <div
+            id="works"
+            className="z-40 w-full flex flex-col "
+            // style={{ backgroundColor: "#0B0B0B" }}
           >
-            WORKS
-          </h1>
-          <Link href="#works" className="bouncing-arrow">
-            <p className="text-white text-2xl">&#8650;</p>
-          </Link>
+            {workItems.map((item, index) => (
+              <WorkItem
+                key={index}
+                label={item.label}
+                image={item.image}
+                link={item.link}
+              />
+            ))}
+          </div>
         </div>
-        <div
-          id="works"
-          className="z-40 w-full flex flex-col "
-          // style={{ backgroundColor: "#0B0B0B" }}
-        >
-          {workItems.map((item, index) => (
-            <WorkItem
-              key={index}
-              label={item.label}
-              image={item.image}
-              link={item.link}
-            />
-          ))}
+        <div id="works-cursor-button">
+          <p>VISIT PROJECT</p>
         </div>
       </div>
-      <div id="works-cursor-button">
-        <p>VISIT PROJECT</p>
-      </div>
-      
+      <div className="hidden md:flex min-h-screen w-full bg-transparent"></div>
       <div className="w-full">
         <NewFooter id="footer" />
       </div>

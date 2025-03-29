@@ -18,7 +18,7 @@ const Chat = () => {
 
   return (
     <Link
-      href="https://api.whatsapp.com/send/?phone=85259291909&text&type=phone_number&app_absent=0"
+      href="https://api.whatsapp.com/send/?phone=64006201&text&type=phone_number&app_absent=0"
       target="_blank"
       className={`fixed bottom-8 right-8 z-[1000] flex items-center gap-4 rounded-full shadow-lg transition-all duration-300 ${
         collapsed ? "p-1" : "p-3"
@@ -103,7 +103,7 @@ const Chat = () => {
               stroke="#100805"
               stroke-width="2"
               stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinejoin="round"
             />
             <path
               d="M15 3H21V9"
