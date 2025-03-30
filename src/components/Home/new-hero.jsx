@@ -292,7 +292,7 @@ const NewHero = () => {
                       </motion.div>
 
                       <motion.div
-                        initial={{ opacity: 0, y: 20 }} 
+                        initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3, duration: 0.6 }}
                         className="mt-0 md:mt-8 max-w-[80%] md:max-w-xs pl-4 md:pl-0"
@@ -326,7 +326,8 @@ const NewHero = () => {
                   <div className="flex w-full justify-between items-center flex-col md:flex-row">
                     <p className="text-sm text-[#121212] flex gap-4 items-center">
                       <a href="mailto:hello@enclave.live">hello@enclave.live</a>
-                      <a href="tel:+85259291909">+852 5929 1909</a>
+                      <a href="tel:+85264006201">+852 64006201</a>
+                      <a href="tel:+85259291909">+852 59291909</a>
                     </p>
                     <p className="text-sm text-[#121212] text-center">
                       © {new Date().getFullYear()} Enclave Technologies Ltd. All

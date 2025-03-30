@@ -102,18 +102,17 @@ const Steps = ({ id }) => {
     <section id={id} className="py-24 md:py-36 px-8 w-full bg-[#FAFAFA]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-14">
-          <h4 className="text-[#FB4E29] text-lg font-bold mb-3">
+          <h4 className="text-[#FB4E29] text-[20px] md:text-[24px] lg:text-[28px] font-bold">
             Testimonials
           </h4>
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 capitalize">
+          <h2 className="text-[32px] md:text-[40px] lg:text-[48px] font-bold mt-2 mb-4 capitalize">
             What Our Partners Say
           </h2>
-          <p className="text-[#26120D] max-w-2xl mx-auto">
+          <p className="text-[#26120D] max-w-3xl mx-auto text-[18px] md:text-[20px] leading-[150%]">
             Real stories. Real results. Straight from the people who knows us
             best
           </p>
         </div>
-
         <div
           className={`grid ${
             isMobile
