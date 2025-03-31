@@ -47,7 +47,7 @@ const Team = ({ id }) => {
     {
       id: 5,
       name: "Rajkumar Chaudhari",
-      title: "Website Engineer",
+      title: "Motion Engineer",
     },
     {
       id: 7,
