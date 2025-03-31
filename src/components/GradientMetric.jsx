@@ -8,6 +8,7 @@ const GradientMetric = ({
   maxWidth = "max-w-xs",
   duration = 2000, // Animation duration in ms
   symbol = "", // Symbol to append (%, +, etc.)
+  upto = true,
 }) => {
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
@@ -71,7 +72,17 @@ const GradientMetric = ({
   }, [isVisible, numericValue, duration]);
 
   return (
-    <div className="text-center" ref={metricRef}>
+    <div
+      className="rounded-3xl flex flex-col items-start justify-end bg-white border-1 border-[#E9E7E7] border px-6 py-20 shadow-lg shadow-gray-200"
+      ref={metricRef}
+    >
+      {upto && (
+        <p
+          className={`text-[#6E605D] text-[18px] md:text-[20px] leading-[150%] ${maxWidth}`}
+        >
+          Upto
+        </p>
+      )}
       <h3
         className={`${fontSize} font-bold mb-2 leading-[120%]`}
         style={{
@@ -85,7 +96,7 @@ const GradientMetric = ({
         {isVisible ? `${count}${valueSuffix}${symbol}` : `0${valueSuffix}`}
       </h3>
       <p
-        className={`text-[#6E605D] text-[18px] md:text-[20px] leading-[150%] ${maxWidth} mx-auto`}
+        className={`text-[#6E605D] text-[18px] md:text-[20px] leading-[150%] ${maxWidth}`}
       >
         {description}
       </p>

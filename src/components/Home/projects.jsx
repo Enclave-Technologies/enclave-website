@@ -2,9 +2,13 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../Button";
+import { Code, Clock, Globe } from "../icons/index";
 
 const ProjectCard = ({
   title,
+  project_industry,
+  project_time,
+  project_type,
   description,
   image,
   logoImage,
@@ -14,21 +18,44 @@ const ProjectCard = ({
   <Link
     href={externalLink}
     target="_blank"
-    className="flex flex-col justify-between items-start p-4 md:p-6 w-full md:h-[432px] h-[320px] rounded-[16px] overflow-hidden relative group transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
-    style={{
-      background: `linear-gradient(180deg, ${gradientColors[0]} 0%, ${gradientColors[1]} 100%), url(${image})`,
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      backgroundRepeat: "no-repeat",
-    }}
+    className="bg-[#FFEDEA] flex flex-col justify-between items-center gap-4 p-4 md:p-6 !px-4 w-full md:h-[432px] h-[320px] rounded-[16px] overflow-hidden relative group transition-all duration-300"
+    // style={{
+    //   background: `linear-gradient(180deg, ${gradientColors[0]} 0%, ${gradientColors[1]} 100%), url(${image})`,
+    //   backgroundSize: "cover",
+    //   backgroundPosition: "center",
+    //   backgroundRepeat: "no-repeat",
+    // }}
   >
-    <h3 className="font-bold text-[28px] leading-[140%] text-white w-full">
-      {title}
-    </h3>
-
-    <div className="flex flex-col gap-3 w-full">
-      <div className="flex justify-between items-center w-full">
-        <div className="h-10 flex items-start justify-start w-fit transition-opacity duration-300 group-hover:opacity-100 opacity-90">
+    <div className="flex flex-col items-center justify-center gap-2">
+      <h3 className="font-bold text-[28px] leading-[140%] text-black w-full text-center">
+        {title}
+      </h3>
+      <div className="flex flex-row gap-3 w-full justify-center">
+        {/* <div className="flex justify-between items-center w-full"> */}
+        <div className="pill">
+          <Clock />
+          <p className="">{project_time}</p>
+        </div>
+        <div className="pill">
+          <Code />
+          <p className="">{project_type}</p>
+        </div>
+        <div className="pill">
+          <Globe />
+          <p className="">{project_industry}</p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="flex-1 w-full overflow-hidden bg-red-300 object-contain rounded-xl"
+      style={{
+        background: `linear-gradient(180deg, ${gradientColors[0]} 0%, ${gradientColors[1]} 100%), url(${image})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    />
+    {/* <div className="h-10 flex items-start justify-start w-fit transition-opacity duration-300 group-hover:opacity-100 opacity-90">
           {logoImage && (
             <Image
               src={logoImage}
@@ -38,9 +65,9 @@ const ProjectCard = ({
               className="object-contain h-10 md:w-fit w-[90%]"
             />
           )}
-        </div>
+        </div> */}
 
-        <div className="w-6 h-6 flex items-center justify-center relative">
+    {/* <div className="w-6 h-6 flex items-center justify-center relative">
           <svg
             width="24"
             height="24"
@@ -70,15 +97,14 @@ const ProjectCard = ({
               stroke-linejoin="round"
             />
           </svg>
-        </div>
-      </div>
+        </div> */}
+    {/* </div> */}
 
-      {/* <p className="font-semibold text-[18px] leading-[150%] text-white transition-all duration-300 group-hover:text-white/90">
+    {/* <p className="font-semibold text-[18px] leading-[150%] text-white transition-all duration-300 group-hover:text-white/90">
         {description}
       </p> */}
-    </div>
 
-    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300"></div>
+    <div className="absolute inset-0 bg-black/0 group-hover:bg-[#FB4E29] opacity-10 transition-all duration-300"></div>
   </Link>
 );
 
@@ -91,7 +117,10 @@ const Projects = ({ id }) => {
       image: "/company-logos/atelier.png",
       logoImage: "/affiliate-logos/atelier-logo.png",
       gradientColors: ["rgba(109, 79, 59, 0.2)", "rgba(109, 79, 59, 0.9)"],
-      externalLink: "https://atelier-shan.webflow.io/",
+      externalLink: "https://atelier-shan.com/",
+      project_industry: "Interior Design",
+      project_time: "8 weeks",
+      project_type: "Website",
     },
     {
       title: "Athena Social",
@@ -101,6 +130,9 @@ const Projects = ({ id }) => {
       logoImage: "/affiliate-logos/athena-logo.png",
       gradientColors: ["rgba(255, 0, 92, 0.2)", "rgba(255, 0, 92, 0.9)"],
       externalLink: "https://athenasocial.webflow.io/",
+      project_industry: "Technology",
+      project_time: "2 weeks",
+      project_type: "Website",
     },
     {
       title: "ParallelChain",
@@ -109,8 +141,10 @@ const Projects = ({ id }) => {
       image: "/company-logos/para.png",
       logoImage: "/affiliate-logos/Vector.png",
       gradientColors: ["rgba(254, 110, 0, 0.2)", "rgba(254, 110, 0, 0.9)"],
-      externalLink:
-        "https://explorer.parallelchain.io/explorer?network=Mainnet",
+      externalLink: "https://parallelchain.io/",
+      project_industry: "Web3",
+      project_time: "12 weeks",
+      project_type: "Website",
     },
     {
       title: "Xccelerate",
@@ -119,6 +153,9 @@ const Projects = ({ id }) => {
       logoImage: "/affiliate-logos/Xccelerate-logo.png",
       gradientColors: ["rgba(68, 81, 255, 0.2)", "rgba(68, 81, 255, 0.9)"],
       externalLink: "https://www.xccelerate.co/",
+      project_industry: "Edu-tech",
+      project_time: "6 weeks",
+      project_type: "Website",
     },
   ];
 
@@ -148,8 +185,8 @@ const Projects = ({ id }) => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 w-full mt-14">
-          {projects.slice(0, 2).map((project, index) => (
+        <div className="px-4 lg:px-40 grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-6 w-full">
+          {projects.slice(0, 4).map((project, index) => (
             <ProjectCard
               key={index}
               title={project.title}
@@ -158,21 +195,9 @@ const Projects = ({ id }) => {
               logoImage={project.logoImage}
               gradientColors={project.gradientColors}
               externalLink={project.externalLink}
-            />
-          ))}
-        </div>
-
-        {/* Second Row of Projects */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 w-full">
-          {projects.slice(2, 4).map((project, index) => (
-            <ProjectCard
-              key={index + 2}
-              title={project.title}
-              description={project.description}
-              image={project.image}
-              logoImage={project.logoImage}
-              gradientColors={project.gradientColors}
-              externalLink={project.externalLink}
+              project_industry={project.project_industry}
+              project_time={project.project_time}
+              project_type={project.project_type}
             />
           ))}
         </div>

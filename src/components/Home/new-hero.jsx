@@ -327,7 +327,6 @@ const NewHero = () => {
                     <p className="text-sm text-[#121212] flex gap-4 items-center">
                       <a href="mailto:hello@enclave.live">hello@enclave.live</a>
                       <a href="tel:+85264006201">+852 64006201</a>
-                      <a href="tel:+85259291909">+852 59291909</a>
                     </p>
                     <p className="text-sm text-[#121212] text-center">
                       © {new Date().getFullYear()} Enclave Technologies Ltd. All

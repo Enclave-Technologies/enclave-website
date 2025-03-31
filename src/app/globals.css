@@ -625,3 +625,8 @@ select {
 .horizontal {
   display: flex;
 }
+
+.pill {
+  @apply px-3 py-2 text-[#FAFAFA] rounded-full flex flex-row items-center justify-center text-sm gap-1;
+  background-color: #fb4e29;
+}
