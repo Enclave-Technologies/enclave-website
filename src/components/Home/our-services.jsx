@@ -72,14 +72,14 @@ const OurServices = ({ id }) => {
               title: "Your website will become your best sales tool",
               description:
                 "We combine web design strategy, UX design, visual design, and storytelling to deliver impactful and user-friendly websites.",
-              image: "/service-images/001.png",
+              image: "/service-images/002.png",
             },
             {
               tag: "Website Development",
               title: "Build a modern & professional website",
               description:
                 "We specialise in website development, providing a strong foundation and a scalable modern website that is secure and optimised.",
-              image: "/service-images/001.png",
+              image: "/service-images/003.png",
             },
           ].map((service, index) => (
             <div

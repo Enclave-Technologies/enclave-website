@@ -20,7 +20,12 @@ const NewFooter = () => {
               className="mb-4"
             />
           </Link>
-          <h3 className="text-white text-[32px] md:text-[40px] lg:text-[48px] font-bold mt-2 mb-4 capitalize">
+          <h3
+            className="text-white text-[32px] md:text-[40px] lg:text-[48px] font-bold mt-2 mb-4 capitalize"
+            style={{
+              lineHeight: 1.2,
+            }}
+          >
             Start Building Magic Today
           </h3>
           <div className="flex flex-col md:flex-row gap-4 w-full items-start md:items-center justify-center">

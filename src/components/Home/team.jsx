@@ -98,10 +98,10 @@ const Team = ({ id }) => {
   return (
     <section
       id={id}
-      className="flex flex-col items-center py-16 md:py-20 lg:py-24 px-8 w-full bg-[#FAFAFA] min-h-screen"
+      className="flex flex-col items-center py-16 md:py-0 px-0 md:px-8 w-full gap-12 bg-[#FAFAFA]"
     >
       <div className="max-w-7xl mx-auto w-full">
-        <div className="text-center mb-8">
+        <div className="text-center mb-8 px-8">
           <h4 className="text-[#FB4E29] text-[20px] md:text-[24px] lg:text-[28px] font-bold">
             Our Team
           </h4>

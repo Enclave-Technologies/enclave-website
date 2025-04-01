@@ -12,6 +12,8 @@ import NewFooter from "../components/NewFooter";
 import OurServices from "../components/Home/our-services";
 import Chat from "../components/Home/chat";
 import KPIs from "../components/Home/KPIs";
+import ScalingSections from "../components/Home/new-steps";
+
 export default function Home() {
   const [domLoaded, setDomLoaded] = useState(false);
 
@@ -53,7 +55,9 @@ export default function Home() {
 
         {/* <NewServices id="new-services" /> */}
         <KPIs id="new-services" />
-        <Steps id="steps" />
+        {/* TODO: Add a 4 step process here */}
+        {/* <Steps id="steps" /> */}
+        <ScalingSections />
         <Team id="team" />
       </div>
       <div className="hidden md:flex min-h-screen w-full bg-transparent"></div>

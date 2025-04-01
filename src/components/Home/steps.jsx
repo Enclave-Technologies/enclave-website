@@ -34,11 +34,10 @@ const testimonials = [
 
 const TestimonialCard = ({ testimonial }) => (
   <div
-    className="p-8 shadow-sm rounded-lg bg-white border border-gray-100 flex flex-col justify-between h-full transition-transform duration-300 hover:-translate-y-2"
+    className="p-8 rounded-3xl bg-white border border-gray-100 flex flex-col justify-between h-full transition-transform duration-300 hover:-translate-y-2 shadow-md"
     style={{
       background:
         "linear-gradient(113.44deg, rgba(255, 255, 255, 0.4) 22.6%, rgba(255, 255, 255, 0.1) 92.47%)",
-      boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.1)",
       backdropFilter: "blur(15px)",
     }}
   >
@@ -46,8 +45,15 @@ const TestimonialCard = ({ testimonial }) => (
       {testimonial.content}
     </p>
     <div>
-      <h4 className="font-semibold text-base">{testimonial.author}</h4>
-      <p className="text-[#9B9290] text-sm">{testimonial.company}</p>
+      <Image
+        src={"https://unsplash.com/s/photos/random-person"}
+        height={40}
+        width={40}
+      />
+      <div>
+        <h4 className="font-semibold text-base">{testimonial.author}</h4>
+        <p className="text-[#9B9290] text-sm">{testimonial.company}</p>
+      </div>
     </div>
   </div>
 );
