@@ -19,10 +19,10 @@ const ScalingSection = ({ sectionNumber, sectionInfo }) => {
 
       // Map visible percentage to dynamic width
       if (visiblePercentage > 0.4) {
-        const newWidth = 100 - visiblePercentage * 20; // Scale between 100vw and 150vw
+        const newWidth = 80 - visiblePercentage * 0; // Scale between 100vw and 150vw
         setWidthPercentage(newWidth);
       } else {
-        const newWidth = 100;
+        const newWidth = 80;
         setWidthPercentage(newWidth);
       }
     };

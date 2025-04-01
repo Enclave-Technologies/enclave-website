@@ -98,7 +98,7 @@ const Team = ({ id }) => {
   return (
     <section
       id={id}
-      className="flex flex-col items-center py-16 md:py-0 px-0 md:px-8 w-full gap-12 bg-[#FAFAFA]"
+      className="flex flex-col items-center py-16 md:py-32 px-0 md:px-8 w-full gap-12 bg-[#FAFAFA]"
     >
       <div className="max-w-7xl mx-auto w-full">
         <div className="text-center mb-8 px-8">
