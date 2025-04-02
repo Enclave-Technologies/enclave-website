@@ -3,7 +3,7 @@ import GradientMetric from "../GradientMetric";
 const KPIs = () => {
   return (
     <section className="flex flex-col items-center py-16 md:py-0 px-8 w-full gap-12 bg-[#FAFAFA]">
-      <div className="w-full max-w-7xl">
+      <div className="w-full max-w-7xl px-4 lg:px-0">
         <div className="text-center">
           <h4 className="text-[#FB4E29] text-[20px] md:text-[24px] lg:text-[28px] font-bold">
             Key Performance Indicators

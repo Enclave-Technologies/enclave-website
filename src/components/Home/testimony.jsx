@@ -89,7 +89,7 @@ const Testimony = ({ id }) => {
       id={id}
     >
       <div
-        className="w-full flex-1 flex flex-col items-center justify-center px-8 py-16 md:py-16 !pb-0 mt-[80px]"
+        className="w-full flex flex-col items-center justify-center !px-0 md:px-8 py-16 md:py-16 !pb-0 mt-[80px]"
         style={{
           // backgroundImage: "url('/heroobg.png')",
           // backgroundSize: "cover",
@@ -99,7 +99,7 @@ const Testimony = ({ id }) => {
         }}
       >
         <div className="flex flex-col items-center justify-center gap-8">
-          <div className="flex flex-col items-center justify-center gap-6">
+          <div className="flex flex-col items-center justify-center gap-6 px-8">
             <h1
               className="text-[40px] md:text-[56px] lg:text-[72px] font-bold mb-6 text-[#121212] max-w-4xl text-center"
               style={{
