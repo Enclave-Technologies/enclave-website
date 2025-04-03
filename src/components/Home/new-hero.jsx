@@ -325,7 +325,9 @@ const NewHero = () => {
 
                   <div className="flex w-full justify-between items-center flex-col md:flex-row">
                     <p className="text-sm text-[#121212] flex gap-4 items-center">
-                      <a href="mailto:hello@enclave.live">hello@enclave.live</a>
+                      <a href="mailto:hello@enclave-studios.com">
+                        hello@enclave-studios.com
+                      </a>
                       <a href="tel:+85264006201">+852 64006201</a>
                     </p>
                     <p className="text-sm text-[#121212] text-center">

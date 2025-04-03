@@ -127,10 +127,10 @@ const NewFooter = () => {
             <ul className="md:space-y-5 space-y-3">
               <li>
                 <a
-                  href="mailto:hello@enclave.live"
+                  href="mailto:hello@enclave-studios.com"
                   className="text-[#FFF] text-sm hover:text-[#FB4E29]"
                 >
-                  hello@enclave.live
+                  hello@enclave-studios.com
                 </a>
               </li>
               <li>

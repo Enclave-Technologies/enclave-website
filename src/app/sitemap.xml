@@ -6,21 +6,21 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <url>
-  <loc>https://enclave.live/</loc>
+  <loc>https://enclave-studios.com/</loc>
   <lastmod>2024-09-26T10:33:20+00:00</lastmod>
   <changefreq>daily</changefreq>
   <priority>1.0</priority>
 </url>
 
 <url>
-  <loc>https://enclave.live/works</loc>
+  <loc>https://enclave-studios.com/works</loc>
   <lastmod>2024-09-26T10:33:20+00:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <changefreq>daily</changefreq>
   <priority>0.9</priority>
 </url>
 
 <url>
-  <loc>https://enclave.live/contact</loc>
+  <loc>https://enclave-studios.com/contact</loc>
   <lastmod>2024-09-26T10:33:20+00:00</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.7</priority>

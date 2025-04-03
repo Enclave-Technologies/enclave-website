@@ -55,7 +55,10 @@ export const Footer = () => {
                   alt="Logo_FB"
                 />
               </a> */}
-              <a href="https://www.instagram.com/enclave.live/" target="_blank">
+              <a
+                href="https://www.instagram.com/enclave_studios_/"
+                target="_blank"
+              >
                 <Image
                   src="/Instagram.svg"
                   width={24}

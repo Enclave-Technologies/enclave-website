@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://enclave.live/sitemap.xml
+Sitemap: https://enclave-studios.com/sitemap.xml
