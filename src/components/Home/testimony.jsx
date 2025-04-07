@@ -106,10 +106,10 @@ const Testimony = ({ id }) => {
                 lineHeight: "1.2",
               }}
             >
-              The Next-Generation of Digital Experiences
+              Award-Winning Website Development Studio
             </h1>
             <h2 className="text-[20px] md:text-[24px] lg:text-[28px] text-[#FB4E29] font-bold mb-4 normal-case text-center">
-              Crafting Bespoke Web, Mobile and 3D Experiences
+              Digital Marketing Solutions To Supercharge Your Business
             </h2>
           </div>
           <div className="flex flex-wrap gap-4 justify-center  mx-auto">

@@ -62,7 +62,7 @@ const FAQs = ({ id }) => {
     {
       question: "How can I contact you?",
       answer:
-        "You can email us at hello@enclave.live with your query. Our team will respond within 1-2 days to your request.",
+        "You can email us at hello@enclave-studios.com with your query. Our team will respond within 1-2 days to your request.",
     },
   ];
 
