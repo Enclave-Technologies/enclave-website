@@ -9,7 +9,7 @@ const albert = Albert_Sans({ subsets: ["latin"], variable: "--font-albert" });
 export const metadata = {
   title: {
     template: "Website & App Development Studio in Hong Kong | Enclave Studios",
-    default: "Enclave Studios: Custom Web & App Development Studio",
+    default: "Enclave Studios - Web Design & Development Company Hong Kong",
   },
   description:
     "Enclave is a website and application prototyping and development studio in Hong Kong specialising in web and AI applications development. From ideation, prototyping to development and launch.",
