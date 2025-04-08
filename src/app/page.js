@@ -14,6 +14,7 @@ import Chat from "../components/Home/chat";
 import KPIs from "../components/Home/KPIs";
 import Pricing from "../components/Home/Pricing";
 import ScalingSections from "../components/Home/new-steps";
+// Case-sensitivity is turned on for vercel builds
 
 export default function Home() {
   const [domLoaded, setDomLoaded] = useState(false);
