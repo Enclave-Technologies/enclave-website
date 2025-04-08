@@ -6,10 +6,11 @@ import Image from "next/image";
 import Hamburger from "./Hamburger";
 
 const links = [
-  { title: "Home", link: "/" },
   { title: "Services", link: "/#our-services" },
-  { title: "Works", link: "/#projects" },
-  { title: "About Us", link: "/#new-services" },
+  { title: "About Us", link: "/#about-us" },
+  { title: "Portfolio", link: "/#projects" },
+  { title: "Pricing", link: "/#pricing" },
+  { title: "Contact", link: "/#footer" },
 ];
 
 export const Navbarr = () => {
@@ -63,7 +64,7 @@ export const Navbarr = () => {
                 onClick={(e) => {
                   e.stopPropagation();
                 }}
-                className="text-black hover:text-[#FB4E29] transition-colors duration-200 text-lg font-medium"
+                className="text-black hover:text-[#FB4E29] transition-colors duration-200 font-medium"
               >
                 {link.title}
               </Link>
@@ -72,11 +73,11 @@ export const Navbarr = () => {
 
           <div className="hidden md:flex h-[40px] w-auto relative z-[1001]">
             <Link
-              href="https://api.whatsapp.com/send/?phone=64006201&text&type=phone_number&app_absent=0"
+              href="/contact"
               target="_blank"
               className="bg-[#FB4E29] flex items-center justify-center h-full w-full text-white px-4 py-2 rounded-full transition-colors duration-200 text-base font-medium"
             >
-              Get In Touch
+              Get A Free Strategy
             </Link>
           </div>
 

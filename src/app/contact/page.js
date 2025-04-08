@@ -5,15 +5,17 @@ import { Navbarr } from "../../components/Navbar/Navbarr";
 import NewFooter from "../../components/NewFooter";
 
 const services = [
-  "Website Design",
-  "Web Development",
-  "Mobile Development",
-  "E-Commerce Store Development",
-  "Search Engine Optimization (SEO)",
-  "Google Ads",
+  "Website Redesign",
+  "Website Development",
+  "App Development",
+  "ECommerce Launch",
+  "Growing Website Traffic",
+  "Generating Online Sales",
+  "Growing Brand Awareness",
+  "Increasing Customers",
 ];
 
-const budgets = ["2-10K", "10-20K", "20-50K", "50-100K", "100K+"];
+const budgets = ["<2K", "2-10K", "10-20K", "20-50K", "50-100K", "100K+"];
 
 export default function Contact() {
   const [state, handleSubmit, reset] = useForm("mvgpjgpy");
@@ -21,15 +23,15 @@ export default function Contact() {
   const [selectedServices, setSelectedServices] = useState([]);
 
   return (
-    <main className="flex w-full min-h-screen flex-col items-center justify-start text-black ">
+    <main className="flex w-full min-h-screen flex-col items-center justify-start text-black">
       {/* <div id="cursor" /> */}
       <Navbarr />
-      <div className="z-10 bg-[#FAFAFA]">
-        <section className="w-full flex flex-col items-center">
+      <div className="z-10 bg-[#FAFAFA] w-full flex flex-col items-center">
+        <section className="w-full flex flex-col items-center max-w-7xl">
           <div className="inner-container min-h-screen flex flex-col items-start justify-center gap-24 md:!pr-96">
             <h1 className="text-6xl font-bold pt-12">
-              Hey! Tell us all the
-              <br /> things 👋
+              Hey! How can we
+              <br /> help you? 👋
             </h1>
             <form
               className="text-2xl"
@@ -38,7 +40,7 @@ export default function Contact() {
             >
               <div className="flex flex-col gap-20">
                 <div className="flex flex-col gap-8">
-                  <p>I’m Interested in...</p>
+                  <p>I Need Help With...</p>
                   <div className="flex flex-wrap gap-4">
                     {services.map((service, index) => {
                       return (
@@ -80,7 +82,7 @@ export default function Contact() {
                   required
                   id="email"
                   name="email"
-                  placeholder="Email"
+                  placeholder="Business Email"
                   style={{ fontSize: 20 }}
                   className="bg-transparent border-b-2 max-w-2xl focus:outline-none resize-none"
                 />

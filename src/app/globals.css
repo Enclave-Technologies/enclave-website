@@ -31,14 +31,14 @@ body {
 }
 
 section {
-  @apply flex flex-row justify-center py-8 px-4 sm:px-4 md:px-24 lg:px-32 xl:px-40;
+  @apply flex flex-col justify-start items-center py-16 px-8 w-full bg-[#FAFAFA];
   width: auto;
   /* min-height: 100vh; */
   max-width: 1920px;
 }
 
 .lead {
-  @apply text-lg w-full md:w-3/5;
+  @apply w-full md:w-3/5;
   line-height: 150%;
   font-weight: 400;
 }
@@ -271,7 +271,7 @@ li a:hover {
 }
 
 .primary {
-  @apply flex flex-row items-center w-full justify-center text-white font-bold py-4 px-12 rounded-xl transition-all duration-150 ease-in-out;
+  @apply flex flex-row items-center w-full justify-center text-white font-bold py-3 px-4 rounded-xl transition-all duration-150 ease-in-out;
   /* width: 80px; */
   background-color: var(--primary-color);
   border: 2px solid var(--primary-color);
@@ -313,7 +313,7 @@ li a:hover {
 }
 
 .secondary {
-  @apply flex flex-row justify-center bg-transparent text-[#FB4E29] font-bold py-4 px-12 rounded-xl w-full transition-all duration-150 ease-in-out;
+  @apply flex flex-row justify-center bg-transparent text-[#FB4E29] font-bold py-3 px-4 rounded-xl w-full transition-all duration-150 ease-in-out;
   border: 2px solid #fb4e29;
   cursor: pointer;
 }

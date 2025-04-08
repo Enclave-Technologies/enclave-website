@@ -45,42 +45,51 @@ const OurServices = ({ id }) => {
   }, []);
 
   return (
-    <section
-      id={id}
-      className="flex flex-col justify-start items-center py-16 px-8 w-full bg-[#FAFAFA] sticky-parent"
-    >
-      <div className="w-full max-w-7xl mx-auto flex flex-col items-center justify-center gap-6 md:gap-6 pt-[96px] sticky top-0 h-full md:max-h-screen overflow-hidden">
+    <section id={id} className="sticky-parent">
+      <div className="max-w-7xl justify-center gap-6 md:gap-10 pt-[40px] sticky top-0 h-full md:max-h-screen overflow-hidden">
         <div className="flex flex-col items-center gap-2">
           <h4 className="text-[#FB4E29] text-[20px] md:text-[24px] lg:text-[24px] font-bold">
-            First Impressions Matter
+            Our Services
           </h4>
-          <h2 className="text-[32px] md:text-[40px] lg:text-[48px] font-bold mt-2 mb-4 capitalize text-center">
-            Invest In Designs That Convert
+          <h2 className="text-[32px] md:text-[40px] lg:text-[48px] max-w-3xl font-bold mt-2 mb-4 capitalize text-center">
+            Custom Solutions That Deliver Value For Your Business
           </h2>
+          {/* <p className="text-[#26120D] mx-auto text-[18px] md:text-[20px] leading-[150%] text-center max-w-4xl">
+            Digital marketing includes SEO, PPC, content marketing and so on.
+            These solutions are crucial for reaching audiences online, expanding
+            your digital presence, and attracting more businesses!
+          </p> */}
         </div>
-        <div className="flex flex-col lg:flex-row overflow-visible justify-start md:gap-12 gap-6 max-w-7xl horizontal px-0 md:px-48">
+        <div className="flex flex-col lg:flex-row overflow-visible justify-start md:gap-12 gap-6 max-w-7xl horizontal px-0 md:px-48 mt-4">
           {[
             {
-              tag: "Branding",
+              tag: "Brand Development",
               title: "Bring your brand story to life in your website",
               description:
                 "We create unique brand identities that reflect your brand's true values, establish credibility, and leave a lasting impression.",
               image: "/service-images/001.png",
             },
             {
-              tag: "Website Design",
+              tag: "Website Development",
               title: "Your website will become your best sales tool",
               description:
                 "We combine web design strategy, UX design, visual design, and storytelling to deliver impactful and user-friendly websites.",
               image: "/service-images/002.png",
             },
             {
-              tag: "Website Development",
+              tag: "App Development",
               title: "Build a modern & professional website",
               description:
                 "We specialise in website development, providing a strong foundation and a scalable modern website that is secure and optimised.",
               image: "/service-images/003.png",
             },
+            // {
+            //   tag: "Digital Marketing",
+            //   title: "Build a modern & professional website",
+            //   description:
+            //     "We specialise in website development, providing a strong foundation and a scalable modern website that is secure and optimised.",
+            //   image: "/service-images/003.png",
+            // },
           ].map((service, index) => (
             <div
               key={index}

@@ -8,7 +8,10 @@ import { Button } from "./Button";
 
 const NewFooter = () => {
   return (
-    <footer className="w-screen bg-[#FB4E29] relative md:fixed top-0 z-0 min-h-screen">
+    <footer
+      className="w-screen bg-[#FB4E29] relative md:fixed top-0 z-0 min-h-screen"
+      id="footer"
+    >
       <div className="max-w-7xl flex flex-col justify-center mx-auto px-8 py-12 min-h-screen">
         <div className="flex-1 flex flex-col items-center justify-center gap-6">
           <Link href="/" className="mb-4">
@@ -38,7 +41,8 @@ const NewFooter = () => {
             <Button
               variant="primary footer-secondary"
               title="Book Consultation"
-              link="/contact"
+              target="_blank"
+              link="https://calendly.com/hello-enclave-studios/30min"
               rounded={true}
             />
           </div>
@@ -46,9 +50,7 @@ const NewFooter = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-0 md:gap-8">
           {/* Enclave Studios section */}
           <div className="col-span-1 lg:col-span-4 md:mt-0 mt-8">
-            <h3 className="text-[#FFF] font-bold text-lg mb-6">
-              Enclave Studios
-            </h3>
+            <h3 className="text-[#FFF] font-bold mb-6">Enclave Studios</h3>
             <ul className="md:space-y-5 space-y-3">
               <li>
                 <Link
@@ -77,7 +79,7 @@ const NewFooter = () => {
             </ul>
           </div>
           <div className="col-span-1 lg:col-span-4 md:mt-0 mt-8">
-            <h3 className="text-[#FFF] font-bold text-lg mb-6">Services</h3>
+            <h3 className="text-[#FFF] font-bold mb-6">Services</h3>
             <ul className="md:space-y-5 space-y-3">
               <li>
                 <Link
@@ -123,7 +125,7 @@ const NewFooter = () => {
           </div>
           {/* Contact Us section */}
           <div className="col-span-1 lg:col-span-4 md:mt-0 mt-8">
-            <h3 className="text-[#FFF] font-bold text-lg mb-6">Contact Us</h3>
+            <h3 className="text-[#FFF] font-bold mb-6">Contact Us</h3>
             <ul className="md:space-y-5 space-y-3">
               <li>
                 <a

@@ -65,7 +65,7 @@ const ScalingSection = ({ sectionNumber, sectionInfo }) => {
 
 const ScalingSections = () => {
   return (
-    <section className="flex flex-col items-center py-16 md:py-32 px-0 md:px-8 w-full max-w-screen gap-12 bg-[#FAFAFA]">
+    <section className="flex flex-col items-center px-0 md:px-8 w-full max-w-screen gap-12 bg-[#FAFAFA]">
       <div className="flex flex-col gap-16 items-center px-0 md:px-0">
         <div className="flex flex-col items-center gap-2 max-w-[782px] px-4">
           <h4 className="text-[#FB4E29] text-[20px] md:text-[24px] lg:text-[28px] font-bold">

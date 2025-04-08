@@ -13,13 +13,13 @@ export const Button = ({
   return (
     <Link href={link} className="" target={target}>
       <button
-        className={`${variant} flex flex-row items-center gap-2 min-w-fit w-full ${
+        className={`${variant} flex flex-row items-center gap-2 min-w-fit ${
           rounded ? "!rounded-full" : ""
         }`}
       >
         <span className="button-text-container min-w-fit">
-          <span className="button-text w-fit !text-lg">{title}</span>
-          <span className="button-text w-fit !text-lg">{title}</span>
+          <span className="button-text w-fit">{title}</span>
+          <span className="button-text w-fit">{title}</span>
         </span>
         {/* {variant == "primary" && (
           <Image src={`/icons/arrow-1.svg`} width={16} height={16} alt="" />

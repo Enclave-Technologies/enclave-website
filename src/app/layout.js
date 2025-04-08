@@ -37,6 +37,10 @@ export default function RootLayout({ children }) {
         <meta property="og:description" content={metadata.description} />
         <meta property="og:image" content="/logo-dark.svg" />
         <meta name="twitter:card" content="/logo-dark.svg" />
+        <link
+          href="https://assets.calendly.com/assets/external/widget.css"
+          rel="stylesheet"
+        />
       </Head>
 
       <body>

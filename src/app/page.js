@@ -14,6 +14,7 @@ import Chat from "../components/Home/chat";
 import KPIs from "../components/Home/KPIs";
 import Pricing from "../components/Home/Pricing";
 import ScalingSections from "../components/Home/new-steps";
+import CalendlyEmbed from "../components/Calendly/CalendlyEmbed";
 // Case-sensitivity is turned on for vercel builds
 
 export default function Home() {
@@ -49,13 +50,11 @@ export default function Home() {
       {/* <div className="cursor" /> */}
       <div className="z-10">
         <Navbarr />
-        {/* <Chat /> */}
-
         <Testimony id="testimony" />
         <OurServices id="our-services" />
         <ScalingSections />
-        <KPIs id="new-services" />
-        <Team id="team" />
+        <Team id="about-us" />
+        {/* <KPIs id="new-services" /> */}
         <Projects id="projects" />
         <Pricing id="pricing" />
         <Steps id="steps" />

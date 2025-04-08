@@ -17,7 +17,7 @@ const PricingCard = ({ pricing, highlighted }) => {
               key={index}
               className="flex flex-row w-full items-center justify-between"
             >
-              <p className="text-lg">{feature.feature}</p>
+              <p>{feature.feature}</p>
               {feature.available ? <Checkmark /> : <Cross />}
             </div>
           );
@@ -29,20 +29,20 @@ const PricingCard = ({ pricing, highlighted }) => {
       </div>
       <Link href={"/contact"} className="" target={"_self"}>
         <button
-          className={`primary flex flex-row items-center gap-2 min-w-fit w-full ${
+          className={`primary flex flex-row items-center gap-2 min-w-fit w-full !rounded-full ${
             highlighted ? "!bg-white" : ""
           }`}
         >
           <span className="button-text-container min-w-fit">
             <span
-              className={`button-text w-fit !text-lg ${
+              className={`button-text w-fit ${
                 highlighted ? "!text-[#FB4E29]" : ""
               }`}
             >
               {"Get Started"}
             </span>
             <span
-              className={`button-text w-fit !text-lg ${
+              className={`button-text w-fit ${
                 highlighted ? "!text-[#FB4E29]" : ""
               }`}
             >
@@ -62,14 +62,14 @@ const Pricing = ({ id }) => {
       className="flex flex-col items-center py-16 md:py-32 px-0 md:px-8 w-full gap-12 bg-[#FAFAFA]"
     >
       <div className="max-w-7xl mx-auto w-full flex flex-col gap-12 px-8">
-        <div className="text-center mb-8">
+        <div className="text-center mb-8 flex flex-col items-center">
           <h4 className="text-[#FB4E29] text-[20px] md:text-[24px] lg:text-[28px] font-bold">
             Pricing
           </h4>
-          <h2 className="text-[32px] md:text-[40px] lg:text-[48px] font-bold mt-2 mb-4 capitalize">
+          <h2 className="text-[32px] md:text-[40px] lg:text-[48px] max-w-4xl font-bold mt-2 mb-4 capitalize text-center">
             Pricing Packages For Every Budget
           </h2>
-          <p className="text-[#26120D] mx-auto text-[18px] md:text-[20px] leading-[150%]">
+          <p className="text-[#26120D] mx-auto text-[18px] md:text-[20px] leading-[150%] text-center max-w-4xl">
             Includes design, development, hosting, unlimited edits, 24/7
             support, and lifetime updates.
           </p>

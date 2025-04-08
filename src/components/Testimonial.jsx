@@ -31,7 +31,7 @@ const Testimonial = ({
 
       <div className="flex flex-col md:flex-row justify-center items-center gap-4 w-full mt-6 md:mt-0">
         <div className="flex flex-col justify-center items-center md:items-end order-3 md:order-1">
-          <h4 className="font-bold text-lg text-[#1B0D09]">{name}</h4>
+          <h4 className="font-bold text-[#1B0D09]">{name}</h4>
           <p className="font-normal text-base text-[#26120D]">{title}</p>
         </div>
 
@@ -46,7 +46,7 @@ const Testimonial = ({
               className="object-contain"
             />
           ) : (
-            <span className="font-bold text-lg">{companyName}</span>
+            <span className="font-bold">{companyName}</span>
           )}
         </div>
       </div>

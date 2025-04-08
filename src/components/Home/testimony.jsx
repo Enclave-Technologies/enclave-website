@@ -85,11 +85,11 @@ const LogoMarquee = ({ direction = "left" }) => {
 const Testimony = ({ id }) => {
   return (
     <section
-      className="relative w-full min-h-[100vh] flex flex-col gap-16 items-center justify-between overflow-hidden bg-[#FAFAFA]"
+      className="relative min-h-[100vh] gap-16 !justify-between overflow-hidden"
       id={id}
     >
       <div
-        className="w-full flex flex-col items-center justify-center !px-0 md:px-8 py-16 md:py-16 !pb-0 mt-[80px]"
+        className="w-full flex flex-col items-center justify-center !px-0 md:px-8 py-16 md:py-16 !pb-0 mt-[80px] mb-[40px]"
         style={{
           // backgroundImage: "url('/heroobg.png')",
           // backgroundSize: "cover",
@@ -101,15 +101,15 @@ const Testimony = ({ id }) => {
         <div className="flex flex-col items-center justify-center gap-8">
           <div className="flex flex-col items-center justify-center gap-6 px-8">
             <h1
-              className="text-[40px] md:text-[56px] lg:text-[64px] font-bold mb-6 text-[#121212] max-w-4xl text-center"
+              className="text-[40px] md:text-[56px] lg:text-[64px] font-bold text-[#121212] max-w-7xl text-center"
               style={{
                 lineHeight: "1.2",
               }}
             >
-              Award-Winning Website Development Studio
+              Award-Winning <br></br> Design & Development Studio
             </h1>
             <h2 className="text-[20px] md:text-[24px] lg:text-[28px] text-[#FB4E29] font-bold mb-4 normal-case text-center">
-              Digital Marketing Solutions To Supercharge Your Business
+              Digital Solutions To Supercharge Your Business
             </h2>
           </div>
           <div className="flex flex-wrap gap-4 justify-center  mx-auto">
