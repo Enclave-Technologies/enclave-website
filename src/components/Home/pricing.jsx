@@ -1,6 +1,6 @@
-const { Button } = require("../Button");
 import Link from "next/link";
 import { Checkmark, Cross } from "../icons";
+import { Button } from "../Button";
 
 const Pricing = ({ id }) => {
   return (
@@ -130,11 +130,6 @@ const PricingCard = ({ pricing, highlighted }) => {
               {"Get Started"}
             </span>
           </span>
-          {/* {variant == "primary" && (
-          <Image src={`/icons/arrow-1.svg`} width={16} height={16} alt="" />
-        )} */}
-
-          {/* {variant == "secondary" && <FiExternalLink color="#FB4E29" size={20} />} */}
         </button>
       </Link>
     </div>
