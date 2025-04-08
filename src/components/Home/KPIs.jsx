@@ -17,11 +17,23 @@ const KPIs = () => {
         </div>
 
         <div className="hidden md:grid grid-cols-4 gap-8 my-14">
-          <GradientMetric value="20M" description="Revenue Generated" />
+          <GradientMetric
+            value="100%"
+            description="ROI Generated"
+            upto={false}
+          />
 
-          <GradientMetric value="80K" description="Unique Visitors" />
+          <GradientMetric
+            value="4.8/5"
+            description="Google Reviews"
+            upto={false}
+          />
 
-          <GradientMetric value="50+" description="Clients Delivered" />
+          <GradientMetric
+            value="100"
+            description="Page Speed Scores"
+            upto={false}
+          />
           <GradientMetric
             value="10x"
             description="Awards and Nominations"
