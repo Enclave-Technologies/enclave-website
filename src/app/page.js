@@ -12,6 +12,7 @@ import NewFooter from "../components/NewFooter";
 import OurServices from "../components/Home/our-services";
 import Chat from "../components/Home/chat";
 import KPIs from "../components/Home/KPIs";
+import Pricing from "../components/Home/Pricing";
 import ScalingSections from "../components/Home/new-steps";
 
 export default function Home() {
@@ -51,14 +52,14 @@ export default function Home() {
 
         <Testimony id="testimony" />
         <OurServices id="our-services" />
-        <Projects id="projects" />
-
-        {/* <NewServices id="new-services" /> */}
-        <KPIs id="new-services" />
-        {/* TODO: Add a 4 step process here */}
-        {/* <Steps id="steps" /> */}
         <ScalingSections />
+        <KPIs id="new-services" />
         <Team id="team" />
+        <Projects id="projects" />
+        <Pricing id="pricing" />
+        <Steps id="steps" />
+        {/* <NewServices id="new-services" /> */}
+        {/* TODO: Add a 4 step process here */}
       </div>
       <div className="hidden md:flex min-h-screen w-full bg-transparent"></div>
       <NewFooter id="footer" />

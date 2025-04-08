@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Button } from "../Button";
+import Image from "next/image";
 
 const TeamMember = ({ name, title, final }) => (
   <div
@@ -25,37 +26,36 @@ const Team = ({ id }) => {
   const teamMembers = [
     {
       id: 1,
-      name: "Siddharth Agarwal",
-      title: "CEO & Co-Founder",
+      name: "Karan Kapur",
+      title: "Projects Manager, Taiwan",
     },
     {
       id: 2,
-      name: "Avishek Majumder",
-      title: "CTO & Co-Founder",
+      name: "Sneha Nawalkha",
+      title: "Fractional CMO, Hong Kong",
     },
     {
       id: 3,
-      name: "Aida Naingolan",
-      title: "Director of UI/UX Design",
+      name: "Kary Yeung",
+      title: "Business Development, Hong Kong",
     },
     {
       id: 4,
       name: "Pease Adeniji",
-      title: "Lead Software Engineer",
+      title: "Senior Software Engineer",
     },
-
     {
       id: 5,
+      name: "Rhea Gupta",
+      title: "Senior UI/UX Designer",
+    },
+    {
+      id: 6,
       name: "Rajkumar Chaudhari",
-      title: "Motion Engineer",
+      title: "Software Engineer",
     },
     {
       id: 7,
-      name: "Sneha Nawalkha",
-      title: "Fractional CMO",
-    },
-    {
-      id: 9,
       name: "You",
       title: (
         <p
@@ -113,7 +113,46 @@ const Team = ({ id }) => {
             backgrounds who share the same passion for your brand as you do.
           </p>
         </div>
-
+        {/* Founding Team */}
+        <div className="flex flex-col md:flex-row gap-12 md:gap-1 items-center justify-center mb-12">
+          {[
+            {
+              image: "/team/sid.png",
+              name: "Siddharth Agarwal",
+              title: "Chief Executive Officer",
+              location: "Hong Kong",
+            },
+            {
+              image: "/team/avi.png",
+              name: "Avishek Majumder",
+              title: "Chief Technology Officer",
+              location: "Hong Kong",
+            },
+            {
+              image: "/team/aida.png",
+              name: "Aida Nainggolan",
+              title: "Global Head of Design",
+              location: "Hong Kong",
+            },
+          ].map((member, index) => (
+            <div
+              key={index}
+              className="w-full flex flex-col gap-4 items-center"
+            >
+              <Image
+                src={member.image}
+                height={320}
+                width={320}
+                alt={`team-member-${index}`}
+              />
+              <div className="flex flex-col items-center">
+                <p className="text-lg font-semibold">{member.name}</p>
+                <p>{member.title}</p>
+                <p>{member.location}</p>
+              </div>
+            </div>
+          ))}
+        </div>
         <div className="flex flex-col gap-1 items-center">
           {teamMembers.map((member, index) => (
             <TeamMember

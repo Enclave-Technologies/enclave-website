@@ -31,13 +31,13 @@ const NewFooter = () => {
           <div className="flex flex-col md:flex-row gap-4 w-full items-start md:items-center justify-center">
             <Button
               variant="secondary footer-primary"
-              title="Book a Call"
+              title="Reach us on Whatsapp"
               link="https://wa.me/85264006201"
               rounded={true}
             />
             <Button
               variant="primary footer-secondary"
-              title="Get Started"
+              title="Book Consultation"
               link="/contact"
               rounded={true}
             />

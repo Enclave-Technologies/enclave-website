@@ -5,7 +5,7 @@ import { FiExternalLink } from "react-icons/fi";
 
 export const Button = ({
   variant = "primary",
-  link,
+  link = "#pricing",
   title,
   rounded = false,
   target = "_self",

@@ -19,10 +19,10 @@ const ScalingSection = ({ sectionNumber, sectionInfo }) => {
 
       // Map visible percentage to dynamic width
       if (visiblePercentage > 0.4) {
-        const newWidth = 100 - visiblePercentage * 20; // Scale between 100vw and 150vw
+        const newWidth = 80 - visiblePercentage * 0; // Scale between 100vw and 150vw
         setWidthPercentage(newWidth);
       } else {
-        const newWidth = 100;
+        const newWidth = 80;
         setWidthPercentage(newWidth);
       }
     };
@@ -42,20 +42,22 @@ const ScalingSection = ({ sectionNumber, sectionInfo }) => {
         height: "80vh",
         margin: "0 auto",
       }}
-      className={`sticky flex flex-row items-center justify-center top-[10vh] transition-all duration-500 ease-out bg-[#1C1C1C] rounded-[24px] text-white`}
+      className={`overflow-hidden w-[80vw] h-[80vh] sticky flex flex-row items-center justify-center top-[10vh] transition-all duration-500 ease-out bg-[#1C1C1C] rounded-[24px] text-white`}
     >
-      <div className="w-[80vw] h-[80vh] flex flex-col md:flex-row items-center justify-center gap-0 md:gap-16 p-8 md:p-0">
+      <div className="h-full flex flex-col md:flex-row items-center justify-center gap-0 md:gap-16 p-8">
         <div className="flex flex-col items-start justify-center gap-4 max-w-lg">
           <p className="leading-relaxed">Step {sectionNumber + 1}</p>
           <h1 className="text-4xl font-semibold">{sectionInfo.title}</h1>
           <p className="leading-relaxed">{sectionInfo.description}</p>
         </div>
-        <Image
-          src={sectionInfo.image}
-          alt="Solutions Development"
-          height={600}
-          width={600}
-        />
+        <div className="h-full flex items-center justify-center">
+          <Image
+            src={sectionInfo.image}
+            alt="Solutions Development"
+            height={540}
+            width={540}
+          />
+        </div>
       </div>
     </div>
   );
