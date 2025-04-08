@@ -43,21 +43,21 @@ const KPIs = () => {
 
         <div className="md:hidden flex flex-col space-y-12 mt-12">
           <GradientMetric
-            value="20M"
-            description="dollars in client revenue driven by our tailored solutions and strategies."
-            maxWidth="max-w-[250px]"
+            value="100%"
+            description="ROI Generated"
+            upto={false}
           />
 
           <GradientMetric
-            value="80K"
-            description="unique visitors engaging with the websites we build every month."
-            maxWidth="max-w-[250px]"
+            value="4.8/5"
+            description="Google Reviews"
+            upto={false}
           />
 
           <GradientMetric
-            value="50+"
-            description="projects successfully delivered across multiple industries."
-            maxWidth="max-w-[250px]"
+            value="100"
+            description="Page Speed Scores"
+            upto={false}
           />
         </div>
       </div>
