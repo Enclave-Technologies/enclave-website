@@ -101,7 +101,7 @@ const Testimony = ({ id }) => {
         <div className="flex flex-col items-center justify-center gap-8">
           <div className="flex flex-col items-center justify-center gap-6 px-8">
             <h1
-              className="text-[40px] md:text-[56px] lg:text-[72px] font-bold mb-6 text-[#121212] max-w-4xl text-center"
+              className="text-[40px] md:text-[56px] lg:text-[64px] font-bold mb-6 text-[#121212] max-w-4xl text-center"
               style={{
                 lineHeight: "1.2",
               }}
