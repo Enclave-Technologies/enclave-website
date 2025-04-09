@@ -16,7 +16,7 @@ export const Cross = () => {
       />
       <path
         d="M6.66797 6.5L18.668 18.5"
-        stroke="black"
+        stroke="currentColor"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"

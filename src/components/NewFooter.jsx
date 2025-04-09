@@ -43,7 +43,7 @@ const NewFooter = () => {
               variant="primary footer-primary"
               title="Book Consultation"
               target="_blank"
-              link="https://calendly.com/hello-enclave-studios/30min"
+              link="https://calendly.com/hello-enclave-studios/free-consult"
               rounded={true}
             />
           </div>

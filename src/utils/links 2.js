@@ -1,2 +1,3 @@
-export const calendlyBookingLink = "https://calendly.com/hello-enclave/30min";
+export const calendlyBookingLink =
+  "https://calendly.com/hello-enclave-studios/free-consult";
 export const contactLink = "/contact";

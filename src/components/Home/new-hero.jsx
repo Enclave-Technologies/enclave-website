@@ -222,7 +222,7 @@ const NewHero = () => {
                       <Button
                         variant="primary navigation"
                         title="Book Consultation"
-                        link="https://calendly.com/hello-enclave-studios/30min"
+                        link="https://calendly.com/hello-enclave-studios/free-consult"
                       />
                     </motion.div>
                   </div>
@@ -300,7 +300,7 @@ const NewHero = () => {
                         <Button
                           variant="primary navigation"
                           title="Book Consultation"
-                          link="https://calendly.com/hello-enclave-studios/30min"
+                          link="https://calendly.com/hello-enclave-studios/free-consult"
                         />
                       </motion.div>
                     </div>
