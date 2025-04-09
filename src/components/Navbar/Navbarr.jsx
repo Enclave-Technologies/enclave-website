@@ -75,7 +75,7 @@ export const Navbarr = () => {
             <Link
               href="/contact"
               target="_blank"
-              className="bg-[#FB4E29] flex items-center justify-center h-full w-full text-white px-4 py-2 rounded-full transition-colors duration-200 text-base font-medium"
+              className="bg-[#FB4E29] hover:bg-[#fb7429] flex items-center justify-center h-full w-full text-white px-4 py-2 rounded-full transition-colors duration-200 text-base font-medium"
             >
               Get A Free Strategy
             </Link>

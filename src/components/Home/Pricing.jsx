@@ -30,25 +30,12 @@ const PricingCard = ({ pricing, highlighted }) => {
       <Link href={"/contact"} className="" target={"_self"}>
         <button
           className={`primary flex flex-row items-center gap-2 min-w-fit w-full !rounded-full ${
-            highlighted ? "!bg-white" : ""
+            highlighted
+              ? "!text-[#FB4E29] hover:!text-[#FB4E29] !bg-white hover:!bg-gray-100"
+              : ""
           }`}
         >
-          <span className="button-text-container min-w-fit">
-            <span
-              className={`button-text w-fit ${
-                highlighted ? "!text-[#FB4E29]" : ""
-              }`}
-            >
-              {"Get Started"}
-            </span>
-            <span
-              className={`button-text w-fit ${
-                highlighted ? "!text-[#FB4E29]" : ""
-              }`}
-            >
-              {"Get Started"}
-            </span>
-          </span>
+          Get Started
         </button>
       </Link>
     </div>

@@ -43,9 +43,9 @@ const ProjectCard = ({
           </h3>
           <p>{description}</p>
         </div>
-        <div>
+        <div className="w-40">
           <Button
-            variant="secondary"
+            variant="primary"
             title="Visit Project"
             link={externalLink}
             rounded
@@ -155,13 +155,13 @@ const Projects = ({ id }) => {
             />
           ))}
         </div>
-
+        {/* 
         <Button
           variant="primary navigation"
           title="Explore All Projects"
           link="/works"
           rounded={true}
-        />
+        /> */}
       </div>
     </section>
   );

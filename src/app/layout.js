@@ -2,9 +2,13 @@ import { Albert_Sans, Onest } from "next/font/google";
 import "./globals.css";
 import Head from "next/head";
 import Script from "next/script";
+import Clarity from "@microsoft/clarity";
 
 const onest = Onest({ subsets: ["latin"], variable: "--font-onest" });
 const albert = Albert_Sans({ subsets: ["latin"], variable: "--font-albert" });
+const projectId = "r10gunijpv";
+
+Clarity.init(projectId);
 
 export const metadata = {
   title: {

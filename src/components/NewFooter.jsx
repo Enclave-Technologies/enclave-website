@@ -33,13 +33,14 @@ const NewFooter = () => {
           </h3>
           <div className="flex flex-col md:flex-row gap-4 w-full items-start md:items-center justify-center">
             <Button
-              variant="secondary footer-primary"
+              variant="secondary footer-secondary"
               title="Reach us on Whatsapp"
+              target="_blank"
               link="https://wa.me/85264006201"
               rounded={true}
             />
             <Button
-              variant="primary footer-secondary"
+              variant="primary footer-primary"
               title="Book Consultation"
               target="_blank"
               link="https://calendly.com/hello-enclave-studios/30min"

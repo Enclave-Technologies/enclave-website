@@ -17,15 +17,7 @@ export const Button = ({
           rounded ? "!rounded-full" : ""
         }`}
       >
-        <span className="button-text-container min-w-fit">
-          <span className="button-text w-fit">{title}</span>
-          <span className="button-text w-fit">{title}</span>
-        </span>
-        {/* {variant == "primary" && (
-          <Image src={`/icons/arrow-1.svg`} width={16} height={16} alt="" />
-        )} */}
-
-        {/* {variant == "secondary" && <FiExternalLink color="#FB4E29" size={20} />} */}
+        <span className="button-text w-fit">{title}</span>
       </button>
     </Link>
   );
