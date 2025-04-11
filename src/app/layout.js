@@ -8,8 +8,6 @@ const onest = Onest({ subsets: ["latin"], variable: "--font-onest" });
 const albert = Albert_Sans({ subsets: ["latin"], variable: "--font-albert" });
 const projectId = "r10gunijpv";
 
-Clarity.init(projectId);
-
 export const metadata = {
   title: {
     template: "Website & App Development Studio in Hong Kong | Enclave Studios",
@@ -20,6 +18,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  Clarity.init(projectId);
   return (
     <html
       lang="en"
@@ -61,13 +60,6 @@ export default function RootLayout({ children }) {
 
   gtag('config', 'G-80NXJV4T5M');
   `}
-        </Script>
-        <Script id="clarity">
-          {`(function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "r10gunijpv");`}
         </Script>
         {children}
         {/* <div
