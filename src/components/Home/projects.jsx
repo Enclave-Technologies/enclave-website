@@ -30,8 +30,11 @@ const ProjectCard = ({
           <h5>{title}</h5>
           <p>{description}</p>
           <div className="flex flex-row gap-2">
-            {tags.map((tag) => (
-              <div className="px-3 py-1 bg-[#E9E7E7]">
+            {tags.map((tag, index) => (
+              <div
+                className="px-3 py-1 bg-[#E9E7E7]"
+                key={`${title}-tag-${index}`}
+              >
                 <p className="text-[10px] md:text-xs">{tag}</p>
               </div>
             ))}

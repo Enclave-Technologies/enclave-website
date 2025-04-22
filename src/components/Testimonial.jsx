@@ -20,9 +20,8 @@ const Testimonial = ({
         <div className="flex flex-col gap-8">
           <div className="w-full hidden md:flex flex-wrap justify-center items-center gap-4 md:gap-12">
             {[1, 2, 3, 4, 5].map((partner, index) => (
-              <div className="w-[140px] h-[40px] relative">
+              <div className="w-[140px] h-[40px] relative" key={index}>
                 <Image
-                  key={index}
                   src={`partner-${partner}.png`}
                   fill
                   objectFit="contain"
