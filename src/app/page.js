@@ -11,7 +11,6 @@ import { Navbarr } from "../components/Navbar/Navbarr";
 import Team from "../components/Home/team";
 import NewFooter from "../components/NewFooter";
 import OurServices from "../components/Home/our-services";
-import Partners from "../components/Home/Partners";
 import Chat from "../components/Home/chat";
 import KPIs from "../components/Home/KPIs";
 import Pricing from "../components/Home/Pricing";
@@ -60,7 +59,6 @@ export default function Home() {
         {/* <ScalingSections /> */}
         {/* <Team id="about-us" /> */}
         <KPIs id="new-services" />
-        {/* <Partners id="partners" /> */}
         <Testimonial id="testimonial" />
         {/* <Pricing id="pricing" /> */}
         {/* <Steps id="steps" /> */}
