@@ -135,12 +135,12 @@ const OurServices = ({ id }) => {
               description:
                 "We create unique brand identities that reflect your brand's true values, establish credibility, and leave a lasting impression.",
             },
-            {
-              image: "/service-4.png",
-              title: "Application Development Tailored for Your Business",
-              description:
-                "We create unique brand identities that reflect your brand's true values, establish credibility, and leave a lasting impression.",
-            },
+            // {
+            //   image: "/service-4.png",
+            //   title: "Application Development Tailored for Your Business",
+            //   description:
+            //     "We create unique brand identities that reflect your brand's true values, establish credibility, and leave a lasting impression.",
+            // },
           ].map((serviceInfo, index) => (
             <ServiceCard serviceInfo={serviceInfo} key={index} />
           ))}
