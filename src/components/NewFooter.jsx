@@ -29,34 +29,32 @@ const NewFooter = () => {
               lineHeight: 1.2,
             }}
           >
-            Start Building Magic Today
+            Ready to Level Up Your Business?
           </h3>
           <div className="flex flex-col md:flex-row gap-4 w-full items-start md:items-center justify-center">
             <Button
               variant="secondary footer-secondary"
-              title="Reach us on Whatsapp"
+              title="Book A Consultation"
               target="_blank"
-              link="https://wa.me/85264006201"
-              rounded={true}
+              link="/contact"
             />
             <Button
               variant="primary footer-primary"
-              title="Book Consultation"
+              title="Join Newsletter"
               target="_blank"
-              link="https://calendly.com/hello-enclave-studios/free-consult"
-              rounded={true}
+              link="https://wa.me/85264006201"
             />
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-0 md:gap-8">
           {/* Enclave Studios section */}
           <div className="col-span-1 lg:col-span-4 md:mt-0 mt-8">
-            <h3 className="text-[#FFF] font-bold mb-6">Enclave Studios</h3>
+            <p className="text-[#FFF] font-bold mb-6">Enclave Studios</p>
             <ul className="md:space-y-5 space-y-3">
               <li>
                 <Link
                   href="/works"
-                  className="text-[#FFF] text-sm hover:text-[#FB4E29]"
+                  className="text-[#FFF] text-sm hover:text-[#E3E3E3]"
                 >
                   Works
                 </Link>
@@ -64,7 +62,7 @@ const NewFooter = () => {
               <li>
                 <Link
                   href="/#our-services"
-                  className="text-[#FFF] text-sm hover:text-[#FB4E29]"
+                  className="text-[#FFF] text-sm hover:text-[#E3E3E3]"
                 >
                   Services
                 </Link>
@@ -72,7 +70,7 @@ const NewFooter = () => {
               <li>
                 <Link
                   href="/#team"
-                  className="text-[#FFF] text-sm hover:text-[#FB4E29]"
+                  className="text-[#FFF] text-sm hover:text-[#E3E3E3]"
                 >
                   About Us
                 </Link>
@@ -80,12 +78,12 @@ const NewFooter = () => {
             </ul>
           </div>
           <div className="col-span-1 lg:col-span-4 md:mt-0 mt-8">
-            <h3 className="text-[#FFF] font-bold mb-6">Services</h3>
+            <p className="text-[#FFF] font-bold mb-6">Services</p>
             <ul className="md:space-y-5 space-y-3">
               <li>
                 <Link
                   href="/"
-                  className="text-[#FFF] text-sm hover:text-[#FB4E29]"
+                  className="text-[#FFF] text-sm hover:text-[#E3E3E3]"
                 >
                   Branding
                 </Link>
@@ -93,7 +91,7 @@ const NewFooter = () => {
               <li>
                 <Link
                   href="/"
-                  className="text-[#FFF] text-sm hover:text-[#FB4E29]"
+                  className="text-[#FFF] text-sm hover:text-[#E3E3E3]"
                 >
                   Website Design
                 </Link>
@@ -101,7 +99,7 @@ const NewFooter = () => {
               <li>
                 <Link
                   href="/"
-                  className="text-[#FFF] text-sm hover:text-[#FB4E29]"
+                  className="text-[#FFF] text-sm hover:text-[#E3E3E3]"
                 >
                   Mobile App Design
                 </Link>
@@ -109,7 +107,7 @@ const NewFooter = () => {
               <li>
                 <Link
                   href="/"
-                  className="text-[#FFF] text-sm hover:text-[#FB4E29]"
+                  className="text-[#FFF] text-sm hover:text-[#E3E3E3]"
                 >
                   Search Engine Optimization
                 </Link>
@@ -117,7 +115,7 @@ const NewFooter = () => {
               <li>
                 <Link
                   href="/"
-                  className="text-[#FFF] text-sm hover:text-[#FB4E29]"
+                  className="text-[#FFF] text-sm hover:text-[#E3E3E3]"
                 >
                   Paid Ads
                 </Link>
@@ -126,12 +124,12 @@ const NewFooter = () => {
           </div>
           {/* Contact Us section */}
           <div className="col-span-1 lg:col-span-4 md:mt-0 mt-8">
-            <h3 className="text-[#FFF] font-bold mb-6">Contact Us</h3>
+            <p className="text-[#FFF] font-bold mb-6">Contact Us</p>
             <ul className="md:space-y-5 space-y-3">
               <li>
                 <a
                   href="mailto:hello@enclave-studios.com"
-                  className="text-[#FFF] text-sm hover:text-[#FB4E29]"
+                  className="text-[#FFF] text-sm hover:text-[#E3E3E3]"
                 >
                   hello@enclave-studios.com
                 </a>
@@ -140,7 +138,7 @@ const NewFooter = () => {
                 <a
                   href="https://api.whatsapp.com/send/?phone=64006201&text&type=phone_number&app_absent=0"
                   target="_blank"
-                  className="text-[#FFF] text-sm hover:text-[#FB4E29]"
+                  className="text-[#FFF] text-sm hover:text-[#E3E3E3]"
                 >
                   Whatsapp: +852 5929 1909
                 </a>
@@ -166,7 +164,7 @@ const NewFooter = () => {
               href="https://www.instagram.com/enclave_studios_/"
               target="_blank"
               rel="noreferrer"
-              className="text-white hover:text-[#FB4E29] transition-colors"
+              className="text-white hover:text-[#E3E3E3] transition-colors"
               aria-label="Instagram"
             >
               <FaSquareInstagram size={24} />
@@ -175,7 +173,7 @@ const NewFooter = () => {
               href="https://hk.linkedin.com/company/enclave-live"
               target="_blank"
               rel="noreferrer"
-              className="text-white hover:text-[#FB4E29] transition-colors"
+              className="text-white hover:text-[#E3E3E3] transition-colors"
               aria-label="LinkedIn"
             >
               <FaLinkedin size={24} />

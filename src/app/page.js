@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 
+import Hero from "../components/Home/Hero";
 import Testimony from "../components/Home/testimony";
 import Steps from "../components/Home/steps";
 import Projects from "../components/Home/projects";
@@ -10,11 +11,13 @@ import { Navbarr } from "../components/Navbar/Navbarr";
 import Team from "../components/Home/team";
 import NewFooter from "../components/NewFooter";
 import OurServices from "../components/Home/our-services";
+import Partners from "../components/Home/Partners";
 import Chat from "../components/Home/chat";
 import KPIs from "../components/Home/KPIs";
 import Pricing from "../components/Home/Pricing";
 import ScalingSections from "../components/Home/new-steps";
 import CalendlyEmbed from "../components/Calendly/CalendlyEmbed";
+import Testimonial from "../components/Testimonial";
 // Case-sensitivity is turned on for vercel builds
 
 export default function Home() {
@@ -46,18 +49,21 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between text-black relative home-font gap-32 bg-[#FAFAFA]">
+    <main className="flex min-h-screen flex-col items-center justify-between text-black relative home-font gap-32 bg-[#FFFFFF]">
       {/* <div className="cursor" /> */}
       <div className="z-10">
         <Navbarr />
-        <Testimony id="testimony" />
+        <Hero id="hero" />
+        {/* <Testimony id="testimony" /> */}
         <OurServices id="our-services" />
-        <ScalingSections />
-        <Team id="about-us" />
-        {/* <KPIs id="new-services" /> */}
         <Projects id="projects" />
-        <Pricing id="pricing" />
-        <Steps id="steps" />
+        {/* <ScalingSections /> */}
+        {/* <Team id="about-us" /> */}
+        <KPIs id="new-services" />
+        {/* <Partners id="partners" /> */}
+        <Testimonial id="testimonial" />
+        {/* <Pricing id="pricing" /> */}
+        {/* <Steps id="steps" /> */}
         {/* <NewServices id="new-services" /> */}
         {/* TODO: Add a 4 step process here */}
       </div>

@@ -79,7 +79,7 @@ export default function Works() {
     >
       {/* <div id="cursor" /> */}
       <Navbarr />
-      <div className="z-10 bg-[#FAFAFA] w-full">
+      <div className="z-10 bg-[#FFFFFF] w-full">
         <div className="w-full">
           <div className="sticky top-0 left-0 min-h-screen min-w-full flex flex-col items-center justify-center gap-24 z-0">
             <h1

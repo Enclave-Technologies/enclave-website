@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
+import SectionHeader from "../SectionHeader";
 import Link from "next/link";
 import { Button } from "../Button";
 
@@ -14,53 +15,47 @@ const NumberCircle = ({ number }) => (
 );
 
 const OurServices = ({ id }) => {
-  useEffect(() => {
-    // Adding scroll event listener
-    if (screen.width > 960) {
-      document.addEventListener("scroll", horizontalScroll);
-      //Selecting Elements
-      let sticky = document.querySelector(".sticky");
-      let horizontal = document.querySelector(".horizontal");
-      let stickyParent = document.querySelector(".sticky-parent");
+  // useEffect(() => {
+  //   // Adding scroll event listener
+  //   if (screen.width > 960) {
+  //     document.addEventListener("scroll", horizontalScroll);
+  //     //Selecting Elements
+  //     let sticky = document.querySelector(".sticky");
+  //     let horizontal = document.querySelector(".horizontal");
+  //     let stickyParent = document.querySelector(".sticky-parent");
 
-      let scrollWidth = sticky.scrollWidth;
-      let verticalScrollHeight =
-        stickyParent.getBoundingClientRect().height -
-        sticky.getBoundingClientRect().height;
+  //     let scrollWidth = sticky.scrollWidth;
+  //     let verticalScrollHeight =
+  //       stickyParent.getBoundingClientRect().height -
+  //       sticky.getBoundingClientRect().height;
 
-      //Scroll function
-      function horizontalScroll() {
-        //Checking whether the sticky element has entered into view or not
-        let stickyPosition = sticky.getBoundingClientRect().top;
-        if (stickyPosition > 1) {
-          horizontal.style.transform = `translateX(${0}px)`;
-        } else {
-          let scrolled = stickyParent.getBoundingClientRect().top; //how much is scrolled?
-          horizontal.style.transform = `translateX(${
-            (scrollWidth / verticalScrollHeight) * scrolled * 0.8
-          }px)`;
-        }
-      }
-    }
-  }, []);
+  //     //Scroll function
+  //     function horizontalScroll() {
+  //       //Checking whether the sticky element has entered into view or not
+  //       let stickyPosition = sticky.getBoundingClientRect().top;
+  //       if (stickyPosition > 1) {
+  //         horizontal.style.transform = `translateX(${0}px)`;
+  //       } else {
+  //         let scrolled = stickyParent.getBoundingClientRect().top; //how much is scrolled?
+  //         horizontal.style.transform = `translateX(${
+  //           (scrollWidth / verticalScrollHeight) * scrolled * 0.8
+  //         }px)`;
+  //       }
+  //     }
+  //   }
+  // }, []);
 
   return (
-    <section id={id} className="sticky-parent">
-      <div className="max-w-7xl justify-center gap-6 md:gap-10 pt-[40px] sticky top-0 h-full md:max-h-screen overflow-hidden">
-        <div className="flex flex-col items-center gap-2">
-          <h4 className="text-[#FB4E29] text-[20px] md:text-[24px] lg:text-[24px] font-bold">
-            Our Services
-          </h4>
-          <h2 className="text-[32px] md:text-[40px] lg:text-[48px] max-w-3xl font-bold mt-2 mb-4 capitalize text-center">
-            Custom Solutions That Deliver Value For Your Business
-          </h2>
-          {/* <p className="text-[#26120D] mx-auto text-[18px] md:text-[20px] leading-[150%] text-center max-w-4xl">
-            Digital marketing includes SEO, PPC, content marketing and so on.
-            These solutions are crucial for reaching audiences online, expanding
-            your digital presence, and attracting more businesses!
-          </p> */}
-        </div>
-        <div className="flex flex-col lg:flex-row overflow-visible justify-start md:gap-12 gap-6 max-w-7xl horizontal px-0 md:px-48 mt-4">
+    <section id={id}>
+      <div className="max-w-7xl px-8 md:px-0 flex flex-col justify-center gap-12 md:gap-16 sticky top-0 h-full overflow-hidden">
+        <SectionHeader
+          tag={"Innovation"}
+          title={"Transforming Ideas Into Digital Solutions"}
+          description={
+            "At Enclave Studios, we specialise in turning your vision into reality through cutting-edge technology. Our expertise spans app development, AI Solutions & Web3 Integration."
+          }
+        />
+        {/* <div className="flex flex-col lg:flex-row overflow-visible justify-start md:gap-12 gap-6 max-w-7xl horizontal px-0 md:px-48 mt-4">
           {[
             {
               tag: "Brand Development",
@@ -119,9 +114,62 @@ const OurServices = ({ id }) => {
               </div>
             </div>
           ))}
+        </div> */}
+        <div className="flex flex-wrap items-center gap-12">
+          {[
+            {
+              image: "/service-1.png",
+              title: "Application Development Tailored for Your Business",
+              description:
+                "We create unique brand identities that reflect your brand's true values, establish credibility, and leave a lasting impression.",
+            },
+            {
+              image: "/service-2.png",
+              title: "Application Development Tailored for Your Business",
+              description:
+                "We create unique brand identities that reflect your brand's true values, establish credibility, and leave a lasting impression.",
+            },
+            {
+              image: "/service-3.png",
+              title: "Application Development Tailored for Your Business",
+              description:
+                "We create unique brand identities that reflect your brand's true values, establish credibility, and leave a lasting impression.",
+            },
+            {
+              image: "/service-4.png",
+              title: "Application Development Tailored for Your Business",
+              description:
+                "We create unique brand identities that reflect your brand's true values, establish credibility, and leave a lasting impression.",
+            },
+          ].map((serviceInfo, index) => (
+            <ServiceCard serviceInfo={serviceInfo} key={index} />
+          ))}
+        </div>
+        <div className="flex flex-wrap gap-4 justify-center  mx-auto">
+          <Button variant="primary" title="Learn More" link="/contact" />
+          <Button
+            variant="secondary"
+            title="Sign Up"
+            link="/contact"
+            className="hidden md:block"
+          />
         </div>
       </div>
     </section>
+  );
+};
+
+const ServiceCard = ({ serviceInfo }) => {
+  return (
+    <div className="flex flex-col gap-8 min-w-[280px] flex-1 overflow-hidden">
+      <div className="bg-red-400 min-w-[280px] aspect-[1.5/1] rounded-[48px] relative overflow-hidden">
+        <Image src={serviceInfo.image} className="block" fill />
+      </div>
+      <div className="flex flex-col gap-2">
+        <h4>{serviceInfo.title}</h4>
+        <p>{serviceInfo.description}</p>
+      </div>
+    </div>
   );
 };
 

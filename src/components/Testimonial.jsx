@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import SectionHeader from "./SectionHeader";
 
 const Testimonial = ({
   quote,
@@ -10,47 +11,65 @@ const Testimonial = ({
   gradientColors = "linear-gradient(106.81deg, rgba(41, 251, 78, 0.25) 0%, rgba(41, 214, 251, 0.25) 47.5%, rgba(78, 41, 251, 0.25) 100%)",
 }) => {
   return (
-    <div
-      className="flex flex-col justify-center items-center p-6 md:p-14 gap-6 w-full max-w-[1200px] mx-auto h-auto md:rounded-[48px] rounded-[16px]"
-      style={{
-        background: gradientColors,
-        boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.1)",
-      }}
-    >
-      <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-4 md:gap-6 w-full relative">
-        <span className="font-bold text-[60px] md:text-[150px] leading-none text-[#121212] absolute md:-top-10 top-0 md:left-4 left-0 md:static">
-          &ldquo;
-        </span>
-        <p className="font-bold text-xl md:text-2xl lg:text-[28px] text-center text-[#100805] max-w-[760px] mt-10 md:mt-6">
-          {quote}
-        </p>
-        <span className="font-bold text-[60px] md:text-[150px] leading-none text-[#121212] absolute md:bottom-0 -bottom-12 md:right-4 right-0 md:static rotate-180">
-          &ldquo;
-        </span>
-      </div>
-
-      <div className="flex flex-col md:flex-row justify-center items-center gap-4 w-full mt-6 md:mt-0">
-        <div className="flex flex-col justify-center items-center md:items-end order-3 md:order-1">
-          <h4 className="font-bold text-[#1B0D09]">{name}</h4>
-          <p className="font-normal text-base text-[#26120D]">{title}</p>
+    <section className="">
+      <div className="max-w-7xl px-8 flex flex-col items-center justify-center gap-4 md:gap-8 h-full overflow-hidden">
+        <SectionHeader
+          tag="Reliability"
+          title={"Trusted By Industry Leaders and Innovators"}
+        />
+        <div className="flex flex-col gap-8">
+          <div className="w-full hidden md:flex flex-wrap justify-center items-center gap-4 md:gap-12">
+            {[1, 2, 3, 4, 5].map((partner) => (
+              <div className="w-[140px] h-[40px] relative">
+                <Image
+                  src={`partner-${partner}.png`}
+                  fill
+                  objectFit="contain"
+                  className="mix-blend-luminosity"
+                />
+              </div>
+            ))}
+          </div>
+          <div className="w-full flex flex-col md:flex-row items-center justify-center gap-4 md:gap-16">
+            <div className="w-full md:w-1/2 aspect-[1/1.4] relative">
+              <Image src="/testimonial.png" fill objectFit="contain" />
+            </div>
+            <div className="flex flex-col gap-6">
+              <div className="flex flex-row gap-0.5">
+                {[1, 2, 3, 4, 5].map((star, index) => (
+                  <svg
+                    key={index}
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
+                      fill="black"
+                      stroke="black"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                ))}
+              </div>
+              <p>
+                “Enclave Studios transformed our vision into a functional
+                prototype that exceeded our expectations. Their expertise in
+                application development is unmatched!”
+              </p>
+              <div>
+                <p className="font-semibold">Ketty Shan</p>
+                <p>CEO, Atelier Shan</p>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div className=" md:block md:h-[40px] md:w-[1px] w-[60%] h-[1px] bg-[#121212] mx-6 order-2"></div>
-        <div className="w-[160px] h-[40px] mt-2 md:mt-0 order-1 md:order-3">
-          {companyLogo ? (
-            <Image
-              src={companyLogo}
-              alt={companyName || "Company logo"}
-              width={160}
-              height={40}
-              className="object-contain"
-            />
-          ) : (
-            <span className="font-bold">{companyName}</span>
-          )}
-        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

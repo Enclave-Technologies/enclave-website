@@ -9,11 +9,12 @@ export const Button = ({
   title,
   rounded = false,
   target = "_self",
+  className = "",
 }) => {
   return (
-    <Link href={link} className="" target={target}>
+    <Link href={link} className={className} target={target}>
       <button
-        className={`${variant} flex flex-row items-center gap-2 min-w-fit ${
+        className={`${variant} flex flex-row items-center gap-2 min-w-[180px] ${
           rounded ? "!rounded-full" : ""
         }`}
       >

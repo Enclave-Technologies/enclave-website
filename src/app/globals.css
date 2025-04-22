@@ -22,7 +22,7 @@
 body {
   /* cursor: none; */
   color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
+  background: #fff;
   max-width: 100vw;
   overflow-x: hidden;
   display: flex;
@@ -30,11 +30,49 @@ body {
   align-items: center;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-onest);
+  font-style: normal !important;
+}
+
+p,
+span,
+a,
+li,
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-albert);
+  font-style: normal !important;
+}
+
 section {
-  @apply flex flex-col justify-start items-center py-16 px-8 w-full bg-[#FAFAFA];
+  @apply flex flex-col justify-start items-center py-20 px-8 w-full bg-[#FFFFFF];
   width: auto;
   /* min-height: 100vh; */
   max-width: 1920px;
+}
+
+h2 {
+  @apply md:font-extrabold !text-[1rem];
+}
+
+h3 {
+  @apply md:font-normal text-[1.75rem] md:text-[2.5rem] leading-tight;
+}
+
+h4 {
+  @apply md:font-normal text-[1.5rem] leading-tight;
+}
+
+h5 {
+  @apply md:font-semibold text-[1.25rem] leading-tight;
 }
 
 .lead {
@@ -54,17 +92,8 @@ section {
   }
 }
 
-h2 {
-  @apply text-3xl md:text-5xl font-semibold;
-  @apply uppercase;
-}
-
 p {
   font-family: "Roboto", sans-serif;
-}
-
-h3 {
-  @apply text-xl;
 }
 
 h6 {
@@ -270,8 +299,12 @@ li a:hover {
   text-decoration: underline;
 }
 
+button > span {
+  @apply !text-sm;
+}
+
 .primary {
-  @apply flex flex-row items-center w-full justify-center font-bold py-3 px-4 rounded-xl transition-all duration-150 ease-in-out;
+  @apply flex flex-row items-center w-full justify-center font-bold py-3 px-4 rounded-[4px] transition-all duration-150 ease-in-out;
   /* width: 80px; */
   background-color: var(--primary-color);
   border: 2px solid var(--primary-color);
@@ -296,15 +329,15 @@ li a:hover {
 
 .footer-primary:hover {
   @apply !w-fit;
-  background-color: #fff !important;
-  border: 2px solid #fff !important;
+  background-color: #e7e7e7 !important;
+  border: 2px solid #e7e7e7 !important;
   color: #43140b !important;
 }
 
 .footer-secondary:hover {
-  @apply !w-fit !bg-[#FB7429];
-  border: 2px solid #fb7429 !important;
-  color: #fff !important;
+  @apply !w-fit !bg-[#e7e7e7];
+  border: 2px solid #e7e7e7 !important;
+  color: #000 !important;
 }
 
 .navigation {
@@ -312,32 +345,27 @@ li a:hover {
 }
 
 .secondary {
-  @apply flex flex-row justify-center bg-transparent text-[#FB4E29] font-bold py-3 px-4 rounded-xl w-full transition-all duration-150 ease-in-out;
+  @apply flex flex-row justify-center bg-transparent text-[#FB4E29] font-bold py-3 px-4 rounded-[4px] w-full transition-all duration-150 ease-in-out;
   border: 2px solid #fb4e29;
   cursor: pointer;
 }
 
 .secondary:hover {
-  @apply bg-[#FB4E29] rounded-xl w-full transition-all duration-150 ease-in-out;
+  @apply bg-[#fc8870] w-full transition-all duration-150 ease-in-out;
   /* width: 80px; */
-  border-color: #fb4e29;
+  border-color: #fc8870;
   color: #fff;
   cursor: pointer;
   position: relative;
 }
 
 .primary:hover {
-  @apply bg-[#FB7429] rounded-xl w-full transition-all duration-150 ease-in-out -translate-y-0.5;
+  @apply bg-[#fc8870] w-full transition-all duration-150 ease-in-out;
   /* width: 80px; */
-  border-color: #fb7429;
+  border-color: #fc8870;
   color: #fff;
   cursor: pointer;
   position: relative;
-}
-
-.primary span {
-  display: inline-block;
-  margin: 0;
 }
 
 button .button-text-container {
@@ -603,28 +631,6 @@ button:hover .button-text-container span {
 .home-font {
   font-family: "Albert Sans", sans-serif !important;
   max-width: 100vw;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-onest);
-  font-style: normal !important;
-}
-
-p,
-span,
-a,
-li,
-button,
-input,
-textarea,
-select {
-  font-family: var(--font-albert);
-  font-style: normal !important;
 }
 
 .sticky-parent {

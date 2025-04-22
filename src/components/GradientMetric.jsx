@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 const GradientMetric = ({
   value,
   description,
-  gradient = "linear-gradient(107.56deg, #FBB729 2.2%, #FB296D 95.31%)",
+  gradient = "linear-gradient(107.56deg, #FF6B00 2.2%, #FF2E00 95.31%)",
   fontSize = "text-[36px] md:text-[56px]",
   maxWidth = "max-w-xs",
   duration = 2000, // Animation duration in ms
@@ -73,7 +73,7 @@ const GradientMetric = ({
 
   return (
     <div
-      className="rounded-3xl flex flex-col items-start justify-end bg-white border-1 border-[#E9E7E7] border px-6 py-20 shadow-lg shadow-gray-200"
+      className="rounded-3xl flex flex-col items-center justify-center bg-white border-1 border-[#E9E7E7] border px-6 py-20 shadow-lg shadow-gray-200"
       ref={metricRef}
     >
       {upto && (

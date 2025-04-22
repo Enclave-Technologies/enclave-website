@@ -26,7 +26,7 @@ export default function Contact() {
     <main className="flex w-full min-h-screen flex-col items-center justify-start text-black">
       {/* <div id="cursor" /> */}
       <Navbarr />
-      <div className="z-10 bg-[#FAFAFA] w-full flex flex-col items-center">
+      <div className="z-10 bg-[#FFFFFF] w-full flex flex-col items-center">
         <section className="w-full flex flex-col items-center max-w-7xl">
           <div className="inner-container min-h-screen flex flex-col items-start justify-center gap-24 md:!pr-96">
             <h1 className="text-6xl font-bold pt-12">
