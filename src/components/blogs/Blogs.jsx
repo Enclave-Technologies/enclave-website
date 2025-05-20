@@ -194,228 +194,230 @@ const Blogs = () => {
   }
 
   return (
-    <div className="min-h-screen mt-[70px] w-[90vw]">
+    <div className="min-h-screen w-full flex relative flex-col home-font gap-32 items-center justify-between">
       <Navbarr />
 
-      <div className="py-16">
-        <div className="mb-16">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Blog</h1>
-          <p className="text-lg text-gray-600">
-            Empowering Your Digital Journey with Insights and Innovation
-          </p>
-          {error && (
-            <div className="mt-4 p-3 bg-orange-100 text-orange-700 rounded-md">
-              <p>
-                Using sample blog data for display. Strapi connection error:{" "}
-                {error}
-              </p>
-            </div>
-          )}
-        </div>
+      <div className="py-16 z-10 w-screen bg-white">
+        <div className="w-[90vw] mx-auto mt-[70px]">
+          <div className="mb-16">
+            <h1 className="text-[56px] font-bold text-gray-900 mb-4">Blog</h1>
+            <p className="text-lg text-gray-600">
+              Empowering Your Digital Journey with Insights and Innovation
+            </p>
+            {error && (
+              <div className="mt-4 p-3 bg-orange-100 text-orange-700 rounded-md">
+                <p>
+                  Using sample blog data for display. Strapi connection error:{" "}
+                  {error}
+                </p>
+              </div>
+            )}
+          </div>
 
-        <div className="flex flex-col lg:flex-row gap-8">
-          {/* Left Side */}
-          <div className="lg:w-2/3 space-y-10">
-            {displayBlogs.slice(0, 5).map((blog) => (
-              <div
-                key={blog.id}
-                className="overflow-hidden flex flex-col md:flex-row"
-                style={{
-                  background:
-                    "linear-gradient(113.44deg, rgba(255, 255, 255, 0.4) 22.6%, rgba(255, 255, 255, 0.1) 92.47%)",
-                  boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.2)",
-                  backdropFilter: "blur(15px)",
-                  borderRadius: "12px",
-                }}
-              >
-                <div className="md:w-2/5 relative">
-                  <div className="aspect-[4/3] bg-gray-300 w-full h-full">
-                    {/* Placeholder for blog image */}
-                    <div className="flex items-center justify-center h-full">
-                      {blog?.cover?.url && !imageErrors[blog?.id] ? (
-                        <Image
-                          src={
-                            blog?.cover?.url.startsWith("http")
-                              ? blog?.cover?.url
-                              : `http://localhost:1337${blog?.cover?.url}`
-                          }
-                          alt={blog?.title}
-                          className="object-cover w-full h-full"
-                          width={400}
-                          height={300}
-                          unoptimized={blog?.cover?.url.startsWith("http")}
-                          onError={() => handleImageError(blog?.id)}
-                        />
-                      ) : (
-                        <svg
-                          className="w-16 h-16 text-gray-400"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
+          <div className="flex flex-col lg:flex-row gap-8">
+            {/* Left Side */}
+            <div className="lg:w-2/3 space-y-10">
+              {displayBlogs.slice(0, 5).map((blog) => (
+                <div
+                  key={blog.id}
+                  className="overflow-hidden flex flex-col md:flex-row"
+                  style={{
+                    background:
+                      "linear-gradient(113.44deg, rgba(255, 255, 255, 0.4) 22.6%, rgba(255, 255, 255, 0.1) 92.47%)",
+                    boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.2)",
+                    backdropFilter: "blur(15px)",
+                    borderRadius: "12px",
+                  }}
+                >
+                  <div className="md:w-2/5 relative">
+                    <div className="aspect-[4/3] bg-gray-300 w-full h-full">
+                      <div className="flex items-center justify-center h-full">
+                        {blog?.cover?.url && !imageErrors[blog?.id] ? (
+                          <Image
+                            src={
+                              blog?.cover?.url.startsWith("http")
+                                ? blog?.cover?.url
+                                : `http://localhost:1337${blog?.cover?.url}`
+                            }
+                            alt={blog?.title}
+                            className="object-cover w-full h-full"
+                            width={400}
+                            height={300}
+                            unoptimized={blog?.cover?.url.startsWith("http")}
+                            onError={() => handleImageError(blog?.id)}
+                          />
+                        ) : (
+                          <svg
+                            className="w-16 h-16 text-gray-400"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                            ></path>
+                          </svg>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="md:w-3/5 p-6 flex flex-col justify-between h-auto">
+                    <div className="flex-1">
+                      <h2 className="text-xl font-bold text-gray-900 mb-2 normal-case">
+                        <Link
+                          href={`/blog?id=${blog.id}`}
+                          className="hover:text-[#FB4E29] transition-colors"
                         >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                          ></path>
-                        </svg>
-                      )}
+                          {blog?.title}
+                        </Link>
+                      </h2>
+                      <p className="text-[#6E605D] mb-4 line-clamp-2">
+                        {blog?.description}
+                      </p>
+                    </div>
+
+                    <div className="flex justify-between items-center">
+                      <span className="text-[#26120D] text-sm">
+                        {blog?.updatedAt
+                          ? formatDate(blog?.updatedAt)
+                          : "DD/MM/YYYY"}
+                      </span>
+                      <span className="text-[#6E605D] text-sm">
+                        {blog?.readTime || "XX minute read"}
+                      </span>
                     </div>
                   </div>
                 </div>
+              ))}
+            </div>
 
-                <div className="md:w-3/5 p-6 flex flex-col justify-between h-auto">
-                  <div className="flex-1">
+            {/* Right Side Column */}
+            <div className="lg:w-1/3 space-y-8">
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4 capitalize">
+                  Stay Informed
+                </h2>
+              </div>
+
+              {displayBlogs.slice(5, 7).map((blog) => (
+                <div
+                  key={blog.id}
+                  className="overflow-hidden"
+                  style={{
+                    background:
+                      "linear-gradient(113.44deg, rgba(255, 255, 255, 0.4) 22.6%, rgba(255, 255, 255, 0.1) 92.47%)",
+                    boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.2)",
+                    backdropFilter: "blur(15px)",
+                    borderRadius: "12px",
+                  }}
+                >
+                  <div className="relative">
+                    <div className="aspect-[16/9] bg-gray-300">
+                      <div className="flex items-center justify-center h-full">
+                        {blog?.cover?.url && !imageErrors[blog?.id] ? (
+                          <Image
+                            src={
+                              blog?.cover?.url.startsWith("http")
+                                ? blog?.cover?.url
+                                : `http://localhost:1337${blog?.cover?.url}`
+                            }
+                            alt={blog?.title}
+                            className="object-cover w-full h-full"
+                            width={400}
+                            height={300}
+                            unoptimized={blog?.cover?.url.startsWith("http")}
+                            onError={() => handleImageError(blog?.id)}
+                          />
+                        ) : (
+                          <svg
+                            className="w-16 h-16 text-gray-400"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                            ></path>
+                          </svg>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-6">
                     <h2 className="text-xl font-bold text-gray-900 mb-2 normal-case">
                       <Link
-                        href={`/blogs/${blog.id}`}
+                        href={`/blog?id=${blog.id}`}
                         className="hover:text-[#FB4E29] transition-colors"
                       >
                         {blog?.title}
                       </Link>
                     </h2>
-                    <p className="text-[#6E605D] mb-4 line-clamp-2">
-                      {blog?.description}
-                    </p>
-                  </div>
-
-                  <div className="flex justify-between items-center">
-                    <span className="text-[#26120D] text-sm">
-                      {blog?.updatedAt
-                        ? formatDate(blog?.updatedAt)
-                        : "DD/MM/YYYY"}
-                    </span>
-                    <span className="text-[#6E605D] text-sm">
-                      {blog?.readTime || "XX minute read"}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Right Side Column */}
-          <div className="lg:w-1/3 space-y-8">
-            <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4 capitalize">
-                Stay Informed
-              </h2>
-            </div>
-
-            {displayBlogs.slice(5, 7).map((blog) => (
-              <div
-                key={blog.id}
-                className="overflow-hidden"
-                style={{
-                  background:
-                    "linear-gradient(113.44deg, rgba(255, 255, 255, 0.4) 22.6%, rgba(255, 255, 255, 0.1) 92.47%)",
-                  boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.2)",
-                  backdropFilter: "blur(15px)",
-                  borderRadius: "12px",
-                }}
-              >
-                <div className="relative">
-                  <div className="aspect-[16/9] bg-gray-300">
-                    <div className="flex items-center justify-center h-full">
-                      {blog?.cover?.url && !imageErrors[blog?.id] ? (
-                        <Image
-                          src={
-                            blog?.cover?.url.startsWith("http")
-                              ? blog?.cover?.url
-                              : `http://localhost:1337${blog?.cover?.url}`
-                          }
-                          alt={blog?.title}
-                          className="object-cover w-full h-full"
-                          width={400}
-                          height={300}
-                          unoptimized={blog?.cover?.url.startsWith("http")}
-                          onError={() => handleImageError(blog?.id)}
-                        />
-                      ) : (
-                        <svg
-                          className="w-16 h-16 text-gray-400"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                          ></path>
-                        </svg>
-                      )}
+                    <div className="flex justify-between items-center mt-4">
+                      <span className="text-[#26120D] text-sm">
+                        {blog?.updatedAt
+                          ? formatDate(blog?.updatedAt)
+                          : "DD/MM/YYYY"}
+                      </span>
+                      <span className="text-[#6E605D] text-sm">
+                        {blog?.readTime || "XX minute read"}
+                      </span>
                     </div>
                   </div>
                 </div>
-                <div className="p-6">
-                  <h2 className="text-xl font-bold text-gray-900 mb-2 normal-case">
-                    <Link
-                      href={`/blogs/${blog.id}`}
-                      className="hover:text-[#FB4E29] transition-colors"
-                    >
-                      {blog?.title}
-                    </Link>
-                  </h2>
-                  <div className="flex justify-between items-center mt-4">
-                    <span className="text-[#26120D] text-sm">
-                      {blog?.updatedAt
-                        ? formatDate(blog?.updatedAt)
-                        : "DD/MM/YYYY"}
-                    </span>
-                    <span className="text-[#6E605D] text-sm">
-                      {blog?.readTime || "XX minute read"}
-                    </span>
+              ))}
+
+              {/* Newsletter Subscription */}
+              <div
+                className="py-8 px-6 rounded-2xl"
+                style={{
+                  background: "linear-gradient(0deg, #FEC8BD 0%, #FFFFFF 100%)",
+                  boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.2)",
+                }}
+              >
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  Stay Ahead of the Curve!
+                </h3>
+                <p className="text-[#26120D] text-sm mb-6">
+                  Get your latest insights and tips on website design, SEO, and
+                  data analytics
+                </p>
+
+                <form className="space-y-5">
+                  <div>
+                    <input
+                      type="email"
+                      placeholder="Email"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                      required
+                    />
                   </div>
-                </div>
+
+                  <div className="flex justify-center w-fit">
+                    <Button
+                      variant="primary navigation"
+                      title="Subscribe Now"
+                      link="/contact"
+                      rounded={true}
+                      type="submit"
+                    />
+                  </div>
+                </form>
               </div>
-            ))}
-
-            {/* Newsletter Subscription */}
-            <div
-              className="py-8 px-6 rounded-2xl"
-              style={{
-                background: "linear-gradient(0deg, #FEC8BD 0%, #FFFFFF 100%)",
-                boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.2)",
-              }}
-            >
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
-                Stay Ahead of the Curve!
-              </h3>
-              <p className="text-[#26120D] text-sm mb-6">
-                Get your latest insights and tips on website design, SEO, and
-                data analytics
-              </p>
-
-              <form className="space-y-5">
-                <div>
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                    required
-                  />
-                </div>
-
-                <div className="flex justify-center w-fit">
-                  <Button
-                    variant="primary navigation"
-                    title="Subscribe Now"
-                    link="/contact"
-                    rounded={true}
-                    type="submit"
-                  />
-                </div>
-              </form>
             </div>
           </div>
         </div>
       </div>
 
+      <div className="hidden md:flex min-h-screen w-full bg-transparent"></div>
       <NewFooter />
     </div>
   );

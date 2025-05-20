@@ -85,19 +85,10 @@ const LogoMarquee = ({ direction = "left" }) => {
 const Testimony = ({ id }) => {
   return (
     <section
-      className="relative min-h-[100vh] gap-16 !justify-between overflow-hidden"
+      className="relative min-h-[100vh] gap-6 !justify-between overflow-hidden w-screen"
       id={id}
     >
-      <div
-        className="w-full flex flex-col items-center justify-center !px-0 md:px-8 py-16 md:py-16 !pb-0 mt-[80px] mb-[40px]"
-        style={{
-          // backgroundImage: "url('/heroobg.png')",
-          // backgroundSize: "cover",
-          // backgroundPosition: "center",
-          // backgroundRepeat: "no-repeat",
-          width: "100vw",
-        }}
-      >
+      <div className="w-full flex flex-col items-center justify-center !px-0 md:px-8 py-4 !pb-0 mt-[80px] mb-[40px]">
         <div className="flex flex-col items-center justify-center gap-8">
           <div className="flex flex-col items-center justify-center gap-6 px-8">
             <h1
@@ -106,56 +97,43 @@ const Testimony = ({ id }) => {
                 lineHeight: "1.2",
               }}
             >
-              Award-Winning <br></br> Design & Development Studio
+              Defining Tomorrow
             </h1>
-            <h2 className="text-[20px] md:text-[24px] lg:text-[28px] text-[#FB4E29] font-bold mb-4 normal-case text-center">
-              Digital Solutions To Supercharge Your Business
-            </h2>
+
+            <p className="text-[16px] md:text-[18px] lg:text-[20px] text-[#121212] font-normal normal-case text-center max-w-[47rem] mx-auto">
+              Enabling businesses to establish bold digital identities, and
+              create impactful digital solutions Enabling businesses to
+              establish bold digital identities, and create impactful digital
+              solutions Enabling businesses to establish bold digital
+              identities,
+            </p>
           </div>
-          <div className="flex flex-wrap gap-4 justify-center  mx-auto">
+          <div className="flex flex-wrap gap-4 justify-center mx-auto mt-2">
+            <Button
+              variant="primary"
+              title="Get in Touch"
+              link="/contact"
+              rounded={true}
+              className="px-16"
+            />
+
             <Button
               variant="secondary"
-              title="Get a Free Quote"
-              link="/contact"
+              title="See More"
+              link="/works"
               rounded={true}
             />
           </div>
         </div>
       </div>
-      <div className="w-screen bg-[#FAFAFA]">
-        <LogoMarquee direction="left" />
-      </div>
-      <div className="flex flex-row flex-wrap items-center justify-center gap-6">
-        {[
-          // "google.png",
-          // "aws.png",
-          "payphone.png",
-          "movement.png",
-          // "meta.png",
-          "figma.png",
-          "webflow.png",
-          // "semrush.png",
-          // "wix.png",
-          "xcelerate.png",
-          // "first.png",
-          // "accelrte.png",
-          // "blogo.png",
-          // "h.png",
-          // "nju.png",
-          // "para.png",
-          // "roju.png",
-          "atelier.png",
-        ].map((logo, index) => (
-          <div key={index} className="mx-2 md:mx-3 flex-shrink-0 opacity-70">
-            <Image
-              src={`/affiliate-logos/${logo}`}
-              alt={`Partner ${index + 1}`}
-              width={120}
-              height={40}
-              className="h-8 md:h-10 w-auto object-contain grayscale"
-            />
-          </div>
-        ))}
+      <div className="w-[90vw] flex items-center justify-center h-full">
+        <Image
+          src="/hero-image-2.png"
+          alt="testimony"
+          width={1000}
+          height={1000}
+          className="w-full h-full object-cover"
+        />
       </div>
     </section>
   );

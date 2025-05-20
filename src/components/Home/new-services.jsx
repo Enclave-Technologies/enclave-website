@@ -2,108 +2,124 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../Button";
-import Testimonial from "../Testimonial";
-import GradientMetric from "../GradientMetric";
+import { motion } from "framer-motion";
+
+const services = [
+  {
+    title: "Digital Marketing",
+    description:
+      "We design and refine conceptual blueprints that blend innovation with technical insight, transforming preliminary ideas into engaging, practical models. Our bespoke prototyping process captures the essence of your vision while setting the stage for scalable, future-ready solutions.",
+    list: [
+      "Website Design",
+      "Search Engine Optimisation",
+      "Social Media Management",
+    ],
+    image: "/service1.png",
+    imageAlt: "Digital Marketing",
+  },
+  {
+    title: "Growth Consulting",
+    description:
+      "We design and refine conceptual blueprints that blend innovation with technical insight, transforming preliminary ideas into engaging, practical models. Our bespoke prototyping process captures the essence of your vision while setting the stage for scalable, future-ready solutions.",
+    list: ["UI/UX Design", "Website Design", "Website Design"],
+    image: "/service2.png",
+    imageAlt: "Growth Consulting",
+  },
+  {
+    title: "Analytics & Reporting",
+    description:
+      "We design and refine conceptual blueprints that blend innovation with technical insight, transforming preliminary ideas into engaging, practical models. Our bespoke prototyping process captures the essence of your vision while setting the stage for scalable, future-ready solutions.",
+    list: ["UI/UX Design", "Website Design", "Website Design"],
+    image: "/service3.png",
+    imageAlt: "Analytics & Reporting",
+    extraButtons: true,
+  },
+  {
+    title: "Analytics & Reporting",
+    description:
+      "We design and refine conceptual blueprints that blend innovation with technical insight, transforming preliminary ideas into engaging, practical models. Our bespoke prototyping process captures the essence of your vision while setting the stage for scalable, future-ready solutions.",
+    list: ["UI/UX Design", "Website Design", "Website Design"],
+    image: "/service4.png",
+    imageAlt: "Branding",
+    extraButtons: true,
+  },
+];
+
+const fadeIn = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
+};
 
 const NewServices = ({ id }) => {
-  const services = {
-    digital: {
-      title: "Social Media Optimization",
-      description:
-        "We help you understand your audience and make data-driven decisions to grow your business.",
-      services: [
-        "LinkedIn Marketing",
-        "Youtube Marketing",
-        "Instagram Marketing",
-        "Facebook Marketing",
-      ],
-      image: "/data-services.png",
-    },
-    seo: {
-      title: "Search Engine Optimization",
-      description:
-        "Soluions to grow your visibility on Google and drive more organic traffic to your business.",
-      services: [
-        "Keyword Planning",
-        "SEO strategization",
-        "Content Creation",
-        "Technical SEO",
-      ],
-      image: "/design-services.png",
-    },
-    development: {
-      title: "Website Design & Development",
-      description:
-        "We help you integrate AI into your business to automate processes and grow your business.",
-      services: [
-        "Website Design",
-        "Website Development",
-        "Website Copywriting",
-        "Deployment & Analytics",
-      ],
-      image: "/seo-services.png",
-    },
-  };
-
   return (
     <section
       id={id}
-      className="w-full py-20 px-8 md:py-32 flex flex-col items-center justify-center overflow-hidden bg-[#FAFAFA]"
+      className="w-full min-h-screen bg-[#FAFAFA] flex flex-col items-center justify-center px-2 md:px-8 py-6 gap-12 z-3"
     >
-      <div className="w-full max-w-7xl mx-auto">
-        <div className="text-center mb-8">
-          <h4 className="text-[#FB4E29] text-[20px] md:text-[24px] lg:text-[28px] font-bold">
-            Modular Solutions
-          </h4>
-          <h2 className="text-[32px] md:text-[40px] lg:text-[48px] font-bold mt-2 mb-4 capitalize">
-            Solidify Your Digital Presence
-          </h2>
-          <p className="text-[#26120D] max-w-3xl mx-auto text-[18px] md:text-[20px] leading-[150%]">
-            Providing end-to-end solutions for brands in the ever evolving
-            digital landscape
-          </p>
-        </div>
-
-        <div className="flex items-center justify-center my-16">
-          <Image
-            src="/services-graphic.png"
-            alt="Our Services"
-            width={1000}
-            height={1000}
-            className="w-[90%] h-[90%] object-cover hidden sm:flex"
-          />
-
-          <Image
-            src="/moble-graphic.png"
-            alt="Our Services"
-            width={500}
-            height={500}
-            className="w-[70%] h-[70%] object-cover sm:hidden flex"
-          />
-        </div>
-
-        {/* <div className="flex items-center justify-center w-full">
-          <div className="mb-12 flex items-center justify-center w-fit">
-            <Button
-              variant="primary"
-              title="Book a Consultation"
-              link="https://api.whatsapp.com/send/?phone=85259291909&text&type=phone_number&app_absent=0"
-              rounded={true}
-              target="_blank"
-            />
+      {services.map((service, idx) => (
+        <motion.div
+          key={service.title}
+          className={`flex flex-col md:flex-row ${
+            idx % 2 === 1 ? "md:flex-row-reverse" : ""
+          } items-end justify-center gap-12 md:gap-[48px] w-full py-6 md:py-16 px-4 md:px-[64px]`}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={fadeIn}
+        >
+          {/* Text Section */}
+          <div className="flex-1 flex flex-col gap-8 md:gap-12 max-w-[605px] w-full md:py-0 py-4">
+            <div className="flex flex-col gap-4">
+              <h2 className="font-onest capitalize font-bold text-[#100805] text-[32px] md:text-[56px] leading-[120%]">
+                {service.title}
+              </h2>
+              <p className="font-albert text-[#26120D] text-[18px] md:text-[20px] leading-[150%]">
+                {service.description}
+              </p>
+            </div>
+            <ul className="flex flex-col gap-2">
+              {service.list.map((item, i) => (
+                <li
+                  key={i}
+                  className="font-albert text-[#26120D] text-[18px] md:text-[20px] leading-[150%]"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <div className="flex flex-row gap-4 mt-4">
+              <Button
+                variant="outline"
+                title="Learn More"
+                link="/services"
+                rounded={true}
+                className="min-w-[120px] px-8 py-3 text-[16px] font-bold font-albert"
+              />
+              {service.extraButtons && (
+                <Button
+                  variant="black navigation"
+                  title="Project >"
+                  link="/works"
+                  rounded={true}
+                  className="min-w-[120px] px-8 py-3 text-[16px] font-bold font-albert"
+                />
+              )}
+            </div>
           </div>
-        </div> */}
-
-        {/* <div className="flex flex-col items-center justify-center gap-6 w-full mt-24">
-          <Testimonial
-            quote="I'm so happy! Their solutions design process has tripled our online visibility, helped us rank #1 on Google and skyrocketed our website sales."
-            name="Aman Selarka"
-            title="Head of Product"
-            companyLogo="/affiliate-logos/payphone.png"
-            companyName="Payphone"
-          />
-        </div> */}
-      </div>
+          {/* Image Section */}
+          <div className="flex-1 flex items-center justify-center w-full max-w-[547px] h-[320px] md:h-[684px]">
+            <div className="w-full h-full flex items-center justify-center overflow-hidden">
+              <Image
+                src={service.image}
+                alt={service.imageAlt}
+                width={547}
+                height={684}
+                className="object-cover w-full h-full"
+              />
+            </div>
+          </div>
+        </motion.div>
+      ))}
     </section>
   );
 };

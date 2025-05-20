@@ -1,7 +1,4 @@
-import Image from "next/image";
 import Link from "next/link";
-
-import { FiExternalLink } from "react-icons/fi";
 
 export const Button = ({
   variant = "primary",
@@ -9,11 +6,12 @@ export const Button = ({
   title,
   rounded = false,
   target = "_self",
+  className = "",
 }) => {
   return (
-    <Link href={link} className="" target={target}>
+    <Link href={link} target={target}>
       <button
-        className={`${variant} flex flex-row items-center gap-2 min-w-fit ${
+        className={`${variant} ${className} flex flex-row items-center gap-2 min-w-[150px] ${
           rounded ? "!rounded-full" : ""
         }`}
       >

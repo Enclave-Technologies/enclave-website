@@ -165,7 +165,7 @@ const Team = ({ id }) => {
         </div>
       </div>
 
-      {/* <div className="flex flex-col items-center w-full max-w-7xl mt-14 md:mt-20 lg:mt-24">
+      <div className="flex flex-col items-center w-full max-w-7xl mt-14 md:mt-20 lg:mt-24">
         <div
           className="relative flex flex-col justify-between items-start p-4 md:p-8 w-full h-[320px] rounded-xl shadow-[0px_0px_15px_rgba(0,0,0,0.2)] backdrop-blur-[15px] overflow-hidden"
           style={{
@@ -189,7 +189,7 @@ const Team = ({ id }) => {
             />
           </div>
         </div>
-      </div> */}
+      </div>
     </section>
   );
 };

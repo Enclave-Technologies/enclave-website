@@ -51,15 +51,14 @@ export default function Home() {
       <div className="z-10">
         <Navbarr />
         <Testimony id="testimony" />
-        <OurServices id="our-services" />
-        <ScalingSections />
-        <Team id="about-us" />
-        {/* <KPIs id="new-services" /> */}
         <Projects id="projects" />
-        <Pricing id="pricing" />
+        <NewServices id="new-services" />
         <Steps id="steps" />
-        {/* <NewServices id="new-services" /> */}
-        {/* TODO: Add a 4 step process here */}
+        {/* <KPIs id="new-services" /> */}
+        {/* <OurServices id="our-services" /> */}
+        {/* <ScalingSections /> */}
+        {/* <Team id="about-us" /> */}
+        {/* <Pricing id="pricing" /> */}
       </div>
       <div className="hidden md:flex min-h-screen w-full bg-transparent"></div>
       <NewFooter id="footer" />

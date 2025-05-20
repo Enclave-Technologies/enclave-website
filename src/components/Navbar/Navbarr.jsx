@@ -6,11 +6,10 @@ import Image from "next/image";
 import Hamburger from "./Hamburger";
 
 const links = [
-  { title: "Services", link: "/#our-services" },
-  { title: "About Us", link: "/#about-us" },
-  { title: "Portfolio", link: "/#projects" },
-  { title: "Pricing", link: "/#pricing" },
-  { title: "Contact", link: "/#footer" },
+  { title: "Home", link: "/" },
+  { title: "Works", link: "/works" },
+  { title: "Services", link: "/services" },
+  { title: "About Us", link: "/services" },
 ];
 
 export const Navbarr = () => {
@@ -36,10 +35,8 @@ export const Navbarr = () => {
       className="fixed top-0 left-0 z-50 md:h-[56px] py-2 px-8 transition-all duration-300 flex justify-center max-w-screen w-full"
       style={{
         background: "#FAFAFA",
-        // boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.2)",
+        boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.2)",
         backdropFilter: "blur(12px)",
-        borderBottom: "1px solid rgba(0, 0, 0, 0.2)",
-        borderStyle: "dashed",
       }}
     >
       <div className="w-full h-full flex items-center max-w-screen md:max-w-7xl">
@@ -47,9 +44,9 @@ export const Navbarr = () => {
           <div className="w-[140px] relative z-[1001]">
             <Link href="/">
               <Image
-                src="/new-enclave-logo.svg"
-                width={40}
-                height={40}
+                src="/enclave-logo-with-text.svg"
+                width={106}
+                height={24}
                 alt="Enclave Studios"
                 priority
               />
@@ -77,7 +74,7 @@ export const Navbarr = () => {
               target="_blank"
               className="bg-[#FB4E29] hover:bg-[#fb7429] flex items-center justify-center h-full w-full text-white px-4 py-2 rounded-full transition-colors duration-200 text-base font-medium"
             >
-              Get A Free Strategy
+              Get in Touch
             </Link>
           </div>
 

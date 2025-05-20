@@ -9,43 +9,24 @@ import { Button } from "./Button";
 const NewFooter = () => {
   return (
     <footer
-      className="w-screen bg-[#FB4E29] relative md:fixed top-0 z-0 min-h-screen"
+      className="w-screen bg-[#121212] relative md:fixed top-0 z-0 min-h-screen"
       id="footer"
     >
       <div className="max-w-7xl flex flex-col justify-center mx-auto px-8 py-12 min-h-screen">
-        <div className="flex-1 flex flex-col items-center justify-center gap-6">
-          <Link href="/" className="mb-4">
-            <Image
-              src="/enclave-studios-logo-white.svg"
-              alt="Enclave Studios"
-              width={60}
-              height={60}
-              className="mb-4"
-            />
+        <div className="flex-1 flex flex-col items-start justify-center gap-6">
+          <Link href="/" className="mb-2">
+            <h1 className="text-white text-[32px] md:text-[56px] lg:text-[72px] font-bold mt-2 capitalize">
+              Enclave Studios
+            </h1>
           </Link>
-          <h3
-            className="text-white text-[32px] md:text-[40px] lg:text-[48px] font-bold mt-2 mb-4 capitalize"
-            style={{
-              lineHeight: 1.2,
-            }}
-          >
-            Start Building Magic Today
-          </h3>
-          <div className="flex flex-col md:flex-row gap-4 w-full items-start md:items-center justify-center">
-            <Button
-              variant="secondary footer-secondary"
-              title="Reach us on Whatsapp"
-              target="_blank"
-              link="https://wa.me/85264006201"
-              rounded={true}
-            />
-            <Button
-              variant="primary footer-primary"
-              title="Book Consultation"
-              target="_blank"
-              link="https://calendly.com/hello-enclave-studios/free-consult"
-              rounded={true}
-            />
+
+          <div className="flex flex-col md:flex-row gap-4 w-full items-start md:items-center justify-start">
+            <a
+              href="mailto:info@enclave-studios.com"
+              className="text-white text-base border p-4 rounded-full border-white hover:bg-white hover:text-black transition-colors font-bold"
+            >
+              info@enclave-studios.com
+            </a>
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-0 md:gap-8">
@@ -61,14 +42,7 @@ const NewFooter = () => {
                   Works
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/#our-services"
-                  className="text-[#FFF] text-sm hover:text-[#FB4E29]"
-                >
-                  Services
-                </Link>
-              </li>
+
               <li>
                 <Link
                   href="/#team"
@@ -84,42 +58,34 @@ const NewFooter = () => {
             <ul className="md:space-y-5 space-y-3">
               <li>
                 <Link
-                  href="/"
+                  href="/services"
                   className="text-[#FFF] text-sm hover:text-[#FB4E29]"
                 >
-                  Branding
+                  Solutions Prototyping
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/"
+                  href="/services"
                   className="text-[#FFF] text-sm hover:text-[#FB4E29]"
                 >
-                  Website Design
+                  Real-time Tech Support
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/"
+                  href="/services"
                   className="text-[#FFF] text-sm hover:text-[#FB4E29]"
                 >
-                  Mobile App Design
+                  Software Development
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/"
+                  href="/services"
                   className="text-[#FFF] text-sm hover:text-[#FB4E29]"
                 >
-                  Search Engine Optimization
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/"
-                  className="text-[#FFF] text-sm hover:text-[#FB4E29]"
-                >
-                  Paid Ads
+                  Digital Takeoff & Marketing
                 </Link>
               </li>
             </ul>
