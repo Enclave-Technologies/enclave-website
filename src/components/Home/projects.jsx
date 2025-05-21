@@ -46,7 +46,7 @@ const Projects = ({ id }) => {
     {
       title: "Atelier Shan",
       description:
-        "Crafts flexible, multi-faceted spaces for beauty therapists",
+        "Revolutionizing beauty spaces with innovative, multi-functional design solutions that enhance therapist workflow and client experience. Creating elegant, efficient environments that blend form and function.",
       image: "/company-logos/atelier.png",
       logoImage: "/affiliate-logos/atelier-logo.png",
       gradientColors: ["rgba(109, 79, 59, 0.2)", "rgba(109, 79, 59, 0.9)"],
@@ -58,7 +58,7 @@ const Projects = ({ id }) => {
     {
       title: "Athena Social",
       description:
-        "Facilitates community of fitness enthusiasts via social media",
+        "Building an engaged fitness community through strategic social media integration. Empowering fitness enthusiasts to connect, share, and grow together while achieving their wellness goals.",
       image: "/company-logos/athena.png",
       logoImage: "/affiliate-logos/Vector.png",
       gradientColors: ["rgba(254, 110, 0, 0.2)", "rgba(254, 110, 0, 0.9)"],

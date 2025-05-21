@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { Button } from "../Button";
 import { motion } from "framer-motion";
 
@@ -61,30 +60,50 @@ const services = [
   },
 ];
 
-const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
+const slideUpAnimation = {
+  hidden: {
+    y: 40,
+  },
+  visible: {
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.33, 1, 0.68, 1], // custom cubic-bezier for smoother motion
+    },
+  },
 };
 
 const NewServices = ({ id }) => {
   return (
     <section
       id={id}
-      className="w-full min-h-screen bg-[#FAFAFA] flex flex-col items-center justify-center px-2 md:px-8 py-6 gap-12 z-3"
+      className="flex flex-col items-center w-full bg-[#FAFAFA] px-2 md:px-8 py-6 gap-12 z-3"
     >
       {services.map((service, idx) => (
         <motion.div
           key={service.title}
           className={`flex flex-col md:flex-row ${
             idx % 2 === 1 ? "md:flex-row-reverse" : ""
-          } items-end justify-center gap-12 md:gap-[48px] w-full py-6 md:py-16 px-4 md:px-[64px]`}
+          } items-end justify-center gap-12 md:gap-[48px] w-full py-6 md:py-16 px-4 md:px-[64px] overflow-hidden`}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={fadeIn}
+          viewport={{ once: true, amount: 0.2 }}
+          variants={slideUpAnimation}
         >
           {/* Text Section */}
-          <div className="flex-1 flex flex-col gap-8 md:gap-12 max-w-[605px] w-full md:py-0 py-4">
+          <motion.div
+            className="flex-1 flex flex-col gap-8 md:gap-12 max-w-[605px] w-full md:py-0 py-4"
+            variants={{
+              hidden: { y: 30 },
+              visible: {
+                y: 0,
+                transition: {
+                  duration: 0.6,
+                  ease: [0.33, 1, 0.68, 1],
+                },
+              },
+            }}
+          >
             <div className="flex flex-col gap-4">
               <h2 className="font-onest capitalize font-bold text-[#100805] text-[32px] md:text-[56px] leading-[120%]">
                 {service.title}
@@ -95,15 +114,39 @@ const NewServices = ({ id }) => {
             </div>
             <ul className="flex flex-col gap-2">
               {service.list.map((item, i) => (
-                <li
+                <motion.li
                   key={i}
+                  variants={{
+                    hidden: { y: 20 },
+                    visible: {
+                      y: 0,
+                      transition: {
+                        duration: 0.5,
+                        delay: 0.1 * i,
+                        ease: [0.33, 1, 0.68, 1],
+                      },
+                    },
+                  }}
                   className="font-albert text-[#26120D] text-[18px] md:text-[20px] leading-[150%]"
                 >
                   {item}
-                </li>
+                </motion.li>
               ))}
             </ul>
-            <div className="flex flex-row gap-4 mt-4">
+            <motion.div
+              className="flex flex-row gap-4 mt-4"
+              variants={{
+                hidden: { y: 15 },
+                visible: {
+                  y: 0,
+                  transition: {
+                    duration: 0.5,
+                    delay: 0.4,
+                    ease: [0.33, 1, 0.68, 1],
+                  },
+                },
+              }}
+            >
               <Button
                 variant="outline"
                 title="Learn More"
@@ -120,10 +163,22 @@ const NewServices = ({ id }) => {
                   className="min-w-[120px] px-8 py-3 text-[16px] font-bold font-albert"
                 />
               )}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
           {/* Image Section */}
-          <div className="flex-1 flex items-center justify-center w-full max-w-[547px] h-[320px] md:h-[684px]">
+          <motion.div
+            className="flex-1 flex items-center justify-center w-full max-w-[547px] h-[320px] md:h-[684px]"
+            variants={{
+              hidden: { y: 35 },
+              visible: {
+                y: 0,
+                transition: {
+                  duration: 0.7,
+                  ease: [0.33, 1, 0.68, 1],
+                },
+              },
+            }}
+          >
             <div className="w-full h-full flex items-center justify-center overflow-hidden">
               <Image
                 src={service.image}
@@ -133,7 +188,7 @@ const NewServices = ({ id }) => {
                 className="object-cover w-full h-full"
               />
             </div>
-          </div>
+          </motion.div>
         </motion.div>
       ))}
     </section>
