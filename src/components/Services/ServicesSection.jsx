@@ -8,11 +8,12 @@ const services = [
   {
     title: "Websites",
     description:
-      "We design and refine conceptual blueprints that blend innovation with technical insight, transforming preliminary ideas into engaging, practical models. Our bespoke prototyping process captures the essence of your vision while setting the stage for scalable, future-ready solutions.",
+      "Transform your online presence with our custom website solutions. We create stunning, high-performance websites that drive engagement and convert visitors into customers. From responsive designs to seamless user experiences, we ensure your website stands out in today's digital landscape.",
     list: [
-      "Website Design",
-      "Search Engine Optimisation",
-      "Social Media Management",
+      "Custom Website Development",
+      "E-commerce Solutions",
+      "Performance Optimization",
+      "Mobile-First Design",
     ],
     image: "/service7.png",
     imageAlt: "Websites",
@@ -21,8 +22,13 @@ const services = [
   {
     title: "Branding",
     description:
-      "We design and refine conceptual blueprints that blend innovation with technical insight, transforming preliminary ideas into engaging, practical models. Our bespoke prototyping process captures the essence of your vision while setting the stage for scalable, future-ready solutions.",
-    list: ["UI/UX Design", "Website Design", "Website Design"],
+      "Build a memorable brand that resonates with your audience. Our branding expertise helps you craft a unique identity that tells your story and connects with your target market. We develop comprehensive brand strategies that set you apart and create lasting impressions.",
+    list: [
+      "Brand Strategy & Positioning",
+      "Visual Identity Design",
+      "Brand Guidelines & Assets",
+      "Brand Voice Development",
+    ],
     image: "/service6.png",
     imageAlt: "Branding",
     button: "Learn More",
@@ -30,8 +36,13 @@ const services = [
   {
     title: "Digital Products",
     description:
-      "We design and refine conceptual blueprints that blend innovation with technical insight, transforming preliminary ideas into engaging, practical models. Our bespoke prototyping process captures the essence of your vision while setting the stage for scalable, future-ready solutions.",
-    list: ["UI/UX Design", "Website Design", "Website Design"],
+      "Create innovative digital solutions that solve real-world problems. From mobile apps to web platforms, we design and develop user-centric digital products that enhance user experience and drive business growth. Our focus is on creating scalable, future-proof solutions.",
+    list: [
+      "Mobile App Development",
+      "Web Application Design",
+      "UI/UX Design Systems",
+      "Product Strategy",
+    ],
     image: "/service3.png",
     imageAlt: "Digital Products",
     button: "Learn More",
@@ -40,8 +51,13 @@ const services = [
   {
     title: "Content",
     description:
-      "We design and refine conceptual blueprints that blend innovation with technical insight, transforming preliminary ideas into engaging, practical models. Our bespoke prototyping process captures the essence of your vision while setting the stage for scalable, future-ready solutions.",
-    list: ["UI/UX Design", "Website Design", "Website Design"],
+      "Engage your audience with compelling content that drives results. Our content strategy and creation services help you tell your story, establish authority, and connect with your target audience. We create content that not only attracts but converts.",
+    list: [
+      "Content Strategy",
+      "Copywriting & Messaging",
+      "Social Media Content",
+      "Video Production",
+    ],
     image: "/service5.png",
     imageAlt: "Content",
     button: "Learn More",
@@ -50,8 +66,13 @@ const services = [
   {
     title: "Development",
     description:
-      "We design and refine conceptual blueprints that blend innovation with technical insight, transforming preliminary ideas into engaging, practical models. Our bespoke prototyping process captures the essence of your vision while setting the stage for scalable, future-ready solutions.",
-    list: ["UI/UX Design", "Website Design", "Website Design"],
+      "Build robust, scalable solutions with our expert development services. We combine cutting-edge technology with industry best practices to create powerful digital solutions. From front-end interfaces to complex backend systems, we deliver quality code that performs.",
+    list: [
+      "Full-Stack Development",
+      "API Integration",
+      "Cloud Solutions",
+      "Technical Consulting",
+    ],
     image: "/service3.png",
     imageAlt: "Development",
     button: "Learn More",

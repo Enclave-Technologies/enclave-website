@@ -280,6 +280,17 @@ li a:hover {
   position: relative;
 }
 
+.outline {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.outline:hover {
+  @apply bg-[#100805] text-white transform scale-105;
+}
+
 .black {
   @apply bg-black text-white;
   border: 2px solid #000;
@@ -287,6 +298,11 @@ li a:hover {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.black:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 
 .footer-primary {

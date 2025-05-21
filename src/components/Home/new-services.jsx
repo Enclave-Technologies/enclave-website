@@ -8,11 +8,12 @@ const services = [
   {
     title: "Digital Marketing",
     description:
-      "We design and refine conceptual blueprints that blend innovation with technical insight, transforming preliminary ideas into engaging, practical models. Our bespoke prototyping process captures the essence of your vision while setting the stage for scalable, future-ready solutions.",
+      "Drive your online presence with our comprehensive digital marketing solutions. We combine data-driven strategies with creative excellence to increase your brand visibility, engage your target audience, and generate measurable results across all digital channels.",
     list: [
-      "Website Design",
-      "Search Engine Optimisation",
-      "Social Media Management",
+      "Search Engine Optimization (SEO)",
+      "Social Media Marketing",
+      "Pay-Per-Click Advertising",
+      "Content Marketing Strategy",
     ],
     image: "/service1.png",
     imageAlt: "Digital Marketing",
@@ -20,25 +21,40 @@ const services = [
   {
     title: "Growth Consulting",
     description:
-      "We design and refine conceptual blueprints that blend innovation with technical insight, transforming preliminary ideas into engaging, practical models. Our bespoke prototyping process captures the essence of your vision while setting the stage for scalable, future-ready solutions.",
-    list: ["UI/UX Design", "Website Design", "Website Design"],
+      "Transform your business potential into sustainable success with our strategic growth consulting services. We analyze your market position, identify opportunities, and develop actionable strategies to accelerate your business growth and maximize ROI.",
+    list: [
+      "Market Analysis & Strategy",
+      "Business Model Optimization",
+      "Revenue Growth Planning",
+      "Performance Metrics & KPIs",
+    ],
     image: "/service2.png",
     imageAlt: "Growth Consulting",
   },
   {
     title: "Analytics & Reporting",
     description:
-      "We design and refine conceptual blueprints that blend innovation with technical insight, transforming preliminary ideas into engaging, practical models. Our bespoke prototyping process captures the essence of your vision while setting the stage for scalable, future-ready solutions.",
-    list: ["UI/UX Design", "Website Design", "Website Design"],
+      "Turn data into actionable insights with our advanced analytics and reporting solutions. We help you track, measure, and understand your business performance through comprehensive data analysis, custom dashboards, and clear, actionable reports.",
+    list: [
+      "Custom Dashboard Development",
+      "Performance Tracking",
+      "Data Visualization",
+      "Insight Generation & Reporting",
+    ],
     image: "/service3.png",
     imageAlt: "Analytics & Reporting",
     extraButtons: true,
   },
   {
-    title: "Analytics & Reporting",
+    title: "Branding",
     description:
-      "We design and refine conceptual blueprints that blend innovation with technical insight, transforming preliminary ideas into engaging, practical models. Our bespoke prototyping process captures the essence of your vision while setting the stage for scalable, future-ready solutions.",
-    list: ["UI/UX Design", "Website Design", "Website Design"],
+      "Build a powerful and memorable brand identity that resonates with your audience. Our branding services help you create a distinctive voice, visual identity, and brand strategy that sets you apart from competitors and builds lasting connections with your customers.",
+    list: [
+      "Brand Strategy & Positioning",
+      "Visual Identity Design",
+      "Brand Guidelines",
+      "Brand Voice Development",
+    ],
     image: "/service4.png",
     imageAlt: "Branding",
     extraButtons: true,

@@ -91,21 +91,14 @@ const Testimony = ({ id }) => {
       <div className="w-full flex flex-col items-center justify-center !px-0 md:px-8 py-4 !pb-0 mt-[80px] mb-[40px]">
         <div className="flex flex-col items-center justify-center gap-8">
           <div className="flex flex-col items-center justify-center gap-6 px-8">
-            <h1
-              className="text-[40px] md:text-[56px] lg:text-[64px] font-bold text-[#121212] max-w-7xl text-center"
-              style={{
-                lineHeight: "1.2",
-              }}
-            >
-              Defining Tomorrow
+            <h1 className="font-medium lg:text-[96px] md:text-[64px] text-[42px] leading-[100%] text-[#100805] max-w-7xl text-center">
+              Elevate, Innovate, Digitize
             </h1>
 
-            <p className="text-[16px] md:text-[18px] lg:text-[20px] text-[#121212] font-normal normal-case text-center max-w-[47rem] mx-auto">
+            <p className="text-[16px] md:text-[18px] lg:text-[20px] text-[#121212] font-normal normal-case text-center w-full lg:max-w-5xl mx-auto">
               Enabling businesses to establish bold digital identities, and
-              create impactful digital solutions Enabling businesses to
-              establish bold digital identities, and create impactful digital
-              solutions Enabling businesses to establish bold digital
-              identities,
+              create impactful digital solutions with customised digital
+              marketing strategies and design solutions.
             </p>
           </div>
           <div className="flex flex-wrap gap-4 justify-center mx-auto mt-2">
