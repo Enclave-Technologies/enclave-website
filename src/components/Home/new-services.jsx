@@ -64,15 +64,15 @@ const NewServices = ({ id }) => {
   return (
     <section
       id={id}
-      className="flex flex-col items-center w-full bg-[#FAFAFA] md:px-8 py-6 gap-12 z-3"
+      className="flex flex-col items-center w-full bg-[#FAFAFA] px-6 md:px-[120px] py-6 gap-12 z-3"
     >
-      <div className="flex flex-col items-center gap-6 max-w-[1440px]">
+      <div className="flex flex-col items-center gap-6 w-full">
         <div className="flex flex-col items-center gap-2">
           <h4 className="text-[#FB4E29] text-[20px] md:text-[24px] lg:text-[28px] font-bold">
             Our Services
           </h4>
           <h2
-            className="text-[32px] md:text-[40px] lg:text-[48px] font-bold capitalize max-w-2xl text-center"
+            className="text-[32px] md:text-[40px] lg:text-[48px] font-bold capitalize text-center"
             style={{
               lineHeight: "1.3",
             }}
@@ -87,7 +87,7 @@ const NewServices = ({ id }) => {
           key={service.title}
           className={`flex flex-col md:flex-row ${
             idx % 2 === 1 ? "" : "md:flex-row-reverse"
-          } items-end justify-center gap-12 md:gap-[48px] w-full py-6 md:py-16 px-4 md:px-10 overflow-hidden`}
+          } items-end justify-center gap-12 md:gap-[48px] w-full py-0 md:py-16 overflow-hidden`}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
@@ -137,7 +137,7 @@ const NewServices = ({ id }) => {
               ))}
             </ul>
             <motion.div
-              className="flex flex-row gap-4 mt-4"
+              className="flex flex-row gap-3 md:gap-4 mt-4"
               variants={{
                 hidden: { y: 15 },
                 visible: {
@@ -155,7 +155,7 @@ const NewServices = ({ id }) => {
                 title="Learn More"
                 link="/services"
                 rounded={true}
-                className="min-w-[120px] px-8 py-3 text-[16px] font-bold font-albert"
+                className="px-8 py-3 text-[16px] font-bold font-albert ml-1"
               />
               {service.extraButtons && (
                 <Button
@@ -163,7 +163,7 @@ const NewServices = ({ id }) => {
                   title="Project >"
                   link="/works"
                   rounded={true}
-                  className="min-w-[120px] px-8 py-3 text-[16px] font-bold font-albert"
+                  className="px-8 py-3 text-[16px] font-bold font-albert"
                 />
               )}
             </motion.div>

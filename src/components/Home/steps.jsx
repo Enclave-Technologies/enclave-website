@@ -2,8 +2,8 @@ import React from "react";
 
 const Steps = () => {
   return (
-    <section className="w-full min-h-fit px-0">
-      <div className="w-full mx-auto flex flex-col md:flex-row-reverse justify-center items-center px-12 md:px-20 py-4 md:py-16 gap-6 md:gap-12">
+    <section className="w-full min-h-fit px-0 pb-0 md:pb-16">
+      <div className="w-full mx-auto flex flex-col md:flex-row-reverse justify-center items-center px-6 md:px-[120px] py-4 md:py-16 gap-6 md:gap-12">
         <div
           className="w-full md:w-[748px] h-[300px] md:h-[647px] bg-cover bg-center flex-none order-0"
           style={{ backgroundImage: 'url("/service8.png")' }}

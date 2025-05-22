@@ -85,12 +85,12 @@ const LogoMarquee = ({ direction = "left" }) => {
 const Testimony = ({ id }) => {
   return (
     <section
-      className="relative min-h-[100vh] gap-6 !justify-between overflow-hidden w-full"
+      className="relative min-h-[100vh] gap-6 !justify-between overflow-hidden w-full px-6 md:px-16"
       id={id}
     >
-      <div className="w-full flex flex-col items-center justify-center !px-0 md:px-8 py-4 !pb-0 mt-[80px] mb-[40px]">
+      <div className="w-full flex flex-col items-center justify-center py-4 !pb-0 mt-[80px] mb-[40px]">
         <div className="flex flex-col items-center justify-center gap-8">
-          <div className="flex flex-col items-center justify-center gap-6 px-8">
+          <div className="flex flex-col items-center justify-center gap-6">
             <h1 className="font-medium lg:text-[96px] md:text-[64px] text-[42px] leading-[100%] text-[#100805] max-w-7xl text-center">
               Elevate, Innovate, Digitize
             </h1>
@@ -119,7 +119,7 @@ const Testimony = ({ id }) => {
           </div>
         </div>
       </div>
-      <div className="md:w-[90vw] w-full flex items-center justify-center h-full">
+      <div className="w-full flex items-center justify-center h-full">
         <Image
           src="/hero-image-2.png"
           alt="testimony"

@@ -96,16 +96,16 @@ const Projects = ({ id }) => {
   return (
     <section
       id={id}
-      className="flex flex-col items-center py-16 md:py-32 px-8 w-full gap-12 bg-[#FAFAFA]"
+      className="flex flex-col items-center py-16 md:py-32 px-6 md:px-[120px] w-full gap-12 bg-[#FAFAFA]"
     >
-      <div className="w-full max-w-[1440px] mx-auto flex flex-col items-center gap-6 md:gap-16 px-0">
-        <div className="flex flex-col items-center gap-6 max-w-4xl">
+      <div className="w-full flex flex-col items-center gap-12 md:gap-16">
+        <div className="flex flex-col items-center gap-6">
           <div className="flex flex-col items-center gap-2">
             <h4 className="text-[#FB4E29] text-[20px] md:text-[24px] lg:text-[28px] font-bold">
               Our Works
             </h4>
             <h2
-              className="text-[32px] md:text-[40px] lg:text-[48px] font-bold capitalize max-w-2xl text-center"
+              className="text-[32px] md:text-[40px] lg:text-[48px] font-bold capitalize text-center"
               style={{
                 lineHeight: "1.3",
               }}
@@ -114,7 +114,7 @@ const Projects = ({ id }) => {
             </h2>
           </div>
         </div>
-        <div className="px-4 flex flex-col gap-6 md:gap-12 w-full">
+        <div className="flex flex-col gap-6 md:gap-12 w-full">
           {projects.map((project, index) => (
             <ProjectCard
               key={index}
