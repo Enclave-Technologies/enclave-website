@@ -59,11 +59,7 @@ const services = [
     title: "Newsletter and Blog Writing",
     description:
       "Create engaging content that drives results. Our newsletter and blog writing services help you tell your story, establish authority, and connect with your target audience. We create content that not only attracts but converts.",
-    list: [
-      "Newsletter Writing",
-      "Blog Writing",
-      "Content Strategy",
-    ],
+    list: ["Newsletter Writing", "Blog Writing", "Content Strategy"],
     image: "/service3.png",
     imageAlt: "Development",
     button: "Learn More",
@@ -85,13 +81,13 @@ const slideUpAnimation = {
 };
 
 const ServicesSection = ({}) => (
-  <section className="flex flex-col items-center w-full bg-[#FAFAFA] px-2 md:px-8 py-6 gap-12 z-3">
+  <section className="flex flex-col items-center w-full bg-[#FAFAFA] py-6 md:gap-12 gap-8 z-3 px-0">
     {services.map((service, idx) => (
       <motion.div
         key={service.title}
         className={`flex flex-col md:flex-row ${
           idx % 2 === 1 ? "md:flex-row-reverse" : ""
-        } items-end justify-center gap-12 md:gap-[48px] w-full py-6 md:py-16 px-4 md:px-[64px] overflow-hidden`}
+        } items-center justify-center gap-12 w-full  md:gap-[100px] py-6 md:py-14 px-6 md:px-16 overflow-hidden`}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -99,7 +95,7 @@ const ServicesSection = ({}) => (
       >
         {/* Text Section */}
         <motion.div
-          className="flex-1 flex flex-col gap-8 md:gap-12 max-w-[605px] w-full md:py-0 py-4"
+          className="flex-1 flex flex-col gap-8 md:gap-12 max-w-[800px] w-full md:py-0 py-4"
           variants={{
             hidden: { y: 30 },
             visible: {

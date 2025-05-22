@@ -59,10 +59,10 @@ const staggerContainer = {
 
 const ServicesIndustry = () => {
   return (
-    <section className="flex justify-center w-full bg-[#FAFAFA]">
-      <div className="flex flex-col items-center gap-8 md:gap-12 w-full max-w-[1440px]">
+    <section className="flex justify-center w-full bg-[#FAFAFA] px-0">
+      <div className="flex flex-col items-center gap-8 md:gap-12 w-full px-6 md:px-16">
         <motion.div
-          className="flex flex-col items-center w-full max-w-[1200px]"
+          className="flex flex-col items-center w-full"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -79,7 +79,7 @@ const ServicesIndustry = () => {
         </motion.div>
 
         <motion.div
-          className="flex flex-col gap-6 w-full max-w-[1200px]"
+          className="flex flex-col gap-6 w-full"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -102,7 +102,7 @@ const ServicesIndustry = () => {
         </motion.div>
 
         <motion.div
-          className="flex flex-row justify-center md:justify-end items-center gap-4 md:gap-2.5 w-full max-w-[1200px]"
+          className="flex flex-row justify-center md:justify-end items-center gap-4 md:gap-2.5 w-full"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
