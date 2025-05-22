@@ -4,63 +4,33 @@ import { motion } from "framer-motion";
 
 const industries = [
   {
-    title: "Fintech",
+    title: "Hospitality",
     description:
-      "Innovative financial technology solutions for digital payments, banking, and investment platforms",
+      "Digital solutions for hotels and resorts to enhance guest experiences",
   },
   {
-    title: "B2B & Enterprise Software",
-    description:
-      "Scalable business solutions and enterprise-grade software for operational excellence",
-  },
-  {
-    title: "Crypto & Web3",
-    description:
-      "Blockchain technology, decentralized applications, and next-generation web solutions",
-  },
-  {
-    title: "Technology",
-    description:
-      "Cutting-edge tech solutions across cloud computing, AI/ML, and digital transformation",
-  },
-  {
-    title: "Ecommerce & Fashiontech",
-    description:
-      "Digital retail solutions and fashion technology platforms for modern commerce",
-  },
-  {
-    title: "Electronics",
-    description:
-      "Smart hardware solutions and IoT devices for connected experiences",
+    title: "Interior Design",
+    description: "Digital platforms for interior designers and space planning",
   },
   {
     title: "Food & Beverage",
-    description:
-      "Digital solutions for restaurants, delivery services, and F&B operations",
+    description: "Tech solutions for restaurants and F&B operations",
+  },
+  {
+    title: "Luxury Retail",
+    description: "Digital transformation for high-end retail and luxury brands",
+  },
+  {
+    title: "Technology",
+    description: "Software development and digital transformation services",
+  },
+  {
+    title: "Ecommerce & Fashiontech",
+    description: "Digital commerce solutions for retail and fashion businesses",
   },
   {
     title: "Startups & VC",
-    description:
-      "Technology solutions and digital platforms for emerging businesses and investors",
-  },
-  {
-    title: "Healthcare & Life Sciences",
-    description:
-      "Digital health solutions and platforms for medical services and research",
-  },
-  {
-    title: "Telecommunications",
-    description:
-      "Advanced communication solutions and network infrastructure services",
-  },
-  {
-    title: "Mobility",
-    description:
-      "Smart transportation solutions and mobility service platforms",
-  },
-  {
-    title: "Logistics",
-    description: "Supply chain optimization and logistics management solutions",
+    description: "Tech solutions for emerging businesses and investors",
   },
 ];
 
