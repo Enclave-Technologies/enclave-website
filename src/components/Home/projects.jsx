@@ -2,20 +2,8 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../Button";
-import { Code, Clock, Globe } from "../icons/index";
-import Testimonial from "../Testimonial";
 
-const ProjectCard = ({
-  title,
-  project_industry,
-  project_time,
-  project_type,
-  description,
-  image,
-  logoImage,
-  gradientColors,
-  externalLink = "#",
-}) => (
+const ProjectCard = ({ title, description, image, externalLink = "#" }) => (
   <Link
     href={externalLink}
     target="_blank"
@@ -25,16 +13,28 @@ const ProjectCard = ({
       <Image
         src={image}
         alt={title}
-        width={1000}
-        height={1000}
+        width={700}
+        height={700}
         className="w-full h-full object-cover"
       />
       <div className="flex flex-col gap-6">
-        <div className="flex flex-col items-start gap-3">
-          <h3 className="font-bold text-[28px] leading-[140%] text-black text-center w-full">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-3">
+          <h3 className="font-bold text-[22px] md:text-[28px] leading-[140%] text-black md:text-start text-center w-full">
             {title}
           </h3>
-          <p className="text-center">{description}</p>
+          <div>
+            <p className="text-center md:text-end">{description}</p>
+
+            <div className="flex flex-row w-full md:justify-end justify-center my-4 pr-1">
+              <Button
+                variant="outline"
+                title="Learn More"
+                link="/works"
+                rounded={true}
+                className="min-w-[120px] px-8 py-3 text-[16px] font-bold font-albert"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -44,7 +44,31 @@ const ProjectCard = ({
 const Projects = ({ id }) => {
   const projects = [
     {
-      title: "Atelier Shan",
+      title: "NEIGHBOURHOOD (COMING SOON)",
+      description:
+        "Revolutionizing beauty spaces with innovative, multi-functional design solutions that enhance therapist workflow and client experience. Creating elegant, efficient environments that blend form and function.",
+      image: "/company-logos/neighborhood.png",
+      logoImage: "/affiliate-logos/atelier-logo.png",
+      gradientColors: ["rgba(109, 79, 59, 0.2)", "rgba(109, 79, 59, 0.9)"],
+      externalLink: "/",
+      project_industry: "Interior Design",
+      project_time: "8 weeks",
+      project_type: "Website",
+    },
+    {
+      title: "BONAFIDÈ (2025)",
+      description:
+        "Revolutionizing beauty spaces with innovative, multi-functional design solutions that enhance therapist workflow and client experience. Creating elegant, efficient environments that blend form and function.",
+      image: "/company-logos/bonafide.png",
+      logoImage: "/affiliate-logos/atelier-logo.png",
+      gradientColors: ["rgba(109, 79, 59, 0.2)", "rgba(109, 79, 59, 0.9)"],
+      externalLink: "https://www.atelier-shan.com/",
+      project_industry: "Interior Design",
+      project_time: "8 weeks",
+      project_type: "Website",
+    },
+    {
+      title: "ATELIER SHAN (2024 - 2025)",
       description:
         "Revolutionizing beauty spaces with innovative, multi-functional design solutions that enhance therapist workflow and client experience. Creating elegant, efficient environments that blend form and function.",
       image: "/company-logos/atelier.png",
@@ -56,7 +80,7 @@ const Projects = ({ id }) => {
       project_type: "Website",
     },
     {
-      title: "Athena Social",
+      title: "XCCELERATE (2025)",
       description:
         "Building an engaged fitness community through strategic social media integration. Empowering fitness enthusiasts to connect, share, and grow together while achieving their wellness goals.",
       image: "/company-logos/athena.png",
@@ -74,7 +98,7 @@ const Projects = ({ id }) => {
       id={id}
       className="flex flex-col items-center py-16 md:py-32 px-8 w-full gap-12 bg-[#FAFAFA]"
     >
-      <div className="w-full max-w-7xl mx-auto flex flex-col items-center gap-6 md:gap-16">
+      <div className="w-full max-w-[1440px] mx-auto flex flex-col items-center gap-6 md:gap-16 px-0">
         <div className="flex flex-col items-center gap-6 max-w-4xl">
           <div className="flex flex-col items-center gap-2">
             <h4 className="text-[#FB4E29] text-[20px] md:text-[24px] lg:text-[28px] font-bold">
@@ -90,7 +114,7 @@ const Projects = ({ id }) => {
             </h2>
           </div>
         </div>
-        <div className="px-4 grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 w-full">
+        <div className="px-4 flex flex-col gap-6 md:gap-12 w-full">
           {projects.map((project, index) => (
             <ProjectCard
               key={index}
@@ -105,23 +129,6 @@ const Projects = ({ id }) => {
               project_type={project.project_type}
             />
           ))}
-        </div>
-
-        <div className="flex flex-row w-full md:justify-end justify-center gap-4">
-          <Button
-            variant="outline"
-            title="Learn More"
-            link="/services"
-            rounded={true}
-            className="min-w-[120px] px-8 py-3 text-[16px] font-bold font-albert"
-          />
-
-          <Button
-            variant="black navigation"
-            title="Projects >"
-            link="/works"
-            rounded={true}
-          />
         </div>
       </div>
     </section>

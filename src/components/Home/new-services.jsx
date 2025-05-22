@@ -5,43 +5,30 @@ import { motion } from "framer-motion";
 
 const services = [
   {
-    title: "Digital Marketing",
+    title: "Website Design & Development",
     description:
       "Drive your online presence with our comprehensive digital marketing solutions. We combine data-driven strategies with creative excellence to increase your brand visibility, engage your target audience, and generate measurable results across all digital channels.",
     list: [
-      "Search Engine Optimization (SEO)",
-      "Social Media Marketing",
-      "Pay-Per-Click Advertising",
-      "Content Marketing Strategy",
+      "SEO Consulting",
+      "Keyword Research",
+      "Copywriting / Blog Writing",
+      "Responsive Design",
     ],
-    image: "/service1.png",
-    imageAlt: "Digital Marketing",
+    image: "/service9.png",
+    imageAlt: "Website Design & Development",
   },
   {
-    title: "Growth Consulting",
+    title: "Search Engine Optimization (SEO)",
     description:
-      "Transform your business potential into sustainable success with our strategic growth consulting services. We analyze your market position, identify opportunities, and develop actionable strategies to accelerate your business growth and maximize ROI.",
+      "Boost your online visibility and drive organic traffic with our expert SEO services. We optimize your website for search engines to improve your ranking, increase visibility, and attract more targeted visitors.",
     list: [
-      "Market Analysis & Strategy",
-      "Business Model Optimization",
-      "Revenue Growth Planning",
-      "Performance Metrics & KPIs",
+      "Keyword Research",
+      "On-Page Optimization",
+      "Technical SEO",
+      "Content Strategy",
     ],
-    image: "/service2.png",
-    imageAlt: "Growth Consulting",
-  },
-  {
-    title: "Analytics & Reporting",
-    description:
-      "Turn data into actionable insights with our advanced analytics and reporting solutions. We help you track, measure, and understand your business performance through comprehensive data analysis, custom dashboards, and clear, actionable reports.",
-    list: [
-      "Custom Dashboard Development",
-      "Performance Tracking",
-      "Data Visualization",
-      "Insight Generation & Reporting",
-    ],
-    image: "/service3.png",
-    imageAlt: "Analytics & Reporting",
+    image: "/service4.png",
+    imageAlt: "Search Engine Optimization (SEO)",
     extraButtons: true,
   },
   {
@@ -54,7 +41,7 @@ const services = [
       "Brand Guidelines",
       "Brand Voice Development",
     ],
-    image: "/service4.png",
+    image: "/service2.png",
     imageAlt: "Branding",
     extraButtons: true,
   },
@@ -77,14 +64,30 @@ const NewServices = ({ id }) => {
   return (
     <section
       id={id}
-      className="flex flex-col items-center w-full bg-[#FAFAFA] px-2 md:px-8 py-6 gap-12 z-3"
+      className="flex flex-col items-center w-full bg-[#FAFAFA] md:px-8 py-6 gap-12 z-3"
     >
+      <div className="flex flex-col items-center gap-6 max-w-[1440px]">
+        <div className="flex flex-col items-center gap-2">
+          <h4 className="text-[#FB4E29] text-[20px] md:text-[24px] lg:text-[28px] font-bold">
+            Our Services
+          </h4>
+          <h2
+            className="text-[32px] md:text-[40px] lg:text-[48px] font-bold capitalize max-w-2xl text-center"
+            style={{
+              lineHeight: "1.3",
+            }}
+          >
+            Impossible Redefined{" "}
+          </h2>
+        </div>
+      </div>
+
       {services.map((service, idx) => (
         <motion.div
           key={service.title}
           className={`flex flex-col md:flex-row ${
-            idx % 2 === 1 ? "md:flex-row-reverse" : ""
-          } items-end justify-center gap-12 md:gap-[48px] w-full py-6 md:py-16 px-4 md:px-[64px] overflow-hidden`}
+            idx % 2 === 1 ? "" : "md:flex-row-reverse"
+          } items-end justify-center gap-12 md:gap-[48px] w-full py-6 md:py-16 px-4 md:px-10 overflow-hidden`}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
@@ -92,7 +95,7 @@ const NewServices = ({ id }) => {
         >
           {/* Text Section */}
           <motion.div
-            className="flex-1 flex flex-col gap-8 md:gap-12 max-w-[605px] w-full md:py-0 py-4"
+            className="flex-1 flex flex-col gap-8 md:gap-12 w-full md:py-0 py-4"
             variants={{
               hidden: { y: 30 },
               visible: {
@@ -167,7 +170,7 @@ const NewServices = ({ id }) => {
           </motion.div>
           {/* Image Section */}
           <motion.div
-            className="flex-1 flex items-center justify-center w-full max-w-[547px] h-[320px] md:h-[684px]"
+            className="flex-1 flex items-center justify-center w-full h-[320px] md:h-[684px]"
             variants={{
               hidden: { y: 35 },
               visible: {

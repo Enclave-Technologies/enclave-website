@@ -1,55 +1,45 @@
 import React from "react";
-import Image from "next/image";
 
-const Steps = ({ id }) => (
-  <section
-    id={id}
-    className="w-full py-16 md:py-32 bg-white"
-    style={{ borderRadius: 0 }}
-  >
-    <div className="mx-auto flex flex-col lg:flex-row items-center gap-12 px-4 md:px-12">
-      <div className="flex-shrink-0 w-full max-w-[350px] md:max-w-[400px] lg:max-w-[537px]">
-        <Image
-          src="/ketty.png"
-          alt="Ketty Shan"
-          width={537}
-          height={642}
-          className="rounded-none object-cover w-full h-auto"
-          priority
+const Steps = () => {
+  return (
+    <section className="w-full min-h-fit px-0">
+      <div className="w-full mx-auto flex flex-col md:flex-row-reverse justify-center items-center px-12 md:px-20 py-4 md:py-16 gap-6 md:gap-12">
+        <div
+          className="w-full md:w-[748px] h-[300px] md:h-[647px] bg-cover bg-center flex-none order-0"
+          style={{ backgroundImage: 'url("/service8.png")' }}
         />
-      </div>
-      <div className="flex flex-col justify-center items-start gap-6 w-full max-w-[40rem]">
-        <div className="flex flex-row items-center gap-1">
-          {[...Array(5)].map((_, i) => (
-            <svg
-              key={i}
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="#000"
-              stroke="#000"
-              strokeWidth="2"
-            >
-              <polygon points="12,2 15,9 22,9 17,14 18,21 12,17 6,21 7,14 2,9 9,9" />
-            </svg>
-          ))}
+
+        <div className="flex flex-col justify-center items-start py-4 md:py-6 gap-4 md:gap-6 w-full h-auto md:h-[318px] flex-1">
+          <div className="flex flex-row items-center w-full h-auto md:h-[195px]">
+            <p className="font-onest font-bold text-xl md:text-[28px] leading-[140%] text-[#100805] flex-grow text-center md:text-left">
+              Their solutions design process has tripled our online visibility,
+              helped us rank #1 on Google and skyrocketed our website sales.
+            </p>
+          </div>
+
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 w-full h-auto md:h-[51px] mt-2 md:mt-6">
+            <div className="flex flex-col justify-center items-center md:items-end w-full md:w-[121px] h-auto md:h-[51px]">
+              <p className="font-albert-sans font-bold text-lg leading-[150%] text-[#1B0D09] m-0">
+                Aman Selarka
+              </p>
+              <p className="font-albert-sans font-normal text-base leading-[150%] text-[#26120D] m-0">
+                Head of Product
+              </p>
+            </div>
+
+            <div className="hidden md:block w-0 h-[51px] border border-[#121212]" />
+
+            <div
+              className="w-[145px] h-[35px] bg-contain bg-no-repeat bg-center"
+              style={{
+                backgroundImage: 'url("/company-logos/logo-payphone.png")',
+              }}
+            />
+          </div>
         </div>
-        <p className="font-normal text-base md:text-lg leading-relaxed text-[#100805] font-[Albert Sans]">
-          “Enclave Studios transformed our vision into a functional prototype
-          that exceeded our expectations. Their expertise in application
-          development is unmatched!”
-        </p>
-        <div className="flex flex-col items-start">
-          <span className="font-semibold text-sm md:text-base text-black font-[Albert Sans]">
-            Ketty Shan
-          </span>
-          <span className="font-normal text-sm md:text-base text-black font-[Albert Sans]">
-            CEO, Atelier Shan
-          </span>
-        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default Steps;

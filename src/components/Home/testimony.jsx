@@ -85,7 +85,7 @@ const LogoMarquee = ({ direction = "left" }) => {
 const Testimony = ({ id }) => {
   return (
     <section
-      className="relative min-h-[100vh] gap-6 !justify-between overflow-hidden w-screen"
+      className="relative min-h-[100vh] gap-6 !justify-between overflow-hidden w-full"
       id={id}
     >
       <div className="w-full flex flex-col items-center justify-center !px-0 md:px-8 py-4 !pb-0 mt-[80px] mb-[40px]">
@@ -119,7 +119,7 @@ const Testimony = ({ id }) => {
           </div>
         </div>
       </div>
-      <div className="w-[90vw] flex items-center justify-center h-full">
+      <div className="md:w-[90vw] w-full flex items-center justify-center h-full">
         <Image
           src="/hero-image-2.png"
           alt="testimony"
