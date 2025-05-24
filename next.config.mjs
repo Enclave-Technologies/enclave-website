@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
+  // output: "export",
   images: {
     loader: "default", // Use the default loader instead of Next.js-optimized loader
     unoptimized: true,
