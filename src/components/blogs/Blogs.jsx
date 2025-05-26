@@ -41,38 +41,54 @@ const EmptyState = () => (
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
+  const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchBlogs = async () => {
+    const fetchContent = async () => {
       try {
-        setLoading(true);
-        // Query to get all blog posts with their authors and categories
-        const query = `*[_type == "post"] | order(publishedAt desc) {
+        const blogsQuery = `*[_type == "post"] | order(publishedAt desc) {
           _id,
           title,
           slug,
-          excerpt,
           mainImage,
+          excerpt,
           publishedAt,
           readTime,
           "author": author->name,
           "category": category->title
         }`;
 
-        const data = await client.fetch(query);
-        setBlogs(data || []);
+        const newsQuery = `*[_type == "news"] | order(publishedAt desc)[0...2] {
+          _id,
+          title,
+          slug,
+          mainImage,
+          excerpt,
+          publishedAt,
+          readTime,
+          "author": author->name,
+          "category": category->title
+        }`;
+
+        const [blogsData, newsData] = await Promise.all([
+          client.fetch(blogsQuery),
+          client.fetch(newsQuery),
+        ]);
+
+        setBlogs(blogsData);
+        setNews(newsData);
         setError(null);
       } catch (error) {
-        console.error("Error fetching blogs:", error);
+        console.error("Error fetching content:", error);
         setError(error.message);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchBlogs();
+    fetchContent();
   }, []);
 
   const formatDate = (dateString) => {
@@ -259,9 +275,9 @@ const Blogs = () => {
                   </h2>
                 </div>
 
-                {blogs.slice(5, 7).map((blog) => (
+                {news.map((newsItem) => (
                   <div
-                    key={blog._id}
+                    key={newsItem._id}
                     className="overflow-hidden"
                     style={{
                       background:
@@ -273,10 +289,14 @@ const Blogs = () => {
                   >
                     <div className="relative">
                       <div className="aspect-[16/9] bg-gray-300">
-                        {blog.mainImage ? (
+                        {newsItem.mainImage ? (
                           <Image
-                            src={`https://cdn.sanity.io/images/ye739xfs/production/${blog.mainImage.asset._ref.replace("image-", "").replace("-jpg", ".jpg").replace("-png", ".png").replace("-webp", ".webp")}`}
-                            alt={blog.title}
+                            src={`https://cdn.sanity.io/images/ye739xfs/production/${newsItem.mainImage.asset._ref
+                              .replace("image-", "")
+                              .replace("-jpg", ".jpg")
+                              .replace("-png", ".png")
+                              .replace("-webp", ".webp")}`}
+                            alt={newsItem.title}
                             className="object-cover w-full h-full"
                             width={400}
                             height={300}
@@ -304,27 +324,27 @@ const Blogs = () => {
                     <div className="p-6">
                       <div className="flex gap-2 mb-2">
                         <span className="text-sm text-[#FB4E29]">
-                          {blog.category}
+                          {newsItem.category}
                         </span>
                         <span className="text-sm text-gray-500">•</span>
                         <span className="text-sm text-gray-500">
-                          By {blog.author}
+                          By {newsItem.author}
                         </span>
                       </div>
                       <h2 className="text-xl font-bold text-gray-900 mb-2 normal-case">
                         <Link
-                          href={`/blog/${blog.slug.current}`}
+                          href={`/news/${newsItem.slug.current}`}
                           className="hover:text-[#FB4E29] transition-colors"
                         >
-                          {blog.title}
+                          {newsItem.title}
                         </Link>
                       </h2>
                       <div className="flex justify-between items-center mt-4">
                         <span className="text-[#26120D] text-sm">
-                          {formatDate(blog.publishedAt)}
+                          {formatDate(newsItem.publishedAt)}
                         </span>
                         <span className="text-[#6E605D] text-sm">
-                          {blog.readTime} min read
+                          {newsItem.readTime} min read
                         </span>
                       </div>
                     </div>
