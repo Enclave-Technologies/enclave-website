@@ -57,12 +57,12 @@ const Location = () => {
             </div>
           </div>
 
-          <div className="w-full md:w-[833px] md:h-[573px] h-[400px] relative">
+          <div className="w-full  md:h-[573px] h-[400px] relative">
             <Image
               src="/locations.png"
               alt="Hong Kong Office Location"
               fill
-              className="object-cover rounded-xl"
+              className="object-cover"
             />
           </div>
         </div>

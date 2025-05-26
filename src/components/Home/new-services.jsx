@@ -7,43 +7,48 @@ const services = [
   {
     title: "Website Design & Development",
     description:
-      "Drive your online presence with our comprehensive digital marketing solutions. We combine data-driven strategies with creative excellence to increase your brand visibility, engage your target audience, and generate measurable results across all digital channels.",
+      "We craft modern websites for new-age businesses, delivering a premium and rich experience to every visitor. Each site is hand-crafted and tailored to your unique brand identity and business goals. Our mobile-first approach ensures optimal performance on all devices, starting with mobile.",
     list: [
-      "SEO Consulting",
-      "Keyword Research",
-      "Copywriting / Blog Writing",
-      "Responsive Design",
+      "Web Design",
+      "Web Development",
+      "Hosting & Maintenance",
+      "Responsive Design (Mobile-First)",
     ],
     image: "/service9.png",
     imageAlt: "Website Design & Development",
+    btn1: "Book Consultation",
+    btn2: "View Gallery >",
   },
   {
-    title: "Search Engine Optimization (SEO)",
+    title: "Search Engine Marketing (SEM)",
     description:
-      "Boost your online visibility and drive organic traffic with our expert SEO services. We optimize your website for search engines to improve your ranking, increase visibility, and attract more targeted visitors.",
+      "We go beyond basic optimization, delivering a rich and prominent online presence that connects with your target audience. Each strategy is tailored to your unique brand identity and business goals, ensuring maximum visibility and organic growth. We prioritize a holistic, data-driven approach that secures top rankings and delivers a consistent stream of engaged visitors, starting with getting you found.",
     list: [
-      "Keyword Research",
-      "On-Page Optimization",
+      "Search Engine Optimisation",
+      "On-Page SEO",
       "Technical SEO",
-      "Content Strategy",
+      "Off-Page SEO",
+      "Search Ads (SEA) / Pay-Per-Click (PPC)",
     ],
     image: "/service4.png",
-    imageAlt: "Search Engine Optimization (SEO)",
-    extraButtons: true,
+    imageAlt: "Search Engine Marketing (SEM)",
+    btn1: "Book SEO Audit Call",
+    btn2: "Learn More >",
   },
   {
-    title: "Branding",
+    title: "App Development",
     description:
-      "Build a powerful and memorable brand identity that resonates with your audience. Our branding services help you create a distinctive voice, visual identity, and brand strategy that sets you apart from competitors and builds lasting connections with your customers.",
+      "We craft modern mobile applications for new-age businesses, delivering a premium and rich experience to every user. Our mobile-first approach ensures optimal performance and seamless user journeys across all devices, starting with the smartphone in their hand.",
     list: [
-      "Brand Strategy & Positioning",
-      "Visual Identity Design",
-      "Brand Guidelines",
-      "Brand Voice Development",
+      "Mobile Applications (React Native, iOS, Flutter)",
+      "Web Applications (ReactJS)",
+      "AI Applications",
+      "Web3 Applications",
     ],
     image: "/service2.png",
-    imageAlt: "Branding",
-    extraButtons: true,
+    imageAlt: "App Development",
+    btn1: "Get A Quote",
+    btn2: "Case Studies >",
   },
 ];
 
@@ -86,7 +91,7 @@ const NewServices = ({ id }) => {
         <motion.div
           key={service.title}
           className={`flex flex-col md:flex-row ${
-            idx % 2 === 1 ? "" : "md:flex-row-reverse"
+            idx % 2 === 0 ? "" : "md:flex-row-reverse"
           } items-end justify-center gap-12 md:gap-[48px] w-full py-0 md:py-16 overflow-hidden`}
           initial="hidden"
           whileInView="visible"
@@ -108,14 +113,14 @@ const NewServices = ({ id }) => {
             }}
           >
             <div className="flex flex-col gap-4">
-              <h2 className="font-onest capitalize font-bold text-[#100805] text-[32px] md:text-[56px] leading-[120%]">
+              <h2 className="font-onest capitalize font-bold text-[#100805] text-[24px] md:text-[40px] leading-[120%]">
                 {service.title}
               </h2>
               <p className="font-albert text-[#26120D] text-[18px] md:text-[20px] leading-[150%]">
                 {service.description}
               </p>
             </div>
-            <ul className="flex flex-col gap-2">
+            <ul className="flex flex-col gap-2 list-disc pl-5">
               {service.list.map((item, i) => (
                 <motion.li
                   key={i}
@@ -130,7 +135,7 @@ const NewServices = ({ id }) => {
                       },
                     },
                   }}
-                  className="font-albert text-[#26120D] text-[18px] md:text-[20px] leading-[150%]"
+                  className="font-albert text-[#26120D] text-[18px] md:text-[20px] leading-[150%] marker:text-[#26120D]"
                 >
                   {item}
                 </motion.li>
@@ -152,20 +157,18 @@ const NewServices = ({ id }) => {
             >
               <Button
                 variant="outline"
-                title="Learn More"
+                title={service.btn1}
                 link="/services"
                 rounded={true}
                 className="px-8 py-3 text-[16px] font-bold font-albert ml-1"
               />
-              {service.extraButtons && (
-                <Button
-                  variant="black navigation"
-                  title="Project >"
-                  link="/works"
-                  rounded={true}
-                  className="px-8 py-3 text-[16px] font-bold font-albert"
-                />
-              )}
+              <Button
+                variant="black navigation"
+                title={service.btn2}
+                link="/works"
+                rounded={true}
+                className="px-8 py-3 text-[16px] font-bold font-albert"
+              />
             </motion.div>
           </motion.div>
           {/* Image Section */}

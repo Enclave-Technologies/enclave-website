@@ -8,10 +8,10 @@ const ProjectCard = ({ title, description, image, externalLink = "#" }) => (
       <Image src={image} alt={title} width={700} height={700} />
       <div className="flex flex-col gap-6 w-full justify-between">
         <div className="flex flex-col justify-between items-start gap-3">
-          <h3 className="font-bold text-[22px] md:text-[28px] leading-[140%] text-black md:text-start text-center w-full">
+          <h3 className="font-bold text-[24px] md:text-[40px] leading-[120%] text-black md:text-start text-center w-full">
             {title}
           </h3>
-          <p className="text-center md:text-start">{description}</p>
+          <p className="text-center md:text-start text-[18px] md:text-[20px] leading-[150%]">{description}</p>
         </div>
 
         <div className="flex flex-row w-full md:items-end items-center md:justify-start justify-center my-4 pr-1 flex-grow flex-1">
