@@ -16,7 +16,7 @@ import Pricing from "../components/Home/Pricing";
 import ScalingSections from "../components/Home/new-steps";
 import CalendlyEmbed from "../components/Calendly/CalendlyEmbed";
 import ServicesIndustry from "../components/Services/ServicesIndustry";
-import Location from "../components/Home/location";
+import Location from "../components/Home/Location";
 // Case-sensitivity is turned on for vercel builds
 
 export default function Home() {
