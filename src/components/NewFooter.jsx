@@ -22,10 +22,10 @@ const NewFooter = () => {
 
           <div className="flex flex-col md:flex-row gap-4 w-full items-start md:items-center justify-start">
             <a
-              href="mailto:info@enclave-studios.com"
+              href="mailto:hello@enclave-studios.com"
               className="text-white text-base border p-4 rounded-full border-white hover:bg-white hover:text-black transition-colors font-bold"
             >
-              info@enclave-studios.com
+              hello@enclave-studios.com
             </a>
           </div>
         </div>

@@ -6,10 +6,10 @@ import Image from "next/image";
 import Hamburger from "./Hamburger";
 
 const links = [
-  { title: "Home", link: "/" },
-  { title: "Works", link: "/works" },
-  { title: "Services", link: "/services" },
-  { title: "About Us", link: "/services" },
+  { title: "Home", link: "/#" },
+  { title: "Works", link: "/#our-works" },
+  { title: "Services", link: "/#services" },
+  { title: "About Us", link: "/#about-us" },
 ];
 
 export const Navbarr = () => {
