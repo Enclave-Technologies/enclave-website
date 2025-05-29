@@ -57,10 +57,10 @@ const staggerContainer = {
   },
 };
 
-const ServicesIndustry = () => {
+const ServicesIndustry = ({ id }) => {
   return (
-    <section className="flex justify-center w-full bg-[#FAFAFA] px-0">
-      <div className="flex flex-col items-center gap-8 md:gap-12 w-full px-6 md:px-16">
+    <section id={id} className="flex justify-center w-full bg-[#FAFAFA] px-0">
+      <div className="flex flex-col items-center gap-8 md:gap-12 w-full px-6 sm:px-[60px] lg:px-[120px]">
         <motion.div
           className="flex flex-col items-center w-full"
           initial="hidden"
@@ -70,7 +70,7 @@ const ServicesIndustry = () => {
         >
           <div className="flex flex-col items-center gap-1 w-full max-w-[782px]">
             <p className="font-onest font-bold text-[16px] md:text-[20px] leading-[140%] text-center text-[#FB4E29]">
-              Our Works
+              Our Partners
             </p>
             <h2 className="font-onest font-bold text-[32px] md:text-[48px] leading-[120%] text-center text-[#100805] capitalize">
               Industries
