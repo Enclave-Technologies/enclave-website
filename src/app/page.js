@@ -14,33 +14,6 @@ export const metadata = {
 
 
 export default function Home() {
-  const [domLoaded, setDomLoaded] = useState(false);
-
-  function onMouseUpdate(e) {
-    const cursor = document.querySelectorAll(".cursor")[0];
-    if (!cursor) return;
-    cursor.style.left = e.clientX - 10 + "px";
-    cursor.style.top = e.clientY - 10 + "px";
-  }
-
-  useEffect(() => {
-    document.addEventListener("mouseenter", onMouseUpdate, false);
-    document.addEventListener("mousemove", onMouseUpdate, false);
-    // document.querySelectorAll("button").forEach((button) => {
-    //   button.addEventListener("mouseover", () => {
-    //     console.log(document.getElementsByClassName("cursor")[0]);
-    //     document
-    //       .getElementsByClassName("cursor")[0]
-    //       .classList.add("cursor-hover");
-    //   });
-    //   button.addEventListener("mouseout", () => {
-    //     document
-    //       .getElementsByClassName("cursor")[0]
-    //       .classList.remove("cursor-hover");
-    //   });
-    // });
-  }, []);
-
   return (
     <main className="flex min-h-screen flex-col items-center justify-between text-black relative home-font gap-32 bg-[#FAFAFA]">
       {/* <div className="cursor" /> */}
