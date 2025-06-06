@@ -109,12 +109,12 @@ const Testimony = ({ id }) => {
               className="px-16"
             />
 
-            <Button
+            {/* <Button
               variant="secondary"
               title="Learn More"
               link="/works"
               rounded={true}
-            />
+            /> */}
           </div>
         </div>
       </div>
