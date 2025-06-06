@@ -1,10 +1,7 @@
-"use client";
 import React from "react";
 import Link from "next/link";
 import { FaLinkedin } from "react-icons/fa";
 import { FaSquareInstagram } from "react-icons/fa6";
-
-import { Button } from "./Button";
 
 const NewFooter = () => {
   return (
