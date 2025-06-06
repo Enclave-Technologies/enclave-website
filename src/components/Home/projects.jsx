@@ -81,7 +81,7 @@ const Projects = ({ id }) => {
       image: "/company-logos/elysian.png",
       logoImage: "/affiliate-logos/atelier-logo.png",
       gradientColors: ["rgba(109, 79, 59, 0.2)", "rgba(109, 79, 59, 0.9)"],
-      externalLink: "https://elysian-tennis.webflow.io/#intro",
+      externalLink: "https://elysian-tennis.webflow.io/",
       project_industry: "Interior Design",
       project_time: "8 weeks",
       project_type: "Website",
