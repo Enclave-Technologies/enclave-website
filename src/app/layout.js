@@ -8,6 +8,14 @@ const onest = Onest({ subsets: ["latin"], variable: "--font-onest" });
 const albert = Albert_Sans({ subsets: ["latin"], variable: "--font-albert" });
 const projectId = "r10gunijpv";
 
+export const metadata = {
+  title:  "Home | Enclave Studios",
+  description: "Enclave Studios is a growth marketing agency helping startups and businesses grow their online visibility with unique branding and marketing solutions.",
+  keywords: "website design, website development, web-app development, mobile app development, search engine optimisation, seo, search experience optimisation, sxo, branding,",
+  favicon: "/favicon.ico",
+  url: 'www.enclave-studios.com'
+};
+
 export default function RootLayout({ children }) {
   Clarity.init(projectId);
   return (

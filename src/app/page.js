@@ -7,11 +7,6 @@ import NewFooter from "../components/NewFooter";
 import { FloatingWA } from "../components/FloatingWA";
 // Case-sensitivity is turned on for vercel builds
 
-export const metadata = {
-  title:  "Home | Enclave Studios",
-  description: "Enclave Studios is a growth marketing agency helping startups and businesses grow their online visibility with unique branding and marketing solutions."};
-
-
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between text-black relative home-font gap-32 bg-[#FAFAFA]">
