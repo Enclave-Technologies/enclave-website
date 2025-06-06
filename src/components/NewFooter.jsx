@@ -1,6 +1,6 @@
+"use client";
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { FaLinkedin } from "react-icons/fa";
 import { FaSquareInstagram } from "react-icons/fa6";
 

@@ -23,7 +23,6 @@ export default function Home() {
         <Projects id="our-works" />
         <NewServices id="services" />
         <Steps id="about-us" />
-        
         {/* <KPIs id="new-services" /> */}
         {/* <OurServices id="our-services" /> */}
         {/* <ScalingSections /> */}
