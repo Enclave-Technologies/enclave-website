@@ -1,23 +1,12 @@
-"use client";
-
 import { useEffect, useState } from "react";
-
 import Testimony from "../components/Home/testimony";
 import Steps from "../components/Home/steps";
 import Projects from "../components/Home/projects";
 import NewServices from "../components/Home/new-services";
 import { Navbarr } from "../components/Navbar/Navbarr";
-import Team from "../components/Home/team";
 import NewFooter from "../components/NewFooter";
-import OurServices from "../components/Home/our-services";
-import Chat from "../components/Home/chat";
-import KPIs from "../components/Home/KPIs";
-import Pricing from "../components/Home/Pricing";
-import ScalingSections from "../components/Home/new-steps";
-import ContactSection from '../components/Home/ContactForm'
 import { FloatingWA } from "../components/FloatingWA";
 // Case-sensitivity is turned on for vercel builds
-
 
 export const metadata = {
   title:  "Home | Enclave Studios",
