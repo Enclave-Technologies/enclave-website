@@ -158,17 +158,17 @@ const NewServices = ({ id }) => {
               <Button
                 variant="outline"
                 title={service.btn1}
-                link="/services"
+                link="https://calendly.com/hello-enclave-studios/free-consult"
                 rounded={true}
                 className="px-8 py-3 text-[16px] font-bold font-albert ml-1"
               />
-              <Button
+              {/* <Button
                 variant="black navigation"
                 title={service.btn2}
                 link="/works"
                 rounded={true}
                 className="px-8 py-3 text-[16px] font-bold font-albert"
-              />
+              /> */}
             </motion.div>
           </motion.div>
           {/* Image Section */}

@@ -96,9 +96,7 @@ const Testimony = ({ id }) => {
             </h1>
 
             <p className="text-[16px] md:text-[18px] lg:text-[20px] text-[#121212] font-normal normal-case text-center w-full lg:max-w-3xl mx-auto">
-              We enable businesses to create impactful digital solutions and
-              establish bold digital identities, and with customised digital
-              marketing and design strategies.
+              Enclave Studios is a growth marketing agency helping startups and businesses grow their online visibility with unique branding and marketing solutions.
             </p>
           </div>
           <div className="flex flex-wrap gap-4 justify-center mx-auto mt-2">
