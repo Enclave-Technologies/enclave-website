@@ -8,15 +8,6 @@ const onest = Onest({ subsets: ["latin"], variable: "--font-onest" });
 const albert = Albert_Sans({ subsets: ["latin"], variable: "--font-albert" });
 const projectId = "r10gunijpv";
 
-export const metadata = {
-  title: {
-    template: "Website & App Development Studio in Hong Kong | Enclave Studios",
-    default: "Enclave Studios - Web Design & Development Company Hong Kong",
-  },
-  description:
-    "Enclave is a website and application prototyping and development studio in Hong Kong specialising in web and AI applications development. From ideation, prototyping to development and launch.",
-};
-
 export default function RootLayout({ children }) {
   Clarity.init(projectId);
   return (

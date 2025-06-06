@@ -18,6 +18,12 @@ import ContactSection from '../components/Home/ContactForm'
 import { FloatingWA } from "../components/FloatingWA";
 // Case-sensitivity is turned on for vercel builds
 
+
+export const metadata = {
+  title:  "Home | Enclave Studios",
+  description: "Enclave Studios is a growth marketing agency helping startups and businesses grow their online visibility with unique branding and marketing solutions."};
+
+
 export default function Home() {
   const [domLoaded, setDomLoaded] = useState(false);
 
