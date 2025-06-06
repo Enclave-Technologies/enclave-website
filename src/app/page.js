@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import Testimony from "../components/Home/testimony";
 import Steps from "../components/Home/steps";
 import Projects from "../components/Home/projects";
