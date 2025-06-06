@@ -52,10 +52,10 @@ export default function Home() {
       <div className="z-10 flex flex-col items-center">
         <Navbarr />
         <FloatingWA />
-        <Testimony id="testimony" />
-        <Projects id="projects" />
-        <NewServices id="new-services" />
-        <Steps id="steps" />
+        <Testimony id="home" />
+        <Projects id="our-works" />
+        <NewServices id="services" />
+        <Steps id="about-us" />
         
         {/* <KPIs id="new-services" /> */}
         {/* <OurServices id="our-services" /> */}
