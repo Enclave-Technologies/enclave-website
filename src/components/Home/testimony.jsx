@@ -91,8 +91,8 @@ const Testimony = ({ id }) => {
       <div className="w-full flex flex-col items-center justify-center py-4 !pb-0 mt-[80px] mb-[40px]">
         <div className="flex flex-col items-center justify-center gap-8">
           <div className="flex flex-col items-center justify-center gap-6">
-            <h1 className="font-medium lg:text-[96px] md:text-[64px] text-[42px] leading-[100%] text-[#100805] max-w-7xl text-center">
-              Elevate, Innovate, Digitize
+            <h1 className="font-medium lg:text-[64px] md:text-[48px] text-[32px] leading-[120%] text-[#100805] max-w-7xl text-center">
+              Elevate Your Digital Presence With Hong Kong’s Leading Growth Marketing Studio
             </h1>
 
             <p className="text-[16px] md:text-[18px] lg:text-[20px] text-[#121212] font-normal normal-case text-center w-full lg:max-w-3xl mx-auto">
