@@ -14,7 +14,6 @@ import Chat from "../components/Home/chat";
 import KPIs from "../components/Home/KPIs";
 import Pricing from "../components/Home/Pricing";
 import ScalingSections from "../components/Home/new-steps";
-import CalendlyEmbed from "../components/Calendly/CalendlyEmbed";
 import ContactSection from '../components/Home/ContactForm'
 import { FloatingWA } from "../components/FloatingWA";
 // Case-sensitivity is turned on for vercel builds
