@@ -70,11 +70,10 @@ export const Navbarr = () => {
 
           <div className="hidden md:flex h-[40px] w-auto relative z-[1001]">
             <Link
-              href="/contact"
-              target="_blank"
+              href="https://calendly.com/hello-enclave-studios/free-consult"
               className="bg-[#FB4E29] hover:bg-[#fb7429] flex items-center justify-center h-full w-full text-white px-4 py-2 rounded-full transition-colors duration-200 text-base font-medium"
             >
-              Get in Touch
+              Book Appointment
             </Link>
           </div>
 
