@@ -46,6 +46,7 @@ export default function RootLayout({ children }) {
         />
       </Head>
       <GoogleAnalytics gaId="G-80NXJV4T5M"/>
+      <GoogleAnalytics gaId="G-HX4W3X4GRB"/>
       <GoogleTagManager gtmId="GTM-WL5WBF6R"/>
       <body>
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=YourIdGoesHere" height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe></noscript>
