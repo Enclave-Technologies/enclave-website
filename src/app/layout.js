@@ -3,6 +3,7 @@ import "./globals.css";
 import Head from "next/head";
 import Script from "next/script";
 import Clarity from "@microsoft/clarity";
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 
 const onest = Onest({ subsets: ["latin"], variable: "--font-onest" });
 const albert = Albert_Sans({ subsets: ["latin"], variable: "--font-albert" });
@@ -44,31 +45,11 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </Head>
-
+      <GoogleAnalytics gaId="G-80NXJV4T5M"/>
+      <GoogleTagManager gtmId="GTM-WL5WBF6R"/>
       <body>
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-80NXJV4T5M"
-        ></Script>
-
-        <Script id="google-analytics">
-          {`
-                    window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-80NXJV4T5M');
-  `}
-        </Script>
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=YourIdGoesHere" height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe></noscript>
         {children}
-        {/* <div
-          className=".whatsapp-outer-container"
-          style={{ backdropFilter: "blur(12px)" }}
-        >
-          <div clas>
-            <MdWhatsapp size={36} />
-          </div>
-        </div> */}
       </body>
     </html>
   );
