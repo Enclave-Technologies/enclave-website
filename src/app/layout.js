@@ -49,7 +49,7 @@ export default function RootLayout({ children }) {
       <GoogleAnalytics gaId="G-HX4W3X4GRB"/>
       <GoogleTagManager gtmId="GTM-WL5WBF6R"/>
       <body>
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=YourIdGoesHere" height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe></noscript>
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WL5WBF6R" height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe></noscript>
         {children}
       </body>
     </html>
