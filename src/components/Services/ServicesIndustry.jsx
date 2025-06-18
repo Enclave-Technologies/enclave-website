@@ -70,10 +70,10 @@ const ServicesIndustry = ({ id }) => {
         >
           <div className="flex flex-col items-center gap-1 w-full max-w-[782px]">
             <p className="font-onest font-bold text-[16px] md:text-[20px] leading-[140%] text-center text-[#FB4E29]">
-              Our Partners
+              Our Expertise
             </p>
             <h2 className="font-onest font-bold text-[32px] md:text-[48px] leading-[120%] text-center text-[#100805] capitalize">
-              Industries
+              Industries We Have Worked With
             </h2>
           </div>
         </motion.div>
@@ -111,9 +111,9 @@ const ServicesIndustry = ({ id }) => {
           <Button
             variant="outline"
             title="Learn More"
-            link="/about"
+            link="/about-us"
             rounded={true}
-            className="w-full md:w-auto min-w-[149px] h-12 px-8 py-4 text-base font-bold font-albert"
+            className="w-full md:w-auto min-w-[149px] h-11 px-8 py-3 text-base font-bold font-albert"
           />
           <Button
             variant="black"

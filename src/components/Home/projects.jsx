@@ -1,37 +1,97 @@
 import React from "react";
 import Image from "next/image";
 import { Button } from "../Button";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 const services = {
-  'website-design': {icon: '/icons/icon_web_design.png', title: 'Web Design'},
-  'e-commerce': {icon: '/icons/icon_ecommerce.png', title: 'E-Commerce'},
-  'seo': {icon: '/icons/icon_seo.png', title: 'SEO'},
-  'sxo': {icon: '/icons/icon_sxo.png', title: 'SXO'},
-  'app-dev': {icon: '/icons/icon_appdev.png', title: 'App Development'}
-}
+  "website-design": { icon: "/icons/icon_web_design.png", title: "Web Design" },
+  "e-commerce": { icon: "/icons/icon_ecommerce.png", title: "E-Commerce" },
+  seo: { icon: "/icons/icon_seo.png", title: "SEO" },
+  sxo: { icon: "/icons/icon_sxo.png", title: "SXO" },
+  "app-dev": { icon: "/icons/icon_appdev.png", title: "App Development" },
+};
 
-const ProjectCard = ({ title, description, image, externalLink = "#", tags}) => (
-  <div className="flex flex-col justify-between items-center gap-4 w-full md:w-[calc(50%-24px)] h-full overflow-hidden relative group transition-all duration-300 px-2">
+const fadeInAnimation = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 1.2,
+      ease: [0.33, 1, 0.68, 1],
+    },
+  },
+};
+
+const ProjectCard = ({
+  title,
+  fromServices,
+  image,
+  externalLink = "#",
+  tags,
+}) => (
+  <div className="flex flex-col justify-between items-center gap-4 w-full md:w-[calc(50%-24px)] h-full overflow-hidden relative transition-all duration-300">
     <div className="h-full flex flex-col md:flex-col justify-between gap-6">
-      <Image src={image} alt={title} width={700} height={700} />
+      <motion.div
+        className="relative overflow-hidden"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeInAnimation}
+      >
+        <Link href={externalLink} target="_blank" rel="noopener noreferrer">
+          <motion.div
+            className="cursor-pointer group"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+          >
+            <Image
+              src={image}
+              alt={title}
+              width={700}
+              height={700}
+              className="transition-transform duration-300 w-full h-full"
+            />
+          </motion.div>
+        </Link>
+      </motion.div>
+
       <div className="flex flex-col gap-6 w-full justify-between">
         <div className="flex flex-col justify-between items-start gap-3">
           <h3 className="font-bold text-[24px] md:text-[32px] leading-[120%] text-black text-start w-full">
             {title}
           </h3>
-          <div className="flex flex-row gap-4">
-            {tags.map((tag, index)=>{
-              return (
-                <div className="flex flex-row gap-2 items-center justify-start" key={index}>
-                  {<Image src={services[tag].icon} height={16} width={16} alt={services[tag].title} className="w-6 h-6"/> }
-                  <p className="text-center md:text-start text-[14px] md:text-[16px] leading-[150%]">{services[tag].title}</p>
-                </div>
-              )
-            })}
-          </div>
+
+          {!fromServices && (
+            <div className="flex flex-row gap-2">
+              {tags.map((tag, index) => {
+                return (
+                  <div
+                    className="flex flex-row gap-2 items-center justify-start"
+                    key={index}
+                  >
+                    {
+                      <Image
+                        src={services[tag].icon}
+                        height={16}
+                        width={16}
+                        alt={services[tag].title}
+                        className="w-6 h-6"
+                      />
+                    }
+                    {/* <p className="text-center md:text-start text-[14px] md:text-[16px] leading-[150%]">
+          {services[tag].title}
+        </p> */}
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </div>
 
-        <div className="flex flex-row w-full md:items-end items-center justify-start my-4 pr-1 flex-grow flex-1">
+        {/* <div className="flex flex-row w-full md:items-end items-center justify-start my-4 pr-1 flex-grow flex-1">
           <Button
             variant="outline"
             title="VISIT"
@@ -40,27 +100,14 @@ const ProjectCard = ({ title, description, image, externalLink = "#", tags}) => 
             link={externalLink}
             target="_blank"
           />
-        </div>
+        </div> */}
       </div>
     </div>
   </div>
 );
 
-const Projects = ({ id }) => {
+const Projects = ({ id, fromServices = false }) => {
   const projects = [
-    {
-      title: "SRK HAUTE HORLOGERIE",
-      description:
-        "Revolutionizing beauty spaces with innovative, multi-functional design solutions that enhance therapist workflow and client experience. Creating elegant, efficient environments that blend form and function.",
-      image: "/company-logos/SRKHH.png",
-      logoImage: "/affiliate-logos/atelier-logo.png",
-      gradientColors: ["rgba(109, 79, 59, 0.2)", "rgba(109, 79, 59, 0.9)"],
-      externalLink: "https://srk-hautehorlogerie.com",
-      project_industry: "Interior Design",
-      project_time: "8 weeks",
-      project_type: "Website",
-      tags: ['website-design', 'seo', 'sxo']
-    },
     {
       title: "ATELIER SHAN",
       description:
@@ -72,10 +119,49 @@ const Projects = ({ id }) => {
       project_industry: "Interior Design",
       project_time: "8 weeks",
       project_type: "Website",
-      tags: ['website-design', 'sxo']
+      tags: ["website-design", "seo"],
     },
     {
-      title: "ELYSIAN TENNIS ACADEMY",
+      title: "SRK HAUTE HORLOGERIE",
+      description:
+        "Revolutionizing beauty spaces with innovative, multi-functional design solutions that enhance therapist workflow and client experience. Creating elegant, efficient environments that blend form and function.",
+      image: "/company-logos/SRKHH.png",
+      logoImage: "/affiliate-logos/atelier-logo.png",
+      gradientColors: ["rgba(109, 79, 59, 0.2)", "rgba(109, 79, 59, 0.9)"],
+      externalLink: "https://www.srk-hautehorlogerie.com/",
+      project_industry: "Interior Design",
+      project_time: "8 weeks",
+      project_type: "Website",
+      tags: ["website-design", "seo", "sxo"],
+    },
+    {
+      title: "AMARTA SARI",
+      description:
+        "Revolutionizing beauty spaces with innovative, multi-functional design solutions that enhance therapist workflow and client experience. Creating elegant, efficient environments that blend form and function.",
+      image: "/company-logos/amarta.png",
+      logoImage: "/company-logos/Sleepyhead.png",
+      gradientColors: ["rgba(109, 79, 59, 0.2)", "rgba(109, 79, 59, 0.9)"],
+      externalLink: "https://amarta-sari.webflow.io/",
+      project_industry: "Interior Design",
+      project_time: "8 weeks",
+      project_type: "Website",
+      tags: ["website-design", "app-dev"],
+    },
+    {
+      title: "ETERNA LUXE",
+      description:
+        "Revolutionizing beauty spaces with innovative, multi-functional design solutions that enhance therapist workflow and client experience. Creating elegant, efficient environments that blend form and function.",
+      image: "/company-logos/eterna.png",
+      logoImage: "/company-logos/Sleepyhead.png",
+      gradientColors: ["rgba(109, 79, 59, 0.2)", "rgba(109, 79, 59, 0.9)"],
+      externalLink: "https://eterna-luxe.webflow.io/",
+      project_industry: "Interior Design",
+      project_time: "8 weeks",
+      project_type: "Website",
+      tags: ["website-design", "seo", "e-commerce"],
+    },
+    {
+      title: "GO GYM",
       description:
         "Building an engaged fitness community through strategic social media integration. Empowering fitness enthusiasts to connect, share, and grow together while achieving their wellness goals.",
       image: "/company-logos/elysian.png",
@@ -85,7 +171,7 @@ const Projects = ({ id }) => {
       project_industry: "Interior Design",
       project_time: "8 weeks",
       project_type: "Website",
-      tags: ['website-design', 'app-dev']
+      tags: ["website-design", "seo", "e-commerce"],
     },
     {
       title: "SLEEPYHEAD",
@@ -98,9 +184,31 @@ const Projects = ({ id }) => {
       project_industry: "Interior Design",
       project_time: "8 weeks",
       project_type: "Website",
-      tags: ['website-design', 'e-commerce', 'seo', 'sxo']
+      tags: ["website-design", "seo", "e-commerce"],
     },
-    
+  ];
+
+  const tags = [
+    {
+      title: "Website Design",
+      icon: "/icons/icon_web_design.png",
+    },
+    {
+      title: "SEO",
+      icon: "/icons/icon_seo.png",
+    },
+    {
+      title: "SEM",
+      icon: "/icons/icon_sxo.png",
+    },
+    {
+      title: "E-Commerce",
+      icon: "/icons/icon_ecommerce.png",
+    },
+    {
+      title: "App Development",
+      icon: "/icons/icon_appdev.png",
+    },
   ];
 
   return (
@@ -122,9 +230,33 @@ const Projects = ({ id }) => {
             >
               Impossible Redefined{" "}
             </h2>
+
+            {!fromServices && (
+              <div className="flex flex-row flex-wrap gap-4 items-center justify-center">
+                {tags.map((tag, index) => (
+                  <div
+                    className="flex flex-row gap-2 items-center justify-start"
+                    key={index}
+                  >
+                    {
+                      <Image
+                        src={tag.icon}
+                        height={16}
+                        width={16}
+                        alt={tag.title}
+                        className="w-6 h-6"
+                      />
+                    }
+                    <p className="text-center md:text-start text-[14px] md:text-[16px] leading-[150%]">
+                      {tag.title}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
-        <div className="flex flex-row flex-wrap gap-12 md:gap-0c w-full">
+        <div className="flex flex-row flex-wrap gap-12 w-full mt-2 md:mt-12">
           {projects.map((project, index) => (
             <ProjectCard
               key={index}
@@ -138,6 +270,7 @@ const Projects = ({ id }) => {
               project_time={project.project_time}
               project_type={project.project_type}
               tags={project.tags}
+              fromServices={fromServices}
             />
           ))}
         </div>

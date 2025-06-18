@@ -1,13 +1,14 @@
-// This is a conceptual representation and needs to be adapted to your specific React setup (e.g., Next.js, Create React App, etc.)
-// You'll likely need to import useState for form handling and potentially a CSS module or styled-components for styling.
+"use client";
+import React, { useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
+import Image from "next/image";
 
-import React, { useState } from 'react';
-
-const ContactSection = () => {
+const ContactForm = ({ id }) => {
+  const [state, handleSubmit, reset] = useForm("mvgpjgpy");
   const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    message: '',
+    fullName: "",
+    email: "",
+    message: "",
     subscribe: false,
   });
 
@@ -15,110 +16,156 @@ const ContactSection = () => {
     const { name, value, type, checked } = e.target;
     setFormData((prevData) => ({
       ...prevData,
-      [name]: type === 'checkbox' ? checked : value,
+      [name]: type === "checkbox" ? checked : value,
     }));
   };
 
-  const handleSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form data submitted:', formData);
-    // Here you would typically send the form data to your backend
-    alert('Message sent! (This is a placeholder, integrate with your backend)');
+    const result = await handleSubmit(e);
+    if (result) {
+      setFormData({
+        fullName: "",
+        email: "",
+        message: "",
+        subscribe: false,
+      });
+    }
   };
 
   return (
-    <section className="contact-section">
-      <div className="contact-form-container">
-        <h2>Reach out to us</h2>
-        <p>
-          We welcome your questions and a member of our team will strive to
-          respond in a timely manner.
-        </p>
+    <section
+      id={id}
+      className="flex flex-row justify-center items-center py-10 md:py-[64px] px-6 md:px-[60px] lg:px-[120px] gap-8 md:gap-[32px] w-full bg-white"
+    >
+      <div className="flex flex-col items-center gap-6 flex-1">
+        {/* Header */}
+        <div className="flex flex-col items-start gap-1 w-full">
+          <h2 className="font-onest font-bold text-[36px] leading-[46px] text-black w-full capitalize">
+            Contact Us
+          </h2>
+          <p className="font-albert font-normal text-[16px] leading-[19px] text-black w-full">
+            We welcome your questions and a member of our team will strive to
+            respond in a timely manner.
+          </p>
+        </div>
 
-        <form onSubmit={handleSubmit} className="contact-form">
-          <div className="form-group">
-            <label htmlFor="fullName">Full name</label>
+        {/* Form */}
+        <form
+          onSubmit={onSubmit}
+          className="flex flex-col items-start gap-3 w-full"
+        >
+          {/* Full Name Input */}
+          <div className="flex flex-row items-center border-b border-black w-full h-[56px] gap-[10px]">
             <input
               type="text"
               id="fullName"
               name="fullName"
+              placeholder="Full name"
               value={formData.fullName}
               onChange={handleChange}
-              aria-label="Full Name"
+              required
+              className="font-albert font-light text-[16px] leading-[20px] text-black bg-transparent outline-none w-full h-full"
             />
           </div>
+          <ValidationError
+            prefix="Name"
+            field="fullName"
+            errors={state.errors}
+          />
 
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
+          {/* Email Input */}
+          <div className="flex flex-row items-center border-b border-black w-full h-[56px] gap-[10px]">
             <input
               type="email"
               id="email"
               name="email"
+              placeholder="Email"
               value={formData.email}
               onChange={handleChange}
-              aria-label="Email"
+              required
+              className="font-albert font-light text-[16px] leading-[20px] text-black bg-transparent outline-none w-full h-full"
             />
           </div>
+          <ValidationError prefix="Email" field="email" errors={state.errors} />
 
-          <div className="form-group">
-            <label htmlFor="message">Message</label>
+          {/* Message Input */}
+          <div className="flex flex-row items-center border-b border-black w-full h-[56px] gap-[10px]">
             <textarea
               id="message"
               name="message"
+              placeholder="Message"
               value={formData.message}
               onChange={handleChange}
-              rows="5"
-              aria-label="Message"
-            ></textarea>
-          </div>
-
-          <div className="form-group checkbox-group">
-            <input
-              type="checkbox"
-              id="subscribe"
-              name="subscribe"
-              checked={formData.subscribe}
-              onChange={handleChange}
-              aria-label="Sign-up to receive latest additions to our collection and our thought leadership content"
+              required
+              className="font-albert font-light text-[16px] leading-[20px] text-black bg-transparent outline-none resize-none w-full h-full"
             />
-            <label htmlFor="subscribe">
-              Sign-up to receive latest additions to our collection and our thought
-              leadership content
+          </div>
+          <ValidationError
+            prefix="Message"
+            field="message"
+            errors={state.errors}
+          />
+
+          {/* Checkbox */}
+          <div className="flex flex-row items-start gap-3 w-full py-2">
+            <div
+              className="w-[14px] h-[14px] border border-black flex items-center justify-center mt-1 cursor-pointer"
+              onClick={() =>
+                setFormData((prev) => ({ ...prev, subscribe: !prev.subscribe }))
+              }
+            >
+              {formData.subscribe && (
+                <div className="w-[8px] h-[8px] bg-black"></div>
+              )}
+              <input
+                type="checkbox"
+                id="subscribe"
+                name="subscribe"
+                checked={formData.subscribe}
+                onChange={handleChange}
+                className="hidden"
+              />
+            </div>
+            <label
+              htmlFor="subscribe"
+              className="font-albert font-light text-[14px] leading-[20px] text-black cursor-pointer flex-1"
+            >
+              Sign-up to receive latest additions to our collection and our
+              thought leadership content
             </label>
           </div>
 
-          <button type="submit" className="send-message-button">
-            SEND MESSAGE
+          {/* Submit Button */}
+          <button
+            type="submit"
+            disabled={state.submitting}
+            className="flex flex-col justify-center items-center py-[10px] px-[21px] w-full h-[52px] bg-black border border-black rounded-[5px] hover:bg-gray-800 transition-colors duration-300"
+          >
+            <span className="font-albert font-normal text-[14px] leading-[20px] text-white">
+              {state.submitting ? "SENDING..." : "SEND MESSAGE"}
+            </span>
           </button>
+
+          {state.succeeded && (
+            <p className="font-albert text-[14px] text-green-600 mt-2">
+              Thank you for reaching out! We&apos;ll get back to you soon.
+            </p>
+          )}
         </form>
       </div>
 
-      <div className="iphone-mockup-container">
-        {/*
-          In a real application, you'd likely use an <img> tag with a proper src.
-          For a more dynamic/interactive mockup, you might use a dedicated library or component.
-          The text "News for you Since yesterday your sales have increased!" would be overlaid.
-        */}
-        <img
-          src="path/to/your/iphone-mockup.png" // Replace with the actual path to your image
-          alt="iPhone 12 Pro Mockup displaying a sales increase notification"
-          className="iphone-mockup-image"
+      <div className="flex-1 lg:h-[720px] h-[400px] lg:block hidden">
+        <Image
+          src="/contact-img.png"
+          alt="Contact us"
+          width={547}
+          height={720}
+          className="object-contain w-full h-full"
         />
-        <div className="iphone-screen-content">
-          <p className="app-name">FISHBOWL</p>
-          <div className="notification-card">
-            <p className="news-label">News for you</p>
-            <p className="sales-message">Since yesterday your sales have increased!</p>
-            <div className="navigation-buttons">
-              <button className="nav-button">&lt;</button>
-              <button className="nav-button">&gt;</button>
-              <span className="start-text">Start</span>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
 };
 
-export default ContactSection;
+export default ContactForm;

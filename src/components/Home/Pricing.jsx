@@ -1,155 +1,737 @@
 import Link from "next/link";
-import { Checkmark, Cross } from "../icons";
-import { Button } from "../Button";
+import { Cross } from "../icons";
 
-const PricingCard = ({ pricing, highlighted }) => {
-  return (
-    <div
-      className={`w-full my-4 md:mx-2 md:my-0 flex flex-col justify-between gap-10 shadow-lg ${
-        highlighted ? "bg-[#FB4E29] -translate-y-0 text-white" : "bg-white"
-      } px-6 py-8 rounded-[24px] duration-[400ms]`}
-    >
-      <h5 className="text-4xl font-bold">{pricing.title}</h5>
-      <div className="flex flex-col gap-3">
-        {pricing.features.map((feature, index) => {
-          return (
-            <div
-              key={index}
-              className={`flex flex-row w-full items-center justify-between ${
-                highlighted ? "!text-white" : ""
-              }`}
-            >
-              <p>{feature.feature}</p>
-              {feature.available ? (
-                <div
-                  className={`${
-                    highlighted ? "!text-white" : "text-[#FB4E29]"
-                  }`}
-                >
-                  <Checkmark />
-                </div>
-              ) : (
-                <div className={`${highlighted ? "!text-white" : ""}`}>
-                  <Cross />
-                </div>
-              )}
-            </div>
-          );
-        })}
-      </div>
-      <div className="flex flex-col gap-1">
-        <h4 className="text-5xl font-bold">{pricing.price}</h4>
-        <p className="">{pricing.additionalPrice}</p>
-      </div>
-      <Link
-        href={"https://calendly.com/hello-enclave-studios/free-consult"}
-        className=""
-        target={"_blank"}
-      >
-        <button
-          className={`primary flex flex-row items-center gap-2 min-w-fit w-full !rounded-full ${
-            highlighted
-              ? "!text-[#FB4E29] hover:!text-[#FB4E29] !bg-white hover:!bg-gray-100"
-              : ""
-          }`}
-        >
-          Book Consultation
-        </button>
-      </Link>
-    </div>
-  );
-};
+const CheckmarkIcon = () => (
+  <svg
+    width="24"
+    height="25"
+    viewBox="0 0 24 25"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M22 11.3318V12.2518C21.9988 14.4082 21.3005 16.5065 20.0093 18.2336C18.7182 19.9608 16.9033 21.2243 14.8354 21.8357C12.7674 22.4471 10.5573 22.3737 8.53447 21.6264C6.51168 20.8791 4.78465 19.4979 3.61096 17.6889C2.43727 15.8799 1.87979 13.7399 2.02168 11.5881C2.16356 9.43638 2.99721 7.38814 4.39828 5.74889C5.79935 4.10964 7.69279 2.9672 9.79619 2.49196C11.8996 2.01673 14.1003 2.23415 16.07 3.11182"
+      stroke="#FB4E29"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M22 4.25L12 14.26L9 11.26"
+      stroke="#FB4E29"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+);
 
-const Pricing = ({ id }) => {
+const Pricing = ({ id, fromServices = false, header, subtitle }) => {
+  const pricingTiers = [
+    {
+      title: "Basic Website",
+      price: "HK$12,000",
+      pages: "1-5 Pages",
+      description:
+        "A basic website ideal for individuals and startups wanting to launch a digital presence with the bare necessary functionality.",
+      idealFor: "Individuals & Startups",
+      buttonText: "Contact Us",
+      buttonVariant: "outline",
+      viewExamples: true,
+    },
+    {
+      title: "Standard Website",
+      price: "HK$25,000",
+      pages: "5-10 Pages",
+      description:
+        "Designed for small businesses looking to provide detailed information about their services, this package includes more pages.",
+      idealFor: "Small Businesses",
+      buttonText: "Contact Us",
+      buttonVariant: "filled",
+      viewExamples: true,
+      highlighted: true,
+    },
+    {
+      title: "Advanced Website",
+      price: "HK$52,000",
+      pages: "10-20 Pages",
+      description:
+        "A comprehensive solution for medium to large enterprises that require a robust online presence with multiple sections and user.",
+      idealFor: "Medium to Large Enterprises",
+      buttonText: "Contact Us",
+      buttonVariant: "outline",
+      viewExamples: true,
+    },
+  ];
+
+  const features = [
+    {
+      category: "Design & Pages",
+      items: [
+        {
+          name: "Upto 5 Pages (Home, About etc.)",
+          basic: true,
+          standard: true,
+          advanced: true,
+        },
+        {
+          name: "Design Type",
+          basic: "Professional Template-Based Design",
+          standard: "Customized Design",
+          advanced: "Fully Custom (Bespoke) Design",
+        },
+        {
+          name: "Your Branding Integration",
+          basic: true,
+          standard: true,
+          advanced: true,
+        },
+        {
+          name: "Mobile & Tablet Responsive",
+          basic: true,
+          standard: true,
+          advanced: true,
+        },
+        { name: "Contact Form", basic: true, standard: true, advanced: true },
+        {
+          name: "Interactive Google Map",
+          basic: true,
+          standard: true,
+          advanced: true,
+        },
+        {
+          name: "Social Media Links",
+          basic: true,
+          standard: true,
+          advanced: true,
+        },
+        {
+          name: "Basic SEO Setup",
+          basic: true,
+          standard: true,
+          advanced: true,
+        },
+        {
+          name: "Google Analytics Integration",
+          basic: true,
+          standard: true,
+          advanced: true,
+        },
+        {
+          name: "Secure Hosting Setup Assistance",
+          basic: true,
+          standard: true,
+          advanced: true,
+        },
+        {
+          name: "1 Round of Revisions",
+          basic: true,
+          standard: true,
+          advanced: true,
+        },
+        {
+          name: "Stock Photography",
+          basic: false,
+          standard: "Stock Photography",
+          advanced: "Paid Photography",
+        },
+        {
+          name: "Content Management System (CMS)",
+          basic: false,
+          standard: true,
+          advanced: true,
+        },
+        {
+          name: "Blog / News Functionality",
+          basic: false,
+          standard: true,
+          advanced: true,
+        },
+        {
+          name: "Email Newsletter Integration",
+          basic: false,
+          standard: true,
+          advanced: true,
+        },
+        {
+          name: "Basic Booking / Appointment System",
+          basic: false,
+          standard: true,
+          advanced: true,
+        },
+        {
+          name: "Speed & Performance Optimization",
+          basic: false,
+          standard: true,
+          advanced: true,
+        },
+        {
+          name: "1-Hour Training Session",
+          basic: false,
+          standard: "1-Hour Training Session",
+          advanced: "In-depth Training Session",
+        },
+        {
+          name: "Advanced UI/UX Design",
+          basic: false,
+          standard: false,
+          advanced: true,
+        },
+        {
+          name: "E-commerce Functionality",
+          basic: false,
+          standard: false,
+          advanced: true,
+        },
+        {
+          name: "Third-Party API Integration",
+          basic: false,
+          standard: false,
+          advanced: true,
+        },
+        {
+          name: "Advanced SEO & Performance",
+          basic: false,
+          standard: false,
+          advanced: true,
+        },
+        {
+          name: "Priority Support (3 Months)",
+          basic: false,
+          standard: false,
+          advanced: true,
+        },
+      ],
+    },
+  ];
+
   return (
     <section
       id={id}
-      className="flex flex-col items-center py-16 md:py-32 px-0 md:px-8 w-full gap-12 bg-[#FAFAFA]"
+      className="flex flex-col justify-center items-center py-16 md:py-32 px-6 sm:px-[60px] lg:px-[120px] gap-12 bg-white"
     >
-      <div className="max-w-7xl mx-auto w-full flex flex-col gap-12 px-8">
-        <div className="text-center mb-8 flex flex-col items-center">
-          <h4 className="text-[#FB4E29] text-[20px] md:text-[24px] lg:text-[28px] font-bold">
-            Pricing
-          </h4>
-          <h2 className="text-[32px] md:text-[40px] lg:text-[48px] max-w-2xl font-bold mt-2 mb-4 capitalize text-center">
-            Pricing Packages For Every Budget
-          </h2>
-          <p className="text-[#26120D] mx-auto text-[18px] md:text-[20px] leading-[150%] text-center max-w-4xl">
-            Includes design, development, hosting, unlimited edits, 24/7
-            support, and lifetime updates.
-          </p>
-        </div>
-        <div className="flex flex-col md:flex-row w-full gap-2">
-          {[
-            {
-              title: "Consultation",
-              price: "Free",
-              additionalPrice: "",
-              features: [
-                { feature: "1-hour Session Included", available: true },
-                { feature: "Expert Guidance", available: true },
-                { feature: "No Upfront Fees", available: true },
-                { feature: "No Hidden Costs", available: true },
-                { feature: "Quick Response Time", available: true },
-                { feature: "100% commitment free", available: true },
-                { feature: "Personalized Solutions", available: true },
-                { feature: "Secure Communication", available: true },
-              ],
-              highlighted: false,
-            },
-            // {
-            //   title: "Lump Sum",
-            //   price: "$3.8K",
-            //   additionalPrice: "+HK$250/mo Hosting",
-            //   features: [
-            //     { feature: "Design And Development", available: true },
-            //     { feature: "$25/mo Hosting", available: true },
-            //     { feature: "$100 fee per Page after 5", available: true },
-            //     { feature: "+$50/mo Unlimited Edits Add-on", available: true },
-            //     { feature: "+$250 To Add a Blog", available: true },
-            //     { feature: "24/7 Support", available: false },
-            //     { feature: "Lifetime Updates", available: false },
-            //   ],
-            //   highlighted: false,
-            // },
-            {
-              title: "Monthly",
-              price: "$250",
-              additionalPrice: "per month",
-              features: [
-                { feature: "Design And Development", available: true },
-                { feature: "$25/mo Hosting Included", available: true },
-                { feature: "Unlimited Edits", available: true },
-                { feature: "$100 fee per Page after 5", available: true },
-                { feature: "+$250 To Add a Blog", available: true },
-                { feature: "24/7 Support", available: true },
-                { feature: "Lifetime Updates", available: true },
-              ],
-              highlighted: true,
-            },
-            {
-              title: "E-Commerce",
-              price: "$8k",
-              additionalPrice: "Starting",
-              features: [
-                { feature: "Custom Shopify Store", available: true },
-                { feature: "Configure Any & All Apps", available: true },
-                { feature: "Integrated Shipping", available: true },
-                { feature: "Shopify Tutorial Walkthrough", available: true },
-                { feature: "Fully Editable in Shopify CMS", available: true },
-                { feature: "+$50/mo Unlimited Edits", available: false },
-                { feature: "24/7 Support", available: false },
-              ],
-              highlighted: false,
-            },
-          ].map((pricing, index) => (
-            <PricingCard
-              pricing={pricing}
-              key={index}
-              highlighted={pricing.highlighted}
-            />
-          ))}
-        </div>
+      {/* Header */}
+      <div className="flex flex-col items-center gap-4 text-center">
+        <h2 className="font-onest font-bold text-[32px] md:text-[48px] leading-[120%] text-center text-[#100805] capitalize">
+          {header}
+        </h2>
+        <p className="text-[18px] md:text-[20px] text-[#26120D] leading-[150%]">
+          {subtitle}
+        </p>
+      </div>
+
+      {/* Pricing Cards */}
+      <div className="flex flex-col lg:flex-row gap-8 w-full mt-2 md:mt-12">
+        {pricingTiers.map((tier, index) => (
+          <div
+            key={index}
+            className={`group flex-1 flex flex-col p-8 md:p-10 gap-10 rounded-xl transition-all duration-300 hover:shadow-[0px_0px_25px_rgba(0,0,0,0.15)] hover:-translate-y-2 ${
+              tier.highlighted
+                ? "bg-gradient-to-br from-white to-white/20 shadow-[0px_0px_15px_rgba(0,0,0,0.2)]"
+                : "bg-gradient-to-br from-white to-white/20 shadow-[0px_0px_15px_rgba(0,0,0,0.2)]"
+            }`}
+            style={{ backdropFilter: "blur(15px)" }}
+          >
+            {/* Header */}
+            <div className="flex flex-col gap-4">
+              <h3 className="text-[28px] font-bold text-[#FB4E29]">
+                {tier.title}
+              </h3>
+              <div className="flex flex-col gap-3">
+                <h4 className="text-[40px] font-bold text-[#100805]">
+                  {tier.price}
+                </h4>
+                <p className="text-[28px] font-bold text-[#51413D]">
+                  {tier.pages}
+                </p>
+              </div>
+              <p className="text-[16px] text-[#6E605D] leading-[150%]">
+                {tier.description}
+              </p>
+
+              {/* Buttons */}
+              <div className="flex sm:flex-row flex-col justify-between w-full sm:items-center flex-wrap gap-3 mt-2">
+                <Link
+                  href="/contact"
+                  className={`flex justify-center items-center px-6 py-3 rounded-full font-bold text-[16px] transition-all duration-300 border-2 border-[#FB4E29] bg-transparent text-[#FB4E29] group-hover:bg-[#FB4E29] group-hover:text-white ${
+                    fromServices ? "w-full" : ""
+                  }`}
+                >
+                  {fromServices ? "Book Consultation" : tier.buttonText}
+                </Link>
+                {tier.viewExamples && !fromServices && (
+                  <Link
+                    href="/services"
+                    className="text-[#FB4E29] font-bold text-[16px] hover:underline self-center"
+                  >
+                    View Examples
+                  </Link>
+                )}
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="border-t-2 border-[#FEC8BD]"></div>
+
+            {/* Features */}
+            <div className="flex flex-col gap-2">
+              {features[0].items.map((feature, featureIndex) => {
+                const packageValue =
+                  index === 0
+                    ? feature.basic
+                    : index === 1
+                      ? feature.standard
+                      : feature.advanced;
+
+                // Check if it's a string (custom text) or boolean
+                const isCustomText = typeof packageValue === "string";
+                const isAvailable = isCustomText ? true : packageValue;
+                const displayText = isCustomText ? packageValue : feature.name;
+
+                return (
+                  <div
+                    key={featureIndex}
+                    className={`flex items-center gap-4 py-1 ${
+                      !isAvailable ? "opacity-40" : ""
+                    }`}
+                  >
+                    <div className="w-6 h-6 flex-shrink-0 flex items-center justify-center">
+                      {isAvailable ? (
+                        <CheckmarkIcon />
+                      ) : (
+                        <Cross className="text-[#FB4E29]" />
+                      )}
+                    </div>
+                    <p className="text-[18px] text-[#6E605D]">{displayText}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Comparison Table */}
+      <div className="w-full mt-16 overflow-x-auto">
+        <table className="w-full">
+          <thead>
+            <tr className="border-b-2 border-gray-200">
+              <th className="text-left py-4 px-4 text-[18px] font-bold">
+                Features
+              </th>
+              <th className="text-center py-4 px-4 text-[18px] font-bold">
+                Basic Website
+              </th>
+              <th className="text-center py-4 px-4 text-[18px] font-bold">
+                Standard Website
+              </th>
+              <th className="text-center py-4 px-4 text-[18px] font-bold">
+                Advanced Website
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b border-gray-100">
+              <td className="py-3 px-4 text-[18px]">Ideal for</td>
+              <td className="text-center py-3 px-4 text-[18px]">
+                Individuals & Startups
+              </td>
+              <td className="text-center py-3 px-4 text-[18px]">
+                Small Businesses
+              </td>
+              <td className="text-center py-3 px-4 text-[18px]">
+                Medium to Large Enterprises
+              </td>
+            </tr>
+
+            <tr>
+              <td className="py-6 px-4 text-[18px] font-bold" colSpan="4">
+                Design & Pages
+              </td>
+            </tr>
+            <tr className="border-b border-gray-100">
+              <td className="py-3 px-4 text-[18px]">Max Number of Pages</td>
+              <td className="text-center py-3 px-4 text-[18px]">Up to 5</td>
+              <td className="text-center py-3 px-4 text-[18px]">Up to 10</td>
+              <td className="text-center py-3 px-4 text-[18px]">Up to 20</td>
+            </tr>
+            <tr className="border-b border-gray-100">
+              <td className="py-3 px-4 text-[18px]">Design Approach</td>
+              <td className="text-center py-3 px-4 text-[18px]">
+                Professional Template-Based
+              </td>
+              <td className="text-center py-3 px-4 text-[18px]">
+                Enhanced & Customized Design
+              </td>
+              <td className="text-center py-3 px-4 text-[18px]">
+                Fully Custom / Bespoke
+              </td>
+            </tr>
+            <tr className="border-b border-gray-100">
+              <td className="py-3 px-4 text-[18px]">Advanced UI/UX Design</td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <Cross className="text-gray-400" />
+                </div>
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <Cross className="text-gray-400" />
+                </div>
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <CheckmarkIcon />
+                </div>
+              </td>
+            </tr>
+            <tr className="border-b border-gray-100">
+              <td className="py-3 px-4 text-[18px]">
+                Mobile & Tablet Responsive
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <CheckmarkIcon />
+                </div>
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <CheckmarkIcon />
+                </div>
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <CheckmarkIcon />
+                </div>
+              </td>
+            </tr>
+            <tr className="border-b border-gray-100">
+              <td className="py-3 px-4 text-[18px]">Branding Integration</td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <CheckmarkIcon />
+                </div>
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <CheckmarkIcon />
+                </div>
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <CheckmarkIcon />
+                </div>
+              </td>
+            </tr>
+            <tr className="border-b border-gray-100">
+              <td className="py-3 px-4 text-[18px]">
+                Professional Stock Photos
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <Cross className="text-gray-400" />
+                </div>
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <CheckmarkIcon />
+                </div>
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <CheckmarkIcon />
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td className="py-6 px-4 text-[18px] font-bold" colSpan="4">
+                Functionality & Features
+              </td>
+            </tr>
+            <tr className="border-b border-gray-100">
+              <td className="py-3 px-4 text-[18px]">
+                Content Management System (CMS)
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <Cross className="text-gray-400" />
+                </div>
+              </td>
+              <td className="text-center py-3 px-4">Webflow / Wordpress</td>
+              <td className="text-center py-3 px-4">Webflow / Wordpress</td>
+            </tr>
+            <tr className="border-b border-gray-100">
+              <td className="py-3 px-4 text-[18px]">Blog / News Section</td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <Cross className="text-gray-400" />
+                </div>
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <CheckmarkIcon />
+                </div>
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <CheckmarkIcon />
+                </div>
+              </td>
+            </tr>
+            <tr className="border-b border-gray-100">
+              <td className="py-3 px-4 text-[18px]">Contact & Enquiry Forms</td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <CheckmarkIcon />
+                </div>
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <CheckmarkIcon />
+                </div>
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <CheckmarkIcon />
+                </div>
+              </td>
+            </tr>
+            <tr className="border-b border-gray-100">
+              <td className="py-3 px-4 text-[18px]">
+                Email Newsletter Integration
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <Cross className="text-gray-400" />
+                </div>
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <CheckmarkIcon />
+                </div>
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <CheckmarkIcon />
+                </div>
+              </td>
+            </tr>
+            <tr className="border-b border-gray-100">
+              <td className="py-3 px-4 text-[18px]">
+                Basic Booking / Appointment System
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <Cross className="text-gray-400" />
+                </div>
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <CheckmarkIcon />
+                </div>
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <CheckmarkIcon />
+                </div>
+              </td>
+            </tr>
+            <tr className="border-b border-gray-100">
+              <td className="py-3 px-4 text-[18px]">
+                E-commerce Functionality
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <Cross className="text-gray-400" />
+                </div>
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <Cross className="text-gray-400" />
+                </div>
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <CheckmarkIcon />
+                </div>
+              </td>
+            </tr>
+            <tr className="border-b border-gray-100">
+              <td className="py-3 px-4 text-[18px]">
+                Advanced Custom Features
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <Cross className="text-gray-400" />
+                </div>
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <Cross className="text-gray-400" />
+                </div>
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <CheckmarkIcon />
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td className="py-6 px-4 text-[18px] font-bold" colSpan="4">
+                Technical & SEO
+              </td>
+            </tr>
+            <tr className="border-b border-gray-100">
+              <td className="py-3 px-4 text-[18px]">Basic On-Page SEO</td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <CheckmarkIcon />
+                </div>
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <CheckmarkIcon />
+                </div>
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <CheckmarkIcon />
+                </div>
+              </td>
+            </tr>
+            <tr className="border-b border-gray-100">
+              <td className="py-3 px-4 text-[18px]">Enhanced Technical SEO</td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <Cross className="text-gray-400" />
+                </div>
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <CheckmarkIcon />
+                </div>
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <CheckmarkIcon />
+                </div>
+              </td>
+            </tr>
+            <tr className="border-b border-gray-100">
+              <td className="py-3 px-4 text-[18px]">Advanced SEO & Audit</td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <Cross className="text-gray-400" />
+                </div>
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <Cross className="text-gray-400" />
+                </div>
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <CheckmarkIcon />
+                </div>
+              </td>
+            </tr>
+            <tr className="border-b border-gray-100">
+              <td className="py-3 px-4 text-[18px]">Google Analytics Setup</td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <CheckmarkIcon />
+                </div>
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <CheckmarkIcon />
+                </div>
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <CheckmarkIcon />
+                </div>
+              </td>
+            </tr>
+            <tr className="border-b border-gray-100">
+              <td className="py-3 px-4 text-[18px]">
+                Performance Optimization
+              </td>
+              <td className="text-center py-3 px-4">Basic</td>
+              <td className="text-center py-3 px-4">
+                Standard (Caching & Image Opt.)
+              </td>
+              <td className="text-center py-3 px-4">
+                Advanced (CDN & Minification)
+              </td>
+            </tr>
+            <tr className="border-b border-gray-100">
+              <td className="py-3 px-4 text-[18px]">
+                Hosting Setup Assistance
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <CheckmarkIcon />
+                </div>
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <CheckmarkIcon />
+                </div>
+              </td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <CheckmarkIcon />
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td className="py-6 px-4 text-[18px] font-bold" colSpan="4">
+                Project & Support
+              </td>
+            </tr>
+            <tr className="border-b border-gray-100">
+              <td className="py-3 px-4 text-[18px]">Rounds of Revisions</td>
+              <td className="text-center py-3 px-4 text-[18px]">1 Round</td>
+              <td className="text-center py-3 px-4 text-[18px]">2 Rounds</td>
+              <td className="text-center py-3 px-4 text-[18px]">3 Rounds</td>
+            </tr>
+            <tr className="border-b border-gray-100">
+              <td className="py-3 px-4 text-[18px]">CMS Training Session</td>
+              <td className="text-center py-3 px-4">
+                <div className="flex justify-center">
+                  <Cross className="text-gray-400" />
+                </div>
+              </td>
+              <td className="text-center py-3 px-4">1-hour session</td>
+              <td className="text-center py-3 px-4">In-depth team training</td>
+            </tr>
+            <tr className="border-b border-gray-100">
+              <td className="py-3 px-4 text-[18px]">Post-Launch Support</td>
+              <td className="text-center py-3 px-4">Email Support</td>
+              <td className="text-center py-3 px-4">Email Support</td>
+              <td className="text-center py-3 px-4">Priority Support</td>
+            </tr>
+
+            <tr>
+              <td className="py-6 px-4 text-[18px] font-bold">
+                Estimated Delivery
+              </td>
+              <td className="text-center py-3 px-4 text-[18px] font-bold">
+                ~2-3 Weeks
+              </td>
+              <td className="text-center py-3 px-4 text-[18px] font-bold">
+                ~4-5 Weeks
+              </td>
+              <td className="text-center py-3 px-4 text-[18px] font-bold">
+                ~6-8+ Weeks
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
   );

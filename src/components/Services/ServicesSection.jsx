@@ -8,62 +8,70 @@ const services = [
   {
     title: "Website Design & Development",
     description:
-      "Transform your online presence with our custom website solutions. We create stunning, high-performance websites that drive engagement and convert visitors into customers. From responsive designs to seamless user experiences, we ensure your website stands out in today's digital landscape.",
+      "We craft modern websites for new-age businesses, delivering a premium and rich experience to every visitor. Each site is hand-crafted and tailored to your unique brand identity and business goals. Our mobile-first approach ensures optimal performance on all devices, starting with mobile.",
     list: [
-      "Website Design",
-      "Search Engine Optimisation",
-      "Social Media Management",
+      "Web Design",
+      "Web Development",
+      "Hosting & Maintenance",
+      "Responsive Design (Mobile-First)",
     ],
-    image: "/service9.png",
-    imageAlt: "Websites",
-    button: "View All Websites >",
-  },
-  {
-    title: "Branding",
-    description:
-      "Build a memorable brand that resonates with your audience. Our branding expertise helps you craft a unique identity that tells your story and connects with your target market. We develop comprehensive brand strategies that set you apart and create lasting impressions.",
-    list: [
-      "Brand Strategy & Positioning",
-      "Visual Identity Design",
-      "Brand Guidelines & Assets",
-    ],
-    image: "/service5.png",
-    imageAlt: "Branding",
-    button: "Learn More",
+    image: "/service7.png",
+    imageAlt: "Website Design & Development",
+    btn1: "Request Pricing",
+    btn2: "Learn More",
+    link: "/services/web-design",
+    link2: "/services/web-design/#pricing",
   },
   {
     title: "Search Engine Optimisation (SEO)",
     description:
-      "Boost your online visibility and drive organic traffic with our expert SEO services. We optimise your website to improve search engine rankings, increase visibility, and attract more targeted traffic. Our SEO strategies are designed to help you stand out in the competitive digital landscape.",
-    list: ["Keyword Research & Strategy", "On-Page SEO", "Technical SEO"],
-    image: "/service3.png",
-    imageAlt: "Digital Products",
-    button: "Learn More",
-    extraButtons: true,
+      "We go beyond basic optimization, delivering a rich and prominent online presence that connects with your target audience. Each strategy is tailored to your unique brand identity and business goals, ensuring maximum visibility and organic growth. We prioritize a holistic, data-driven approach that secures top rankings starting with getting you found.",
+    list: [
+      "Search Engine Optimisation",
+      "On-Page SEO",
+      "Technical SEO",
+      "Off-Page SEO",
+    ],
+    image: "/service4.png",
+    imageAlt: "Search Engine Optimisation (SEO)",
+    btn1: "View Pricing",
+    btn2: "Learn More",
+    link: "/services/seo",
+    link2: "/services/seo/#pricing",
   },
   {
-    title: "Social Media Optimisation (SMO)",
+    title: "Search Engine Marketing (SEM)",
     description:
-      "Enhance your online presence and engage your audience with our expert social media optimisation services. We optimise your social media platforms to improve visibility, increase engagement, and drive more traffic to your website. Our SMO strategies are designed to help you stand out in the competitive social media landscape.",
+      "We craft modern mobile applications for new-age businesses, delivering a premium and rich experience to every user. Our mobile-first approach ensures optimal performance and seamless user journeys across all devices, starting with the smartphone in their hand.",
     list: [
-      "Social Media Strategy",
-      "Social Media Management",
-      "Social Media Advertising",
+      "Search Ads (SEA)",
+      "Pay-Per-Click (PPC)",
+      "Campaign Management",
+      "Analytics & Reporting",
     ],
     image: "/service6.png",
-    imageAlt: "Content",
-    button: "Learn More",
-    extraButtons: true,
+    imageAlt: "Search Engine Marketing (SEM)",
+    btn1: "Request Pricing",
+    btn2: "Learn More",
+    link: "/services/sem",
+    link2: "/services/sem/#pricing",
   },
   {
-    title: "Newsletter and Blog Writing",
+    title: "Application Development",
     description:
-      "Create engaging content that drives results. Our newsletter and blog writing services help you tell your story, establish authority, and connect with your target audience. We create content that not only attracts but converts.",
-    list: ["Newsletter Writing", "Blog Writing", "Content Strategy"],
-    image: "/service3.png",
-    imageAlt: "Development",
-    button: "Learn More",
-    extraButtons: true,
+      "We craft modern mobile applications for new-age businesses, delivering a premium and rich experience to every user. Our mobile-first approach ensures optimal performance and seamless user journeys across all devices, starting with the smartphone in their hand.",
+    list: [
+      "Mobile Applications",
+      "Web Applications",
+      "AI Applications",
+      "Custom Solutions",
+    ],
+    image: "/service2.png",
+    imageAlt: "Application Development",
+    btn1: "View Pricing",
+    btn2: "Learn More",
+    link: "/services/app-development",
+    link2: "/services/app-development/#pricing",
   },
 ];
 
@@ -75,125 +83,105 @@ const slideUpAnimation = {
     y: 0,
     transition: {
       duration: 0.8,
-      ease: [0.33, 1, 0.68, 1], // custom cubic-bezier for smoother motion
+      ease: [0.33, 1, 0.68, 1],
     },
   },
 };
 
-const ServicesSection = ({}) => (
-  <section className="flex flex-col items-center w-full bg-[#FAFAFA] py-6 md:gap-12 gap-8 z-3 px-0">
-    {services.map((service, idx) => (
+const ServiceCard = ({ service, index }) => (
+  <motion.div
+    className="flex flex-col gap-6 w-full"
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.2 }}
+    variants={slideUpAnimation}
+  >
+    {/* Image */}
+    <motion.div
+      className="w-full h-[300px] md:h-[400px] flex items-center justify-center overflow-hidden"
+      variants={{
+        hidden: { y: 35 },
+        visible: {
+          y: 0,
+          transition: {
+            duration: 0.7,
+            ease: [0.33, 1, 0.68, 1],
+          },
+        },
+      }}
+    >
+      <Image
+        src={service.image}
+        alt={service.imageAlt}
+        width={600}
+        height={400}
+        className="object-cover w-full h-full"
+      />
+    </motion.div>
+
+    {/* Content */}
+    <motion.div
+      className="flex flex-col gap-4"
+      variants={{
+        hidden: { y: 30 },
+        visible: {
+          y: 0,
+          transition: {
+            duration: 0.6,
+            delay: 0.2,
+            ease: [0.33, 1, 0.68, 1],
+          },
+        },
+      }}
+    >
+      <h3 className="font-onest font-bold text-[#100805] text-[20px] md:text-[28px] leading-[120%] capitalize text-left md:text-center">
+        {service.title}
+      </h3>
+      <p className="font-albert text-[#26120D] text-[16px] md:text-[18px] leading-[150%] text-left md:text-center">
+        {service.description}
+      </p>
+
       <motion.div
-        key={service.title}
-        className={`flex flex-col md:flex-row ${
-          idx % 2 === 1 ? "md:flex-row-reverse" : ""
-        } items-center justify-center gap-12 w-full  md:gap-[100px] py-6 md:py-14 px-6 md:px-16 overflow-hidden`}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={slideUpAnimation}
+        className="flex flex-row gap-4 w-full md:justify-center justify-start"
+        variants={{
+          hidden: { y: 15 },
+          visible: {
+            y: 0,
+            transition: {
+              duration: 0.5,
+              delay: 0.4,
+              ease: [0.33, 1, 0.68, 1],
+            },
+          },
+        }}
       >
-        {/* Text Section */}
-        <motion.div
-          className="flex-1 flex flex-col gap-8 md:gap-12 max-w-[800px] w-full md:py-0 py-4"
-          variants={{
-            hidden: { y: 30 },
-            visible: {
-              y: 0,
-              transition: {
-                duration: 0.6,
-                ease: [0.33, 1, 0.68, 1],
-              },
-            },
-          }}
-        >
-          <div className="flex flex-col gap-4">
-            <h2 className="font-onest capitalize font-bold text-[#100805] text-[32px] md:text-[56px] leading-[120%]">
-              {service.title}
-            </h2>
-            <p className="font-albert text-[#26120D] text-[18px] md:text-[20px] leading-[150%]">
-              {service.description}
-            </p>
-          </div>
-          <ul className="flex flex-col gap-2">
-            {service.list.map((item, i) => (
-              <motion.li
-                key={i}
-                variants={{
-                  hidden: { y: 20 },
-                  visible: {
-                    y: 0,
-                    transition: {
-                      duration: 0.5,
-                      delay: 0.1 * i,
-                      ease: [0.33, 1, 0.68, 1],
-                    },
-                  },
-                }}
-                className="font-albert text-[#26120D] text-[18px] md:text-[20px] leading-[150%]"
-              >
-                {item}
-              </motion.li>
-            ))}
-          </ul>
-          <motion.div
-            className="flex flex-row gap-4 mt-4"
-            variants={{
-              hidden: { y: 15 },
-              visible: {
-                y: 0,
-                transition: {
-                  duration: 0.5,
-                  delay: 0.4,
-                  ease: [0.33, 1, 0.68, 1],
-                },
-              },
-            }}
-          >
-            <Button
-              variant="outline"
-              title="Learn More"
-              link="/services"
-              rounded={true}
-              className="min-w-[120px] px-8 py-3 text-[16px] font-bold font-albert"
-            />
-            {service.extraButtons && (
-              <Button
-                variant="black navigation"
-                title="Project >"
-                link="/works"
-                rounded={true}
-                className="min-w-[120px] px-8 py-3 text-[16px] font-bold font-albert"
-              />
-            )}
-          </motion.div>
-        </motion.div>
-        {/* Image Section */}
-        <motion.div
-          className="flex-1 flex items-center justify-center w-full max-w-[547px] h-[320px] md:h-[684px]"
-          variants={{
-            hidden: { y: 35 },
-            visible: {
-              y: 0,
-              transition: {
-                duration: 0.7,
-                ease: [0.33, 1, 0.68, 1],
-              },
-            },
-          }}
-        >
-          <div className="w-full h-full flex items-center justify-center overflow-hidden">
-            <Image
-              src={service.image}
-              alt={service.imageAlt}
-              width={547}
-              height={684}
-              className="object-cover w-full h-full"
-            />
-          </div>
-        </motion.div>
+        <Button
+          variant="primary"
+          title={service.btn1}
+          link={service.link2}
+          rounded={true}
+          className="px-6 py-2 text-[14px] font-bold font-albert"
+        />
+
+        <Button
+          variant="secondary"
+          title={service.btn2}
+          link={service.link}
+          rounded={true}
+          className="px-6 py-2 text-[14px] font-bold font-albert"
+        />
       </motion.div>
-    ))}
+    </motion.div>
+  </motion.div>
+);
+
+const ServicesSection = ({}) => (
+  <section className="flex flex-col items-center w-full bg-[#FAFAFA] py-16 md:py-32 px-6 sm:px-[60px] lg:px-[120px] gap-12 z-3">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full mt-2 md:mt-12">
+      {services.map((service, index) => (
+        <ServiceCard key={service.title} service={service} index={index} />
+      ))}
+    </div>
   </section>
 );
 

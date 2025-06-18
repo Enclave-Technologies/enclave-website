@@ -93,28 +93,31 @@ const Testimony = ({ id }) => {
         <div className="flex flex-col items-center justify-center gap-8">
           <div className="flex flex-col items-center justify-center gap-6">
             <h1 className="font-medium lg:text-[64px] md:text-[48px] text-[32px] leading-[120%] text-[#100805] max-w-7xl text-center">
-              Elevate Your Digital Presence With Hong Kong’s Leading Growth Marketing Studio
+              Website & Digital Marketing Solutions To Boost Your Digital
+              Presence
             </h1>
 
             <p className="text-[16px] md:text-[18px] lg:text-[20px] text-[#121212] font-normal normal-case text-center w-full lg:max-w-3xl mx-auto">
-              Enclave Studios is a growth marketing agency helping startups and businesses grow their online visibility with unique branding and marketing solutions.
+              Enclave Studios is a growth marketing agency helping startups and
+              businesses grow their online visibility with unique branding and
+              marketing solutions.
             </p>
           </div>
           <div className="flex flex-wrap gap-4 justify-center mx-auto mt-2">
             <Button
               variant="primary"
-              title="Contact Us"
+              title="Get In Touch"
               link="/contact"
               rounded={true}
               className="px-16"
             />
 
-            {/* <Button
+            <Button
               variant="secondary"
               title="Learn More"
               link="/works"
               rounded={true}
-            /> */}
+            />
           </div>
         </div>
       </div>

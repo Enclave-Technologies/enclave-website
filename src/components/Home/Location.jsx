@@ -8,15 +8,24 @@ const Location = () => {
         <div className="flex flex-col items-start gap-5 w-full">
           <div className="flex flex-col justify-center items-center gap-1 w-full">
             <p className="font-onest font-bold text-[16px] md:text-[20px] leading-[140%] text-center text-[#FB4E29] w-full">
-              Our Offices
+              Visit Us
             </p>
             <h2 className="font-onest capitalize font-bold text-[32px] md:text-[48px] leading-[120%] text-center text-[#100805] w-full">
-              Locations
+              Our Locations
             </h2>
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row items-start py-6 md:p-[24px] gap-6 md:gap-[10px] w-full rounded-xl">
+        <div className="flex flex-col md:flex-row items-start gap-6 md:gap-14 w-full">
+          <div className="w-full md:h-[573px] h-[400px] relative">
+            <Image
+              src="/locations.png"
+              alt="Hong Kong Office Location"
+              fill
+              className="object-cover"
+            />
+          </div>
+
           <div className="flex flex-col justify-between items-start w-full md:h-[573px]">
             <div className="flex flex-col items-start gap-3 md:gap-[12px] w-full">
               <h3 className="font-onest font-bold text-[24px] md:text-[32px] leading-[150%] text-black">
@@ -55,15 +64,6 @@ const Location = () => {
                 </a>
               </div>
             </div>
-          </div>
-
-          <div className="w-full  md:h-[573px] h-[400px] relative">
-            <Image
-              src="/locations.png"
-              alt="Hong Kong Office Location"
-              fill
-              className="object-cover"
-            />
           </div>
         </div>
       </div>
