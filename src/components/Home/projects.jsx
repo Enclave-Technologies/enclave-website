@@ -216,21 +216,20 @@ const Projects = ({ id, fromServices = false }) => {
       id={id}
       className="flex flex-col items-center py-16 md:py-32 px-6 sm:px-[60px] lg:px-[120px] w-full gap-12 bg-[#FAFAFA]"
     >
-      <div className="w-full flex flex-col items-center gap-12 md:gap-16">
+      <div className="w-full flex flex-col items-center gap-4 md:gap-8">
         <div className="flex flex-col items-center gap-6">
           <div className="flex flex-col items-center gap-2">
-            <h4 className="text-[#FB4E29] text-[20px] md:text-[24px] lg:text-[28px] font-bold">
-              Featured Works
+            <h4 className="text-[#FB4E29] text-[14px] md:text-[16px] lg:text-[20px] font-normal uppercase">
+              Featured Projects
             </h4>
             <h2
-              className="text-[32px] md:text-[40px] lg:text-[48px] font-bold capitalize text-center"
+              className="text-[32px] md:text-[40px] lg:text-[48px] font-semibold capitalize text-center"
               style={{
                 lineHeight: "1.3",
               }}
             >
-              Impossible Redefined{" "}
+              Working with Global Brands
             </h2>
-
             {!fromServices && (
               <div className="flex flex-row flex-wrap gap-4 items-center justify-center">
                 {tags.map((tag, index) => (
@@ -256,7 +255,7 @@ const Projects = ({ id, fromServices = false }) => {
             )}
           </div>
         </div>
-        <div className="flex flex-row flex-wrap gap-12 w-full mt-2 md:mt-12">
+        <div className="flex flex-row flex-wrap gap-12 w-full mt-2">
           {projects.map((project, index) => (
             <ProjectCard
               key={index}

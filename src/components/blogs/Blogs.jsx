@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Navbarr } from "../Navbar/Navbarr";
+import { Navbarr } from "../Navbar/Navbar";
 import { Button } from "../Button";
 import NewFooter from "../NewFooter";
 

@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { Navbarr } from "../../components/Navbar/Navbarr";
+import { Navbarr } from "../../components/Navbar/Navbar";
 
 const BlogPage = () => {
   return (

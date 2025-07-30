@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Navbarr } from "../../components/Navbar/Navbarr";
+import { Navbarr } from "../../components/Navbar/Navbar";
 import ServicesHero from "../../components/Services/ServicesHero";
 import ContactForm from "../../components/Home/ContactForm";
 import NewFooter from "../../components/NewFooter";

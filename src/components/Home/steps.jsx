@@ -10,11 +10,9 @@ const Steps = ({ fromServices }) => {
         />
 
         <div className="flex flex-col justify-center items-start py-4 md:py-6 gap-4 md:gap-6 w-full h-auto md:h-[318px] flex-1">
-          <div className="flex flex-row items-center w-full h-auto md:h-[195px]">
-            <p className="font-onest font-bold text-xl md:text-[28px] leading-[140%] text-[#FAFAFA] flex-grow text-center md:text-left">
-              Their website optimisation process has tripled our online
-              visibility, helped us rank #1 on Google and skyrocketed our
-              website sales.
+          <div className="flex flex-row items-center w-full h-auto">
+            <p className="font-onest font-normal text-lg md:text-[24px] leading-[140%] text-[#FAFAFA] flex-grow text-center md:text-left">
+              Enclave revamped my design studio website and I couldn&apos;t recommend them more. I had the privilege of working closely with them, and their attention to detail and feedback was key to the development of the website. Their help during the project and follow up afterwards is also very helpful. The result is very satisfying and I will keep using them for other implementations.
             </p>
           </div>
 

@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useForm, ValidationError } from "@formspree/react";
-import { Navbarr } from "../../components/Navbar/Navbarr";
+import { Navbarr } from "../../components/Navbar/Navbar";
 import NewFooter from "../../components/NewFooter";
 import Image from "next/image";
 

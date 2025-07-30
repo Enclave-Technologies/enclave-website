@@ -30,6 +30,19 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        primary: {
+          100: '#fff0eb',
+          200: '#ffd8cc',
+          300: '#ffb8a8',
+          400: '#ff8f79',
+          500: '#fb4e29', // Your base color
+          600: '#e43e1a',
+          700: '#bf3115',
+          800: '#9b2a16',
+          900: '#7d2516',
+        },
+      },
     },
   },
   plugins: [],

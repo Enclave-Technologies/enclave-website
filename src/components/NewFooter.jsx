@@ -33,13 +33,20 @@ const NewFooter = () => {
             <ul className="md:space-y-5 space-y-3">
               <li>
                 <Link
-                  href="/works"
+                  href="/#our-works"
                   className="text-[#FFF] text-sm hover:text-[#FB4E29]"
                 >
                   Works
                 </Link>
               </li>
-
+              <li>
+                <Link
+                  href="/#our-works"
+                  className="text-[#FFF] text-sm hover:text-[#FB4E29]"
+                >
+                  Services
+                </Link>
+              </li>
               <li>
                 <Link
                   href="/#team"
@@ -55,34 +62,34 @@ const NewFooter = () => {
             <ul className="md:space-y-5 space-y-3">
               <li>
                 <Link
-                  href="/services"
+                  href="/#services"
                   className="text-[#FFF] text-sm hover:text-[#FB4E29]"
                 >
-                  Solutions Prototyping
+                  Web Design & Development
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/services"
+                  href="/#services"
                   className="text-[#FFF] text-sm hover:text-[#FB4E29]"
                 >
-                  Real-time Tech Support
+                  E-Commerce Integration
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/services"
+                  href="/#services"
                   className="text-[#FFF] text-sm hover:text-[#FB4E29]"
                 >
-                  Software Development
+                  Search Engine Optimisation
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/services"
+                  href="/#services"
                   className="text-[#FFF] text-sm hover:text-[#FB4E29]"
                 >
-                  Digital Takeoff & Marketing
+                  Conversion Rate Optimisation
                 </Link>
               </li>
             </ul>
@@ -126,7 +133,7 @@ const NewFooter = () => {
           </div>
           <div className="flex space-x-4 md:mb-0 mb-4">
             <a
-              href="https://www.instagram.com/enclave_studios_/"
+              href="https://www.instagram.com/theenclavestudios/"
               target="_blank"
               rel="noreferrer"
               className="text-white hover:text-[#FB4E29] transition-colors"

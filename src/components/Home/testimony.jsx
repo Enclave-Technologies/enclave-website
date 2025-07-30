@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Button } from "../Button";
+import QuoteGenerator from "../quote-generator/quote-generator";
 
 const LogoMarquee = ({ direction = "left" }) => {
   const rowRef = useRef(null);
@@ -86,48 +87,27 @@ const LogoMarquee = ({ direction = "left" }) => {
 const Testimony = ({ id }) => {
   return (
     <section
-      className="relative min-h-[100vh] gap-6 !justify-between overflow-hidden w-full px-6 md:px-16"
+      className="relative min-h-[100vh] gap-2 md:gap-6 !justify-between overflow-hidden w-full px-3 md:px-16"
       id={id}
     >
-      <div className="w-full flex flex-col items-center justify-center py-4 !pb-0 mt-[80px] mb-[40px]">
-        <div className="flex flex-col items-center justify-center gap-8">
+      <div className="w-full flex flex-col items-center justify-center py-4 !pb-0 mt-[80px] mb:0 md:mb-[40px]">
+        <div className="max-w-full flex flex-col items-center justify-center gap-8">
           <div className="flex flex-col items-center justify-center gap-6">
-            <h1 className="font-medium lg:text-[64px] md:text-[48px] text-[32px] leading-[120%] text-[#100805] max-w-7xl text-center">
-              Website & Digital Marketing Solutions To Boost Your Digital
-              Presence
+            <h1 className="font-medium lg:text-[72px] md:text-[48px] text-[32px] leading-[120%] text-[#100805] max-w-7xl text-center capitalize">
+              More than just websites
+              <br />
+              We craft digital experiences
             </h1>
-
-            <p className="text-[16px] md:text-[18px] lg:text-[20px] text-[#121212] font-normal normal-case text-center w-full lg:max-w-3xl mx-auto">
-              Enclave Studios is a growth marketing agency helping startups and
-              businesses grow their online visibility with unique branding and
-              marketing solutions.
-            </p>
           </div>
-          <div className="flex flex-wrap gap-4 justify-center mx-auto mt-2">
-            <Button
-              variant="primary"
-              title="Get In Touch"
-              link="/contact"
-              rounded={true}
-              className="px-16"
-            />
-
-            <Button
-              variant="secondary"
-              title="Learn More"
-              link="/works"
-              rounded={true}
-            />
-          </div>
+          <QuoteGenerator />
         </div>
       </div>
-      <div className="w-full flex items-center justify-center h-full">
+      <div className="aspect-video relative w-full flex flex-1 items-center justify-center h-full">
         <Image
           src="/hero-image-2.png"
           alt="testimony"
-          width={1000}
-          height={1000}
-          className="w-full h-full object-cover"
+          fill={true}
+          className="relative w-full h-full object-contain"
         />
       </div>
     </section>

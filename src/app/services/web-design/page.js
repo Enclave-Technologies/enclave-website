@@ -3,7 +3,7 @@
 import React from "react";
 import ContactForm from "../../../components/Home/ContactForm";
 import Pricing from "../../../components/Home/Pricing";
-import { Navbarr } from "../../../components/Navbar/Navbarr";
+import { Navbarr } from "../../../components/Navbar/Navbar";
 import NewFooter from "../../../components/NewFooter";
 import ServicesHero from "../../../components/Services/ServicesHero";
 import ServicesIndustry from "../../../components/Services/ServicesIndustry";

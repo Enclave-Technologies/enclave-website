@@ -8,11 +8,11 @@ import Hamburger from "./Hamburger";
 const links = [
   { title: "Home", link: "/" },
   { title: "Works", link: "/#our-works" },
-  { title: "Services", link: "/services" },
-  { title: "About Us", link: "/about-us" },
+  { title: "Our Expertise", link: "/#services" },
+  { title: "About Us", link: "/#about-us" },
 ];
 
-export const Navbarr = () => {
+export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -35,7 +35,7 @@ export const Navbarr = () => {
       className="fixed top-0 left-0 z-50 md:h-[56px] py-2 px-8 transition-all duration-300 flex justify-center max-w-screen w-full"
       style={{
         background: "#FAFAFA",
-        boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.2)",
+        boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.2)",
         backdropFilter: "blur(12px)",
       }}
     >
@@ -70,10 +70,10 @@ export const Navbarr = () => {
 
           <div className="hidden md:flex h-[40px] w-auto relative z-[1001]">
             <Link
-              href="https://calendly.com/hello-enclave-studios/free-consult"
+              href="https://calendly.com/hello-enclave-studios/30-min"
               className="bg-[#FB4E29] hover:bg-[#fb7429] flex items-center justify-center h-full w-full text-white px-4 py-2 rounded-full transition-colors duration-200 text-base font-medium"
             >
-              Book Appointment
+              Get In Touch
             </Link>
           </div>
 

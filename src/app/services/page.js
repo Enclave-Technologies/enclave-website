@@ -4,7 +4,7 @@ import React from "react";
 import ServicesHero from "../../components/Services/ServicesHero";
 import ServicesSection from "../../components/Services/ServicesSection";
 import NewFooter from "../../components/NewFooter";
-import { Navbarr } from "../../components/Navbar/Navbarr";
+import { Navbarr } from "../../components/Navbar/Navbar";
 import ContactForm from "../../components/Home/ContactForm";
 
 const ServicesPage = () => {

@@ -3,13 +3,15 @@ import Testimony from "../components/Home/testimony";
 import Steps from "../components/Home/steps";
 import Projects from "../components/Home/projects";
 import NewServices from "../components/Home/new-services";
-import { Navbarr } from "../components/Navbar/Navbarr";
+import { Navbar } from "../components/Navbar/Navbar";
 import NewFooter from "../components/NewFooter";
 import { FloatingWA } from "../components/FloatingWA";
 import Location from "../components/Home/Location";
 import ContactForm from "../components/Home/ContactForm";
 import OurServices from "../components/Home/our-services";
 import Logos from "../components/Home/Logos";
+import AdditionalServices from "../components/Home/additional_services";
+import About from "../components/Home/about";
 // Case-sensitivity is turned on for vercel builds
 
 export default function Home() {
@@ -17,14 +19,18 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between text-black relative home-font gap-32 bg-[#FAFAFA]">
       {/* <div className="cursor" /> */}
       <div className="z-10 flex flex-col items-center">
-        <Navbarr />
+        <Navbar />
         <FloatingWA />
         <Testimony id="home" />
-        <OurServices id="our-services" />
         <Logos id="logos" />
-        <NewServices
+        <Projects id="our-works" />
+        <Steps />
+        <AdditionalServices id="services"/>
+        <About id="about-us"/>
+        {/* <OurServices id="our-services" /> */}
+        {/* <NewServices
           id="services"
-          title="Our Services"
+          title="Beyond the Basics"
           subtitle="Where Excellence Meets Passion"
           services={[
             {
@@ -56,11 +62,9 @@ export default function Home() {
               imageAlt: "Application Development",
             },
           ]}
-        />
-        <Projects id="our-works" />
-        <Steps id="about-us" />
-        <Location id="location" />
-        <ContactForm id="contact-form" />
+        /> */}
+        {/* <Location id="location" /> */}
+        {/* <ContactForm id="contact-form" /> */}
         {/* <Team id="about-us" /> */}
       </div>
       <div className="hidden md:flex min-h-screen w-full bg-transparent"></div>
