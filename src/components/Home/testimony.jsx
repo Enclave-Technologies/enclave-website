@@ -91,12 +91,12 @@ const Testimony = ({ id }) => {
       id={id}
     >
       <div className="w-full flex flex-col items-center justify-center py-4 !pb-0 mt-[80px] mb:0 md:mb-[40px]">
-        <div className="max-w-full flex flex-col items-center justify-center gap-8">
+        <div className="max-w-full flex flex-col items-center justify-center gap-4 md:gap-8">
           <div className="flex flex-col items-center justify-center gap-6">
-            <h1 className="font-medium lg:text-[72px] md:text-[48px] text-[32px] leading-[120%] text-[#100805] max-w-7xl text-center capitalize">
-              More than just websites
+            <h1 className="font-medium lg:text-[72px] md:text-[64px] text-[40px] leading-[120%] text-[#100805] max-w-7xl text-center capitalize">
+              More than just <span className="text-gray-500">websites</span>
               <br />
-              We craft digital experiences
+              We craft <span className="text-primary-500">digital experiences</span>
             </h1>
           </div>
           <QuoteGenerator />

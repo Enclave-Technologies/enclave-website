@@ -90,44 +90,9 @@ const form = [
 
 export default function Home() {
   return (
-    <main className="w-full flex min-h-screen flex-col items-center justify-between text-black relative home-font gap-32 bg-[#FFF] px-[120px]">
+    <main className="w-full flex min-h-screen flex-col items-center justify-between text-black relative home-font gap-32 bg-[#FFF] px-2 md:px-[120px]">
         {/* <WebsiteDevelopmentQG /> */}
         <WebsiteQuestionnaire />
     </main>
   );
 }
-
-const WebsiteDevelopmentQG = () => {
-    const [step, setStep] = useState(0);
-    return (
-        <div className="w-full flex flex-col items-center py-20 px-[120px] h-screen">
-            {/* Insert Enclave Studios logo */}
-            {/* Insert Progress Bar */}
-            <div className="bg-gray-200 w-1/2 h-2 rounded-full">
-                <div style={{width:`${(step+1)/(form.length)*100}%`}} className="bg-black rounded-full h-2"></div>
-            </div>
-            <div className="w-full flex flex-col gap-10 max-w-[800px] pt-4">
-            <div className="flex-col">
-                <p className="text-[16px] md:text-[16px] lg:text-[16px] font-medium normal-case text-center w-full lg:max-w-3xl mx-auto">
-                    Question {step+1}/{form.length}
-                </p>
-            </div>
-            <form className="grid grid-cols-1 gap-4 text-[20px]">
-                <h4 className="text-[16px] md:text-[24px]">{form[step].sectionTitle}</h4>
-                <div className="flex flex-col">
-                    <ul className="flex flex-col gap-2">
-                        {form[step].options?.map((option, index2) => <li key={index2} className="flex flex-row gap-2">
-                            <input type={form[step].type} id={`${form[step].sectionTitle}-${index2}`} name={`${option}`} value={`${option}`} />
-                            <label htmlFor={`${option}`}>{option}</label>
-                        </li>)}
-                    </ul>
-                </div>
-                <button onClick={(e)=>{
-                    e.preventDefault();
-                    setStep(step+1)
-                }}>Proceed</button>
-            </form>
-        </div>
-        </div>
-    )
-};

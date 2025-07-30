@@ -259,9 +259,9 @@ const MultiStepQuestionnaire: FC = () => {
   const progress = ((currentStep + 1) / allQuestions.length) * 100;
 
   return (
-    <div className="w-full h-screen flex flex-col gap-8 items-center bg-white p-6 sm:p-8 rounded-xl relative overflow-hidden">
+    <div className="w-full h-screen flex flex-col gap-8 items-center bg-white p-6 px-2 md:p-0 rounded-xl relative overflow-hidden">
       <div className="w-[140px] relative z-[1001]">
-        <Link href="/">
+        <Link href="/" className='flex items-center justify-center'>
           <Image
             src="/enclave-logo-with-text.svg"
             width={106}
@@ -280,7 +280,7 @@ const MultiStepQuestionnaire: FC = () => {
         />
       </div>
 
-      <div className="relative flex-1 w-full">
+      <div className="relative flex-1 max-h-4/5 overflow-scroll w-full">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentStep}
