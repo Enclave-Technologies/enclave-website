@@ -15,19 +15,19 @@ const links = [
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    document.addEventListener("scroll", navbarScroll);
-    var prevScrollpos = window.pageYOffset;
-    function navbarScroll() {
-      var currentScrollPos = window.pageYOffset;
-      if (prevScrollpos > currentScrollPos) {
-        document.getElementById("navbar").style.top = "0px";
-      } else {
-        document.getElementById("navbar").style.top = "-80px";
-      }
-      prevScrollpos = currentScrollPos;
-    }
-  }, []);
+  // useEffect(() => {
+  //   document.addEventListener("scroll", navbarScroll);
+  //   var prevScrollpos = window.pageYOffset;
+  //   function navbarScroll() {
+  //     var currentScrollPos = window.pageYOffset;
+  //     if (prevScrollpos > currentScrollPos) {
+  //       document.getElementById("navbar").style.top = "0px";
+  //     } else {
+  //       document.getElementById("navbar").style.top = "-80px";
+  //     }
+  //     prevScrollpos = currentScrollPos;
+  //   }
+  // }, []);
 
   return (
     <div

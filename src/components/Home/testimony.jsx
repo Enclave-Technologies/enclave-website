@@ -90,7 +90,7 @@ const Testimony = ({ id }) => {
       className="relative min-h-[100vh] gap-2 md:gap-6 !justify-between overflow-hidden w-full px-3 md:px-16"
       id={id}
     >
-      <div className="w-full flex flex-col items-center justify-center py-4 !pb-0 mt-[80px] mb:0 md:mb-[40px]">
+      <div className="w-full flex flex-col items-center justify-center py-4 !pb-0 mt-[40px] md:mt-[80px] mb:0 md:mb-[40px]">
         <div className="max-w-full flex flex-col items-center justify-center gap-4 md:gap-8">
           <div className="flex flex-col items-center justify-center gap-6">
             <h1 className="font-medium lg:text-[72px] md:text-[64px] text-[40px] leading-[120%] text-[#100805] max-w-7xl text-center capitalize">

@@ -15,7 +15,7 @@ export const Button = ({
           rounded ? "!rounded-full" : ""
         }`}
       >
-        <span className="button-text w-fit">{title}</span>
+        <span className="button-text w-fit text-nowrap">{title}</span>
       </button>
     </Link>
   );
