@@ -10,8 +10,8 @@ const albert = Albert_Sans({ subsets: ["latin"], variable: "--font-albert" });
 const projectId = "r10gunijpv";
 
 export const metadata = {
-  title:  "Home | Enclave Studios",
-  description: "Enclave Studios is a growth marketing agency helping startups and businesses grow their online visibility with unique branding and marketing solutions.",
+  title:  "Enclave Studios - Curating Premium Web Experiences",
+  description: "Enclave Studios is a digital studio helping startups and growth stage companies craft unique digital experiences to engage their audiences.",
   keywords: "website design, website development, web-app development, mobile app development, search engine optimisation, seo, search experience optimisation, sxo, branding,",
   favicon: "/favicon.ico",
   url: 'www.enclave-studios.com'

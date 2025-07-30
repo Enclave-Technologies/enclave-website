@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Navbarr } from "../Navbar/Navbar";
+import { Navbar } from "../Navbar/Navbar";
 import { Button } from "../Button";
 import NewFooter from "../NewFooter";
 
@@ -135,7 +135,7 @@ const Blogs = () => {
   if (loading) {
     return (
       <div className="min-h-screen mt-[80px] w-[90vw]">
-        <Navbarr />
+        <Navbar />
 
         <div className="py-16">
           <div className="mb-16">
@@ -195,7 +195,7 @@ const Blogs = () => {
 
   return (
     <div className="min-h-screen w-full flex relative flex-col home-font gap-32 items-center justify-between">
-      <Navbarr />
+      <Navbar />
 
       <div className="py-16 z-10 w-screen bg-white">
         <div className="w-[90vw] mx-auto mt-[70px]">
