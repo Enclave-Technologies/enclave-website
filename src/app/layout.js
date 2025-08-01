@@ -1,13 +1,12 @@
 import { Albert_Sans, Onest } from "next/font/google";
 import "./globals.css";
 import Head from "next/head";
-import Script from "next/script";
 import Clarity from "@microsoft/clarity";
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 
 const onest = Onest({ subsets: ["latin"], variable: "--font-onest" });
 const albert = Albert_Sans({ subsets: ["latin"], variable: "--font-albert" });
-const projectId = "r10gunijpv";
+const projectId = "snwsvgucjg";
 
 export const metadata = {
   title:  "Enclave Studios - Curating Premium Web Experiences",

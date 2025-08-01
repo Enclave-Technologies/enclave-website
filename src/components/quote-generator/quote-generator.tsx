@@ -24,7 +24,7 @@ const QuoteGenerator = () => {
             Step 1: Tell Us Your Requirements
         </p>
         <div className="w-full md:w-auto p-2 rounded-full md:border-2 focus-within:border-[#e2806a]">
-            <form className="flex flex-row md:flex-row gap-4">
+            <form className="flex flex-col md:flex-row gap-4">
             <div className="overflow-hidden rounded-full border-[1px] md:border-none border-black px-0 md:px-4 text-[14px]">
                 <select
                     value={selectedService}

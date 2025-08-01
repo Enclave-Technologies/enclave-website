@@ -1,11 +1,4 @@
 "use client";
-
-import WebsiteFeatures from "../../components/quote-generator/website-features";
-import ContactForm from "../../components/quote-generator/contact-form";
-import WebsitePreferences from "../../components/quote-generator/website-preferences";
-import AdditionalFeatures from "../../components/quote-generator/additional-features";
-import DesiredTimeline from "../../components/quote-generator/desired-timeline";
-import { useState } from "react";
 import WebsiteQuestionnaire from "../../components/quote-generator/website-questionnaire";
 
 const form = [

@@ -10,7 +10,7 @@ import AdditionalServices from "../components/Home/additional_services";
 import About from "../components/Home/about";
 // Case-sensitivity is turned on for vercel builds
 
-export default function Home() {
+export default function HomeZH() {
   return (
     <main className="flex flex-col items-center justify-between text-black relative home-font gap-32 bg-[#FAFAFA]">
       {/* <div className="cursor" /> */}
