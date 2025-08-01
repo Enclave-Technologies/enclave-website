@@ -3,6 +3,7 @@ import "./globals.css";
 import Head from "next/head";
 import Clarity from "@microsoft/clarity";
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
+import Script from "next/script";
 
 const onest = Onest({ subsets: ["latin"], variable: "--font-onest" });
 const albert = Albert_Sans({ subsets: ["latin"], variable: "--font-albert" });
@@ -50,6 +51,15 @@ export default function RootLayout({ children }) {
       <body>
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WL5WBF6R" height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe></noscript>
         {children}
+        <Script id="clarity-script" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "${projectId}");
+          `}
+        </Script>
       </body>
     </html>
   );
