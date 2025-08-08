@@ -6,7 +6,7 @@ import nodemailer from 'nodemailer';
 // These values are examples; you should adjust them to match your pricing.
 const calculateQuote = (formData: Record<string, any>): { total: number; breakdown: string[] } => {
   let total = 15000; // Base price in HKD for a simple site
-  const breakdown: string[] = ['Base Website Setup: HK$15,000'];
+  const breakdown: string[] = ['Base Website Design & Development: HK$15,000'];
 
   // Question 7: Number of pages
   const pages = formData['7'];
@@ -98,9 +98,9 @@ const sendQuoteEmail = async (formData: Record<string, any>, quote: { total: num
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
             body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; }
-            .container { max-width: 600px; margin: 20px auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
+            .container { padding: 20px; }
             .header { font-size: 24px; font-weight: bold; color: #2c3e50; text-align: center; margin-bottom: 20px; }
-            .total { font-size: 28px; font-weight: bold; color: #2980b9; text-align: center; margin: 20px 0; padding: 10px; background-color: #f0f8ff; border-radius: 5px; }
+            .total { font-size: 28px; font-weight: bold; color: #2980b9; text-align: left; margin: 20px 0; padding: 10px; background-color: #f0f8ff; border-radius: 5px; }
             .breakdown { margin-top: 20px; }
             .breakdown h3 { font-size: 18px; color: #34495e; border-bottom: 2px solid #ecf0f1; padding-bottom: 5px; }
             .breakdown ul { list-style-type: none; padding: 0; }
@@ -112,16 +112,20 @@ const sendQuoteEmail = async (formData: Record<string, any>, quote: { total: num
         <div class="container">
             <div class="header">Your Website Project Quotation</div>
             <p>Hi ${userName},</p>
-            <p>Thank you for your interest in working with us! Based on the information you provided, we've generated a preliminary quotation for your website project.</p>
-            <div class="total">Estimated Total: HK$${quote.total.toLocaleString()}</div>
+            <p>Thank you for your interest in working with Enclave Studios! We're excited about the possibility of helping you achieve your business goals with a powerful new website. Based on the information you provided in our quote generator, here is the preliminary estimate for your project.</p>
+            <div class="total">Your Project Estimate: HK$${quote.total.toLocaleString()}</div>
             <div class="breakdown">
-                <h3>Cost Breakdown:</h3>
-                <ul>
-                    ${quote.breakdown.map(item => `<li>${item.split(':')[0]}<span>${item.split(':')[1]}</span></li>`).join('')}
-                </ul>
+            <h3>Cost Breakdown:</h3>
+            <ul>
+            ${quote.breakdown.map(item => `<li>${item.split(':')[0]}<span>${item.split(':')[1]}</span></li>`).join('')}
+            </ul>
             </div>
             <div class="footer">
-                <p>This is an automated estimate. Prices may vary based on a more detailed project discussion. We will be in touch shortly to discuss the next steps!</p>
+            <p>Disclaimer:  This is an automated, preliminary estimate to give you a general idea of the investment. A firm, detailed proposal will be provided after our consultation call.</p>
+            </div>
+            <div class="header">Ready for the Next Step?</div>
+            <div>
+
             </div>
         </div>
     </body>
@@ -132,7 +136,7 @@ const sendQuoteEmail = async (formData: Record<string, any>, quote: { total: num
     from: process.env.EMAIL_FROM,
     to: userEmail,
     bcc: process.env.EMAIL_SERVER_USER, // Send a copy to yourself
-    subject: `Your Website Quotation from Enclave Studios`,
+    subject: `Your Quote is Ready! Next Step: A Free Strategy Call`,
     html: emailHtml,
   };
 
