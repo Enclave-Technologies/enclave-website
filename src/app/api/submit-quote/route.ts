@@ -5,8 +5,8 @@ import nodemailer from 'nodemailer';
 // This function calculates the price based on the form data.
 // These values are examples; you should adjust them to match your pricing.
 const calculateQuote = (formData: Record<string, any>): { total: number; breakdown: string[] } => {
-  let total = 10000; // Base price in HKD for a simple site
-  const breakdown: string[] = ['Base Website Setup: HK$10,000'];
+  let total = 15000; // Base price in HKD for a simple site
+  const breakdown: string[] = ['Base Website Setup: HK$15,000'];
 
   // Question 7: Number of pages
   const pages = formData['7'];
