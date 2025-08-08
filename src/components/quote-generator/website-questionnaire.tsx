@@ -189,7 +189,7 @@ const MultiStepQuestionnaire: FC = () => {
               const optionDesc = typeof option === 'string' ? '' : option.description;
               const isSelected = formData[question.id] === optionValue;
               return (
-                <label key={index} className={`flex items-center rounded-lg p-4 border transition-all duration-200 cursor-pointer ${isSelected ? 'bg-primary-50 border-primary-500 ring-2 ring-primary-500' : 'bg-white border-gray-300 hover:bg-gray-50'}`}>
+                <label key={index} className={`flex items-center rounded-lg p-4 border transition-all duration-200 cursor-pointer ${isSelected ? 'bg-primary-50 border-primary-500' : 'bg-white border-gray-300 hover:bg-gray-50'}`}>
                   <input type="radio" name={String(question.id)} value={optionValue} checked={isSelected} onChange={handleChange} className="h-4 w-4 text-primary-600 border-gray-300 focus:ring-primary-500 mt-1" />
                   <div className="ml-4 flex-grow">
                     <span className="font-medium text-gray-900 text-[16px]">{optionValue}</span>
@@ -217,7 +217,7 @@ const MultiStepQuestionnaire: FC = () => {
             {question.options?.map((option, index) => {
               const isSelected = (formData[question.id] || []).includes(String(option));
               return (
-                <label key={index} className={`flex items-center rounded-lg p-4 border transition-all duration-200 cursor-pointer ${isSelected ? 'bg-primary-50 border-primary-500 ring-2 ring-primary-500' : 'bg-white border-gray-300 hover:bg-gray-50'}`}>
+                <label key={index} className={`flex items-center rounded-lg p-4 border transition-all duration-200 cursor-pointer ${isSelected ? 'bg-primary-50 border-primary-500' : 'bg-white border-gray-300 hover:bg-gray-50'}`}>
                   <input type="checkbox" name={String(question.id)} value={String(option)} checked={isSelected} onChange={handleChange} className="h-4 w-4 rounded text-primary-600 border-gray-300 focus:ring-primary-500 mt-1" />
                   <div className="ml-4 flex-grow">
                      <span className="font-medium text-gray-900 text-[16px]">{String(option)}</span>
@@ -259,7 +259,7 @@ const MultiStepQuestionnaire: FC = () => {
   const progress = ((currentStep + 1) / allQuestions.length) * 100;
 
   return (
-    <div className="w-full h-screen flex flex-col gap-8 items-center bg-white p-6 px-2 md:p-0 rounded-xl relative overflow-hidden">
+    <div className="w-full flex flex-col gap-8 items-center bg-white p-6 px-2 md:p-0 relative overflow-hidden">
       <div className="w-[140px] relative z-[1001]">
         <Link href="/" className='flex items-center justify-center'>
           <Image
@@ -280,7 +280,7 @@ const MultiStepQuestionnaire: FC = () => {
         />
       </div>
 
-      <div className="relative flex-1 max-h-4/5 overflow-scroll w-full">
+      <div className="relative flex-1 h-full overflow-scroll w-full">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentStep}
@@ -288,7 +288,7 @@ const MultiStepQuestionnaire: FC = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -50 }}
             transition={{ duration: 0.3 }}
-            className="absolute w-full"
+            className="w-full"
           >
             <h2 className="text-2xl font-bold text-gray-800">{currentQuestion.question_text}</h2>
             <div className="mt-4">
@@ -324,7 +324,7 @@ const MultiStepQuestionnaire: FC = () => {
         {currentStep < allQuestions.length - 1 ? (
           <button
             onClick={handleNext}
-            className="inline-flex items-center px-6 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+            className="inline-flex items-center px-6 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary-600 hover:bg-primary-700 focus:outline-none"
           >
             Next
             <ArrowRight className="ml-2 h-4 w-4" />
@@ -333,7 +333,7 @@ const MultiStepQuestionnaire: FC = () => {
           <button
             onClick={handleSubmit}
             disabled={isSubmitting}
-            className="inline-flex items-center px-6 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="inline-flex items-center px-6 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? (
               <>

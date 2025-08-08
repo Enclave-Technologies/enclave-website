@@ -83,7 +83,7 @@ const form = [
 
 export default function Home() {
   return (
-    <main className="w-full flex min-h-screen flex-col items-center justify-between text-black relative home-font gap-32 bg-[#FFF] px-2 md:px-[120px]">
+    <main className="py-8 box-border w-full flex min-h-screen flex-col items-center justify-between text-black relative home-font gap-32 bg-[#FFF] px-2 md:px-[120px]">
         {/* <WebsiteDevelopmentQG /> */}
         <WebsiteQuestionnaire />
     </main>
