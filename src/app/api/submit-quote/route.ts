@@ -105,6 +105,7 @@ const sendQuoteEmail = async (formData: Record<string, any>, quote: { total: num
             .breakdown h3 { font-size: 18px; color: #34495e; border-bottom: 2px solid #ecf0f1; padding-bottom: 5px; }
             .breakdown ul { list-style-type: none; padding: 0; }
             .breakdown li { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #ecf0f1; }
+            .cta { font-size: 20px; font-weight: bold; color: #2980b9; text-align: left; margin: 20px 0; padding: 10px; background-color: #f0f8ff; border-radius: 5px; }
             .footer { margin-top: 30px; text-align: center; font-size: 12px; color: #7f8c8d; }
         </style>
     </head>
@@ -125,28 +126,23 @@ const sendQuoteEmail = async (formData: Record<string, any>, quote: { total: num
             </div>
             <div class="header">Ready for the Next Step?</div>
             <div>
-              <p>An estimate is a great starting point, but a successful website is built on a clear strategy, not just a list of features. The most important step is our initial conversation.
-
-                  Let's schedule a complimentary 15-minute Discovery Call. On this call, we will:
-
-                  Discuss your business goals in detail.
-
-                  Refine this estimate into a firm, detailed proposal.
-
-                  Answer every question you have about our process.
-
-                  There's no pressure and no obligation. It's the best way for us to see if we're a good fit to help you succeed.
-
-                  <br>
-
-                  >>> Book Your Free 15-Minute Consultation Now <<<
-
-                  <br>
-
-                  We look forward to speaking with you!
-
-                  Best regards,
-                </p>
+              <p>An estimate is a great starting point, but a successful website is built on a clear strategy, not just a list of features. The most important step is our initial conversation.</p>
+              <p>Let's schedule a complimentary 15-minute Discovery Call. On this call, we will:
+                <ul>
+                  <li>Discuss your business goals in detail.</li>
+                  <li>Refine this estimate into a firm, detailed proposal.</li>
+                  <li>Answer every question you have about our process.</li>
+                </ul>
+                There's no pressure and no obligation. It's the best way for us to see if we're a good fit to help you succeed.
+              </p>
+              <a class="cta" href="https://calendly.com/hello-enclave-studios/30-min">&gt;&gt;&gt; Book Your Free 15-Minute Consultation Now &lt;&lt;&lt;</a>
+              <p>We look forward to speaking with you!</p>
+              <br/>
+              <p>Best regards,
+                <br/>Siddharth Agarwal
+                <br/>Founder, Chief Experience Officer
+                <br/><a href="https://www.google.com/search?q=enclave-studios.com">Enclave Studios</a>
+              </p>              
             </div>
         </div>
     </body>
