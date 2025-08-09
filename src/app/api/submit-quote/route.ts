@@ -99,7 +99,7 @@ const sendQuoteEmail = async (formData: Record<string, any>, quote: { total: num
         <style>
             body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; }
             .container { padding: 20px; }
-            .header { font-size: 24px; font-weight: bold; color: #2c3e50; text-align: center; margin-bottom: 20px; }
+            .header { font-size: 24px; font-weight: bold; color: #2c3e50; text-align: left; margin-bottom: 20px; }
             .total { font-size: 28px; font-weight: bold; color: #2980b9; text-align: left; margin: 20px 0; padding: 10px; background-color: #f0f8ff; border-radius: 5px; }
             .breakdown { margin-top: 20px; }
             .breakdown h3 { font-size: 18px; color: #34495e; border-bottom: 2px solid #ecf0f1; padding-bottom: 5px; }
