@@ -125,7 +125,28 @@ const sendQuoteEmail = async (formData: Record<string, any>, quote: { total: num
             </div>
             <div class="header">Ready for the Next Step?</div>
             <div>
+              <p>An estimate is a great starting point, but a successful website is built on a clear strategy, not just a list of features. The most important step is our initial conversation.
 
+                  Let's schedule a complimentary 15-minute Discovery Call. On this call, we will:
+
+                  Discuss your business goals in detail.
+
+                  Refine this estimate into a firm, detailed proposal.
+
+                  Answer every question you have about our process.
+
+                  There's no pressure and no obligation. It's the best way for us to see if we're a good fit to help you succeed.
+
+                  <br>
+
+                  >>> Book Your Free 15-Minute Consultation Now <<<
+
+                  <br>
+
+                  We look forward to speaking with you!
+
+                  Best regards,
+                </p>
             </div>
         </div>
     </body>
